@@ -1,24 +1,66 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { getClasses, getCategories, getCoursList } from "../api/resources";
+import {
+  getClasses, getCategories, getCoursList,
+  createCategorie, deleteCategorie, getFilieres,
+} from "../api/resources";
 import StatusBadge from "../components/StatusBadge";
+import Modal from "../components/Modal";
 import { exportCurrentPage } from "../utils/pdf";
 
 export default function Cours() {
+  const currentTeacher = JSON.parse(localStorage.getItem("teacher_session") || "null");
   const navigate = useNavigate();
   const [classes, setClasses] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [filieres, setFilieres] = useState(["CIEL", "MELEC"]);
   const [cours, setCours] = useState([]);
   const [classeFilter, setClasseFilter] = useState("");
+  const [showCategorieModal, setShowCategorieModal] = useState(false);
+  const [catCode, setCatCode] = useState("");
+  const [catNom, setCatNom] = useState("");
+  const [catFiliere, setCatFiliere] = useState(currentTeacher?.filiere || "CIEL");
+  const [catError, setCatError] = useState("");
+
+  const loadCategories = () => getCategories().then(setCategories);
 
   useEffect(() => {
     getClasses().then(setClasses);
-    getCategories().then(setCategories);
+    loadCategories();
+    getFilieres().then(setFilieres).catch(console.error);
   }, []);
 
   useEffect(() => {
     getCoursList(classeFilter ? { classe_id: classeFilter } : {}).then(setCours);
   }, [classeFilter]);
+
+  const submitCategorie = async (e) => {
+    e.preventDefault();
+    if (!catCode.trim() || !catNom.trim()) {
+      setCatError("Le code et le nom sont obligatoires.");
+      return;
+    }
+    try {
+      await createCategorie({ code: catCode.trim(), nom: catNom.trim(), filiere: catFiliere });
+      setCatCode("");
+      setCatNom("");
+      setCatError("");
+      setShowCategorieModal(false);
+      loadCategories();
+    } catch (err) {
+      setCatError(err?.response?.data?.error || "Impossible de créer cette catégorie.");
+    }
+  };
+
+  const handleDeleteCategorie = async (categorie) => {
+    if (!window.confirm(`Supprimer la catégorie "${categorie.code} — ${categorie.nom}" ?`)) return;
+    try {
+      await deleteCategorie(categorie.id);
+      setCategories((current) => current.filter((c) => c.id !== categorie.id));
+    } catch (err) {
+      alert(err?.response?.data?.error || "Impossible de supprimer cette catégorie.");
+    }
+  };
 
   const progressionParClasse = classes
     .filter((c) => !classeFilter || String(c.id) === String(classeFilter))
@@ -40,6 +82,7 @@ export default function Cours() {
         </div>
         <div className="toolbar">
           <button type="button" className="btn" onClick={() => exportCurrentPage("Cours et progression")}>Exporter PDF</button>
+          <button type="button" className="btn btn-copper" onClick={() => setShowCategorieModal(true)}>+ Nouvelle catégorie</button>
           <select style={{ width: 200 }} value={classeFilter} onChange={(e) => setClasseFilter(e.target.value)}>
             <option value="">Toutes les classes</option>
             {classes.map((c) => <option key={c.id} value={c.id}>{c.nom}</option>)}
@@ -69,8 +112,9 @@ export default function Cours() {
         const items = cours.filter((c) => c.categorie_id === cat.id);
         return (
           <div key={cat.id} style={{ marginBottom: 22 }}>
-            <div style={{ fontFamily: "var(--font-mono)", fontSize: 12, marginBottom: 8 }}>
-              <span className="cat-chip">{cat.code}</span> — {cat.nom}
+            <div style={{ fontFamily: "var(--font-mono)", fontSize: 12, marginBottom: 8, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+              <span><span className="cat-chip">{cat.code}</span> — {cat.nom}{cat.filiere ? ` (${cat.filiere})` : ""}</span>
+              {cat.removable && <button type="button" className="btn btn-sm" onClick={() => handleDeleteCategorie(cat)}>Supprimer</button>}
             </div>
             {items.length === 0 ? <div className="empty-state">Aucun cours dans cette catégorie pour le moment.</div> : <div className="card"><table>
                 <thead>
@@ -111,6 +155,33 @@ export default function Cours() {
         <div className="empty-state">
           Aucun cours pour l'instant. Rendez-vous dans une <Link to="/classes">classe</Link> pour en créer un.
         </div>
+      )}
+
+      {showCategorieModal && (
+        <Modal title="Nouvelle catégorie de cours" onClose={() => setShowCategorieModal(false)}>
+          <form onSubmit={submitCategorie}>
+            {catError && <div className="error-box" style={{ marginBottom: 12 }}>{catError}</div>}
+            <div className="field">
+              <label>Code</label>
+              <input value={catCode} onChange={(e) => setCatCode(e.target.value)} placeholder="ex : 07" autoFocus />
+            </div>
+            <div className="field">
+              <label>Nom</label>
+              <input value={catNom} onChange={(e) => setCatNom(e.target.value)} placeholder="ex : Domotique" />
+            </div>
+            <div className="field">
+              <label>Filière</label>
+              <select value={catFiliere} onChange={(e) => setCatFiliere(e.target.value)}>
+                {filieres.map((f) => <option key={f} value={f}>{f}</option>)}
+              </select>
+              <span className="field-hint">Cette catégorie ne sera visible que pour cette filière.</span>
+            </div>
+            <div className="form-actions">
+              <button type="button" className="btn" onClick={() => setShowCategorieModal(false)}>Annuler</button>
+              <button type="submit" className="btn btn-primary">Créer</button>
+            </div>
+          </form>
+        </Modal>
       )}
     </div>
   );

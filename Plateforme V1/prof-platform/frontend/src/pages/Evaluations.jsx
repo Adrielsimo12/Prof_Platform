@@ -83,14 +83,6 @@ export default function Evaluations() {
       .then(setClasses)
       .catch(console.error);
 
-    getCompetences()
-      .then(setCompetences)
-      .catch(console.error);
-
-    getAppreciations()
-      .then(setAppreciations)
-      .catch(console.error);
-
   }, []);
 
   useEffect(() => {
@@ -151,11 +143,16 @@ export default function Evaluations() {
   useEffect(() => {
     if (!classeId) {
       setCompetences([]);
+      setAppreciations([]);
       return;
     }
 
     getCompetences({ classe_id: classeId })
       .then(setCompetences)
+      .catch(console.error);
+
+    getAppreciations({ classe_id: classeId })
+      .then(setAppreciations)
       .catch(console.error);
   }, [classeId]);
 

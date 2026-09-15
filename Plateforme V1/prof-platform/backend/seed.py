@@ -113,8 +113,8 @@ def run():
                 print(f"Classe créée : {nom}")
 
         for code, nom in CATEGORIES_INITIALES:
-            if not Categorie.query.filter_by(code=code).first():
-                db.session.add(Categorie(code=code, nom=nom))
+            if not Categorie.query.filter_by(code=code, filiere="CIEL", owner_id=1).first():
+                db.session.add(Categorie(code=code, nom=nom, filiere="CIEL", owner_id=1))
                 print(f"Catégorie créée : {code} - {nom}")
 
         # Créer le domaine des compétences

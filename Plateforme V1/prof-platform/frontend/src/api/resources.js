@@ -21,8 +21,11 @@ export const importEleves = (id, content) =>
   client.post(`/classes/${id}/eleves/import`, { content }).then((r) => r.data);
 
 // ---- Categories ----
-export const getCategories = () =>
-  client.get("/categories").then((r) => r.data);
+export const getCategories = (params = {}) =>
+  client.get("/categories", { params }).then((r) => r.data);
+export const createCategorie = (data) =>
+  client.post("/categories", data).then((r) => r.data);
+export const deleteCategorie = (id) => client.delete(`/categories/${id}`);
 
 // ---- Eleves ----
 export const createEleve = (data) =>
@@ -110,13 +113,19 @@ export const getDashboard = () => client.get("/dashboard").then((r) => r.data);
 
 // ---- Domaines de compétences ----
 
-export const getDomainesCompetences = () =>
-  client.get("/domaines-competences").then((r) => r.data);
-export const importCompetences = (content) =>
-  client.post("/competences/import", { content }).then((r) => r.data);
+export const getDomainesCompetences = (params = {}) =>
+  client.get("/domaines-competences", { params }).then((r) => r.data);
+export const importCompetences = (content, filiere) =>
+  client.post("/competences/import", { content, filiere }).then((r) => r.data);
+export const exportCompetences = (params = {}) =>
+  client.get("/competences/export", { params }).then((r) => r.data);
+export const getFilieres = () =>
+  client.get("/filieres").then((r) => r.data);
 
 export const createDomaineCompetence = (data) =>
   client.post("/domaines-competences", data).then((r) => r.data);
+export const deleteDomaineCompetence = (id) =>
+  client.delete(`/domaines-competences/${id}`);
 
 // ---- Compétences ----
 
@@ -195,8 +204,8 @@ export const updateEvaluationCompetence = (id, data) =>
 
 export const deleteEvaluationCompetence = (id) =>
   client.delete(`/evaluations-competences/${id}`);
-export const getAppreciations = () =>
-  client.get("/appreciations").then((r) => r.data);
+export const getAppreciations = (params = {}) =>
+  client.get("/appreciations", { params }).then((r) => r.data);
 
 // ---- Messagerie ----
 export const getMessageUsers = () => client.get("/messages/users").then((r) => r.data);

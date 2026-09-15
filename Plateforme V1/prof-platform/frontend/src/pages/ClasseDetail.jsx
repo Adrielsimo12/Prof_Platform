@@ -4,6 +4,7 @@ import {
   getClasse, getElevesDeClasse, exportEleves, importEleves, createEleve,
   updateEleve, getActivitesSuivi, updateActivitesSuivi,
   getCoursList, getCategories, createCours, getSeances, createSeance,
+  updateClasse, getFilieres,
 } from "../api/resources";
 import StatusBadge from "../components/StatusBadge";
 import Modal from "../components/Modal";
@@ -14,6 +15,7 @@ export default function ClasseDetail() {
   const navigate = useNavigate();
   const classeId = Number(id);
   const [classe, setClasse] = useState(null);
+  const [filieres, setFilieres] = useState(["CIEL", "MELEC"]);
   const [tab, setTab] = useState("eleves");
 
   const [eleves, setEleves] = useState([]);
@@ -30,12 +32,13 @@ export default function ClasseDetail() {
     getClasse(classeId).then(setClasse);
     getElevesDeClasse(classeId).then(setEleves);
     getCoursList({ classe_id: classeId }).then(setCours);
-    getCategories().then(setCategories);
+    getCategories({ classe_id: classeId }).then(setCategories);
     getSeances({ classe_id: classeId }).then(setSeances);
     getActivitesSuivi(classeId).then(setSuivi);
   };
 
   useEffect(() => { loadAll(); }, [classeId]);
+  useEffect(() => { getFilieres().then(setFilieres).catch(console.error); }, []);
 
   const handleExport = async () => {
     const { filename, content } = await exportEleves(classeId);
@@ -58,6 +61,20 @@ export default function ClasseDetail() {
     };
     reader.readAsText(file);
     e.target.value = "";
+  };
+
+  const handleFiliereChange = async (event) => {
+    const value = event.target.value;
+    if (value === "Autre") {
+      const custom = window.prompt("Précisez la filière :", "");
+      if (!custom) return;
+      const updated = await updateClasse(classeId, { filiere: custom.trim() });
+      setClasse(updated);
+      getFilieres().then(setFilieres).catch(console.error);
+      return;
+    }
+    const updated = await updateClasse(classeId, { filiere: value });
+    setClasse(updated);
   };
 
   const handleGroupChange = async (eleve, groupe) => {
@@ -109,6 +126,13 @@ export default function ClasseDetail() {
           <span className="eyebrow">Classe</span>
           <h1>{classe.nom}</h1>
           <div className="sub">{classe.annee_scolaire} · {eleves.length} élèves · {cours.length} cours</div>
+          <div className="field" style={{ marginTop: 10, maxWidth: 220 }}>
+            <label>Filière</label>
+            <select value={filieres.includes(classe.filiere) ? classe.filiere : "Autre"} onChange={handleFiliereChange}>
+              {filieres.map((f) => <option key={f} value={f}>{f}</option>)}
+              <option value="Autre">Autre (nouvelle filière)</option>
+            </select>
+          </div>
         </div>
         <button type="button" className="btn" onClick={() => exportCurrentPage(`Classe ${classe.nom}`)}>Exporter PDF</button>
       </div>

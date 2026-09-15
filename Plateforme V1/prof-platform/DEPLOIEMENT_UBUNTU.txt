@@ -146,8 +146,10 @@ Pour charger les données de référence initiales :
    python seed_competences.py
    deactivate
 
-Le référentiel CIEL existant est conservé. Les autres filières peuvent importer leur propre référentiel depuis l'onglet Compétences.
-Chaque compte possède une filière et voit le référentiel correspondant.
+Le référentiel CIEL existant est conservé. Les autres filières peuvent importer leur propre référentiel depuis l'onglet Compétences,
+grâce au sélecteur de filière (indépendant de la filière par défaut du compte).
+Chaque classe possède sa propre filière (CIEL, MELEC ou autre) : les compétences, appréciations et catégories de cours
+proposées pour une classe dépendent de la filière de cette classe, pas seulement de celle du compte connecté.
 
 7. SERVICE BACKEND SYSTEMD
 --------------------------

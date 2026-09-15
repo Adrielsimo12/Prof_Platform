@@ -20,7 +20,10 @@ export default function CoursDetail() {
   const load = () => getCours(coursId).then((c) => { setCours(c); setForm(c); });
 
   useEffect(() => { load(); }, [coursId]);
-  useEffect(() => { getCategories().then(setCategories); }, []);
+  useEffect(() => {
+    if (!cours?.classe_id) return;
+    getCategories({ classe_id: cours.classe_id }).then(setCategories);
+  }, [cours?.classe_id]);
 
   if (!cours || !form) return <div className="main"><p className="muted">Chargement…</p></div>;
 

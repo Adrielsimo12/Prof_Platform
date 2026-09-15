@@ -48,9 +48,9 @@ def create_app():
 
     with app.app_context():
         db.create_all()
-        _upgrade_tracking_schema()
         from routes.auth import ensure_default_teacher
         ensure_default_teacher()
+        _upgrade_tracking_schema()
 
     @app.get("/api/health")
     def health():
@@ -110,14 +110,34 @@ def _upgrade_tracking_schema():
         if column_name not in user_columns:
             db.session.execute(text(f"ALTER TABLE users ADD COLUMN {column_name} {definition}"))
 
+    classe_columns = {column["name"] for column in inspector.get_columns("classes")}
+    if "filiere" not in classe_columns:
+        db.session.execute(text("ALTER TABLE classes ADD COLUMN filiere VARCHAR(120) NULL"))
+
     domaine_columns = {column["name"] for column in inspector.get_columns("domaines_competences")}
     if "filiere" not in domaine_columns:
         db.session.execute(text("ALTER TABLE domaines_competences ADD COLUMN filiere VARCHAR(120) NOT NULL DEFAULT 'CIEL'"))
     competence_columns = {column["name"] for column in inspector.get_columns("competences")}
     if "filiere" not in competence_columns:
         db.session.execute(text("ALTER TABLE competences ADD COLUMN filiere VARCHAR(120) NOT NULL DEFAULT 'CIEL'"))
+    categorie_columns = {column["name"] for column in inspector.get_columns("categories")}
+    if "filiere" not in categorie_columns:
+        db.session.execute(text("ALTER TABLE categories ADD COLUMN filiere VARCHAR(120) NULL"))
+    if "owner_id" not in categorie_columns:
+        db.session.execute(text("ALTER TABLE categories ADD COLUMN owner_id INTEGER NULL"))
+    # Les catégories créées avant l'ajout de la filière/du multi-enseignant appartiennent
+    # à l'organisation historique du compte n°1 : elles ne doivent pas être héritées par
+    # les nouveaux enseignants, qui doivent construire leurs propres catégories.
+    db.session.execute(text(
+        "UPDATE categories SET filiere = 'CIEL', owner_id = 1 WHERE owner_id IS NULL"
+    ))
+
     if db.engine.dialect.name == "mysql":
-        for table_name, column_name in (("domaines_competences", "code"), ("competences", "code")):
+        for table_name, column_name in (
+            ("domaines_competences", "code"),
+            ("competences", "code"),
+            ("categories", "code"),
+        ):
             unique_indexes = inspector.get_indexes(table_name)
             for index in unique_indexes:
                 if index.get("unique") and index.get("column_names") == [column_name]:

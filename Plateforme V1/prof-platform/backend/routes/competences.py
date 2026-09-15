@@ -5,11 +5,15 @@ from flask import Blueprint, request, jsonify
 
 from extensions import db
 from models import (
+    Classe,
     DomaineCompetence,
     Competence,
     SavoirFaire,
+    User,
 )
-from workspace import current_teacher
+from workspace import current_teacher, current_teacher_id
+
+FILIERES_PAR_DEFAUT = ["CIEL", "MELEC"]
 
 bp = Blueprint(
     "competences",
@@ -18,13 +22,38 @@ bp = Blueprint(
 )
 
 
+def _resolve_filiere():
+    """Résout la filière à appliquer : filière explicite > filière de la classe > filière de l'enseignant."""
+    filiere = request.args.get("filiere")
+    if filiere:
+        return filiere
+
+    classe_id = request.args.get("classe_id", type=int)
+    if classe_id:
+        classe = Classe.query.filter_by(id=classe_id, owner_id=current_teacher_id()).first()
+        if classe and classe.filiere:
+            return classe.filiere
+
+    return current_teacher().filiere
+
+
+@bp.get("/filieres")
+def get_filieres():
+    """Liste des filières connues (valeurs par défaut + toutes celles déjà utilisées)."""
+    connues = set(FILIERES_PAR_DEFAUT)
+    connues.update(v for (v,) in db.session.query(Classe.filiere).distinct() if v)
+    connues.update(v for (v,) in db.session.query(User.filiere).distinct() if v)
+    connues.update(v for (v,) in db.session.query(DomaineCompetence.filiere).distinct() if v)
+    return jsonify(sorted(connues))
+
+
 # ================================================================
 # DOMAINES
 # ================================================================
 
 @bp.get("/domaines-competences")
 def get_domaines():
-    filiere = request.args.get("filiere") or current_teacher().filiere
+    filiere = _resolve_filiere()
     domaines = DomaineCompetence.query.order_by(
         DomaineCompetence.ordre
     ).filter_by(filiere=filiere).all()
@@ -71,6 +100,14 @@ def create_domaine():
     ), 201
 
 
+@bp.delete("/domaines-competences/<int:domaine_id>")
+def delete_domaine(domaine_id):
+    domaine = DomaineCompetence.query.get_or_404(domaine_id)
+    db.session.delete(domaine)
+    db.session.commit()
+    return "", 204
+
+
 # ================================================================
 # COMPETENCES
 # ================================================================
@@ -83,7 +120,7 @@ def get_competences():
         type=int
     )
 
-    query = Competence.query.filter_by(filiere=request.args.get("filiere") or current_teacher().filiere)
+    query = Competence.query.filter_by(filiere=_resolve_filiere())
 
     if domaine_id:
         query = query.filter_by(
@@ -162,7 +199,8 @@ def create_competence():
 
 @bp.post("/competences/import")
 def import_competences():
-    content = (request.get_json() or {}).get("content", "")
+    body = request.get_json() or {}
+    content = body.get("content", "")
     if not content.strip():
         return jsonify({"error": "Le fichier CSV est vide."}), 400
     try:
@@ -171,7 +209,7 @@ def import_competences():
         dialect = csv.excel
         dialect.delimiter = ";"
     reader = csv.DictReader(io.StringIO(content.lstrip("\ufeff")), dialect=dialect)
-    filiere = current_teacher().filiere
+    filiere = (body.get("filiere") or "").strip() or current_teacher().filiere
     created = 0
     domaines = {}
     for line_number, raw_row in enumerate(reader, start=2):
@@ -206,6 +244,46 @@ def import_competences():
         return jsonify({"error": "Aucune compétence valide à importer."}), 400
     db.session.commit()
     return jsonify({"created": created, "filiere": filiere, "message": f"{created} compétence(s) importée(s)."})
+
+
+@bp.get("/competences/export")
+def export_competences():
+    """Export CSV du référentiel de compétences.
+
+    Sans paramètre : exporte toutes les filières (référentiel global).
+    Avec ?filiere=MELEC : n'exporte que cette filière.
+    """
+    filiere = request.args.get("filiere")
+    query = Competence.query.join(DomaineCompetence)
+    if filiere:
+        query = query.filter(Competence.filiere == filiere)
+    competences = query.order_by(
+        Competence.filiere, DomaineCompetence.ordre, Competence.ordre
+    ).all()
+
+    output = io.StringIO()
+    writer = csv.writer(output, delimiter=";")
+    writer.writerow([
+        "filiere", "domaine_code", "domaine_nom", "code", "nom", "description", "ordre", "savoir_faires",
+    ])
+    for c in competences:
+        savoir_faires = " | ".join(
+            (f"{sf.code} - {sf.description}" if sf.code else sf.description)
+            for sf in c.savoir_faires
+        )
+        writer.writerow([
+            c.filiere,
+            c.domaine.code if c.domaine else "",
+            c.domaine.nom if c.domaine else "",
+            c.code,
+            c.nom,
+            c.description or "",
+            c.ordre,
+            savoir_faires,
+        ])
+
+    filename = f"competences_{filiere}.csv" if filiere else "competences.csv"
+    return jsonify({"filename": filename, "content": output.getvalue()})
 
 
 @bp.put("/competences/<int:competence_id>")

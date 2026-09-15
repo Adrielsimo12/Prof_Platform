@@ -10,7 +10,20 @@ from models import (
     Classe,
     Appreciation,
 )
-from workspace import current_teacher_id
+from workspace import current_teacher, current_teacher_id
+
+
+def _resolve_filiere():
+    """Filière explicite > filière de la classe > filière de l'enseignant (même logique que /api/competences)."""
+    filiere = request.args.get("filiere") or (request.get_json(silent=True) or {}).get("filiere")
+    if filiere:
+        return filiere
+    classe_id = request.args.get("classe_id", type=int) or (request.get_json(silent=True) or {}).get("classe_id")
+    if classe_id:
+        classe = Classe.query.filter_by(id=classe_id, owner_id=current_teacher_id()).first()
+        if classe and classe.filiere:
+            return classe.filiere
+    return current_teacher().filiere
 
 bp = Blueprint(
     "evaluations_competences",
@@ -29,10 +42,7 @@ DEFAULT_APPRECIATIONS = [
 
 @bp.get("/appreciations")
 def get_appreciations():
-    filiere = request.args.get("filiere")
-    if not filiere:
-        from workspace import current_teacher
-        filiere = current_teacher().filiere
+    filiere = _resolve_filiere()
     items = Appreciation.query.filter_by(filiere=filiere, actif=True).order_by(Appreciation.id).all()
     if not items:
         items = [Appreciation(libelle=label, filiere=filiere) for label in DEFAULT_APPRECIATIONS]
@@ -45,8 +55,7 @@ def get_appreciations():
 def create_appreciation():
     data = request.get_json() or {}
     libelle = (data.get("libelle") or "").strip()
-    from workspace import current_teacher
-    filiere = data.get("filiere") or current_teacher().filiere
+    filiere = _resolve_filiere()
     if not libelle:
         return jsonify({"error": "L'appréciation est obligatoire."}), 400
     item = Appreciation(libelle=libelle, filiere=filiere)
@@ -187,11 +196,13 @@ def create_evaluation():
                 "Le niveau doit être compris entre 0 et 3"
         }), 400
 
-    Eleve.query.join(Classe).filter(Eleve.id == eleve_id, Classe.owner_id == current_teacher_id()).first_or_404()
+    eleve = Eleve.query.join(Classe).filter(Eleve.id == eleve_id, Classe.owner_id == current_teacher_id()).first_or_404()
 
-    Competence.query.get_or_404(
-        competence_id
-    )
+    classe = Classe.query.get(eleve.classe_id)
+    filiere_classe = (classe.filiere if classe else None) or current_teacher().filiere
+    competence = Competence.query.filter_by(id=competence_id, filiere=filiere_classe).first()
+    if not competence:
+        return jsonify({"error": "Cette compétence n'appartient pas à la filière de la classe de l'élève."}), 400
 
     appreciation_id = data.get("appreciation_id")
     appreciation = None

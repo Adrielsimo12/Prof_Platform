@@ -107,15 +107,24 @@ export default function Activites() {
       .then(setClasses)
       .catch(console.error);
 
-    getCompetences()
-      .then(setCompetences)
-      .catch(console.error);
-
     getActivites()
       .then(setActivites)
       .catch(console.error);
 
   }, []);
+
+  useEffect(() => {
+
+    if (!classeId) {
+      setCompetences([]);
+      return;
+    }
+
+    getCompetences({ classe_id: classeId })
+      .then(setCompetences)
+      .catch(console.error);
+
+  }, [classeId]);
 
   const resetForm = () => {
     setEditingActiviteId(null);
@@ -256,14 +265,14 @@ export default function Activites() {
 
           <form onSubmit={submit}>
 
-            <div className="field"><label>Classe</label><select value={classeId} onChange={(e) => setClasseId(e.target.value)}><option value="">— Sélectionner —</option>{classes.map((classe) => <option key={classe.id} value={classe.id}>{classe.nom}</option>)}</select></div>
+            <div className="field"><label>Classe</label><select value={classeId} onChange={(e) => { setClasseId(e.target.value); setSelectedCompetences([]); }}><option value="">— Sélectionner —</option>{classes.map((classe) => <option key={classe.id} value={classe.id}>{classe.nom}{classe.filiere ? ` (${classe.filiere})` : ""}</option>)}</select></div>
             <div className="field"><label>Titre</label><input value={titre} onChange={(e) => setTitre(e.target.value)} placeholder="Ex : Mise en réseau d'un système" /></div>
             <div className="grid grid-2 activity-form-fields">
               <div className="field"><label>Description</label><textarea value={description} onChange={(e) => setDescription(e.target.value)} /></div>
               <div className="field"><label>Production attendue</label><textarea value={production} onChange={(e) => setProduction(e.target.value)} /></div>
             </div>
             <div className="field"><label>Consignes</label><textarea value={consignes} onChange={(e) => setConsignes(e.target.value)} /></div>
-            <div className="field"><label>Compétences <span className="field-hint">{selectedCompetences.length} sélectionnée(s)</span></label><div className="competence-picker">{competences.map((competence) => <label key={competence.id} className="competence-option"><input type="checkbox" checked={selectedCompetences.includes(competence.id)} onChange={() => toggleCompetence(competence.id)} /><span><strong>{competence.code}</strong><small>{competence.nom}</small></span></label>)}</div></div>
+            <div className="field"><label>Compétences <span className="field-hint">{selectedCompetences.length} sélectionnée(s)</span></label>{!classeId ? <p className="muted" style={{ fontSize: 13 }}>Sélectionnez une classe pour voir les compétences de sa filière.</p> : <div className="competence-picker">{competences.map((competence) => <label key={competence.id} className="competence-option"><input type="checkbox" checked={selectedCompetences.includes(competence.id)} onChange={() => toggleCompetence(competence.id)} /><span><strong>{competence.code}</strong><small>{competence.nom}</small></span></label>)}</div>}</div>
             <button className="btn btn-primary" type="submit">{editingActiviteId ? "Enregistrer" : "Créer l'activité"}</button>
 
           </form>

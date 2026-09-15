@@ -202,13 +202,13 @@ Le fichier `start-hidden.vbs` est le lanceur invisible utilisé par `start.bat`.
 
 ## 9. Fonctionnalités principales
 
-- gestion des classes
+- gestion des classes, chacune rattachée à une filière (CIEL, MELEC ou une filière libre)
 - gestion des élèves
-- gestion des cours
-- gestion des activités pédagogiques
-- gestion des compétences par filière avec import CSV distant
+- gestion des cours, organisés en catégories/groupes propres à chaque enseignant et à chaque filière
+- gestion des activités pédagogiques, avec des compétences proposées selon la filière de la classe
+- gestion des compétences par filière avec import et export CSV, suppression d'une compétence ou d'un groupe entier
 - évaluations par classe / élève / activité / compétence
-- appréciations par élève et groupe de classe
+- appréciations par élève et groupe de classe, adaptées à la filière de la classe
 - suivi de progression
 - planning
 - import CSV des élèves et du planning depuis un appareil distant
@@ -310,6 +310,21 @@ Les comptes peuvent être créés avec une adresse email et une filière. Après
 
 Seuls les administrateurs peuvent créer, approuver, modifier ou supprimer des comptes. L'onglet Messagerie permet d'échanger des messages et des pièces jointes entre utilisateurs approuvés.
 
-## 15. Remarques
+## 15. Filières, compétences et catégories de cours
+
+Chaque classe possède désormais sa propre filière (CIEL, MELEC ou une filière libre créée à la volée). Elle se choisit à la création de la classe et peut être modifiée à tout moment depuis la fiche de la classe.
+
+Les compétences proposées dans les activités, les évaluations et les appréciations dépendent de la filière de la classe sélectionnée, pas seulement de la filière par défaut du compte enseignant. Cela permet à un même enseignant de gérer des classes de filières différentes sans mélanger les référentiels.
+
+Sur la page Compétences :
+
+- un sélecteur permet de consulter ou d'importer le référentiel d'une filière précise, indépendamment de la filière du compte ;
+- un bouton « Exporter CSV » télécharge l'ensemble du référentiel, toutes filières confondues ;
+- chaque compétence peut être supprimée individuellement ;
+- un groupe de compétences (domaine) peut être supprimé entièrement, avec toutes les compétences qu'il contient.
+
+Sur la page Cours, un enseignant peut créer ses propres catégories/groupes de cours, rattachées à une filière. Ces catégories ne sont visibles que par leur créateur : un nouvel enseignant démarre avec une liste vide et construit sa propre organisation. Une catégorie peut être supprimée tant qu'aucun cours ne l'utilise encore.
+
+## 16. Remarques
 
 Le premier lancement crée automatiquement la structure de base et les éléments essentiels pour travailler immédiatement. Si le navigateur s'ouvre avant la fin du démarrage, attendre quelques secondes puis actualiser la page.

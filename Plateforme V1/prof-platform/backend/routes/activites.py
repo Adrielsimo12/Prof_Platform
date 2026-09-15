@@ -12,7 +12,16 @@ from models import (
     ActiviteSuivi,
     EvaluationActivite,
 )
-from workspace import current_teacher_id
+from workspace import current_teacher, current_teacher_id
+
+
+def _competences_de_la_filiere(classe, competence_ids):
+    """Ne garde que les compétences appartenant à la filière de la classe."""
+    filiere = classe.filiere or current_teacher().filiere
+    return Competence.query.filter(
+        Competence.id.in_(competence_ids),
+        Competence.filiere == filiere,
+    ).all()
 
 bp = Blueprint(
     "activites",
@@ -120,7 +129,7 @@ def create_activite():
                 "Le titre est obligatoire"
         }), 400
 
-    Classe.query.filter_by(id=data["classe_id"], owner_id=current_teacher_id()).first_or_404()
+    classe = Classe.query.filter_by(id=data["classe_id"], owner_id=current_teacher_id()).first_or_404()
 
     if data.get("cours_id"):
         Cours.query.get_or_404(
@@ -166,14 +175,7 @@ def create_activite():
         []
     )
 
-    for competence_id in competence_ids:
-
-        competence = Competence.query.get(
-            competence_id
-        )
-
-        if not competence:
-            continue
+    for competence in _competences_de_la_filiere(classe, competence_ids):
 
         liaison = ActiviteCompetence(
             activite_id=activite.id,
@@ -227,6 +229,8 @@ def update_activite(
             "classe_id"
         ]
 
+    classe = Classe.query.get(activite.classe_id)
+
     if "cours_id" in data:
         if data["cours_id"]:
             Cours.query.get_or_404(
@@ -244,22 +248,14 @@ def update_activite(
             activite_id=activite.id
         ).delete()
 
-        for competence_id in data[
-            "competence_ids"
-        ]:
+        for competence in _competences_de_la_filiere(classe, data["competence_ids"]):
 
-            competence = Competence.query.get(
-                competence_id
-            )
-
-            if competence:
-
-                db.session.add(
-                    ActiviteCompetence(
-                        activite_id=activite.id,
-                        competence_id=competence.id
-                    )
+            db.session.add(
+                ActiviteCompetence(
+                    activite_id=activite.id,
+                    competence_id=competence.id
                 )
+            )
 
     db.session.commit()
 

@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
 from extensions import db
 from models import Classe, Eleve, Activite, ActiviteSuivi, GroupeEleve
-from workspace import current_teacher_id
+from workspace import current_teacher, current_teacher_id
 import csv
 import io
 
@@ -33,7 +33,12 @@ def create_classe():
     owner_id = current_teacher_id()
     if Classe.query.filter_by(owner_id=owner_id, nom=data["nom"].strip()).first():
         return jsonify({"error": "Cette classe existe déjà dans votre espace."}), 409
-    classe = Classe(nom=data["nom"].strip(), annee_scolaire=data.get("annee_scolaire", "2026-2027"), owner_id=owner_id)
+    classe = Classe(
+        nom=data["nom"].strip(),
+        annee_scolaire=data.get("annee_scolaire", "2026-2027"),
+        filiere=(data.get("filiere") or "").strip() or current_teacher().filiere,
+        owner_id=owner_id,
+    )
     db.session.add(classe)
     db.session.commit()
     return jsonify(classe.to_dict()), 201
@@ -51,6 +56,8 @@ def update_classe(classe_id):
     data = request.get_json() or {}
     classe.nom = data.get("nom", classe.nom)
     classe.annee_scolaire = data.get("annee_scolaire", classe.annee_scolaire)
+    if "filiere" in data:
+        classe.filiere = (data.get("filiere") or "").strip() or None
     db.session.commit()
     return jsonify(classe.to_dict())
 

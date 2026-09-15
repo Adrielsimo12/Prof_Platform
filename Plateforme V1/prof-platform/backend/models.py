@@ -79,6 +79,7 @@ class Classe(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nom = db.Column(db.String(50), nullable=False)
     annee_scolaire = db.Column(db.String(20), default="2026-2027")
+    filiere = db.Column(db.String(120), nullable=True)
     owner_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False, default=1)
     created_at = db.Column(db.DateTime, default=now)
 
@@ -91,6 +92,7 @@ class Classe(db.Model):
             "id": self.id,
             "nom": self.nom,
             "annee_scolaire": self.annee_scolaire,
+            "filiere": self.filiere or (self.owner.filiere if self.owner else None),
             "owner_id": self.owner_id,
         }
         if with_counts:
@@ -100,18 +102,31 @@ class Classe(db.Model):
 
 
 class Categorie(db.Model):
-    """Les 5 catégories de cours (01 - Electronique, etc.)"""
+    """Catégorie / groupe de cours (ex : 01 - Electronique).
+
+    Les catégories de base (owner_id NULL) sont partagées par tout le monde.
+    Chaque enseignant peut aussi créer ses propres catégories, propres à une
+    filière, car l'organisation des cours diffère selon la filière et le prof.
+    """
 
     __tablename__ = "categories"
 
     id = db.Column(db.Integer, primary_key=True)
-    code = db.Column(db.String(5), nullable=False, unique=True)  # "01", "02", ...
+    code = db.Column(db.String(5), nullable=False)  # "01", "02", ...
     nom = db.Column(db.String(100), nullable=False)
+    filiere = db.Column(db.String(120), nullable=True)
+    owner_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=True)
 
     cours = db.relationship("Cours", backref="categorie")
 
     def to_dict(self):
-        return {"id": self.id, "code": self.code, "nom": self.nom}
+        return {
+            "id": self.id,
+            "code": self.code,
+            "nom": self.nom,
+            "filiere": self.filiere,
+            "owner_id": self.owner_id,
+        }
 
 
 class Eleve(db.Model):
