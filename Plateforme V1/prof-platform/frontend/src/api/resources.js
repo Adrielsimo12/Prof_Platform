@@ -105,7 +105,7 @@ export const importPlanning = (content) =>
 export const getDashboard = () => client.get("/dashboard").then((r) => r.data);
 
 // ================================================================
-// REFERENTIEL CIEL
+// REFERENTIEL PAR FILIERE
 // ================================================================
 
 // ---- Domaines de compétences ----

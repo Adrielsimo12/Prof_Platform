@@ -108,7 +108,7 @@ export default function Competences() {
 
           <p>
             Les domaines et compétences
-            du référentiel CIEL doivent
+            de cette filière doivent
             encore être importés.
           </p>
 

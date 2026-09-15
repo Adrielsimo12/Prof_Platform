@@ -1,0 +1,316 @@
+DEPLOIEMENT UBUNTU - PROF PLATFORM
+==================================
+
+Ce document décrit un déploiement de production sur un serveur Ubuntu 22.04 ou 24.04.
+Le serveur expose une seule adresse web HTTPS. Nginx sert le frontend et reverse-proxy l'API Flask.
+Les utilisateurs peuvent ensuite se connecter depuis un PC, une tablette ou un téléphone.
+
+1. ARCHITECTURE
+---------------
+
+- Ubuntu Server 22.04 ou 24.04
+- MySQL 8
+- Python 3.10 ou plus récent
+- Node.js 20 LTS
+- Gunicorn pour Flask
+- Nginx pour le frontend et le reverse proxy
+- Certbot pour HTTPS
+- systemd pour démarrer automatiquement les services
+
+Le frontend est servi par Nginx.
+L'API est disponible sous /api et est transmise à Flask sur le port local 5000.
+Les fichiers importés sont stockés dans backend/storage.
+
+2. PREPARER LE SERVEUR
+----------------------
+
+Se connecter au serveur en SSH :
+
+   ssh utilisateur@ADRESSE_IP_DU_SERVEUR
+
+Mettre Ubuntu à jour :
+
+   sudo apt update && sudo apt upgrade -y
+   sudo apt install -y git nginx mysql-server python3 python3-venv python3-pip curl
+
+Installer Node.js 20 LTS :
+
+   curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+   sudo apt install -y nodejs
+
+Vérifier les versions :
+
+   python3 --version
+   node --version
+   npm --version
+   mysql --version
+
+3. CREER LA BASE MYSQL
+----------------------
+
+Ouvrir MySQL :
+
+   sudo mysql
+
+Créer la base et un utilisateur dédié :
+
+   CREATE DATABASE prof_platform CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+   CREATE USER 'prof_platform'@'localhost' IDENTIFIED BY 'MOT_DE_PASSE_FORT';
+   GRANT ALL PRIVILEGES ON prof_platform.* TO 'prof_platform'@'localhost';
+   FLUSH PRIVILEGES;
+   EXIT;
+
+Ne pas utiliser root dans la configuration de production.
+
+4. INSTALLER LE PROJET
+----------------------
+
+Choisir un dossier de déploiement :
+
+   sudo mkdir -p /var/www/prof-platform
+   sudo chown -R $USER:$USER /var/www/prof-platform
+   cd /var/www/prof-platform
+   git clone https://github.com/Adrielsimo12/Prof_Platform.git .
+
+Le projet contient actuellement le dossier applicatif :
+
+   /var/www/prof-platform/Plateforme V1/prof-platform
+
+Créer l'environnement Python :
+
+   cd '/var/www/prof-platform/Plateforme V1/prof-platform/backend'
+   sudo ln -s '/var/www/prof-platform/Plateforme V1/prof-platform' /var/www/prof-platform-app
+
+Pour la suite, utiliser le chemin sans espace :
+
+   /var/www/prof-platform-app
+
+Créer l'environnement Python :
+
+   cd /var/www/prof-platform-app/backend
+   python3 -m venv venv
+   source venv/bin/activate
+   pip install --upgrade pip
+   pip install -r requirements.txt
+   deactivate
+
+Installer le frontend :
+
+   cd /var/www/prof-platform-app/frontend
+   npm ci
+   npm run build
+
+5. CONFIGURER L'ENVIRONNEMENT
+-----------------------------
+
+Créer le fichier backend/.env :
+
+   cd /var/www/prof-platform-app/backend
+   nano .env
+
+Mettre des valeurs adaptées au serveur :
+
+   DB_HOST=localhost
+   DB_PORT=3306
+   DB_NAME=prof_platform
+   DB_USER=prof_platform
+   DB_PASSWORD=MOT_DE_PASSE_FORT
+   SECRET_KEY=UNE_LONGUE_CLE_ALEATOIRE
+   UPLOAD_FOLDER=storage
+   FLASK_DEBUG=0
+
+Pour les emails de validation, ajouter les paramètres SMTP du fournisseur choisi :
+
+   SMTP_HOST=smtp.free.fr
+   SMTP_PORT=587
+   SMTP_USER=adresse-complete@free.fr
+   SMTP_PASSWORD=mot-de-passe-smtp
+   SMTP_FROM=adresse-complete@free.fr
+
+Ne jamais publier .env dans GitHub.
+
+Créer le dossier de stockage :
+
+   mkdir -p storage/messages
+   chmod 750 storage storage/messages
+
+6. INITIALISER LA BASE
+----------------------
+
+L'application crée les tables et applique ses migrations au démarrage.
+Pour charger les données de référence initiales :
+
+   cd /var/www/prof-platform-app/backend
+   source venv/bin/activate
+   python seed.py
+   python seed_competences.py
+   deactivate
+
+Le référentiel CIEL existant est conservé. Les autres filières peuvent importer leur propre référentiel depuis l'onglet Compétences.
+Chaque compte possède une filière et voit le référentiel correspondant.
+
+7. SERVICE BACKEND SYSTEMD
+--------------------------
+
+Créer le service :
+
+   sudo nano /etc/systemd/system/prof-platform.service
+
+Contenu :
+
+   [Unit]
+   Description=Prof Platform Flask API
+   After=network.target mysql.service
+
+   [Service]
+   User=www-data
+   Group=www-data
+   WorkingDirectory=/var/www/prof-platform-app/backend
+   EnvironmentFile=/var/www/prof-platform-app/backend/.env
+   ExecStart=/var/www/prof-platform-app/backend/venv/bin/gunicorn --workers 3 --bind 127.0.0.1:5000 app:app
+   Restart=always
+   RestartSec=5
+
+Donner les droits au service :
+
+   sudo chown -R www-data:www-data /var/www/prof-platform-app/backend/storage
+   sudo systemctl daemon-reload
+   sudo systemctl enable --now prof-platform
+   sudo systemctl status prof-platform
+
+Voir les erreurs :
+
+   sudo journalctl -u prof-platform -f
+
+8. CONFIGURER NGINX
+-------------------
+
+Remplacer plateforme.exemple.fr par le nom DNS réel ou l'adresse IP du serveur :
+
+   sudo nano /etc/nginx/sites-available/prof-platform
+
+Contenu :
+
+   server {
+       listen 80;
+       server_name plateforme.exemple.fr;
+
+       root /var/www/prof-platform-app/frontend/dist;
+       index index.html;
+
+       client_max_body_size 50M;
+
+       location /api/ {
+           proxy_pass http://127.0.0.1:5000/api/;
+           proxy_http_version 1.1;
+           proxy_set_header Host $host;
+           proxy_set_header X-Real-IP $remote_addr;
+           proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+           proxy_set_header X-Forwarded-Proto $scheme;
+       }
+
+       location / {
+           try_files $uri $uri/ /index.html;
+       }
+   }
+
+Activer le site :
+
+   sudo ln -s /etc/nginx/sites-available/prof-platform /etc/nginx/sites-enabled/prof-platform
+   sudo nginx -t
+   sudo systemctl reload nginx
+
+Le frontend utilise automatiquement /api en production et le port 5000 uniquement en développement local.
+
+9. HTTPS AVEC CERTBOT
+---------------------
+
+Avec un nom de domaine pointant vers le serveur :
+
+   sudo apt install -y certbot python3-certbot-nginx
+   sudo certbot --nginx -d plateforme.exemple.fr
+   sudo systemctl status certbot.timer
+
+HTTPS est indispensable pour protéger les mots de passe, les messages et les pièces jointes.
+
+10. PARE-FEU
+------------
+
+N'exposer publiquement que SSH, HTTP et HTTPS :
+
+   sudo apt install -y ufw
+   sudo ufw allow OpenSSH
+   sudo ufw allow 'Nginx Full'
+   sudo ufw enable
+   sudo ufw status
+
+Le port 5000 reste uniquement accessible en local grâce au bind 127.0.0.1.
+
+11. TESTS DE DEPLOIEMENT
+------------------------
+
+Depuis le serveur :
+
+   curl http://127.0.0.1:5000/api/health
+   curl -I http://127.0.0.1
+
+Depuis un autre appareil :
+
+   https://plateforme.exemple.fr
+
+Tester ensuite :
+
+- connexion avec Adriel ou enseignant ;
+- création d'un compte avec une filière MELEC ou autre ;
+- approbation par un administrateur ;
+- import du référentiel de la filière ;
+- import d'élèves et de planning ;
+- envoi et téléchargement d'une pièce jointe ;
+- téléchargement d'une ressource de cours ;
+- affichage des compétences et appréciations de la bonne filière.
+
+12. MISE A JOUR DU PROJET
+-------------------------
+
+Depuis le serveur :
+
+   cd /var/www/prof-platform
+   git pull origin main
+   cd /var/www/prof-platform-app/frontend
+   npm ci
+   npm run build
+   sudo systemctl restart prof-platform
+   sudo systemctl reload nginx
+
+Si les dépendances Python changent :
+
+   cd /var/www/prof-platform-app/backend
+   source venv/bin/activate
+   pip install -r requirements.txt
+   deactivate
+   sudo systemctl restart prof-platform
+
+13. SAUVEGARDES
+---------------
+
+Sauvegarder la base :
+
+   mysqldump -u prof_platform -p prof_platform | gzip > prof_platform_$(date +%F).sql.gz
+
+Sauvegarder les fichiers importés :
+
+   tar -czf storage_$(date +%F).tar.gz /var/www/prof-platform-app/backend/storage
+
+Conserver les sauvegardes sur une autre machine ou un stockage externe.
+
+14. SECURITE
+------------
+
+- Utiliser HTTPS.
+- Utiliser un mot de passe MySQL fort.
+- Remplacer SECRET_KEY par une valeur aléatoire.
+- Ne jamais publier .env, les mots de passe ou les sauvegardes SQL publiques.
+- Mettre Ubuntu, MySQL, Python et Node.js à jour.
+- Limiter les droits du dossier storage.
+- Faire des sauvegardes régulières.
+- Le compte administrateur doit utiliser un mot de passe personnel.

@@ -151,14 +151,14 @@ export default function Progression() {
     <div className="main">
       <div className="page-header">
         <div>
-          <span className="eyebrow">Progression CIEL</span>
+          <span className="eyebrow">Progression</span>
           <h1>Suivi de la progression</h1>
           <div className="sub">
             Évolution par classe, élève, activité et compétence
           </div>
         </div>
         <div className="toolbar print-actions">
-          <button type="button" className="btn" onClick={() => exportCurrentPage("Progression CIEL")}>Exporter PDF</button>
+          <button type="button" className="btn" onClick={() => exportCurrentPage("Progression")}>Exporter PDF</button>
         </div>
       </div>
 

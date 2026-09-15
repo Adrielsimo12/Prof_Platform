@@ -99,7 +99,7 @@ export default function EleveDetail() {
         </div>
       </div>
 
-      <div className="section-title">Suivi CIEL</div>
+      <div className="section-title">Suivi des compétences</div>
       <div className="card" style={{ marginBottom: 24 }}>
         {activites.length === 0 ? (
           <p className="muted" style={{ margin: 0 }}>Aucune activité liée à cette classe.</p>

@@ -6,6 +6,7 @@ Application de gestion de cours, classes, élèves, activités, compétences et 
 - Backend : Python + Flask
 - Base de données : MySQL 8
 - Accès réseau : frontend sur le port 5173 et API sur le port 5000
+- Déploiement Ubuntu détaillé : `DEPLOIEMENT_UBUNTU.txt`
 
 ---
 
