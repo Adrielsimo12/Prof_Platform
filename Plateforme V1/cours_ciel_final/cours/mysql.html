@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MySQL — Cours CIEL</title>
+  <meta name="description" content="Cours complet MySQL : création de bases, requêtes SQL, CRUD, jointures.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="shared-styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+
+<body>
+
+  <div id="scroll-indicator"></div>
+  <button class="mobile-menu-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+
+  <aside id="sidebar">
+    <div class="sidebar-header">
+      <img src="assets/logo.png" alt="Logo CIEL" class="sidebar-logo">
+      <div class="sidebar-title">Cours CIEL<span>Adriel TATCHUM SIMO • Formateur</span></div>
+    </div>
+    <div class="search-container" style="padding: 12px 16px;">
+      <input type="text" id="searchInput" placeholder="Rechercher un cours..."
+        style="width:100%;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:13px;">
+    </div>
+    <div class="progress-container">
+      <div class="progress-label">Progression du cours</div>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 0%"></div>
+      </div>
+    </div>
+    <nav>
+      <div class="nav-group">
+        <div class="nav-group-title">Accueil</div>
+        <a href="index.html"><i class="fas fa-home"></i> Introduction</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 1 — Développement Web</div>
+        <a href="html-complet.html"><i class="fab fa-html5"></i> HTML Complet</a>
+        <a href="css-complet.html"><i class="fab fa-css3-alt"></i> CSS Complet</a>
+        <a href="javascript.html"><i class="fab fa-js"></i> JavaScript</a>
+        <a href="python-flask.html"><i class="fab fa-python"></i> Python & Flask</a>
+        <a href="mysql.html"><i class="fas fa-database"></i> MySQL</a>
+        <a href="projet-fullstack.html"><i class="fas fa-project-diagram"></i> Projet Full Stack</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 2 — Électronique</div>
+        <a href="electronique-bases.html"><i class="fas fa-bolt"></i> Bases Électronique</a>
+        <a href="composants.html"><i class="fas fa-microchip"></i> Composants</a>
+        <a href="arduino.html"><i class="fas fa-robot"></i> Arduino & ESP32</a>
+        <a href="raspberry-pi.html"><i class="fab fa-raspberry-pi"></i> Raspberry Pi</a>
+        <a href="capteurs.html"><i class="fas fa-thermometer-half"></i> Capteurs & Actionneurs</a>
+        <a href="maintenance-electronique.html"><i class="fas fa-tools"></i> Maintenance Électronique</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 3 — Réseaux & Sécurité</div>
+        <a href="reseau-informatique.html"><i class="fas fa-network-wired"></i> Réseau Informatique</a>
+        <a href="cybersecurite.html"><i class="fas fa-shield-alt"></i> Cybersécurité</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Outils & Workflow</div>
+        <a href="vscode.html"><i class="fas fa-code"></i> VS Code</a>
+        <a href="git.html"><i class="fab fa-git-alt"></i> Git & GitHub</a>
+        <a href="venv.html"><i class="fas fa-cube"></i> .venv Python</a>
+      </div>
+    </nav>
+    <div class="theme-toggle">
+      <button class="theme-btn"><i class="fas fa-sun"></i><span>Mode clair</span></button>
+    </div>
+  </aside>
+
+  <main id="main">
+<section id="hero">
+      <div class="hero-tag">Base de données</div>
+      <h1 class="hero-title">MySQL<br><em>Gestion des données</em></h1>
+      <p class="hero-desc">
+        Maîtrisez MySQL : création de bases, tables, requêtes CRUD, jointures et intégration avec Flask.
+      </p>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-val">5</span><span class="stat-label">Chapitres</span></div>
+        <div class="stat"><span class="stat-val">15+</span><span class="stat-label">Exemples</span></div>
+        <div class="stat"><span class="stat-val">~1h30</span><span class="stat-label">De lecture</span></div>
+      </div>
+    </section>
+
+
+    <!-- ══════ SECTION VIDÉO PÉDAGOGIQUE ══════ -->
+    <div class="video-ressource">
+      <div class="video-section-title"><i class="fab fa-youtube"></i> Vidéo pédagogique recommandée</div>
+      <div class="video-card">
+        <a href="https://www.youtube.com/watch?v=sMOhZ3_dBTI" target="_blank" class="video-thumbnail">
+          <div class="video-thumbnail-bg">
+            <i class="fab fa-youtube video-yt-icon"></i>
+            <span class="video-yt-text">YOUTUBE</span>
+          </div>
+          <div class="video-play-overlay"><i class="fas fa-play"></i></div>
+        </a>
+        <div class="video-info">
+          <span class="video-badge"><i class="fas fa-clock"></i> 3h</span>
+          <div class="video-titre">MySQL - Base de données relationnelle</div>
+          <div class="video-chaine">Chaîne : FormationVideo</div>
+          <div class="video-desc">SQL, requêtes SELECT/INSERT/UPDATE/DELETE, jointures et connexion Python.</div>
+          <a href="https://www.youtube.com/watch?v=sMOhZ3_dBTI" target="_blank" class="video-watch-btn">
+            <i class="fab fa-youtube"></i> Voir sur YouTube
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════ TÉLÉCHARGEMENTS PDF ══════ -->
+    <div class="pdf-download-zone">
+      <a href="tp-mysql.pdf" download class="pdf-download-btn">
+        <i class="fas fa-file-pdf"></i> Télécharger le TP (PDF)
+      </a>
+      <a href="correction-mysql.pdf" download class="correction-download-btn">
+        <i class="fas fa-check-circle"></i> Télécharger les corrections (PDF)
+      </a>
+      <span class="pdf-info-text">Documents imprimables pour travail hors-ligne</span>
+    </div>
+
+    <div id="content">
+<!-- CH 1 - INTRODUCTION SQL -->
+      <section class="chapter" id="intro-sql">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#00758f;background:rgba(0,117,143,0.1);border-color:rgba(0,117,143,0.2)">SQL.01</span>
+          <div class="chapter-title">Introduction à MySQL<span>Qu'est-ce qu'une base de données relationnelle ?</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Base de données relationnelle</h3>
+          <p class="text">
+            Une <strong>base de données relationnelle</strong> organise les données en <strong>tables</strong>
+            (lignes et colonnes). Les tables sont liées entre elles par des <strong>clés</strong>.
+          </p>
+
+          <div class="cards-grid">
+            <div class="card">
+              <div class="card-type" style="color:#00758f"><i class="fas fa-table"></i> Table</div>
+              <div class="card-desc">Structure qui contient les données (comme un tableau Excel)</div>
+              <div class="card-ex">eleves, produits, commandes</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent)"><i class="fas fa-key"></i> Clé primaire</div>
+              <div class="card-desc">Identifiant unique de chaque ligne</div>
+              <div class="card-ex">id AUTO_INCREMENT</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent2)"><i class="fas fa-link"></i> Clé étrangère</div>
+              <div class="card-desc">Référence vers une autre table</div>
+              <div class="card-ex">user_id → users.id</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 2 - CRÉATION -->
+      <section class="chapter" id="creation">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#00758f;background:rgba(0,117,143,0.1);border-color:rgba(0,117,143,0.2)">SQL.02</span>
+          <div class="chapter-title">Création de base et tables<span>CREATE DATABASE, CREATE TABLE, types de
+              données</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Créer une base de données</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">SQL — Création</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm">-- Créer la base</span>
+<span class="kw">CREATE DATABASE</span> boutique <span class="kw">CHARACTER SET</span> utf8mb4;
+<span class="kw">USE</span> boutique;
+
+<span class="cm">-- Table produits</span>
+<span class="kw">CREATE TABLE</span> produits (
+    id          <span class="cls">INT</span> <span class="kw">PRIMARY KEY AUTO_INCREMENT</span>,
+    nom         <span class="cls">VARCHAR</span>(<span class="num">100</span>) <span class="kw">NOT NULL</span>,
+    prix        <span class="cls">DECIMAL</span>(<span class="num">8</span>,<span class="num">2</span>),
+    categorie   <span class="cls">VARCHAR</span>(<span class="num">50</span>),
+    stock       <span class="cls">INT</span> <span class="kw">DEFAULT</span> <span class="num">0</span>,
+    created_at  <span class="cls">DATETIME</span> <span class="kw">DEFAULT</span> <span class="fn">NOW</span>()
+);
+
+<span class="cm">-- Table utilisateurs</span>
+<span class="kw">CREATE TABLE</span> utilisateurs (
+    id          <span class="cls">INT</span> <span class="kw">PRIMARY KEY AUTO_INCREMENT</span>,
+    nom         <span class="cls">VARCHAR</span>(<span class="num">50</span>) <span class="kw">NOT NULL</span>,
+    email       <span class="cls">VARCHAR</span>(<span class="num">100</span>) <span class="kw">UNIQUE NOT NULL</span>,
+    mot_de_passe <span class="cls">VARCHAR</span>(<span class="num">255</span>),
+    actif       <span class="cls">BOOLEAN</span> <span class="kw">DEFAULT</span> <span class="kw">TRUE</span>
+);</pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Types de données MySQL</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Exemple</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>INT</code></td>
+                <td>Entier (-2 milliards à +2 milliards)</td>
+                <td>id, age, stock</td>
+              </tr>
+              <tr>
+                <td><code>BIGINT</code></td>
+                <td>Très grand entier</td>
+                <td>populations</td>
+              </tr>
+              <tr>
+                <td><code>DECIMAL(8,2)</code></td>
+                <td>Nombre décimal précis</td>
+                <td>prix: 12345.67</td>
+              </tr>
+              <tr>
+                <td><code>FLOAT</code></td>
+                <td>Décimal approximatif</td>
+                <td>coordonnées GPS</td>
+              </tr>
+              <tr>
+                <td><code>VARCHAR(n)</code></td>
+                <td>Texte variable (max n caractères)</td>
+                <td>nom, email</td>
+              </tr>
+              <tr>
+                <td><code>TEXT</code></td>
+                <td>Texte long</td>
+                <td>description, bio</td>
+              </tr>
+              <tr>
+                <td><code>DATE</code></td>
+                <td>Date (YYYY-MM-DD)</td>
+                <td>2024-01-15</td>
+              </tr>
+              <tr>
+                <td><code>DATETIME</code></td>
+                <td>Date et heure</td>
+                <td>2024-01-15 14:30:00</td>
+              </tr>
+              <tr>
+                <td><code>BOOLEAN</code></td>
+                <td>Vrai/Faux (stocké comme TINYINT)</td>
+                <td>actif, publié</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- CH 3 - CRUD -->
+      <section class="chapter" id="crud">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#00758f;background:rgba(0,117,143,0.1);border-color:rgba(0,117,143,0.2)">SQL.03</span>
+          <div class="chapter-title">Opérations CRUD<span>INSERT, SELECT, UPDATE, DELETE</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">INSERT — Créer des données</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">SQL — INSERT</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm">-- Insérer une ligne</span>
+<span class="kw">INSERT INTO</span> produits (nom, prix, categorie, stock)
+<span class="kw">VALUES</span> (<span class="str">'Laptop'</span>, <span class="num">1299.99</span>, <span class="str">'Informatique'</span>, <span class="num">10</span>);
+
+<span class="cm">-- Insérer plusieurs lignes</span>
+<span class="kw">INSERT INTO</span> produits (nom, prix, categorie, stock) <span class="kw">VALUES</span>
+  (<span class="str">'Souris'</span>, <span class="num">29.90</span>, <span class="str">'Périphérique'</span>, <span class="num">50</span>),
+  (<span class="str">'Clavier'</span>, <span class="num">79.00</span>, <span class="str">'Périphérique'</span>, <span class="num">30</span>),
+  (<span class="str">'Écran 27"'</span>, <span class="num">349.00</span>, <span class="str">'Informatique'</span>, <span class="num">15</span>);</pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">SELECT — Lire des données</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">SQL — SELECT</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm">-- Tout sélectionner</span>
+<span class="kw">SELECT</span> * <span class="kw">FROM</span> produits;
+
+<span class="cm">-- Colonnes spécifiques</span>
+<span class="kw">SELECT</span> nom, prix <span class="kw">FROM</span> produits;
+
+<span class="cm">-- Avec condition</span>
+<span class="kw">SELECT</span> * <span class="kw">FROM</span> produits <span class="kw">WHERE</span> prix < <span class="num">100</span>;
+<span class="kw">SELECT</span> * <span class="kw">FROM</span> produits <span class="kw">WHERE</span> categorie = <span class="str">'Informatique'</span>;
+
+<span class="cm">-- Opérateurs logiques</span>
+<span class="kw">SELECT</span> * <span class="kw">FROM</span> produits 
+<span class="kw">WHERE</span> prix < <span class="num">500</span> <span class="kw">AND</span> stock > <span class="num">0</span>;
+
+<span class="kw">SELECT</span> * <span class="kw">FROM</span> produits 
+<span class="kw">WHERE</span> categorie = <span class="str">'Informatique'</span> <span class="kw">OR</span> categorie = <span class="str">'Périphérique'</span>;
+
+<span class="cm">-- Tri</span>
+<span class="kw">SELECT</span> * <span class="kw">FROM</span> produits <span class="kw">ORDER BY</span> prix <span class="kw">ASC</span>;   <span class="cm">-- croissant</span>
+<span class="kw">SELECT</span> * <span class="kw">FROM</span> produits <span class="kw">ORDER BY</span> prix <span class="kw">DESC</span>;  <span class="cm">-- décroissant</span>
+
+<span class="cm">-- Limiter les résultats</span>
+<span class="kw">SELECT</span> * <span class="kw">FROM</span> produits <span class="kw">LIMIT</span> <span class="num">10</span>;              <span class="cm">-- 10 premiers</span>
+<span class="kw">SELECT</span> * <span class="kw">FROM</span> produits <span class="kw">LIMIT</span> <span class="num">10</span> <span class="kw">OFFSET</span> <span class="num">20</span>;  <span class="cm">-- pagination</span>
+
+<span class="cm">-- Recherche partielle</span>
+<span class="kw">SELECT</span> * <span class="kw">FROM</span> produits <span class="kw">WHERE</span> nom <span class="kw">LIKE</span> <span class="str">'%clavier%'</span>;
+
+<span class="cm">-- Fonctions d'agrégation</span>
+<span class="kw">SELECT</span> <span class="fn">COUNT</span>(*) <span class="kw">FROM</span> produits;                <span class="cm">-- nombre de lignes</span>
+<span class="kw">SELECT</span> <span class="fn">AVG</span>(prix) <span class="kw">FROM</span> produits;               <span class="cm">-- moyenne</span>
+<span class="kw">SELECT</span> <span class="fn">SUM</span>(stock) <span class="kw">FROM</span> produits;              <span class="cm">-- somme</span>
+<span class="kw">SELECT</span> <span class="fn">MIN</span>(prix), <span class="fn">MAX</span>(prix) <span class="kw">FROM</span> produits;   <span class="cm">-- min/max</span></pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">UPDATE — Modifier des données</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">SQL — UPDATE</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm">-- Modifier une ligne</span>
+<span class="kw">UPDATE</span> produits 
+<span class="kw">SET</span> stock = <span class="num">50</span>, prix = <span class="num">1199.99</span>
+<span class="kw">WHERE</span> id = <span class="num">1</span>;
+
+<span class="cm">-- Modifier plusieurs lignes</span>
+<span class="kw">UPDATE</span> produits 
+<span class="kw">SET</span> prix = prix * <span class="num">0.9</span>   <span class="cm">-- -10% de réduction</span>
+<span class="kw">WHERE</span> categorie = <span class="str">'Périphérique'</span>;</pre>
+          </div>
+
+          <div class="callout callout-warn">
+            <span class="callout-icon"><i class="fas fa-exclamation-triangle"></i></span>
+            <div class="callout-body">
+              <strong>Toujours ajouter WHERE !</strong> Sans clause WHERE, <code>UPDATE</code> modifie
+              <strong>toutes les lignes</strong> de la table.
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">DELETE — Supprimer des données</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">SQL — DELETE</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm">-- Supprimer une ligne</span>
+<span class="kw">DELETE FROM</span> produits <span class="kw">WHERE</span> id = <span class="num">5</span>;
+
+<span class="cm">-- Supprimer avec condition</span>
+<span class="kw">DELETE FROM</span> produits <span class="kw">WHERE</span> stock = <span class="num">0</span>;
+
+<span class="cm">-- ⚠️ DANGER : supprimer TOUT (à éviter !)</span>
+<span class="kw">DELETE FROM</span> produits;  <span class="cm">-- Vide la table entière</span></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 4 - JOINTURES -->
+      <section class="chapter" id="jointures">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#00758f;background:rgba(0,117,143,0.1);border-color:rgba(0,117,143,0.2)">SQL.04</span>
+          <div class="chapter-title">Jointures<span>Relier plusieurs tables</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">INNER JOIN</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">SQL — Jointures</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm">-- Tables exemple</span>
+<span class="kw">CREATE TABLE</span> commandes (
+    id          <span class="cls">INT</span> <span class="kw">PRIMARY KEY AUTO_INCREMENT</span>,
+    user_id     <span class="cls">INT</span>,
+    produit_id  <span class="cls">INT</span>,
+    quantite    <span class="cls">INT</span>,
+    date_commande <span class="cls">DATETIME</span> <span class="kw">DEFAULT</span> <span class="fn">NOW</span>(),
+    <span class="kw">FOREIGN KEY</span> (user_id) <span class="kw">REFERENCES</span> utilisateurs(id),
+    <span class="kw">FOREIGN KEY</span> (produit_id) <span class="kw">REFERENCES</span> produits(id)
+);
+
+<span class="cm">-- INNER JOIN : lignes qui existent dans les deux tables</span>
+<span class="kw">SELECT</span> 
+    u.nom <span class="kw">AS</span> client,
+    p.nom <span class="kw">AS</span> produit,
+    c.quantite,
+    c.date_commande
+<span class="kw">FROM</span> commandes c
+<span class="kw">INNER JOIN</span> utilisateurs u <span class="kw">ON</span> c.user_id = u.id
+<span class="kw">INNER JOIN</span> produits p <span class="kw">ON</span> c.produit_id = p.id
+<span class="kw">ORDER BY</span> c.date_commande <span class="kw">DESC</span>;</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 5 - FLASK + MYSQL -->
+      <section class="chapter" id="flask-mysql">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#00758f;background:rgba(0,117,143,0.1);border-color:rgba(0,117,143,0.2)">SQL.05</span>
+          <div class="chapter-title">Flask + MySQL<span>Connecter l'API à la base de données</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Connexion et requêtes</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Python — app.py avec MySQL</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="kw">import</span> pymysql
+<span class="kw">from</span> flask <span class="kw">import</span> Flask, jsonify, request
+<span class="kw">from</span> flask_cors <span class="kw">import</span> CORS
+
+app = <span class="fn">Flask</span>(__name__)
+<span class="fn">CORS</span>(app)
+
+DB_CONFIG = {
+    <span class="str">'host'</span>:     <span class="str">'localhost'</span>,
+    <span class="str">'user'</span>:     <span class="str">'root'</span>,
+    <span class="str">'password'</span>: <span class="str">'votre_mdp'</span>,
+    <span class="str">'database'</span>: <span class="str">'boutique'</span>,
+    <span class="str">'charset'</span>:  <span class="str">'utf8mb4'</span>
+}
+
+<span class="kw">def</span> <span class="fn">get_db</span>():
+    <span class="kw">return</span> pymysql.<span class="fn">connect</span>(**DB_CONFIG, cursorclass=pymysql.cursors.DictCursor)
+
+<span class="cm"># GET /api/produits — lire tous les produits</span>
+<span class="op">@</span>app.<span class="fn">route</span>(<span class="str">'/api/produits'</span>)
+<span class="kw">def</span> <span class="fn">get_produits</span>():
+    conn = <span class="fn">get_db</span>()
+    <span class="kw">with</span> conn.<span class="fn">cursor</span>() <span class="kw">as</span> cur:
+        cur.<span class="fn">execute</span>(<span class="str">"SELECT * FROM produits ORDER BY nom"</span>)
+        produits = cur.<span class="fn">fetchall</span>()
+    conn.<span class="fn">close</span>()
+    <span class="kw">return</span> <span class="fn">jsonify</span>(produits)
+
+<span class="cm"># POST /api/produits — créer un produit</span>
+<span class="op">@</span>app.<span class="fn">route</span>(<span class="str">'/api/produits'</span>, methods=[<span class="str">'POST'</span>])
+<span class="kw">def</span> <span class="fn">create_produit</span>():
+    d = request.<span class="fn">get_json</span>()
+    conn = <span class="fn">get_db</span>()
+    <span class="kw">with</span> conn.<span class="fn">cursor</span>() <span class="kw">as</span> cur:
+        cur.<span class="fn">execute</span>(
+            <span class="str">"INSERT INTO produits (nom, prix, categorie) VALUES (%s, %s, %s)"</span>,
+            (d[<span class="str">'nom'</span>], d[<span class="str">'prix'</span>], d.<span class="fn">get</span>(<span class="str">'categorie'</span>, <span class="str">''</span>))
+        )
+        conn.<span class="fn">commit</span>()
+        new_id = cur.lastrowid
+    conn.<span class="fn">close</span>()
+    <span class="kw">return</span> <span class="fn">jsonify</span>({<span class="str">"id"</span>: new_id, <span class="str">"message"</span>: <span class="str">"Produit créé"</span>}), <span class="num">201</span>
+
+<span class="cm"># DELETE /api/produits/&lt;id&gt;</span>
+<span class="op">@</span>app.<span class="fn">route</span>(<span class="str">'/api/produits/&lt;int:id&gt;'</span>, methods=[<span class="str">'DELETE'</span>])
+<span class="kw">def</span> <span class="fn">delete_produit</span>(id):
+    conn = <span class="fn">get_db</span>()
+    <span class="kw">with</span> conn.<span class="fn">cursor</span>() <span class="kw">as</span> cur:
+        cur.<span class="fn">execute</span>(<span class="str">"DELETE FROM produits WHERE id = %s"</span>, (id,))
+        conn.<span class="fn">commit</span>()
+    conn.<span class="fn">close</span>()
+    <span class="kw">return</span> <span class="fn">jsonify</span>({<span class="str">"message"</span>: <span class="str">"Produit supprimé"</span>})
+
+<span class="kw">if</span> __name__ == <span class="str">'__main__'</span>:
+    app.<span class="fn">run</span>(debug=<span class="kw">True</span>, host=<span class="str">'0.0.0.0'</span>, port=<span class="num">5000</span>)</pre>
+          </div>
+
+          <div class="callout callout-warn">
+            <span class="callout-icon"><i class="fas fa-shield-alt"></i></span>
+            <div class="callout-body">
+              <strong>Sécurité :</strong> toujours utiliser les <code>%s</code> avec les paramètres séparés —
+              <strong>jamais concaténer</strong> directement du texte utilisateur dans une requête SQL (risque
+              d'injection SQL).
+            </div>
+          </div>
+        </div>
+
+        <div class="retenir">
+          <div class="retenir-title">À retenir — MySQL</div>
+          <ul>
+            <li><code>DictCursor</code> retourne des lignes sous forme de dictionnaires (compatible JSON)</li>
+            <li>Toujours appeler <code>conn.commit()</code> après INSERT/UPDATE/DELETE</li>
+            <li>Toujours fermer la connexion avec <code>conn.close()</code></li>
+            <li>Utiliser <code>%s</code> pour les paramètres, jamais f-strings dans les requêtes SQL</li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="page-nav">
+        <a href="python-flask.html">
+          <span class="page-nav-label">← Précédent</span>
+          <span class="page-nav-title"><i class="fab fa-python"></i> Python & Flask</span>
+        </a>
+        <a href="projet-fullstack.html" class="next">
+          <span class="page-nav-label">Suivant →</span>
+          <span class="page-nav-title"><i class="fas fa-project-diagram"></i> Projet Full Stack</span>
+        </a>
+      </div>
+
+    </div>
+  
+      <!-- EXERCICES & TP MYSQL -->
+      <section class="chapter" id="exercices-mysql">
+        <div class="chapter-header">
+          <span class="chapter-num" style="background:linear-gradient(135deg,#00758f,#f29111);">EX</span>
+          <div class="chapter-title">Exercices &amp; Travaux Pratiques<span>SQL avancé : jointures, transactions, index, optimisation</span></div>
+        </div>
+        <div class="section">
+          <p class="section-intro">Ces exercices couvrent MySQL des requêtes de base à la conception de schémas complexes, en passant par l'optimisation des performances et la sécurité des données.</p>
+
+          <p class="section-exo-title"><i class="fas fa-pencil-alt"></i> Exercices de compréhension</p>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 1 — Requêtes SELECT avancées <span class="niveau-badge niveau-facile">Facile</span></h4>
+            <ol>
+              <li>À partir d'une table <code>employes(id, nom, prenom, salaire, departement_id, date_embauche)</code>, écrivez les requêtes pour : la liste triée par salaire décroissant, les employés embauchés entre 2020 et 2023, le salaire moyen par département, les départements où la moyenne des salaires dépasse 3000 €.</li>
+              <li>Utilisez les fonctions de fenêtrage : <code>RANK() OVER (PARTITION BY departement_id ORDER BY salaire DESC)</code> pour classer les employés par salaire au sein de chaque département.</li>
+              <li>Trouvez les doublons dans une table (même nom + prénom) avec <code>GROUP BY … HAVING COUNT(*) &gt; 1</code>.</li>
+            </ol>
+          </div>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 2 — Jointures complexes <span class="niveau-badge niveau-moyen">Moyen</span></h4>
+            <ol>
+              <li>Créez un schéma e-commerce : <code>clients</code>, <code>commandes</code>, <code>lignes_commande</code>, <code>produits</code>, <code>categories</code>.</li>
+              <li>Écrivez les requêtes : top 10 clients par CA total, produits jamais commandés (LEFT JOIN + IS NULL), CA mensuel sur 12 mois (GROUP BY + YEAR/MONTH), panier moyen par client.</li>
+              <li>Utilisez des <em>Common Table Expressions</em> (CTE) avec <code>WITH</code> pour décomposer une requête complexe en étapes lisibles.</li>
+              <li>Comparez les performances de votre requête avec et sans index. Utilisez <code>EXPLAIN SELECT …</code> pour analyser le plan d'exécution.</li>
+            </ol>
+          </div>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 3 — Procédures stockées &amp; Triggers <span class="niveau-badge niveau-avance">Avancé</span></h4>
+            <ol>
+              <li>Créez une procédure stockée <code>creer_commande(client_id, produit_id, quantite)</code> qui vérifie le stock, insère la commande, décrémente le stock et lève une erreur SQL si le stock est insuffisant.</li>
+              <li>Créez un trigger <code>AFTER UPDATE</code> sur la table <code>produits</code> qui insère dans une table <code>audit_log</code> l'ancienne valeur, la nouvelle valeur, l'utilisateur et la date de modification à chaque changement de prix.</li>
+              <li>Créez une vue <code>vue_commandes_details</code> qui joint toutes les tables et présente les données formatées pour un export.</li>
+            </ol>
+          </div>
+
+          <p class="section-exo-title"><i class="fas fa-flask"></i> Travaux Pratiques</p>
+
+          <div class="tp-block">
+            <h4>🔬 TP — Conception et implémentation d'une base de données de gestion scolaire <span class="niveau-badge niveau-avance">Avancé — 3h</span></h4>
+            <p style="font-size:14px;color:var(--muted);margin-bottom:12px;"><strong>Objectif :</strong> Modéliser, créer et alimenter une base de données complète pour un établissement scolaire.</p>
+            <ol class="tp-etapes">
+              <li><strong>MCD :</strong> Dessiner le Modèle Conceptuel de Données avec les entités : Élève, Professeur, Classe, Matière, Note, Absence, Emploi du temps.</li>
+              <li><strong>MLD :</strong> Transformer en Modèle Logique (tables SQL avec clés primaires et étrangères).</li>
+              <li><strong>Implémentation :</strong> Créer toutes les tables avec les contraintes (<code>NOT NULL</code>, <code>UNIQUE</code>, <code>CHECK</code>, <code>FOREIGN KEY ON DELETE CASCADE</code>).</li>
+              <li><strong>Données de test :</strong> Insérer 30 élèves, 10 professeurs, 5 classes, 8 matières et 200 notes aléatoires.</li>
+              <li><strong>Requêtes métier :</strong> Bulletin de notes d'un élève, classement de la classe, taux d'absence par matière, statistiques par professeur.</li>
+              <li><strong>Backup :</strong> Exporter la base avec <code>mysqldump</code> et documenter la procédure de restauration.</li>
+            </ol>
+          </div>
+
+          <div class="quiz-block">
+            <h4>❓ Quiz de révision — MySQL</h4>
+            <ol>
+              <li>Quelle est la différence entre INNER JOIN, LEFT JOIN, RIGHT JOIN et FULL OUTER JOIN ?</li>
+              <li>Qu'est-ce qu'une transaction ACID ? Donnez un exemple concret où elle est indispensable.</li>
+              <li>Expliquez la différence entre un index B-Tree et un index Hash. Quand utiliser chacun ?</li>
+              <li>Qu'est-ce que la normalisation ? Décrivez les formes normales 1NF, 2NF, 3NF avec un exemple.</li>
+              <li>Comment prévenir les injections SQL en PHP/Python ? Donnez un exemple de code vulnérable et sa version sécurisée.</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-info">
+        <img src="assets/logo.png" alt="Logo" class="footer-logo">
+        <div class="footer-text">
+          <div class="footer-name">Adriel TATCHUM SIMO</div>
+          <div class="footer-job">Enseignant CIEL • Formateur Web & Électronique</div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Accueil</a>
+        <a href="html-complet.html">HTML</a>
+        <a href="css-complet.html">CSS</a>
+        <a href="javascript.html">JavaScript</a>
+      </div>
+      <div class="footer-copy">© 2026 Cours CIEL — Tous droits réservés</div>
+    </div>
+  </footer>
+
+  <button id="back-top" aria-label="Retour en haut">↑</button>
+
+  <script src="script.js"></script>
+  <script>
+    function toggleReponse(btn) {
+      const content = btn.nextElementSibling;
+      const isVisible = content.style.display === 'block';
+      content.style.display = isVisible ? 'none' : 'block';
+      btn.innerHTML = isVisible
+        ? '<i class="fas fa-eye"></i> Voir la réponse'
+        : '<i class="fas fa-eye-slash"></i> Masquer la réponse';
+      btn.style.background   = isVisible ? 'rgba(240,180,41,0.1)'  : 'rgba(0,117,143,0.15)';
+      btn.style.borderColor  = isVisible ? 'rgba(240,180,41,0.35)' : 'rgba(0,117,143,0.4)';
+      btn.style.color        = isVisible ? 'var(--accent)' : '#00b4d8';
+    }
+  </script>
+</body>
+
+</html>

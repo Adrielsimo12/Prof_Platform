@@ -1,0 +1,1668 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Complet — Cours CIEL</title>
+  <meta name="description" content="Cours complet HTML5 avec toutes les balises et exemples pratiques.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="shared-styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+
+<body>
+
+  <div id="scroll-indicator"></div>
+  <button class="mobile-menu-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+
+  <aside id="sidebar">
+    <div class="sidebar-header">
+      <img src="assets/logo.png" alt="Logo CIEL" class="sidebar-logo">
+      <div class="sidebar-title">Cours CIEL<span>Adriel TATCHUM SIMO • Formateur</span></div>
+    </div>
+    <div class="search-container" style="padding: 12px 16px;">
+      <input type="text" id="searchInput" placeholder="Rechercher un cours..."
+        style="width:100%;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:13px;">
+    </div>
+    <div class="progress-container">
+      <div class="progress-label">Progression du cours</div>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 0%"></div>
+      </div>
+    </div>
+    <nav>
+      <div class="nav-group">
+        <div class="nav-group-title">Accueil</div>
+        <a href="index.html"><i class="fas fa-home"></i> Introduction</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 1 — Développement Web</div>
+        <a href="html-complet.html"><i class="fab fa-html5"></i> HTML Complet</a>
+        <a href="css-complet.html"><i class="fab fa-css3-alt"></i> CSS Complet</a>
+        <a href="javascript.html"><i class="fab fa-js"></i> JavaScript</a>
+        <a href="python-flask.html"><i class="fab fa-python"></i> Python & Flask</a>
+        <a href="mysql.html"><i class="fas fa-database"></i> MySQL</a>
+        <a href="projet-fullstack.html"><i class="fas fa-project-diagram"></i> Projet Full Stack</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 2 — Électronique</div>
+        <a href="electronique-bases.html"><i class="fas fa-bolt"></i> Bases Électronique</a>
+        <a href="composants.html"><i class="fas fa-microchip"></i> Composants</a>
+        <a href="arduino.html"><i class="fas fa-robot"></i> Arduino & ESP32</a>
+        <a href="raspberry-pi.html"><i class="fab fa-raspberry-pi"></i> Raspberry Pi</a>
+        <a href="capteurs.html"><i class="fas fa-thermometer-half"></i> Capteurs & Actionneurs</a>
+        <a href="maintenance-electronique.html"><i class="fas fa-tools"></i> Maintenance Électronique</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 3 — Réseaux & Sécurité</div>
+        <a href="reseau-informatique.html"><i class="fas fa-network-wired"></i> Réseau Informatique</a>
+        <a href="cybersecurite.html"><i class="fas fa-shield-alt"></i> Cybersécurité</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Outils & Workflow</div>
+        <a href="vscode.html"><i class="fas fa-code"></i> VS Code</a>
+        <a href="git.html"><i class="fab fa-git-alt"></i> Git & GitHub</a>
+        <a href="venv.html"><i class="fas fa-cube"></i> .venv Python</a>
+      </div>
+    </nav>
+    <div class="theme-toggle">
+      <button class="theme-btn"><i class="fas fa-sun"></i><span>Mode clair</span></button>
+    </div>
+  </aside>
+
+  <main id="main">
+<section id="hero">
+      <div class="hero-tag">Chapitre complet</div>
+      <h1 class="hero-title">HTML5<br><em>Structure du Web</em></h1>
+      <p class="hero-desc">
+        Maîtrisez toutes les balises HTML5 : structure, texte, listes, tableaux, formulaires, multimédia et sémantique.
+        Cours détaillé avec exemples pratiques pour chaque balise.
+      </p>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-val">50+</span><span class="stat-label">Balises</span></div>
+        <div class="stat"><span class="stat-val">20+</span><span class="stat-label">Exemples</span></div>
+        <div class="stat"><span class="stat-val">~2h</span><span class="stat-label">De lecture</span></div>
+      </div>
+    </section>
+
+
+    <!-- ══════ SECTION VIDÉO PÉDAGOGIQUE ══════ -->
+    <div class="video-ressource">
+      <div class="video-section-title"><i class="fab fa-youtube"></i> Vidéo pédagogique recommandée</div>
+      <div class="video-card">
+        <a href="https://www.youtube.com/watch?v=oEAuNzqXGdA" target="_blank" class="video-thumbnail">
+          <div class="video-thumbnail-bg">
+            <i class="fab fa-youtube video-yt-icon"></i>
+            <span class="video-yt-text">YOUTUBE</span>
+          </div>
+          <div class="video-play-overlay"><i class="fas fa-play"></i></div>
+        </a>
+        <div class="video-info">
+          <span class="video-badge"><i class="fas fa-clock"></i> 2h30</span>
+          <div class="video-titre">Cours HTML Complet - De Zéro à Expert</div>
+          <div class="video-chaine">Chaîne : Grafikart</div>
+          <div class="video-desc">Apprenez HTML5 de A à Z : structure, balises sémantiques, formulaires, tableaux et bonnes pratiques.</div>
+          <a href="https://www.youtube.com/watch?v=oEAuNzqXGdA" target="_blank" class="video-watch-btn">
+            <i class="fab fa-youtube"></i> Voir sur YouTube
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════ TÉLÉCHARGEMENTS PDF ══════ -->
+    <div class="pdf-download-zone">
+      <a href="tp-html-complet.pdf" download class="pdf-download-btn">
+        <i class="fas fa-file-pdf"></i> Télécharger le TP (PDF)
+      </a>
+      <a href="correction-html.pdf" download class="correction-download-btn">
+        <i class="fas fa-check-circle"></i> Télécharger les corrections (PDF)
+      </a>
+      <span class="pdf-info-text">Documents imprimables pour travail hors-ligne</span>
+    </div>
+
+    <div id="content">
+<!-- ══════════════════════════════════════════════════════════════ -->
+      <!-- CH 1 - INTRODUCTION HTML -->
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <section class="chapter" id="intro-html">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#e34c26;background:rgba(227,76,38,0.1);border-color:rgba(227,76,38,0.2)">H.01</span>
+          <div class="chapter-title">Introduction à HTML<span>Qu'est-ce que HTML ? Comment fonctionne le web ?</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Qu'est-ce que HTML ?</h3>
+          <p class="text">
+            <strong>HTML</strong> (HyperText Markup Language) est le langage de <strong>balisage</strong> qui structure
+            le contenu des pages web.
+            Ce n'est pas un langage de programmation — il ne contient pas de logique — mais un langage de
+            <strong>description</strong>.
+          </p>
+          <p class="text">
+            Chaque élément HTML est défini par une <strong>balise</strong> (tag) qui indique au navigateur comment
+            afficher le contenu.
+          </p>
+
+          <div class="callout callout-info">
+            <span class="callout-icon"><i class="fas fa-info-circle"></i></span>
+            <div class="callout-body">
+              <strong>Analogie :</strong> Si une page web était un corps humain, HTML serait le squelette (structure),
+              CSS serait la peau et les vêtements (apparence), et JavaScript serait les muscles (mouvement).
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Anatomie d'une balise HTML</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Anatomie d'une balise</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm">&lt;!-- Structure d'une balise avec contenu --&gt;</span>
+<span class="kw">&lt;balise</span> attribut=<span class="str">"valeur"</span><span class="kw">&gt;</span>Contenu de la balise<span class="kw">&lt;/balise&gt;</span>
+
+<span class="cm">&lt;!-- Exemple concret --&gt;</span>
+<span class="kw">&lt;a</span> href=<span class="str">"https://google.com"</span> target=<span class="str">"_blank"</span><span class="kw">&gt;</span>Aller sur Google<span class="kw">&lt;/a&gt;</span>
+
+<span class="cm">&lt;!-- Balise auto-fermante (sans contenu) --&gt;</span>
+<span class="kw">&lt;img</span> src=<span class="str">"photo.jpg"</span> alt=<span class="str">"Description"</span><span class="kw">&gt;</span>
+<span class="kw">&lt;br&gt;</span>
+<span class="kw">&lt;hr&gt;</span>
+<span class="kw">&lt;input</span> type=<span class="str">"text"</span><span class="kw">&gt;</span></pre>
+          </div>
+
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Élément</th>
+                <th>Description</th>
+                <th>Exemple</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Balise ouvrante</td>
+                <td>Début de l'élément</td>
+                <td><code>&lt;p&gt;</code></td>
+              </tr>
+              <tr>
+                <td>Balise fermante</td>
+                <td>Fin de l'élément (avec /)</td>
+                <td><code>&lt;/p&gt;</code></td>
+              </tr>
+              <tr>
+                <td>Attribut</td>
+                <td>Information supplémentaire</td>
+                <td><code>href="..."</code></td>
+              </tr>
+              <tr>
+                <td>Valeur</td>
+                <td>Valeur de l'attribut (entre guillemets)</td>
+                <td><code>"https://..."</code></td>
+              </tr>
+              <tr>
+                <td>Contenu</td>
+                <td>Texte ou autres balises</td>
+                <td><code>Mon texte</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Structure minimale d'une page HTML5</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">HTML — Structure de base</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="kw">&lt;!DOCTYPE html&gt;</span>                     <span class="cm">&lt;!-- Déclaration HTML5 --&gt;</span>
+<span class="kw">&lt;html</span> lang=<span class="str">"fr"</span><span class="kw">&gt;</span>                     <span class="cm">&lt;!-- Élément racine + langue --&gt;</span>
+<span class="kw">&lt;head&gt;</span>                              <span class="cm">&lt;!-- Métadonnées (invisible) --&gt;</span>
+  <span class="kw">&lt;meta</span> charset=<span class="str">"UTF-8"</span><span class="kw">&gt;</span>             <span class="cm">&lt;!-- Encodage des caractères --&gt;</span>
+  <span class="kw">&lt;meta</span> name=<span class="str">"viewport"</span> content=<span class="str">"width=device-width, initial-scale=1.0"</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;meta</span> name=<span class="str">"description"</span> content=<span class="str">"Description de la page"</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;title&gt;</span>Titre de la page<span class="kw">&lt;/title&gt;</span>    <span class="cm">&lt;!-- Titre onglet navigateur --&gt;</span>
+  <span class="kw">&lt;link</span> rel=<span class="str">"stylesheet"</span> href=<span class="str">"style.css"</span><span class="kw">&gt;</span>
+<span class="kw">&lt;/head&gt;</span>
+<span class="kw">&lt;body&gt;</span>                              <span class="cm">&lt;!-- Contenu visible --&gt;</span>
+  
+  <span class="kw">&lt;h1&gt;</span>Mon premier titre<span class="kw">&lt;/h1&gt;</span>
+  <span class="kw">&lt;p&gt;</span>Mon premier paragraphe.<span class="kw">&lt;/p&gt;</span>
+  
+  <span class="kw">&lt;script</span> src=<span class="str">"script.js"</span><span class="kw">&gt;&lt;/script&gt;</span>  <span class="cm">&lt;!-- JS en fin de body --&gt;</span>
+<span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></pre>
+          </div>
+
+          <div class="callout callout-warn">
+            <span class="callout-icon"><i class="fas fa-exclamation-triangle"></i></span>
+            <div class="callout-body">
+              <strong>Important :</strong> Toujours déclarer <code>&lt;!DOCTYPE html&gt;</code> en première ligne et
+              <code>lang="fr"</code> pour l'accessibilité et le référencement.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <!-- CH 2 - BALISES DE TEXTE -->
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <section class="chapter" id="balises-texte">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#e34c26;background:rgba(227,76,38,0.1);border-color:rgba(227,76,38,0.2)">H.02</span>
+          <div class="chapter-title">Balises de texte<span>Titres, paragraphes, mise en forme du texte</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Les titres (h1 à h6)</h3>
+          <p class="text">
+            HTML propose <strong>6 niveaux de titres</strong>, du plus important (<code>&lt;h1&gt;</code>) au moins
+            important (<code>&lt;h6&gt;</code>).
+            Ils définissent la <strong>hiérarchie</strong> du contenu.
+          </p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">HTML — Titres</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="kw">&lt;h1&gt;</span>Titre principal (un seul par page)<span class="kw">&lt;/h1&gt;</span>
+<span class="kw">&lt;h2&gt;</span>Titre de section<span class="kw">&lt;/h2&gt;</span>
+<span class="kw">&lt;h3&gt;</span>Sous-section<span class="kw">&lt;/h3&gt;</span>
+<span class="kw">&lt;h4&gt;</span>Sous-sous-section<span class="kw">&lt;/h4&gt;</span>
+<span class="kw">&lt;h5&gt;</span>Niveau 5<span class="kw">&lt;/h5&gt;</span>
+<span class="kw">&lt;h6&gt;</span>Niveau 6 (le plus petit)<span class="kw">&lt;/h6&gt;</span></pre>
+          </div>
+
+          <div class="callout callout-tip">
+            <span class="callout-icon"><i class="fas fa-lightbulb"></i></span>
+            <div class="callout-body">
+              <strong>SEO :</strong> Utilisez un seul <code>&lt;h1&gt;</code> par page (le titre principal).
+              Les moteurs de recherche l'utilisent pour comprendre le sujet de la page.
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Paragraphes et sauts de ligne</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">HTML — Paragraphes</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm">&lt;!-- Paragraphe : bloc de texte --&gt;</span>
+<span class="kw">&lt;p&gt;</span>Ceci est un paragraphe. Le navigateur ajoute automatiquement
+   un espace avant et après.<span class="kw">&lt;/p&gt;</span>
+
+<span class="kw">&lt;p&gt;</span>Un autre paragraphe séparé du premier.<span class="kw">&lt;/p&gt;</span>
+
+<span class="cm">&lt;!-- Saut de ligne (sans nouveau paragraphe) --&gt;</span>
+<span class="kw">&lt;p&gt;</span>Première ligne<span class="kw">&lt;br&gt;</span>
+   Deuxième ligne (même paragraphe)<span class="kw">&lt;/p&gt;</span>
+
+<span class="cm">&lt;!-- Ligne horizontale de séparation --&gt;</span>
+<span class="kw">&lt;hr&gt;</span>
+
+<span class="cm">&lt;!-- Texte préformaté (conserve espaces et retours) --&gt;</span>
+<span class="kw">&lt;pre&gt;</span>
+  Ce texte garde
+    son formatage
+      exact.
+<span class="kw">&lt;/pre&gt;</span></pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Mise en forme du texte</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Balise</th>
+                <th>Effet</th>
+                <th>Exemple de code</th>
+                <th>Rendu</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>&lt;strong&gt;</code></td>
+                <td>Texte important (gras)</td>
+                <td><code>&lt;strong&gt;Important&lt;/strong&gt;</code></td>
+                <td><strong>Important</strong></td>
+              </tr>
+              <tr>
+                <td><code>&lt;em&gt;</code></td>
+                <td>Emphase (italique)</td>
+                <td><code>&lt;em&gt;Emphase&lt;/em&gt;</code></td>
+                <td><em>Emphase</em></td>
+              </tr>
+              <tr>
+                <td><code>&lt;b&gt;</code></td>
+                <td>Gras (sans importance)</td>
+                <td><code>&lt;b&gt;Gras&lt;/b&gt;</code></td>
+                <td><b>Gras</b></td>
+              </tr>
+              <tr>
+                <td><code>&lt;i&gt;</code></td>
+                <td>Italique (terme technique)</td>
+                <td><code>&lt;i&gt;variable&lt;/i&gt;</code></td>
+                <td><i>variable</i></td>
+              </tr>
+              <tr>
+                <td><code>&lt;u&gt;</code></td>
+                <td>Souligné</td>
+                <td><code>&lt;u&gt;Souligné&lt;/u&gt;</code></td>
+                <td><u>Souligné</u></td>
+              </tr>
+              <tr>
+                <td><code>&lt;s&gt;</code></td>
+                <td>Barré</td>
+                <td><code>&lt;s&gt;Barré&lt;/s&gt;</code></td>
+                <td><s>Barré</s></td>
+              </tr>
+              <tr>
+                <td><code>&lt;mark&gt;</code></td>
+                <td>Surligné</td>
+                <td><code>&lt;mark&gt;Surligné&lt;/mark&gt;</code></td>
+                <td><mark>Surligné</mark></td>
+              </tr>
+              <tr>
+                <td><code>&lt;small&gt;</code></td>
+                <td>Petit texte</td>
+                <td><code>&lt;small&gt;Petit&lt;/small&gt;</code></td>
+                <td><small>Petit</small></td>
+              </tr>
+              <tr>
+                <td><code>&lt;sup&gt;</code></td>
+                <td>Exposant</td>
+                <td><code>x&lt;sup&gt;2&lt;/sup&gt;</code></td>
+                <td>x<sup>2</sup></td>
+              </tr>
+              <tr>
+                <td><code>&lt;sub&gt;</code></td>
+                <td>Indice</td>
+                <td><code>H&lt;sub&gt;2&lt;/sub&gt;O</code></td>
+                <td>H<sub>2</sub>O</td>
+              </tr>
+              <tr>
+                <td><code>&lt;code&gt;</code></td>
+                <td>Code informatique</td>
+                <td><code>&lt;code&gt;let x = 5;&lt;/code&gt;</code></td>
+                <td><code>let x = 5;</code></td>
+              </tr>
+              <tr>
+                <td><code>&lt;kbd&gt;</code></td>
+                <td>Touche clavier</td>
+                <td><code>&lt;kbd&gt;Ctrl&lt;/kbd&gt;</code></td>
+                <td><kbd>Ctrl</kbd></td>
+              </tr>
+              <tr>
+                <td><code>&lt;abbr&gt;</code></td>
+                <td>Abréviation</td>
+                <td><code>&lt;abbr title="HyperText"&gt;HTML&lt;/abbr&gt;</code></td>
+                <td><abbr title="HyperText Markup Language">HTML</abbr></td>
+              </tr>
+              <tr>
+                <td><code>&lt;q&gt;</code></td>
+                <td>Citation courte</td>
+                <td><code>&lt;q&gt;Citation&lt;/q&gt;</code></td>
+                <td><q>Citation</q></td>
+              </tr>
+              <tr>
+                <td><code>&lt;blockquote&gt;</code></td>
+                <td>Citation longue (bloc)</td>
+                <td><code>&lt;blockquote&gt;...&lt;/blockquote&gt;</code></td>
+                <td>Bloc indenté</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">HTML — Exemple complet</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="kw">&lt;p&gt;</span>
+  En physique, la formule <span class="kw">&lt;strong&gt;</span>E = mc<span class="kw">&lt;sup&gt;</span>2<span class="kw">&lt;/sup&gt;&lt;/strong&gt;</span> 
+  d'<span class="kw">&lt;em&gt;</span>Albert Einstein<span class="kw">&lt;/em&gt;</span> montre que l'énergie 
+  est égale à la masse multipliée par la vitesse de la lumière au carré.
+<span class="kw">&lt;/p&gt;</span>
+
+<span class="kw">&lt;p&gt;</span>
+  Pour copier du texte, utilisez <span class="kw">&lt;kbd&gt;</span>Ctrl<span class="kw">&lt;/kbd&gt;</span> + <span class="kw">&lt;kbd&gt;</span>C<span class="kw">&lt;/kbd&gt;</span>.
+<span class="kw">&lt;/p&gt;</span>
+
+<span class="kw">&lt;blockquote&gt;</span>
+  <span class="kw">&lt;p&gt;</span>L'imagination est plus importante que le savoir.<span class="kw">&lt;/p&gt;</span>
+  <span class="kw">&lt;footer&gt;</span>— Albert Einstein<span class="kw">&lt;/footer&gt;</span>
+<span class="kw">&lt;/blockquote&gt;</span></pre>
+          </div>
+        </div>
+
+        <div class="retenir">
+          <div class="retenir-title">À retenir</div>
+          <ul>
+            <li><code>&lt;strong&gt;</code> = importance sémantique (gras) • <code>&lt;b&gt;</code> = gras visuel
+              uniquement</li>
+            <li><code>&lt;em&gt;</code> = emphase sémantique (italique) • <code>&lt;i&gt;</code> = italique visuel</li>
+            <li>Préférez les balises sémantiques (<code>strong</code>, <code>em</code>) pour l'accessibilité</li>
+            <li><code>&lt;br&gt;</code> = saut de ligne • <code>&lt;hr&gt;</code> = séparation thématique</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <!-- CH 3 - LIENS ET IMAGES -->
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <section class="chapter" id="liens-images">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#e34c26;background:rgba(227,76,38,0.1);border-color:rgba(227,76,38,0.2)">H.03</span>
+          <div class="chapter-title">Liens et Images<span>Navigation et médias visuels</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Les liens hypertextes (&lt;a&gt;)</h3>
+          <p class="text">
+            La balise <code>&lt;a&gt;</code> (anchor) crée des <strong>liens cliquables</strong> vers d'autres pages,
+            fichiers ou sections.
+          </p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">HTML — Liens</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm">&lt;!-- Lien externe (vers un autre site) --&gt;</span>
+<span class="kw">&lt;a</span> href=<span class="str">"https://www.google.com"</span><span class="kw">&gt;</span>Aller sur Google<span class="kw">&lt;/a&gt;</span>
+
+<span class="cm">&lt;!-- Ouvrir dans un nouvel onglet --&gt;</span>
+<span class="kw">&lt;a</span> href=<span class="str">"https://www.google.com"</span> target=<span class="str">"_blank"</span> rel=<span class="str">"noopener"</span><span class="kw">&gt;</span>
+  Google (nouvel onglet)
+<span class="kw">&lt;/a&gt;</span>
+
+<span class="cm">&lt;!-- Lien interne (même site) --&gt;</span>
+<span class="kw">&lt;a</span> href=<span class="str">"contact.html"</span><span class="kw">&gt;</span>Page contact<span class="kw">&lt;/a&gt;</span>
+<span class="kw">&lt;a</span> href=<span class="str">"pages/about.html"</span><span class="kw">&gt;</span>À propos<span class="kw">&lt;/a&gt;</span>
+<span class="kw">&lt;a</span> href=<span class="str">"../index.html"</span><span class="kw">&gt;</span>Retour accueil<span class="kw">&lt;/a&gt;</span>
+
+<span class="cm">&lt;!-- Lien vers une section de la page (ancre) --&gt;</span>
+<span class="kw">&lt;a</span> href=<span class="str">"#section-contact"</span><span class="kw">&gt;</span>Aller à Contact<span class="kw">&lt;/a&gt;</span>
+...
+<span class="kw">&lt;section</span> id=<span class="str">"section-contact"</span><span class="kw">&gt;</span>...<span class="kw">&lt;/section&gt;</span>
+
+<span class="cm">&lt;!-- Lien email --&gt;</span>
+<span class="kw">&lt;a</span> href=<span class="str">"mailto:<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fa9995948e9b998eba9f829f978a969fd49c88">[email&#160;protected]</a>"</span><span class="kw">&gt;</span>Envoyer un email<span class="kw">&lt;/a&gt;</span>
+
+<span class="cm">&lt;!-- Lien téléphone --&gt;</span>
+<span class="kw">&lt;a</span> href=<span class="str">"tel:+33612345678"</span><span class="kw">&gt;</span>Appeler<span class="kw">&lt;/a&gt;</span>
+
+<span class="cm">&lt;!-- Lien de téléchargement --&gt;</span>
+<span class="kw">&lt;a</span> href=<span class="str">"document.pdf"</span> download<span class="kw">&gt;</span>Télécharger le PDF<span class="kw">&lt;/a&gt;</span>
+<span class="kw">&lt;a</span> href=<span class="str">"image.png"</span> download=<span class="str">"mon-image.png"</span><span class="kw">&gt;</span>Télécharger l'image<span class="kw">&lt;/a&gt;</span></pre>
+          </div>
+
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Attribut</th>
+                <th>Valeur</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>href</code></td>
+                <td>URL</td>
+                <td>Destination du lien (obligatoire)</td>
+              </tr>
+              <tr>
+                <td><code>target</code></td>
+                <td><code>_blank</code></td>
+                <td>Ouvre dans un nouvel onglet</td>
+              </tr>
+              <tr>
+                <td><code>target</code></td>
+                <td><code>_self</code></td>
+                <td>Même fenêtre (par défaut)</td>
+              </tr>
+              <tr>
+                <td><code>rel</code></td>
+                <td><code>noopener</code></td>
+                <td>Sécurité pour <code>_blank</code></td>
+              </tr>
+              <tr>
+                <td><code>download</code></td>
+                <td>nom fichier</td>
+                <td>Force le téléchargement</td>
+              </tr>
+              <tr>
+                <td><code>title</code></td>
+                <td>texte</td>
+                <td>Info-bulle au survol</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Les images (&lt;img&gt;)</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">HTML — Images</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm">&lt;!-- Image basique --&gt;</span>
+<span class="kw">&lt;img</span> src=<span class="str">"photo.jpg"</span> alt=<span class="str">"Description de la photo"</span><span class="kw">&gt;</span>
+
+<span class="cm">&lt;!-- Image avec dimensions --&gt;</span>
+<span class="kw">&lt;img</span> src=<span class="str">"logo.png"</span> alt=<span class="str">"Logo entreprise"</span> width=<span class="str">"200"</span> height=<span class="str">"100"</span><span class="kw">&gt;</span>
+
+<span class="cm">&lt;!-- Image depuis une URL --&gt;</span>
+<span class="kw">&lt;img</span> src=<span class="str">"https://via.placeholder.com/300x200"</span> alt=<span class="str">"Placeholder"</span><span class="kw">&gt;</span>
+
+<span class="cm">&lt;!-- Image dans un dossier --&gt;</span>
+<span class="kw">&lt;img</span> src=<span class="str">"images/produit.jpg"</span> alt=<span class="str">"Photo produit"</span><span class="kw">&gt;</span>
+<span class="kw">&lt;img</span> src=<span class="str">"../assets/icon.svg"</span> alt=<span class="str">"Icône"</span><span class="kw">&gt;</span>
+
+<span class="cm">&lt;!-- Image cliquable (lien) --&gt;</span>
+<span class="kw">&lt;a</span> href=<span class="str">"page.html"</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;img</span> src=<span class="str">"banniere.jpg"</span> alt=<span class="str">"Cliquez ici"</span><span class="kw">&gt;</span>
+<span class="kw">&lt;/a&gt;</span>
+
+<span class="cm">&lt;!-- Figure avec légende --&gt;</span>
+<span class="kw">&lt;figure&gt;</span>
+  <span class="kw">&lt;img</span> src=<span class="str">"graphique.png"</span> alt=<span class="str">"Graphique des ventes"</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;figcaption&gt;</span>Figure 1 : Évolution des ventes 2024<span class="kw">&lt;/figcaption&gt;</span>
+<span class="kw">&lt;/figure&gt;</span></pre>
+          </div>
+
+          <div class="callout callout-warn">
+            <span class="callout-icon"><i class="fas fa-exclamation-triangle"></i></span>
+            <div class="callout-body">
+              <strong>Accessibilité :</strong> L'attribut <code>alt</code> est <strong>obligatoire</strong>.
+              Il décrit l'image pour les personnes malvoyantes et s'affiche si l'image ne charge pas.
+            </div>
+          </div>
+
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Attribut</th>
+                <th>Description</th>
+                <th>Exemple</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>src</code></td>
+                <td>Chemin ou URL de l'image (obligatoire)</td>
+                <td><code>"photo.jpg"</code></td>
+              </tr>
+              <tr>
+                <td><code>alt</code></td>
+                <td>Texte alternatif (obligatoire)</td>
+                <td><code>"Portrait de Marie"</code></td>
+              </tr>
+              <tr>
+                <td><code>width</code></td>
+                <td>Largeur en pixels</td>
+                <td><code>"400"</code></td>
+              </tr>
+              <tr>
+                <td><code>height</code></td>
+                <td>Hauteur en pixels</td>
+                <td><code>"300"</code></td>
+              </tr>
+              <tr>
+                <td><code>loading</code></td>
+                <td>Chargement différé</td>
+                <td><code>"lazy"</code></td>
+              </tr>
+              <tr>
+                <td><code>title</code></td>
+                <td>Info-bulle au survol</td>
+                <td><code>"Cliquez pour agrandir"</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Formats d'images</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Format</th>
+                <th>Extension</th>
+                <th>Usage recommandé</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>JPEG</strong></td>
+                <td>.jpg, .jpeg</td>
+                <td>Photos, images complexes (compression avec perte)</td>
+              </tr>
+              <tr>
+                <td><strong>PNG</strong></td>
+                <td>.png</td>
+                <td>Logos, images avec transparence</td>
+              </tr>
+              <tr>
+                <td><strong>GIF</strong></td>
+                <td>.gif</td>
+                <td>Animations simples, icônes</td>
+              </tr>
+              <tr>
+                <td><strong>SVG</strong></td>
+                <td>.svg</td>
+                <td>Icônes, logos vectoriels (redimensionnables)</td>
+              </tr>
+              <tr>
+                <td><strong>WebP</strong></td>
+                <td>.webp</td>
+                <td>Format moderne, compression optimale</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <!-- CH 4 - LISTES -->
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <section class="chapter" id="listes">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#e34c26;background:rgba(227,76,38,0.1);border-color:rgba(227,76,38,0.2)">H.04</span>
+          <div class="chapter-title">Les Listes<span>Listes ordonnées, non ordonnées et de définition</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Liste non ordonnée (&lt;ul&gt;)</h3>
+          <p class="text">Utilisée pour des éléments sans ordre particulier. Par défaut, affiche des puces.</p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">HTML — Liste non ordonnée</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="kw">&lt;ul&gt;</span>
+  <span class="kw">&lt;li&gt;</span>Premier élément<span class="kw">&lt;/li&gt;</span>
+  <span class="kw">&lt;li&gt;</span>Deuxième élément<span class="kw">&lt;/li&gt;</span>
+  <span class="kw">&lt;li&gt;</span>Troisième élément<span class="kw">&lt;/li&gt;</span>
+<span class="kw">&lt;/ul&gt;</span>
+
+<span class="cm">&lt;!-- Liste imbriquée --&gt;</span>
+<span class="kw">&lt;ul&gt;</span>
+  <span class="kw">&lt;li&gt;</span>Fruits
+    <span class="kw">&lt;ul&gt;</span>
+      <span class="kw">&lt;li&gt;</span>Pomme<span class="kw">&lt;/li&gt;</span>
+      <span class="kw">&lt;li&gt;</span>Banane<span class="kw">&lt;/li&gt;</span>
+    <span class="kw">&lt;/ul&gt;</span>
+  <span class="kw">&lt;/li&gt;</span>
+  <span class="kw">&lt;li&gt;</span>Légumes
+    <span class="kw">&lt;ul&gt;</span>
+      <span class="kw">&lt;li&gt;</span>Carotte<span class="kw">&lt;/li&gt;</span>
+      <span class="kw">&lt;li&gt;</span>Tomate<span class="kw">&lt;/li&gt;</span>
+    <span class="kw">&lt;/ul&gt;</span>
+  <span class="kw">&lt;/li&gt;</span>
+<span class="kw">&lt;/ul&gt;</span></pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Liste ordonnée (&lt;ol&gt;)</h3>
+          <p class="text">Utilisée quand l'ordre des éléments est important. Affiche des numéros.</p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">HTML — Liste ordonnée</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm">&lt;!-- Liste numérotée classique --&gt;</span>
+<span class="kw">&lt;ol&gt;</span>
+  <span class="kw">&lt;li&gt;</span>Ouvrir le fichier<span class="kw">&lt;/li&gt;</span>
+  <span class="kw">&lt;li&gt;</span>Modifier le contenu<span class="kw">&lt;/li&gt;</span>
+  <span class="kw">&lt;li&gt;</span>Enregistrer<span class="kw">&lt;/li&gt;</span>
+<span class="kw">&lt;/ol&gt;</span>
+
+<span class="cm">&lt;!-- Commencer à un autre numéro --&gt;</span>
+<span class="kw">&lt;ol</span> start=<span class="str">"5"</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;li&gt;</span>Cinquième étape<span class="kw">&lt;/li&gt;</span>
+  <span class="kw">&lt;li&gt;</span>Sixième étape<span class="kw">&lt;/li&gt;</span>
+<span class="kw">&lt;/ol&gt;</span>
+
+<span class="cm">&lt;!-- Lettres au lieu de chiffres --&gt;</span>
+<span class="kw">&lt;ol</span> type=<span class="str">"a"</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;li&gt;</span>Option a<span class="kw">&lt;/li&gt;</span>
+  <span class="kw">&lt;li&gt;</span>Option b<span class="kw">&lt;/li&gt;</span>
+<span class="kw">&lt;/ol&gt;</span>
+
+<span class="cm">&lt;!-- Chiffres romains --&gt;</span>
+<span class="kw">&lt;ol</span> type=<span class="str">"I"</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;li&gt;</span>Chapitre I<span class="kw">&lt;/li&gt;</span>
+  <span class="kw">&lt;li&gt;</span>Chapitre II<span class="kw">&lt;/li&gt;</span>
+<span class="kw">&lt;/ol&gt;</span>
+
+<span class="cm">&lt;!-- Ordre inversé --&gt;</span>
+<span class="kw">&lt;ol</span> reversed<span class="kw">&gt;</span>
+  <span class="kw">&lt;li&gt;</span>Troisième (affiché 3)<span class="kw">&lt;/li&gt;</span>
+  <span class="kw">&lt;li&gt;</span>Deuxième (affiché 2)<span class="kw">&lt;/li&gt;</span>
+  <span class="kw">&lt;li&gt;</span>Premier (affiché 1)<span class="kw">&lt;/li&gt;</span>
+<span class="kw">&lt;/ol&gt;</span></pre>
+          </div>
+
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Attribut</th>
+                <th>Valeurs</th>
+                <th>Effet</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>type</code></td>
+                <td><code>1</code></td>
+                <td>Chiffres (défaut)</td>
+              </tr>
+              <tr>
+                <td><code>type</code></td>
+                <td><code>a</code></td>
+                <td>Lettres minuscules</td>
+              </tr>
+              <tr>
+                <td><code>type</code></td>
+                <td><code>A</code></td>
+                <td>Lettres majuscules</td>
+              </tr>
+              <tr>
+                <td><code>type</code></td>
+                <td><code>i</code></td>
+                <td>Romains minuscules</td>
+              </tr>
+              <tr>
+                <td><code>type</code></td>
+                <td><code>I</code></td>
+                <td>Romains majuscules</td>
+              </tr>
+              <tr>
+                <td><code>start</code></td>
+                <td>nombre</td>
+                <td>Numéro de départ</td>
+              </tr>
+              <tr>
+                <td><code>reversed</code></td>
+                <td>(sans valeur)</td>
+                <td>Ordre décroissant</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Liste de définition (&lt;dl&gt;)</h3>
+          <p class="text">Utilisée pour des paires terme/définition (glossaires, FAQ, métadonnées).</p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">HTML — Liste de définition</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="kw">&lt;dl&gt;</span>
+  <span class="kw">&lt;dt&gt;</span>HTML<span class="kw">&lt;/dt&gt;</span>
+  <span class="kw">&lt;dd&gt;</span>HyperText Markup Language — structure des pages web<span class="kw">&lt;/dd&gt;</span>
+  
+  <span class="kw">&lt;dt&gt;</span>CSS<span class="kw">&lt;/dt&gt;</span>
+  <span class="kw">&lt;dd&gt;</span>Cascading Style Sheets — mise en forme<span class="kw">&lt;/dd&gt;</span>
+  
+  <span class="kw">&lt;dt&gt;</span>JavaScript<span class="kw">&lt;/dt&gt;</span>
+  <span class="kw">&lt;dd&gt;</span>Langage de programmation pour l'interactivité<span class="kw">&lt;/dd&gt;</span>
+  <span class="kw">&lt;dd&gt;</span>Peut être utilisé côté client et serveur<span class="kw">&lt;/dd&gt;</span>
+<span class="kw">&lt;/dl&gt;</span></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <!-- CH 5 - TABLEAUX -->
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <section class="chapter" id="tableaux">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#e34c26;background:rgba(227,76,38,0.1);border-color:rgba(227,76,38,0.2)">H.05</span>
+          <div class="chapter-title">Les Tableaux<span>Présentation de données tabulaires</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Structure d'un tableau</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">HTML — Tableau complet</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="kw">&lt;table&gt;</span>
+  <span class="cm">&lt;!-- Légende du tableau --&gt;</span>
+  <span class="kw">&lt;caption&gt;</span>Notes des élèves - Semestre 1<span class="kw">&lt;/caption&gt;</span>
+  
+  <span class="cm">&lt;!-- En-tête du tableau --&gt;</span>
+  <span class="kw">&lt;thead&gt;</span>
+    <span class="kw">&lt;tr&gt;</span>
+      <span class="kw">&lt;th&gt;</span>Nom<span class="kw">&lt;/th&gt;</span>
+      <span class="kw">&lt;th&gt;</span>Prénom<span class="kw">&lt;/th&gt;</span>
+      <span class="kw">&lt;th&gt;</span>Maths<span class="kw">&lt;/th&gt;</span>
+      <span class="kw">&lt;th&gt;</span>Info<span class="kw">&lt;/th&gt;</span>
+      <span class="kw">&lt;th&gt;</span>Moyenne<span class="kw">&lt;/th&gt;</span>
+    <span class="kw">&lt;/tr&gt;</span>
+  <span class="kw">&lt;/thead&gt;</span>
+  
+  <span class="cm">&lt;!-- Corps du tableau --&gt;</span>
+  <span class="kw">&lt;tbody&gt;</span>
+    <span class="kw">&lt;tr&gt;</span>
+      <span class="kw">&lt;td&gt;</span>Dupont<span class="kw">&lt;/td&gt;</span>
+      <span class="kw">&lt;td&gt;</span>Alice<span class="kw">&lt;/td&gt;</span>
+      <span class="kw">&lt;td&gt;</span>15<span class="kw">&lt;/td&gt;</span>
+      <span class="kw">&lt;td&gt;</span>18<span class="kw">&lt;/td&gt;</span>
+      <span class="kw">&lt;td&gt;</span>16.5<span class="kw">&lt;/td&gt;</span>
+    <span class="kw">&lt;/tr&gt;</span>
+    <span class="kw">&lt;tr&gt;</span>
+      <span class="kw">&lt;td&gt;</span>Martin<span class="kw">&lt;/td&gt;</span>
+      <span class="kw">&lt;td&gt;</span>Bob<span class="kw">&lt;/td&gt;</span>
+      <span class="kw">&lt;td&gt;</span>12<span class="kw">&lt;/td&gt;</span>
+      <span class="kw">&lt;td&gt;</span>14<span class="kw">&lt;/td&gt;</span>
+      <span class="kw">&lt;td&gt;</span>13<span class="kw">&lt;/td&gt;</span>
+    <span class="kw">&lt;/tr&gt;</span>
+  <span class="kw">&lt;/tbody&gt;</span>
+  
+  <span class="cm">&lt;!-- Pied du tableau --&gt;</span>
+  <span class="kw">&lt;tfoot&gt;</span>
+    <span class="kw">&lt;tr&gt;</span>
+      <span class="kw">&lt;td</span> colspan=<span class="str">"4"</span><span class="kw">&gt;</span>Moyenne classe<span class="kw">&lt;/td&gt;</span>
+      <span class="kw">&lt;td&gt;</span>14.75<span class="kw">&lt;/td&gt;</span>
+    <span class="kw">&lt;/tr&gt;</span>
+  <span class="kw">&lt;/tfoot&gt;</span>
+<span class="kw">&lt;/table&gt;</span></pre>
+          </div>
+
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Balise</th>
+                <th>Rôle</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>&lt;table&gt;</code></td>
+                <td>Conteneur du tableau</td>
+              </tr>
+              <tr>
+                <td><code>&lt;caption&gt;</code></td>
+                <td>Titre/légende du tableau</td>
+              </tr>
+              <tr>
+                <td><code>&lt;thead&gt;</code></td>
+                <td>En-tête (titres des colonnes)</td>
+              </tr>
+              <tr>
+                <td><code>&lt;tbody&gt;</code></td>
+                <td>Corps (données)</td>
+              </tr>
+              <tr>
+                <td><code>&lt;tfoot&gt;</code></td>
+                <td>Pied (totaux, résumés)</td>
+              </tr>
+              <tr>
+                <td><code>&lt;tr&gt;</code></td>
+                <td>Ligne (table row)</td>
+              </tr>
+              <tr>
+                <td><code>&lt;th&gt;</code></td>
+                <td>Cellule d'en-tête (gras, centré)</td>
+              </tr>
+              <tr>
+                <td><code>&lt;td&gt;</code></td>
+                <td>Cellule de données</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Fusion de cellules</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">HTML — Fusion de cellules</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="kw">&lt;table&gt;</span>
+  <span class="kw">&lt;tr&gt;</span>
+    <span class="cm">&lt;!-- colspan : fusion horizontale (colonnes) --&gt;</span>
+    <span class="kw">&lt;th</span> colspan=<span class="str">"3"</span><span class="kw">&gt;</span>Emploi du temps<span class="kw">&lt;/th&gt;</span>
+  <span class="kw">&lt;/tr&gt;</span>
+  <span class="kw">&lt;tr&gt;</span>
+    <span class="kw">&lt;th&gt;</span>Lundi<span class="kw">&lt;/th&gt;</span>
+    <span class="kw">&lt;th&gt;</span>Mardi<span class="kw">&lt;/th&gt;</span>
+    <span class="kw">&lt;th&gt;</span>Mercredi<span class="kw">&lt;/th&gt;</span>
+  <span class="kw">&lt;/tr&gt;</span>
+  <span class="kw">&lt;tr&gt;</span>
+    <span class="cm">&lt;!-- rowspan : fusion verticale (lignes) --&gt;</span>
+    <span class="kw">&lt;td</span> rowspan=<span class="str">"2"</span><span class="kw">&gt;</span>Cours de maths<span class="kw">&lt;/td&gt;</span>
+    <span class="kw">&lt;td&gt;</span>TP Info<span class="kw">&lt;/td&gt;</span>
+    <span class="kw">&lt;td&gt;</span>Anglais<span class="kw">&lt;/td&gt;</span>
+  <span class="kw">&lt;/tr&gt;</span>
+  <span class="kw">&lt;tr&gt;</span>
+    <span class="kw">&lt;td&gt;</span>Physique<span class="kw">&lt;/td&gt;</span>
+    <span class="kw">&lt;td&gt;</span>Libre<span class="kw">&lt;/td&gt;</span>
+  <span class="kw">&lt;/tr&gt;</span>
+<span class="kw">&lt;/table&gt;</span></pre>
+          </div>
+
+          <div class="callout callout-tip">
+            <span class="callout-icon"><i class="fas fa-lightbulb"></i></span>
+            <div class="callout-body">
+              <strong>Rappel :</strong> <code>colspan="2"</code> = la cellule s'étend sur 2 colonnes.
+              <code>rowspan="3"</code> = la cellule s'étend sur 3 lignes.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <!-- CH 6 - FORMULAIRES -->
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <section class="chapter" id="formulaires">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#e34c26;background:rgba(227,76,38,0.1);border-color:rgba(227,76,38,0.2)">H.06</span>
+          <div class="chapter-title">Les Formulaires<span>Saisie de données utilisateur</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Structure d'un formulaire</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">HTML — Formulaire complet</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="kw">&lt;form</span> action=<span class="str">"/traitement.php"</span> method=<span class="str">"POST"</span><span class="kw">&gt;</span>
+  
+  <span class="cm">&lt;!-- Champ texte --&gt;</span>
+  <span class="kw">&lt;label</span> for=<span class="str">"nom"</span><span class="kw">&gt;</span>Nom :<span class="kw">&lt;/label&gt;</span>
+  <span class="kw">&lt;input</span> type=<span class="str">"text"</span> id=<span class="str">"nom"</span> name=<span class="str">"nom"</span> 
+         placeholder=<span class="str">"Votre nom"</span> required<span class="kw">&gt;</span>
+  
+  <span class="cm">&lt;!-- Email --&gt;</span>
+  <span class="kw">&lt;label</span> for=<span class="str">"email"</span><span class="kw">&gt;</span>Email :<span class="kw">&lt;/label&gt;</span>
+  <span class="kw">&lt;input</span> type=<span class="str">"email"</span> id=<span class="str">"email"</span> name=<span class="str">"email"</span> 
+         placeholder=<span class="str">"<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ee808183ae8b968b839e828bc0889c">[email&#160;protected]</a>"</span> required<span class="kw">&gt;</span>
+  
+  <span class="cm">&lt;!-- Mot de passe --&gt;</span>
+  <span class="kw">&lt;label</span> for=<span class="str">"mdp"</span><span class="kw">&gt;</span>Mot de passe :<span class="kw">&lt;/label&gt;</span>
+  <span class="kw">&lt;input</span> type=<span class="str">"password"</span> id=<span class="str">"mdp"</span> name=<span class="str">"mdp"</span> 
+         minlength=<span class="str">"8"</span> required<span class="kw">&gt;</span>
+  
+  <span class="cm">&lt;!-- Nombre --&gt;</span>
+  <span class="kw">&lt;label</span> for=<span class="str">"age"</span><span class="kw">&gt;</span>Âge :<span class="kw">&lt;/label&gt;</span>
+  <span class="kw">&lt;input</span> type=<span class="str">"number"</span> id=<span class="str">"age"</span> name=<span class="str">"age"</span> 
+         min=<span class="str">"0"</span> max=<span class="str">"120"</span> value=<span class="str">"18"</span><span class="kw">&gt;</span>
+  
+  <span class="cm">&lt;!-- Date --&gt;</span>
+  <span class="kw">&lt;label</span> for=<span class="str">"date"</span><span class="kw">&gt;</span>Date de naissance :<span class="kw">&lt;/label&gt;</span>
+  <span class="kw">&lt;input</span> type=<span class="str">"date"</span> id=<span class="str">"date"</span> name=<span class="str">"date_naissance"</span><span class="kw">&gt;</span>
+  
+  <span class="cm">&lt;!-- Bouton de soumission --&gt;</span>
+  <span class="kw">&lt;button</span> type=<span class="str">"submit"</span><span class="kw">&gt;</span>Envoyer<span class="kw">&lt;/button&gt;</span>
+  
+<span class="kw">&lt;/form&gt;</span></pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Types d'input</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Exemple</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>text</code></td>
+                <td>Texte simple</td>
+                <td><code>&lt;input type="text"&gt;</code></td>
+              </tr>
+              <tr>
+                <td><code>password</code></td>
+                <td>Mot de passe (masqué)</td>
+                <td><code>&lt;input type="password"&gt;</code></td>
+              </tr>
+              <tr>
+                <td><code>email</code></td>
+                <td>Adresse email (validation auto)</td>
+                <td><code>&lt;input type="email"&gt;</code></td>
+              </tr>
+              <tr>
+                <td><code>number</code></td>
+                <td>Nombre</td>
+                <td><code>&lt;input type="number"&gt;</code></td>
+              </tr>
+              <tr>
+                <td><code>tel</code></td>
+                <td>Téléphone</td>
+                <td><code>&lt;input type="tel"&gt;</code></td>
+              </tr>
+              <tr>
+                <td><code>url</code></td>
+                <td>Adresse web</td>
+                <td><code>&lt;input type="url"&gt;</code></td>
+              </tr>
+              <tr>
+                <td><code>date</code></td>
+                <td>Sélecteur de date</td>
+                <td><code>&lt;input type="date"&gt;</code></td>
+              </tr>
+              <tr>
+                <td><code>time</code></td>
+                <td>Sélecteur d'heure</td>
+                <td><code>&lt;input type="time"&gt;</code></td>
+              </tr>
+              <tr>
+                <td><code>datetime-local</code></td>
+                <td>Date et heure</td>
+                <td><code>&lt;input type="datetime-local"&gt;</code></td>
+              </tr>
+              <tr>
+                <td><code>checkbox</code></td>
+                <td>Case à cocher</td>
+                <td><code>&lt;input type="checkbox"&gt;</code></td>
+              </tr>
+              <tr>
+                <td><code>radio</code></td>
+                <td>Bouton radio</td>
+                <td><code>&lt;input type="radio"&gt;</code></td>
+              </tr>
+              <tr>
+                <td><code>range</code></td>
+                <td>Curseur</td>
+                <td><code>&lt;input type="range"&gt;</code></td>
+              </tr>
+              <tr>
+                <td><code>color</code></td>
+                <td>Sélecteur de couleur</td>
+                <td><code>&lt;input type="color"&gt;</code></td>
+              </tr>
+              <tr>
+                <td><code>file</code></td>
+                <td>Upload de fichier</td>
+                <td><code>&lt;input type="file"&gt;</code></td>
+              </tr>
+              <tr>
+                <td><code>hidden</code></td>
+                <td>Champ caché</td>
+                <td><code>&lt;input type="hidden"&gt;</code></td>
+              </tr>
+              <tr>
+                <td><code>search</code></td>
+                <td>Champ de recherche</td>
+                <td><code>&lt;input type="search"&gt;</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Autres éléments de formulaire</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">HTML — Éléments avancés</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm">&lt;!-- Zone de texte multiligne --&gt;</span>
+<span class="kw">&lt;label</span> for=<span class="str">"message"</span><span class="kw">&gt;</span>Message :<span class="kw">&lt;/label&gt;</span>
+<span class="kw">&lt;textarea</span> id=<span class="str">"message"</span> name=<span class="str">"message"</span> 
+          rows=<span class="str">"5"</span> cols=<span class="str">"40"</span> 
+          placeholder=<span class="str">"Votre message..."</span><span class="kw">&gt;&lt;/textarea&gt;</span>
+
+<span class="cm">&lt;!-- Liste déroulante --&gt;</span>
+<span class="kw">&lt;label</span> for=<span class="str">"pays"</span><span class="kw">&gt;</span>Pays :<span class="kw">&lt;/label&gt;</span>
+<span class="kw">&lt;select</span> id=<span class="str">"pays"</span> name=<span class="str">"pays"</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;option</span> value=<span class="str">""</span><span class="kw">&gt;</span>-- Choisir --<span class="kw">&lt;/option&gt;</span>
+  <span class="kw">&lt;option</span> value=<span class="str">"fr"</span><span class="kw">&gt;</span>France<span class="kw">&lt;/option&gt;</span>
+  <span class="kw">&lt;option</span> value=<span class="str">"be"</span><span class="kw">&gt;</span>Belgique<span class="kw">&lt;/option&gt;</span>
+  <span class="kw">&lt;option</span> value=<span class="str">"ch"</span> selected<span class="kw">&gt;</span>Suisse<span class="kw">&lt;/option&gt;</span>
+<span class="kw">&lt;/select&gt;</span>
+
+<span class="cm">&lt;!-- Groupe d'options --&gt;</span>
+<span class="kw">&lt;select</span> name=<span class="str">"voiture"</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;optgroup</span> label=<span class="str">"Française"</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;option&gt;</span>Renault<span class="kw">&lt;/option&gt;</span>
+    <span class="kw">&lt;option&gt;</span>Peugeot<span class="kw">&lt;/option&gt;</span>
+  <span class="kw">&lt;/optgroup&gt;</span>
+  <span class="kw">&lt;optgroup</span> label=<span class="str">"Allemande"</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;option&gt;</span>BMW<span class="kw">&lt;/option&gt;</span>
+    <span class="kw">&lt;option&gt;</span>Mercedes<span class="kw">&lt;/option&gt;</span>
+  <span class="kw">&lt;/optgroup&gt;</span>
+<span class="kw">&lt;/select&gt;</span>
+
+<span class="cm">&lt;!-- Cases à cocher --&gt;</span>
+<span class="kw">&lt;fieldset&gt;</span>
+  <span class="kw">&lt;legend&gt;</span>Langages maîtrisés :<span class="kw">&lt;/legend&gt;</span>
+  <span class="kw">&lt;label&gt;&lt;input</span> type=<span class="str">"checkbox"</span> name=<span class="str">"lang[]"</span> value=<span class="str">"html"</span><span class="kw">&gt;</span> HTML<span class="kw">&lt;/label&gt;</span>
+  <span class="kw">&lt;label&gt;&lt;input</span> type=<span class="str">"checkbox"</span> name=<span class="str">"lang[]"</span> value=<span class="str">"css"</span><span class="kw">&gt;</span> CSS<span class="kw">&lt;/label&gt;</span>
+  <span class="kw">&lt;label&gt;&lt;input</span> type=<span class="str">"checkbox"</span> name=<span class="str">"lang[]"</span> value=<span class="str">"js"</span> checked<span class="kw">&gt;</span> JavaScript<span class="kw">&lt;/label&gt;</span>
+<span class="kw">&lt;/fieldset&gt;</span>
+
+<span class="cm">&lt;!-- Boutons radio --&gt;</span>
+<span class="kw">&lt;fieldset&gt;</span>
+  <span class="kw">&lt;legend&gt;</span>Genre :<span class="kw">&lt;/legend&gt;</span>
+  <span class="kw">&lt;label&gt;&lt;input</span> type=<span class="str">"radio"</span> name=<span class="str">"genre"</span> value=<span class="str">"h"</span><span class="kw">&gt;</span> Homme<span class="kw">&lt;/label&gt;</span>
+  <span class="kw">&lt;label&gt;&lt;input</span> type=<span class="str">"radio"</span> name=<span class="str">"genre"</span> value=<span class="str">"f"</span><span class="kw">&gt;</span> Femme<span class="kw">&lt;/label&gt;</span>
+  <span class="kw">&lt;label&gt;&lt;input</span> type=<span class="str">"radio"</span> name=<span class="str">"genre"</span> value=<span class="str">"a"</span><span class="kw">&gt;</span> Autre<span class="kw">&lt;/label&gt;</span>
+<span class="kw">&lt;/fieldset&gt;</span>
+
+<span class="cm">&lt;!-- Datalist (autocomplétion) --&gt;</span>
+<span class="kw">&lt;label</span> for=<span class="str">"navigateur"</span><span class="kw">&gt;</span>Navigateur :<span class="kw">&lt;/label&gt;</span>
+<span class="kw">&lt;input</span> list=<span class="str">"navigateurs"</span> id=<span class="str">"navigateur"</span> name=<span class="str">"navigateur"</span><span class="kw">&gt;</span>
+<span class="kw">&lt;datalist</span> id=<span class="str">"navigateurs"</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;option</span> value=<span class="str">"Chrome"</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;option</span> value=<span class="str">"Firefox"</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;option</span> value=<span class="str">"Edge"</span><span class="kw">&gt;</span>
+<span class="kw">&lt;/datalist&gt;</span></pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Attributs de validation</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Attribut</th>
+                <th>Description</th>
+                <th>Exemple</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>required</code></td>
+                <td>Champ obligatoire</td>
+                <td><code>&lt;input required&gt;</code></td>
+              </tr>
+              <tr>
+                <td><code>minlength</code></td>
+                <td>Longueur minimum</td>
+                <td><code>minlength="5"</code></td>
+              </tr>
+              <tr>
+                <td><code>maxlength</code></td>
+                <td>Longueur maximum</td>
+                <td><code>maxlength="100"</code></td>
+              </tr>
+              <tr>
+                <td><code>min</code></td>
+                <td>Valeur minimum (number/date)</td>
+                <td><code>min="0"</code></td>
+              </tr>
+              <tr>
+                <td><code>max</code></td>
+                <td>Valeur maximum</td>
+                <td><code>max="100"</code></td>
+              </tr>
+              <tr>
+                <td><code>pattern</code></td>
+                <td>Expression régulière</td>
+                <td><code>pattern="[A-Za-z]{3}"</code></td>
+              </tr>
+              <tr>
+                <td><code>placeholder</code></td>
+                <td>Texte indicatif</td>
+                <td><code>placeholder="Exemple"</code></td>
+              </tr>
+              <tr>
+                <td><code>disabled</code></td>
+                <td>Désactivé</td>
+                <td><code>&lt;input disabled&gt;</code></td>
+              </tr>
+              <tr>
+                <td><code>readonly</code></td>
+                <td>Lecture seule</td>
+                <td><code>&lt;input readonly&gt;</code></td>
+              </tr>
+              <tr>
+                <td><code>autofocus</code></td>
+                <td>Focus automatique</td>
+                <td><code>&lt;input autofocus&gt;</code></td>
+              </tr>
+              <tr>
+                <td><code>autocomplete</code></td>
+                <td>Autocomplétion navigateur</td>
+                <td><code>autocomplete="off"</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="retenir">
+          <div class="retenir-title">À retenir — Formulaires</div>
+          <ul>
+            <li>Toujours associer <code>&lt;label for="id"&gt;</code> à <code>&lt;input id="id"&gt;</code></li>
+            <li>Utiliser <code>name</code> pour identifier les données côté serveur</li>
+            <li>Les types d'input HTML5 (email, date, etc.) valident automatiquement</li>
+            <li><code>method="POST"</code> pour envoyer des données, <code>GET</code> pour les recherches</li>
+            <li><code>required</code> rend un champ obligatoire (validation côté client)</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <!-- CH 7 - BALISES SÉMANTIQUES -->
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <section class="chapter" id="semantique">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#e34c26;background:rgba(227,76,38,0.1);border-color:rgba(227,76,38,0.2)">H.07</span>
+          <div class="chapter-title">Balises Sémantiques HTML5<span>Structure significative pour l'accessibilité et le
+              SEO</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Pourquoi la sémantique ?</h3>
+          <p class="text">
+            Les balises <strong>sémantiques</strong> décrivent le <strong>rôle</strong> du contenu, pas seulement son
+            apparence.
+            Elles améliorent l'<strong>accessibilité</strong> (lecteurs d'écran), le <strong>SEO</strong>
+            (référencement) et la <strong>maintenabilité</strong> du code.
+          </p>
+
+          <div class="good-bad">
+            <div class="bad">
+              <div class="bad-label">Ancienne méthode (non sémantique)</div>
+              <pre><span class="kw">&lt;div</span> class=<span class="str">"header"</span><span class="kw">&gt;</span>...<span class="kw">&lt;/div&gt;</span>
+<span class="kw">&lt;div</span> class=<span class="str">"nav"</span><span class="kw">&gt;</span>...<span class="kw">&lt;/div&gt;</span>
+<span class="kw">&lt;div</span> class=<span class="str">"main"</span><span class="kw">&gt;</span>...<span class="kw">&lt;/div&gt;</span>
+<span class="kw">&lt;div</span> class=<span class="str">"footer"</span><span class="kw">&gt;</span>...<span class="kw">&lt;/div&gt;</span></pre>
+            </div>
+            <div class="good">
+              <div class="good-label">HTML5 sémantique</div>
+              <pre><span class="kw">&lt;header&gt;</span>...<span class="kw">&lt;/header&gt;</span>
+<span class="kw">&lt;nav&gt;</span>...<span class="kw">&lt;/nav&gt;</span>
+<span class="kw">&lt;main&gt;</span>...<span class="kw">&lt;/main&gt;</span>
+<span class="kw">&lt;footer&gt;</span>...<span class="kw">&lt;/footer&gt;</span></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Les balises sémantiques HTML5</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">HTML — Structure sémantique complète</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="kw">&lt;body&gt;</span>
+  <span class="cm">&lt;!-- En-tête du site (logo, titre, navigation principale) --&gt;</span>
+  <span class="kw">&lt;header&gt;</span>
+    <span class="kw">&lt;img</span> src=<span class="str">"logo.png"</span> alt=<span class="str">"Logo"</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;h1&gt;</span>Mon Site<span class="kw">&lt;/h1&gt;</span>
+    
+    <span class="cm">&lt;!-- Navigation principale --&gt;</span>
+    <span class="kw">&lt;nav&gt;</span>
+      <span class="kw">&lt;ul&gt;</span>
+        <span class="kw">&lt;li&gt;&lt;a</span> href=<span class="str">"/"</span><span class="kw">&gt;</span>Accueil<span class="kw">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="kw">&lt;li&gt;&lt;a</span> href=<span class="str">"/about"</span><span class="kw">&gt;</span>À propos<span class="kw">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="kw">&lt;li&gt;&lt;a</span> href=<span class="str">"/contact"</span><span class="kw">&gt;</span>Contact<span class="kw">&lt;/a&gt;&lt;/li&gt;</span>
+      <span class="kw">&lt;/ul&gt;</span>
+    <span class="kw">&lt;/nav&gt;</span>
+  <span class="kw">&lt;/header&gt;</span>
+  
+  <span class="cm">&lt;!-- Contenu principal (unique par page) --&gt;</span>
+  <span class="kw">&lt;main&gt;</span>
+    
+    <span class="cm">&lt;!-- Article autonome (blog post, news) --&gt;</span>
+    <span class="kw">&lt;article&gt;</span>
+      <span class="kw">&lt;header&gt;</span>
+        <span class="kw">&lt;h2&gt;</span>Titre de l'article<span class="kw">&lt;/h2&gt;</span>
+        <span class="kw">&lt;time</span> datetime=<span class="str">"2024-01-15"</span><span class="kw">&gt;</span>15 janvier 2024<span class="kw">&lt;/time&gt;</span>
+      <span class="kw">&lt;/header&gt;</span>
+      
+      <span class="cm">&lt;!-- Section thématique --&gt;</span>
+      <span class="kw">&lt;section&gt;</span>
+        <span class="kw">&lt;h3&gt;</span>Introduction<span class="kw">&lt;/h3&gt;</span>
+        <span class="kw">&lt;p&gt;</span>Contenu de l'introduction...<span class="kw">&lt;/p&gt;</span>
+      <span class="kw">&lt;/section&gt;</span>
+      
+      <span class="kw">&lt;section&gt;</span>
+        <span class="kw">&lt;h3&gt;</span>Développement<span class="kw">&lt;/h3&gt;</span>
+        <span class="kw">&lt;p&gt;</span>Contenu principal...<span class="kw">&lt;/p&gt;</span>
+        
+        <span class="cm">&lt;!-- Figure avec légende --&gt;</span>
+        <span class="kw">&lt;figure&gt;</span>
+          <span class="kw">&lt;img</span> src=<span class="str">"graphique.png"</span> alt=<span class="str">"Graphique"</span><span class="kw">&gt;</span>
+          <span class="kw">&lt;figcaption&gt;</span>Figure 1 : Statistiques 2024<span class="kw">&lt;/figcaption&gt;</span>
+        <span class="kw">&lt;/figure&gt;</span>
+      <span class="kw">&lt;/section&gt;</span>
+      
+      <span class="kw">&lt;footer&gt;</span>
+        <span class="kw">&lt;p&gt;</span>Auteur : Alice Dupont<span class="kw">&lt;/p&gt;</span>
+      <span class="kw">&lt;/footer&gt;</span>
+    <span class="kw">&lt;/article&gt;</span>
+    
+  <span class="kw">&lt;/main&gt;</span>
+  
+  <span class="cm">&lt;!-- Contenu secondaire (sidebar) --&gt;</span>
+  <span class="kw">&lt;aside&gt;</span>
+    <span class="kw">&lt;h3&gt;</span>Articles récents<span class="kw">&lt;/h3&gt;</span>
+    <span class="kw">&lt;ul&gt;</span>
+      <span class="kw">&lt;li&gt;&lt;a</span> href=<span class="str">"#"</span><span class="kw">&gt;</span>Article 1<span class="kw">&lt;/a&gt;&lt;/li&gt;</span>
+      <span class="kw">&lt;li&gt;&lt;a</span> href=<span class="str">"#"</span><span class="kw">&gt;</span>Article 2<span class="kw">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="kw">&lt;/ul&gt;</span>
+  <span class="kw">&lt;/aside&gt;</span>
+  
+  <span class="cm">&lt;!-- Pied de page --&gt;</span>
+  <span class="kw">&lt;footer&gt;</span>
+    <span class="kw">&lt;p&gt;</span>© 2024 Mon Site - Tous droits réservés<span class="kw">&lt;/p&gt;</span>
+    <span class="kw">&lt;address&gt;</span>
+      Contact : <span class="kw">&lt;a</span> href=<span class="str">"mailto:<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="73101c1d0712100733001a07165d1501">[email&#160;protected]</a>"</span><span class="kw">&gt;</span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="87e4e8e9f3e6e4f3c7f4eef3e2a9e1f5">[email&#160;protected]</a><span class="kw">&lt;/a&gt;</span>
+    <span class="kw">&lt;/address&gt;</span>
+  <span class="kw">&lt;/footer&gt;</span>
+  
+<span class="kw">&lt;/body&gt;</span></pre>
+          </div>
+
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Balise</th>
+                <th>Rôle</th>
+                <th>Usage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>&lt;header&gt;</code></td>
+                <td>En-tête</td>
+                <td>Logo, titre, navigation (page ou section)</td>
+              </tr>
+              <tr>
+                <td><code>&lt;nav&gt;</code></td>
+                <td>Navigation</td>
+                <td>Menu principal, fil d'Ariane</td>
+              </tr>
+              <tr>
+                <td><code>&lt;main&gt;</code></td>
+                <td>Contenu principal</td>
+                <td>Un seul par page</td>
+              </tr>
+              <tr>
+                <td><code>&lt;article&gt;</code></td>
+                <td>Contenu autonome</td>
+                <td>Blog post, commentaire, widget</td>
+              </tr>
+              <tr>
+                <td><code>&lt;section&gt;</code></td>
+                <td>Section thématique</td>
+                <td>Groupe de contenu avec titre</td>
+              </tr>
+              <tr>
+                <td><code>&lt;aside&gt;</code></td>
+                <td>Contenu secondaire</td>
+                <td>Sidebar, encarts, publicités</td>
+              </tr>
+              <tr>
+                <td><code>&lt;footer&gt;</code></td>
+                <td>Pied de page</td>
+                <td>Copyright, liens, contact</td>
+              </tr>
+              <tr>
+                <td><code>&lt;figure&gt;</code></td>
+                <td>Illustration</td>
+                <td>Image, graphique avec légende</td>
+              </tr>
+              <tr>
+                <td><code>&lt;figcaption&gt;</code></td>
+                <td>Légende</td>
+                <td>Description de la figure</td>
+              </tr>
+              <tr>
+                <td><code>&lt;time&gt;</code></td>
+                <td>Date/heure</td>
+                <td>Publication, événement</td>
+              </tr>
+              <tr>
+                <td><code>&lt;address&gt;</code></td>
+                <td>Contact</td>
+                <td>Email, adresse postale</td>
+              </tr>
+              <tr>
+                <td><code>&lt;mark&gt;</code></td>
+                <td>Surligné</td>
+                <td>Texte important</td>
+              </tr>
+              <tr>
+                <td><code>&lt;details&gt;</code></td>
+                <td>Accordéon</td>
+                <td>Contenu repliable</td>
+              </tr>
+              <tr>
+                <td><code>&lt;summary&gt;</code></td>
+                <td>Titre accordéon</td>
+                <td>Titre cliquable de details</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Exemple : Accordéon avec details/summary</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">HTML — Accordéon natif</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="kw">&lt;details&gt;</span>
+  <span class="kw">&lt;summary&gt;</span>Cliquez pour voir plus<span class="kw">&lt;/summary&gt;</span>
+  <span class="kw">&lt;p&gt;</span>Ce contenu est caché par défaut et s'affiche au clic.<span class="kw">&lt;/p&gt;</span>
+  <span class="kw">&lt;p&gt;</span>Aucun JavaScript nécessaire !<span class="kw">&lt;/p&gt;</span>
+<span class="kw">&lt;/details&gt;</span>
+
+<span class="cm">&lt;!-- Ouvert par défaut --&gt;</span>
+<span class="kw">&lt;details</span> open<span class="kw">&gt;</span>
+  <span class="kw">&lt;summary&gt;</span>FAQ - Question fréquente<span class="kw">&lt;/summary&gt;</span>
+  <span class="kw">&lt;p&gt;</span>Réponse à la question...<span class="kw">&lt;/p&gt;</span>
+<span class="kw">&lt;/details&gt;</span></pre>
+          </div>
+        </div>
+
+        <div class="retenir">
+          <div class="retenir-title">À retenir — Sémantique HTML5</div>
+          <ul>
+            <li>Utilisez <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code> au lieu de
+              <code>&lt;div&gt;</code></li>
+            <li><code>&lt;main&gt;</code> doit être unique par page</li>
+            <li><code>&lt;article&gt;</code> = contenu autonome qui a du sens seul</li>
+            <li><code>&lt;section&gt;</code> = groupe de contenu thématique (avec un titre)</li>
+            <li>La sémantique améliore l'accessibilité et le référencement</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Navigation -->
+      <div class="page-nav">
+        <a href="index.html">
+          <span class="page-nav-label">← Précédent</span>
+          <span class="page-nav-title"><i class="fas fa-home"></i> Introduction</span>
+        </a>
+        <a href="css-complet.html" class="next">
+          <span class="page-nav-label">Suivant →</span>
+          <span class="page-nav-title"><i class="fab fa-css3-alt"></i> CSS Complet</span>
+        </a>
+      </div>
+
+    </div>
+  
+      <!-- EXERCICES & TP HTML -->
+      <section class="chapter" id="exercices-html">
+        <div class="chapter-header">
+          <span class="chapter-num" style="background:linear-gradient(135deg,#e34c26,#f06529);">EX</span>
+          <div class="chapter-title">Exercices &amp; Travaux Pratiques<span>Mettre en pratique le HTML de la structure de base aux formulaires avancés</span></div>
+        </div>
+        <div class="section">
+          <p class="section-intro">Le HTML est le squelette de toute page web. Ces exercices vous permettent de passer de la théorie à la pratique, en construisant progressivement des pages de plus en plus complètes et sémantiques.</p>
+
+          <div class="callout callout-info">
+            <span class="callout-icon">💡</span>
+            <div class="callout-body"><strong>Outil recommandé :</strong> Utilisez <strong>VS Code</strong> avec l'extension <em>Live Server</em> pour voir vos modifications en temps réel dans le navigateur.</div>
+          </div>
+
+          <p class="section-exo-title"><i class="fas fa-pencil-alt"></i> Exercices de compréhension</p>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 1 — Structure minimale valide <span class="niveau-badge niveau-facile">Facile</span></h4>
+            <ol>
+              <li>Créez un fichier <code>index.html</code> avec la structure HTML5 complète (<code>DOCTYPE</code>, <code>html</code>, <code>head</code>, <code>body</code>).</li>
+              <li>Dans le <code>head</code> : ajoutez le charset UTF-8, le viewport pour mobile, un titre de page et une balise <code>meta description</code>.</li>
+              <li>Dans le <code>body</code> : créez un titre <code>h1</code>, un sous-titre <code>h2</code>, un paragraphe de présentation et une liste à puces de 5 éléments décrivant vos compétences.</li>
+              <li><strong>Validation :</strong> Collez votre code dans le <a href="https://validator.w3.org/#validate_by_input" target="_blank">validateur W3C</a> et corrigez toutes les erreurs.</li>
+            </ol>
+          </div>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 2 — Tableaux de données <span class="niveau-badge niveau-moyen">Moyen</span></h4>
+            <ol>
+              <li>Créez un tableau HTML représentant un emploi du temps scolaire (5 jours × 6 créneaux).</li>
+              <li>Utilisez <code>thead</code>, <code>tbody</code>, <code>tfoot</code>, <code>th scope="col"</code> et <code>th scope="row"</code> correctement.</li>
+              <li>Fusionnez des cellules avec <code>colspan</code> et <code>rowspan</code> pour les cours qui durent 2 heures.</li>
+              <li>Ajoutez une légende (<code>caption</code>) et des données de résumé dans le <code>tfoot</code> (nombre total d'heures par matière).</li>
+              <li><strong>Accessibilité :</strong> Ajoutez l'attribut <code>summary</code> et vérifiez que le tableau est lisible avec un lecteur d'écran (logique de lecture ligne par ligne).</li>
+            </ol>
+          </div>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 3 — Formulaire d'inscription complet <span class="niveau-badge niveau-moyen">Moyen</span></h4>
+            <ol>
+              <li>Créez un formulaire d'inscription avec les champs : prénom, nom, email, mot de passe (avec confirmation), date de naissance, genre (radio), centres d'intérêt (checkbox), niveau d'études (select), photo de profil (file) et un textarea pour la biographie.</li>
+              <li>Utilisez la validation HTML5 native : <code>required</code>, <code>minlength</code>, <code>maxlength</code>, <code>pattern</code>, <code>type="email"</code>, <code>type="date"</code>.</li>
+              <li>Associez chaque champ à son <code>label</code> avec l'attribut <code>for</code>/<code>id</code>.</li>
+              <li>Regroupez les champs avec <code>fieldset</code> et <code>legend</code>.</li>
+              <li>Ajoutez des textes d'aide (<code>placeholder</code>) et des messages d'erreur avec <code>title</code>.</li>
+            </ol>
+          </div>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 4 — HTML sémantique avancé <span class="niveau-badge niveau-avance">Avancé</span></h4>
+            <ol>
+              <li>Reconstruisez la page d'accueil d'un blog avec : <code>header</code>, <code>nav</code>, <code>main</code>, plusieurs <code>article</code> (chacun avec <code>header</code>, <code>figure</code>, <code>p</code>, <code>footer</code>), une <code>aside</code> (sidebar) et un <code>footer</code> de page.</li>
+              <li>Intégrez du microdata Schema.org sur les articles (<code>itemscope</code>, <code>itemtype="https://schema.org/Article"</code>, <code>itemprop</code>).</li>
+              <li>Ajoutez des balises <code>time datetime="..."</code> pour les dates.</li>
+              <li><strong>Test SEO :</strong> Utilisez l'outil de test des résultats enrichis de Google pour vérifier que votre microdata est correctement parsée.</li>
+            </ol>
+          </div>
+
+          <p class="section-exo-title"><i class="fas fa-flask"></i> Travaux Pratiques</p>
+
+          <div class="tp-block">
+            <h4>🔬 TP 1 — Page de présentation personnelle <span class="niveau-badge niveau-facile">Facile — 1h30</span></h4>
+            <p style="font-size:14px;color:var(--muted);margin-bottom:12px;"><strong>Objectif :</strong> Construire en HTML pur (sans CSS ni JS) une page de présentation personnelle complète et valide W3C.</p>
+            <ol class="tp-etapes">
+              <li><strong>En-tête :</strong> Votre nom en <code>h1</code>, votre métier/spécialité en <code>h2</code>, une photo (<code>img</code> avec <code>alt</code> descriptif), et des liens de contact (email, LinkedIn, GitHub) avec les bonnes balises <code>a</code>.</li>
+              <li><strong>À propos :</strong> Section <code>article</code> avec 2-3 paragraphes de présentation. Utilisez <code>strong</code> et <code>em</code> pour mettre en valeur des mots-clés.</li>
+              <li><strong>Compétences :</strong> Deux listes : une <code>ul</code> pour les compétences techniques, une <code>ol</code> pour vos 5 meilleures compétences classées.</li>
+              <li><strong>Expériences :</strong> Un tableau <code>table</code> listant vos expériences (dates, entreprise, poste, description).</li>
+              <li><strong>Contact :</strong> Un formulaire <code>form</code> avec nom, email, sujet et message. Action vers <code>mailto:</code>.</li>
+              <li><strong>Validation finale :</strong> Zéro erreur dans le validateur W3C + score Lighthouse accessibilité > 90.</li>
+            </ol>
+          </div>
+
+          <div class="tp-block">
+            <h4>🔬 TP 2 — Site vitrine multi-pages <span class="niveau-badge niveau-avance">Avancé — 4h</span></h4>
+            <p style="font-size:14px;color:var(--muted);margin-bottom:12px;"><strong>Objectif :</strong> Créer un mini-site vitrine complet (4 pages liées) pour une entreprise fictive de votre choix.</p>
+            <ol class="tp-etapes">
+              <li><strong>Architecture :</strong> <code>index.html</code> (accueil), <code>services.html</code>, <code>equipe.html</code>, <code>contact.html</code> + dossiers <code>assets/images/</code>.</li>
+              <li><strong>Navigation cohérente :</strong> Même <code>nav</code> sur toutes les pages avec la page active marquée (<code>aria-current="page"</code>).</li>
+              <li><strong>Contenu riche :</strong> Images avec <code>figure</code>/<code>figcaption</code>, vidéo YouTube embarquée (<code>iframe</code>), carte Google Maps (<code>iframe</code>), fichier PDF téléchargeable.</li>
+              <li><strong>Accessibilité :</strong> Attributs <code>aria-label</code>, <code>role</code>, skip-link, contraste suffisant (même sans CSS).</li>
+              <li><strong>SEO :</strong> Balises <code>og:title</code>, <code>og:description</code>, <code>og:image</code> sur chaque page pour le partage réseaux sociaux.</li>
+            </ol>
+          </div>
+
+          <div class="quiz-block">
+            <h4>❓ Quiz de révision — HTML</h4>
+            <ol>
+              <li>Quelle est la différence entre <code>&lt;b&gt;</code> et <code>&lt;strong&gt;</code> ? Même question pour <code>&lt;i&gt;</code> et <code>&lt;em&gt;</code>.</li>
+              <li>Pourquoi faut-il utiliser <code>alt=""</code> (vide) sur les images décoratives ?</li>
+              <li>Expliquez la différence entre un lien absolu et un lien relatif. Donnez un exemple de chaque.</li>
+              <li>Quel attribut HTML5 permet de lancer la lecture automatique d'une vidéo sans son ? (2 attributs)</li>
+              <li>Que fait l'attribut <code>defer</code> sur une balise <code>&lt;script&gt;</code> ? Pourquoi est-ce important ?</li>
+              <li>Donnez 5 balises HTML sémantiques HTML5 et expliquez leur rôle respectif.</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-info">
+        <img src="assets/logo.png" alt="Logo" class="footer-logo">
+        <div class="footer-text">
+          <div class="footer-name">Adriel TATCHUM SIMO</div>
+          <div class="footer-job">Enseignant CIEL • Formateur Web & Électronique</div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Accueil</a>
+        <a href="html-complet.html">HTML</a>
+        <a href="css-complet.html">CSS</a>
+        <a href="javascript.html">JavaScript</a>
+      </div>
+      <div class="footer-copy">© 2026 Cours CIEL — Tous droits réservés</div>
+    </div>
+  </footer>
+
+  <button id="back-top" aria-label="Retour en haut">↑</button>
+
+  <script src="script.js"></script>
+  <script>
+    function toggleReponse(btn) {
+      const content = btn.nextElementSibling;
+      const isVisible = content.style.display === 'block';
+      content.style.display = isVisible ? 'none' : 'block';
+      btn.innerHTML = isVisible
+        ? '<i class="fas fa-eye"></i> Voir la réponse'
+        : '<i class="fas fa-eye-slash"></i> Masquer la réponse';
+      btn.style.background   = isVisible ? 'rgba(240,180,41,0.1)'  : 'rgba(0,117,143,0.15)';
+      btn.style.borderColor  = isVisible ? 'rgba(240,180,41,0.35)' : 'rgba(0,117,143,0.4)';
+      btn.style.color        = isVisible ? 'var(--accent)' : '#00b4d8';
+    }
+  </script>
+</body>
+
+</html>

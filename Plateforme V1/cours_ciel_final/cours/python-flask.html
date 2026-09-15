@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python & Flask — Cours CIEL</title>
+  <meta name="description" content="Cours complet Python et Flask pour créer des API REST.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="shared-styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+
+<body>
+
+  <div id="scroll-indicator"></div>
+  <button class="mobile-menu-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+
+  <aside id="sidebar">
+    <div class="sidebar-header">
+      <img src="assets/logo.png" alt="Logo CIEL" class="sidebar-logo">
+      <div class="sidebar-title">Cours CIEL<span>Adriel TATCHUM SIMO • Formateur</span></div>
+    </div>
+    <div class="search-container" style="padding: 12px 16px;">
+      <input type="text" id="searchInput" placeholder="Rechercher un cours..."
+        style="width:100%;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:13px;">
+    </div>
+    <div class="progress-container">
+      <div class="progress-label">Progression du cours</div>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 0%"></div>
+      </div>
+    </div>
+    <nav>
+      <div class="nav-group">
+        <div class="nav-group-title">Accueil</div>
+        <a href="index.html"><i class="fas fa-home"></i> Introduction</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 1 — Développement Web</div>
+        <a href="html-complet.html"><i class="fab fa-html5"></i> HTML Complet</a>
+        <a href="css-complet.html"><i class="fab fa-css3-alt"></i> CSS Complet</a>
+        <a href="javascript.html"><i class="fab fa-js"></i> JavaScript</a>
+        <a href="python-flask.html"><i class="fab fa-python"></i> Python & Flask</a>
+        <a href="mysql.html"><i class="fas fa-database"></i> MySQL</a>
+        <a href="projet-fullstack.html"><i class="fas fa-project-diagram"></i> Projet Full Stack</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 2 — Électronique</div>
+        <a href="electronique-bases.html"><i class="fas fa-bolt"></i> Bases Électronique</a>
+        <a href="composants.html"><i class="fas fa-microchip"></i> Composants</a>
+        <a href="arduino.html"><i class="fas fa-robot"></i> Arduino & ESP32</a>
+        <a href="raspberry-pi.html"><i class="fab fa-raspberry-pi"></i> Raspberry Pi</a>
+        <a href="capteurs.html"><i class="fas fa-thermometer-half"></i> Capteurs & Actionneurs</a>
+        <a href="maintenance-electronique.html"><i class="fas fa-tools"></i> Maintenance Électronique</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 3 — Réseaux & Sécurité</div>
+        <a href="reseau-informatique.html"><i class="fas fa-network-wired"></i> Réseau Informatique</a>
+        <a href="cybersecurite.html"><i class="fas fa-shield-alt"></i> Cybersécurité</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Outils & Workflow</div>
+        <a href="vscode.html"><i class="fas fa-code"></i> VS Code</a>
+        <a href="git.html"><i class="fab fa-git-alt"></i> Git & GitHub</a>
+        <a href="venv.html"><i class="fas fa-cube"></i> .venv Python</a>
+      </div>
+    </nav>
+    <div class="theme-toggle">
+      <button class="theme-btn"><i class="fas fa-sun"></i><span>Mode clair</span></button>
+    </div>
+  </aside>
+
+  <main id="main">
+<section id="hero">
+      <div class="hero-tag">Backend Python</div>
+      <h1 class="hero-title">Python &<br><em>Flask API</em></h1>
+      <p class="hero-desc">
+        Maîtrisez Python et créez des API REST avec Flask. Variables, fonctions, dictionnaires,
+        routes HTTP, JSON et connexion MySQL.
+      </p>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-val">6</span><span class="stat-label">Chapitres</span></div>
+        <div class="stat"><span class="stat-val">20+</span><span class="stat-label">Exemples</span></div>
+        <div class="stat"><span class="stat-val">~2h</span><span class="stat-label">De lecture</span></div>
+      </div>
+    </section>
+
+
+    <!-- ══════ SECTION VIDÉO PÉDAGOGIQUE ══════ -->
+    <div class="video-ressource">
+      <div class="video-section-title"><i class="fab fa-youtube"></i> Vidéo pédagogique recommandée</div>
+      <div class="video-card">
+        <a href="https://www.youtube.com/watch?v=6plVs_J_f2M" target="_blank" class="video-thumbnail">
+          <div class="video-thumbnail-bg">
+            <i class="fab fa-youtube video-yt-icon"></i>
+            <span class="video-yt-text">YOUTUBE</span>
+          </div>
+          <div class="video-play-overlay"><i class="fas fa-play"></i></div>
+        </a>
+        <div class="video-info">
+          <span class="video-badge"><i class="fas fa-clock"></i> 2h</span>
+          <div class="video-titre">Python & Flask - Créer une API REST</div>
+          <div class="video-chaine">Chaîne : Docstring</div>
+          <div class="video-desc">Apprenez Python et créez votre première API REST avec Flask en français.</div>
+          <a href="https://www.youtube.com/watch?v=6plVs_J_f2M" target="_blank" class="video-watch-btn">
+            <i class="fab fa-youtube"></i> Voir sur YouTube
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════ TÉLÉCHARGEMENTS PDF ══════ -->
+    <div class="pdf-download-zone">
+      <a href="tp-python-flask.pdf" download class="pdf-download-btn">
+        <i class="fas fa-file-pdf"></i> Télécharger le TP (PDF)
+      </a>
+      <a href="correction-python-flask.pdf" download class="correction-download-btn">
+        <i class="fas fa-check-circle"></i> Télécharger les corrections (PDF)
+      </a>
+      <span class="pdf-info-text">Documents imprimables pour travail hors-ligne</span>
+    </div>
+
+    <div id="content">
+</div><div id="content">
+
+      <!-- CH 1 - BASES PYTHON -->
+      <section class="chapter" id="bases-python">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#306998;background:rgba(48,105,152,0.1);border-color:rgba(48,105,152,0.2)">PY.01</span>
+          <div class="chapter-title">Bases de Python<span>Variables, types, fonctions, listes, dictionnaires</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Variables et types</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Python — Variables</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm"># Python — pas de déclaration de type, pas de ";"</span>
+nom    = <span class="str">"Alice"</span>          <span class="cm"># str</span>
+age    = <span class="num">17</span>               <span class="cm"># int</span>
+note   = <span class="num">15.5</span>             <span class="cm"># float</span>
+actif  = <span class="kw">True</span>             <span class="cm"># bool</span>
+
+<span class="cm"># f-string (équivalent des template literals JS)</span>
+<span class="fn">print</span>(<span class="str">f"Bonjour </span>{nom}<span class="str">, tu as </span>{age}<span class="str"> ans"</span>)
+
+<span class="cm"># Types de collections</span>
+liste      = [<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>, <span class="num">4</span>]          <span class="cm"># list — modifiable</span>
+tuple_     = (<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>)              <span class="cm"># tuple — immuable</span>
+dico       = {<span class="str">"nom"</span>: <span class="str">"Alice"</span>, <span class="str">"age"</span>: <span class="num">17</span|}  <span class="cm"># dict</span>
+ensemble   = {<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span|}              <span class="cm"># set — valeurs uniques</span></pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Conditions et boucles</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Python — Conditions et boucles</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm"># if / elif / else (indentation obligatoire !)</span>
+<span class="kw">if</span> age >= <span class="num">18</span>:
+    <span class="fn">print</span>(<span class="str">"Majeur"</span>)
+<span class="kw">elif</span> age >= <span class="num">16</span>:
+    <span class="fn">print</span>(<span class="str">"Presque majeur"</span>)
+<span class="kw">else</span>:
+    <span class="fn">print</span>(<span class="str">"Mineur"</span>)
+
+<span class="cm"># for sur une liste</span>
+notes = [<span class="num">12</span>, <span class="num">15</span>, <span class="num">8</span>, <span class="num">18</span>]
+<span class="kw">for</span> note <span class="kw">in</span> notes:
+    <span class="fn">print</span>(<span class="str">f"Note : </span>{note}<span class="str">"</span>)
+
+<span class="cm"># range() — équivalent de for(i=0; i<5; i++)</span>
+<span class="kw">for</span> i <span class="kw">in</span> <span class="fn">range</span>(<span class="num">5</span>):
+    <span class="fn">print</span>(i)      <span class="cm"># 0, 1, 2, 3, 4</span>
+
+<span class="cm"># Compréhension de liste (puissant et pythonique)</span>
+doubles = [n * <span class="num">2</span> <span class="kw">for</span> n <span class="kw">in</span> notes <span class="kw">if</span> n >= <span class="num">10</span>]</pre>
+          </div>
+
+          <div class="callout callout-warn">
+            <span class="callout-icon"><i class="fas fa-exclamation-triangle"></i></span>
+            <div class="callout-body">
+              <strong>L'indentation</strong> (4 espaces) remplace les accolades en Python — c'est
+              <strong>obligatoire</strong> !
+              Le code indenté forme un bloc.
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Fonctions</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Python — Fonctions</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm"># Fonction simple</span>
+<span class="kw">def</span> <span class="fn">saluer</span>(prenom, titre=<span class="str">"M."</span>):
+    <span class="kw">return</span> <span class="str">f"Bonjour </span>{titre} {prenom}<span class="str">"</span>
+
+<span class="fn">print</span>(<span class="fn">saluer</span>(<span class="str">"Dupont"</span>))           <span class="cm"># "Bonjour M. Dupont"</span>
+<span class="fn">print</span>(<span class="fn">saluer</span>(<span class="str">"Martin"</span>, <span class="str">"Mme"</span>))    <span class="cm"># "Bonjour Mme Martin"</span>
+
+<span class="cm"># Fonction avec plusieurs valeurs retournées</span>
+<span class="kw">def</span> <span class="fn">stats</span>(liste):
+    <span class="kw">return</span> <span class="fn">min</span>(liste), <span class="fn">max</span>(liste), <span class="fn">sum</span>(liste)/<span class="fn">len</span>(liste)
+
+mini, maxi, moy = <span class="fn">stats</span>([<span class="num">8</span>, <span class="num">12</span>, <span class="num">15</span>, <span class="num">18</span>])
+
+<span class="cm"># Dictionnaires — très utilisés avec Flask/JSON</span>
+eleve = {<span class="str">"nom"</span>: <span class="str">"Alice"</span>, <span class="str">"note"</span>: <span class="num">15</span|}
+eleve[<span class="str">"ville"</span>] = <span class="str">"Paris"</span>     <span class="cm"># ajouter une clé</span>
+<span class="fn">print</span>(eleve.<span class="fn">get</span>(<span class="str">"email"</span>, <span class="str">"non renseigné"</span>))</pre>
+          </div>
+        </div>
+
+        <div class="retenir">
+          <div class="retenir-title">À retenir — Python</div>
+          <ul>
+            <li>L'<strong>indentation</strong> (4 espaces) remplace les accolades</li>
+            <li>Pas de <code>;</code> en fin de ligne, pas de <code>var/let/const</code></li>
+            <li>Les f-strings : <code>f"Bonjour {variable}"</code></li>
+            <li>Les dictionnaires Python = les objets JavaScript</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CH 2 - ENVIRONNEMENT VIRTUEL -->
+      <section class="chapter" id="venv">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#306998;background:rgba(48,105,152,0.1);border-color:rgba(48,105,152,0.2)">PY.02</span>
+          <div class="chapter-title">Environnement virtuel (.venv)<span>Isoler les dépendances Python</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Créer et activer un environnement</h3>
+          <p class="text">
+            Un <strong>environnement virtuel</strong> isole les bibliothèques Python du projet.
+            C'est la <strong>bonne pratique systématique</strong> avant tout projet Python.
+          </p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">CMD / PowerShell (Windows)</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm"># 1. Créer le dossier projet</span>
+<span class="fn">mkdir</span> mon_projet
+<span class="fn">cd</span> mon_projet
+
+<span class="cm"># 2. Créer l'environnement virtuel</span>
+<span class="fn">python</span> -m venv .venv
+
+<span class="cm"># 3. Activer l'environnement (PowerShell Windows)</span>
+.\.venv\Scripts\Activate.ps1
+
+<span class="cm"># 3b. Si erreur de politique d'exécution :</span>
+Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+
+<span class="cm"># 4. Installer Flask et les dépendances</span>
+<span class="fn">pip</span> install flask flask-cors pymysql
+
+<span class="cm"># 5. Sauvegarder les dépendances</span>
+<span class="fn">pip</span> freeze > requirements.txt
+
+<span class="cm"># 6. Réinstaller depuis requirements.txt</span>
+<span class="fn">pip</span> install -r requirements.txt
+
+<span class="cm"># Désactiver l'environnement</span>
+<span class="fn">deactivate</span></pre>
+          </div>
+
+          <div class="callout callout-warn">
+            <span class="callout-icon"><i class="fas fa-exclamation-triangle"></i></span>
+            <div class="callout-body">
+              <strong>Important :</strong> toujours voir <code>(.venv)</code> devant votre invite de commande
+              avant de lancer Flask. Sinon les bibliothèques ne seront pas trouvées.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 3 - FLASK API -->
+      <section class="chapter" id="flask-api">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#306998;background:rgba(48,105,152,0.1);border-color:rgba(48,105,152,0.2)">PY.03</span>
+          <div class="chapter-title">Flask — API REST<span>Routes, JSON, méthodes HTTP</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Premier serveur Flask</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Python — app.py</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="kw">from</span> flask <span class="kw">import</span> Flask, jsonify, request
+<span class="kw">from</span> flask_cors <span class="kw">import</span> CORS
+
+app = <span class="fn">Flask</span>(__name__)
+<span class="fn">CORS</span>(app)  <span class="cm"># Autorise les requêtes cross-origin (depuis le front)</span>
+
+<span class="cm"># ── Route GET simple ──────────────────────────</span>
+<span class="op">@</span>app.<span class="fn">route</span>(<span class="str">'/api/bonjour'</span>)
+<span class="kw">def</span> <span class="fn">bonjour</span>():
+    <span class="kw">return</span> <span class="fn">jsonify</span>({<span class="str">"message"</span>: <span class="str">"Bonjour depuis Flask !"</span>})
+
+<span class="cm"># ── Route avec paramètre d'URL ────────────────</span>
+<span class="op">@</span>app.<span class="fn">route</span>(<span class="str">'/api/utilisateur/&lt;int:id&gt;'</span>)
+<span class="kw">def</span> <span class="fn">get_user</span>(id):
+    <span class="kw">return</span> <span class="fn">jsonify</span>({<span class="str">"id"</span>: id, <span class="str">"nom"</span>: <span class="str">"Alice"</span>})
+
+<span class="cm"># ── Route POST — recevoir des données JSON ────</span>
+<span class="op">@</span>app.<span class="fn">route</span>(<span class="str">'/api/utilisateur'</span>, methods=[<span class="str">'POST'</span>])
+<span class="kw">def</span> <span class="fn">create_user</span>():
+    data = request.<span class="fn">get_json</span>()     <span class="cm"># lire le corps JSON</span>
+    nom  = data.<span class="fn">get</span>(<span class="str">'nom'</span>, <span class="str">''</span>)
+    <span class="kw">if not</span> nom:
+        <span class="kw">return</span> <span class="fn">jsonify</span>({<span class="str">"erreur"</span>: <span class="str">"nom requis"</span>}), <span class="num">400</span>
+    <span class="kw">return</span> <span class="fn">jsonify</span>({<span class="str">"message"</span>: <span class="str">f"Utilisateur </span>{nom}<span class="str"> créé"</span>}), <span class="num">201</span>
+
+<span class="kw">if</span> __name__ == <span class="str">'__main__'</span>:
+    <span class="cm"># host='0.0.0.0' = accessible sur le réseau local !</span>
+    app.<span class="fn">run</span>(debug=<span class="kw">True</span>, host=<span class="str">'0.0.0.0'</span>, port=<span class="num">5000</span>)</pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Les méthodes HTTP</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Méthode</th>
+                <th>Usage</th>
+                <th>Exemple</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>GET</code></td>
+                <td>Lire / récupérer des données</td>
+                <td>GET /api/produits</td>
+              </tr>
+              <tr>
+                <td><code>POST</code></td>
+                <td>Créer une ressource</td>
+                <td>POST /api/produits</td>
+              </tr>
+              <tr>
+                <td><code>PUT</code></td>
+                <td>Modifier complètement</td>
+                <td>PUT /api/produits/5</td>
+              </tr>
+              <tr>
+                <td><code>PATCH</code></td>
+                <td>Modifier partiellement</td>
+                <td>PATCH /api/produits/5</td>
+              </tr>
+              <tr>
+                <td><code>DELETE</code></td>
+                <td>Supprimer</td>
+                <td>DELETE /api/produits/5</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Codes HTTP courants</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Code</th>
+                <th>Signification</th>
+                <th>Usage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>200</code></td>
+                <td>OK</td>
+                <td>Requête réussie</td>
+              </tr>
+              <tr>
+                <td><code>201</code></td>
+                <td>Created</td>
+                <td>Ressource créée (POST)</td>
+              </tr>
+              <tr>
+                <td><code>400</code></td>
+                <td>Bad Request</td>
+                <td>Données invalides</td>
+              </tr>
+              <tr>
+                <td><code>401</code></td>
+                <td>Unauthorized</td>
+                <td>Non authentifié</td>
+              </tr>
+              <tr>
+                <td><code>404</code></td>
+                <td>Not Found</td>
+                <td>Ressource introuvable</td>
+              </tr>
+              <tr>
+                <td><code>500</code></td>
+                <td>Internal Server Error</td>
+                <td>Erreur serveur</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="retenir">
+          <div class="retenir-title">À retenir — Flask</div>
+          <ul>
+            <li>Toujours activer <code>.venv</code> avant de travailler</li>
+            <li><code>@app.route('/chemin')</code> définit une URL de l'API</li>
+            <li><code>jsonify()</code> convertit un dict Python en JSON HTTP</li>
+            <li><code>host='0.0.0.0'</code> rend l'API accessible sur le réseau local</li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="page-nav">
+        <a href="javascript.html">
+          <span class="page-nav-label">← Précédent</span>
+          <span class="page-nav-title"><i class="fab fa-js"></i> JavaScript</span>
+        </a>
+        <a href="mysql.html" class="next">
+          <span class="page-nav-label">Suivant →</span>
+          <span class="page-nav-title"><i class="fas fa-database"></i> MySQL</span>
+        </a>
+      </div>
+
+    </div>
+  
+      <!-- EXERCICES & TP PYTHON FLASK -->
+      <section class="chapter" id="exercices-python">
+        <div class="chapter-header">
+          <span class="chapter-num" style="background:linear-gradient(135deg,#3776ab,#ffd43b);">EX</span>
+          <div class="chapter-title">Exercices &amp; Travaux Pratiques<span>Python algorithmique, Flask web et API REST</span></div>
+        </div>
+        <div class="section">
+          <p class="section-intro">Ces exercices progressifs vous permettront de maîtriser Python et le framework Flask, depuis les bases du langage jusqu'à la création d'API REST complètes.</p>
+
+          <div class="callout callout-tip">
+            <span class="callout-icon">🐍</span>
+            <div class="callout-body"><strong>Environnement :</strong> Travaillez toujours dans un environnement virtuel (<code>python -m venv .venv</code>). Activez-le avant d'installer les dépendances : <code>source .venv/bin/activate</code> (Linux/Mac) ou <code>.venv\Scripts\activate</code> (Windows).</div>
+          </div>
+
+          <p class="section-exo-title"><i class="fas fa-pencil-alt"></i> Exercices de compréhension</p>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 1 — Structures Python fondamentales <span class="niveau-badge niveau-facile">Facile</span></h4>
+            <ol>
+              <li>Créez un programme qui lit un fichier texte (<code>notes.txt</code>) contenant des notes séparées par des sauts de ligne, calcule la moyenne, la note min et la note max, puis écrit les résultats dans <code>rapport.txt</code>.</li>
+              <li>Réécrivez le programme précédent en utilisant une <em>list comprehension</em> pour convertir les lignes en nombres.</li>
+              <li>Utilisez un dictionnaire pour compter la fréquence de chaque mot dans un texte donné (sans utiliser <code>Counter</code>). Affichez les 10 mots les plus fréquents.</li>
+              <li>Créez un décorateur <code>@timer</code> qui mesure et affiche le temps d'exécution de n'importe quelle fonction.</li>
+            </ol>
+          </div>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 2 — Flask : routes et templates <span class="niveau-badge niveau-moyen">Moyen</span></h4>
+            <ol>
+              <li>Créez une application Flask avec 4 routes : <code>/</code> (accueil), <code>/about</code>, <code>/contact</code>, <code>/articles/&lt;int:id&gt;</code> (article dynamique).</li>
+              <li>Utilisez Jinja2 pour créer un template <code>base.html</code> avec header/nav/footer, et les autres templates héritent avec <code>{% extends %}</code>.</li>
+              <li>Passez des données Python (listes, dictionnaires) aux templates et affichez-les avec <code>{% for %}</code> et <code>{% if %}</code>.</li>
+              <li>Ajoutez des filtres Jinja2 personnalisés : <code>| truncate(100)</code>, <code>| date_format</code>.</li>
+            </ol>
+          </div>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 3 — Formulaires Flask &amp; Validation <span class="niveau-badge niveau-moyen">Moyen</span></h4>
+            <ol>
+              <li>Créez un formulaire d'inscription avec Flask-WTF : champs nom, email, mot de passe (avec confirmation), validation côté serveur.</li>
+              <li>Utilisez <code>flash()</code> pour afficher les messages de succès et d'erreur.</li>
+              <li>Gérez l'upload de fichier (photo de profil) : restriction sur l'extension (jpg, png, gif), renommage sécurisé avec <code>secure_filename</code>, sauvegarde dans un dossier <code>uploads/</code>.</li>
+              <li>Implémentez la protection CSRF (Cross-Site Request Forgery) avec le token WTForms.</li>
+            </ol>
+          </div>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 4 — API REST Flask + JSON <span class="niveau-badge niveau-avance">Avancé</span></h4>
+            <ol>
+              <li>Créez une API REST complète pour gérer une liste de livres : <code>GET /api/books</code> (liste), <code>GET /api/books/&lt;id&gt;</code> (détail), <code>POST /api/books</code> (créer), <code>PUT /api/books/&lt;id&gt;</code> (modifier), <code>DELETE /api/books/&lt;id&gt;</code> (supprimer).</li>
+              <li>Stockez les données en JSON dans un fichier <code>data.json</code> (pas de base de données).</li>
+              <li>Ajoutez l'authentification par token API dans le header <code>Authorization: Bearer TOKEN</code>.</li>
+              <li>Documentez l'API avec des docstrings et générez la documentation avec Flask-RESTX ou Swagger.</li>
+            </ol>
+          </div>
+
+          <p class="section-exo-title"><i class="fas fa-flask"></i> Travaux Pratiques</p>
+
+          <div class="tp-block">
+            <h4>🔬 TP 1 — Blog dynamique avec Flask + SQLite <span class="niveau-badge niveau-moyen">Moyen — 3h</span></h4>
+            <p style="font-size:14px;color:var(--muted);margin-bottom:12px;"><strong>Objectif :</strong> Créer un blog fonctionnel avec Flask, SQLite via SQLAlchemy, et authentification.</p>
+            <ol class="tp-etapes">
+              <li><strong>Modèles SQLAlchemy :</strong> <code>User</code> (id, email, password_hash, created_at) et <code>Post</code> (id, title, slug, content, published, user_id, created_at).</li>
+              <li><strong>Authentification :</strong> Inscription, connexion, déconnexion avec <code>Flask-Login</code>. Hash des mots de passe avec <code>werkzeug.security</code>.</li>
+              <li><strong>CRUD articles :</strong> Créer, lire, modifier, supprimer des articles. Seul l'auteur peut modifier/supprimer ses articles.</li>
+              <li><strong>Slugs :</strong> Générer automatiquement des slugs d'URL depuis le titre (ex: "Mon article" → "mon-article").</li>
+              <li><strong>Pagination :</strong> Afficher les articles par pages de 10 avec Flask-SQLAlchemy <code>.paginate()</code>.</li>
+              <li><strong>Rendu :</strong> Application déployée localement + code sur GitHub avec README d'installation.</li>
+            </ol>
+          </div>
+
+          <div class="tp-block">
+            <h4>🔬 TP 2 — Scraper web &amp; Tableau de bord <span class="niveau-badge niveau-avance">Avancé — 3h</span></h4>
+            <p style="font-size:14px;color:var(--muted);margin-bottom:12px;"><strong>Objectif :</strong> Collecter des données web automatiquement et les visualiser dans un dashboard Flask.</p>
+            <ol class="tp-etapes">
+              <li><strong>Scraping :</strong> Utiliser <code>requests</code> + <code>BeautifulSoup4</code> pour scraper les titres et prix d'une boutique demo (<code>books.toscrape.com</code>).</li>
+              <li><strong>Stockage :</strong> Sauvegarder les données dans une base SQLite. Ajouter un timestamp et éviter les doublons.</li>
+              <li><strong>Dashboard Flask :</strong> Page principale avec statistiques (nombre de livres, prix moyen, min, max par catégorie).</li>
+              <li><strong>Graphiques :</strong> Intégrer Chart.js via l'API JSON Flask pour afficher la distribution des prix.</li>
+              <li><strong>Automatisation :</strong> Lancer le scraping périodiquement avec <code>APScheduler</code>. Afficher la date du dernier scraping.</li>
+            </ol>
+          </div>
+
+          <div class="quiz-block">
+            <h4>❓ Quiz de révision — Python &amp; Flask</h4>
+            <ol>
+              <li>Quelle est la différence entre une liste et un tuple en Python ? Dans quel cas utiliser l'un ou l'autre ?</li>
+              <li>Expliquez le GIL (Global Interpreter Lock). Quand utiliser <code>threading</code> vs <code>multiprocessing</code> ?</li>
+              <li>Qu'est-ce qu'un générateur Python ? Quelle est la différence entre <code>yield</code> et <code>return</code> ?</li>
+              <li>Dans Flask, quelle est la différence entre <code>session</code> et <code>g</code> ?</li>
+              <li>Pourquoi ne faut-il jamais utiliser <code>app.run(debug=True)</code> en production ?</li>
+              <li>Expliquez le pattern MVC. Comment Flask l'implémente-t-il avec les Blueprints ?</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-info">
+        <img src="assets/logo.png" alt="Logo" class="footer-logo">
+        <div class="footer-text">
+          <div class="footer-name">Adriel TATCHUM SIMO</div>
+          <div class="footer-job">Enseignant CIEL • Formateur Web & Électronique</div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Accueil</a>
+        <a href="html-complet.html">HTML</a>
+        <a href="css-complet.html">CSS</a>
+        <a href="javascript.html">JavaScript</a>
+      </div>
+      <div class="footer-copy">© 2026 Cours CIEL — Tous droits réservés</div>
+    </div>
+  </footer>
+
+  <button id="back-top" aria-label="Retour en haut">↑</button>
+
+  <script src="script.js"></script>
+  <script>
+    function toggleReponse(btn) {
+      const content = btn.nextElementSibling;
+      const isVisible = content.style.display === 'block';
+      content.style.display = isVisible ? 'none' : 'block';
+      btn.innerHTML = isVisible
+        ? '<i class="fas fa-eye"></i> Voir la réponse'
+        : '<i class="fas fa-eye-slash"></i> Masquer la réponse';
+      btn.style.background   = isVisible ? 'rgba(240,180,41,0.1)'  : 'rgba(0,117,143,0.15)';
+      btn.style.borderColor  = isVisible ? 'rgba(240,180,41,0.35)' : 'rgba(0,117,143,0.4)';
+      btn.style.color        = isVisible ? 'var(--accent)' : '#00b4d8';
+    }
+  </script>
+</body>
+
+</html>

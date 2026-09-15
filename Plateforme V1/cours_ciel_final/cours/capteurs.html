@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capteurs & Actionneurs — Cours CIEL</title>
+  <meta name="description" content="Cours complet sur les capteurs (température, distance, lumière) et actionneurs (moteurs, servos, relais).">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="shared-styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+
+<body>
+
+  <div id="scroll-indicator"></div>
+  <button class="mobile-menu-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+
+  <aside id="sidebar">
+    <div class="sidebar-header">
+      <img src="assets/logo.png" alt="Logo CIEL" class="sidebar-logo">
+      <div class="sidebar-title">Cours CIEL<span>Adriel TATCHUM SIMO • Formateur</span></div>
+    </div>
+    <div class="search-container" style="padding: 12px 16px;">
+      <input type="text" id="searchInput" placeholder="Rechercher un cours..."
+        style="width:100%;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:13px;">
+    </div>
+    <div class="progress-container">
+      <div class="progress-label">Progression du cours</div>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 0%"></div>
+      </div>
+    </div>
+    <nav>
+      <div class="nav-group">
+        <div class="nav-group-title">Accueil</div>
+        <a href="index.html"><i class="fas fa-home"></i> Introduction</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 1 — Développement Web</div>
+        <a href="html-complet.html"><i class="fab fa-html5"></i> HTML Complet</a>
+        <a href="css-complet.html"><i class="fab fa-css3-alt"></i> CSS Complet</a>
+        <a href="javascript.html"><i class="fab fa-js"></i> JavaScript</a>
+        <a href="python-flask.html"><i class="fab fa-python"></i> Python & Flask</a>
+        <a href="mysql.html"><i class="fas fa-database"></i> MySQL</a>
+        <a href="projet-fullstack.html"><i class="fas fa-project-diagram"></i> Projet Full Stack</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 2 — Électronique</div>
+        <a href="electronique-bases.html"><i class="fas fa-bolt"></i> Bases Électronique</a>
+        <a href="composants.html"><i class="fas fa-microchip"></i> Composants</a>
+        <a href="arduino.html"><i class="fas fa-robot"></i> Arduino & ESP32</a>
+        <a href="raspberry-pi.html"><i class="fab fa-raspberry-pi"></i> Raspberry Pi</a>
+        <a href="capteurs.html"><i class="fas fa-thermometer-half"></i> Capteurs & Actionneurs</a>
+        <a href="maintenance-electronique.html"><i class="fas fa-tools"></i> Maintenance Électronique</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 3 — Réseaux & Sécurité</div>
+        <a href="reseau-informatique.html"><i class="fas fa-network-wired"></i> Réseau Informatique</a>
+        <a href="cybersecurite.html"><i class="fas fa-shield-alt"></i> Cybersécurité</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Outils & Workflow</div>
+        <a href="vscode.html"><i class="fas fa-code"></i> VS Code</a>
+        <a href="git.html"><i class="fab fa-git-alt"></i> Git & GitHub</a>
+        <a href="venv.html"><i class="fas fa-cube"></i> .venv Python</a>
+      </div>
+    </nav>
+    <div class="theme-toggle">
+      <button class="theme-btn"><i class="fas fa-sun"></i><span>Mode clair</span></button>
+    </div>
+  </aside>
+
+  <main id="main">
+<section id="hero">
+      <div class="hero-tag">Électronique IoT</div>
+      <h1 class="hero-title">Capteurs &<br><em>Actionneurs</em></h1>
+      <p class="hero-desc">
+        Découvrez les capteurs (température, distance, lumière, mouvement) et les actionneurs (moteurs, servomoteurs,
+        relais)
+        pour créer des systèmes intelligents et connectés.
+      </p>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-val">7</span><span class="stat-label">Chapitres</span></div>
+        <div class="stat"><span class="stat-val">15+</span><span class="stat-label">Exemples</span></div>
+        <div class="stat"><span class="stat-val">~1h45</span><span class="stat-label">De lecture</span></div>
+      </div>
+    </section>
+
+
+    <!-- ══════ SECTION VIDÉO PÉDAGOGIQUE ══════ -->
+    <div class="video-ressource">
+      <div class="video-section-title"><i class="fab fa-youtube"></i> Vidéo pédagogique recommandée</div>
+      <div class="video-card">
+        <a href="https://www.youtube.com/watch?v=vHpq_VWHN6g" target="_blank" class="video-thumbnail">
+          <div class="video-thumbnail-bg">
+            <i class="fab fa-youtube video-yt-icon"></i>
+            <span class="video-yt-text">YOUTUBE</span>
+          </div>
+          <div class="video-play-overlay"><i class="fas fa-play"></i></div>
+        </a>
+        <div class="video-info">
+          <span class="video-badge"><i class="fas fa-clock"></i> 1h45</span>
+          <div class="video-titre">Capteurs et Actionneurs Arduino</div>
+          <div class="video-chaine">Chaîne : Électro-Bidouilleur</div>
+          <div class="video-desc">DHT11, HC-SR04, servomoteurs, relais et intégration avec Arduino.</div>
+          <a href="https://www.youtube.com/watch?v=vHpq_VWHN6g" target="_blank" class="video-watch-btn">
+            <i class="fab fa-youtube"></i> Voir sur YouTube
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════ TÉLÉCHARGEMENTS PDF ══════ -->
+    <div class="pdf-download-zone">
+      <a href="tp-capteurs.pdf" download class="pdf-download-btn">
+        <i class="fas fa-file-pdf"></i> Télécharger le TP (PDF)
+      </a>
+      <a href="correction-arduino.pdf" download class="correction-download-btn">
+        <i class="fas fa-check-circle"></i> Télécharger les corrections (PDF)
+      </a>
+      <span class="pdf-info-text">Documents imprimables pour travail hors-ligne</span>
+    </div>
+
+    <div id="content">
+</div><div id="content">
+
+      <!-- CH 1 - INTRODUCTION -->
+      <section class="chapter" id="intro">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:var(--accent3);background:rgba(227,76,38,0.1);border-color:rgba(227,76,38,0.2)">CAPT.01</span>
+          <div class="chapter-title">Introduction<span>Capteurs vs Actionneurs — Systèmes IoT</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Qu'est-ce qu'un capteur ?</h3>
+          <p class="text">
+            Un <strong>capteur</strong> est un composant électronique qui mesure une grandeur physique
+            (température, lumière, pression, distance, etc.) et la convertit en signal électrique exploitable
+            par un microcontrôleur (Arduino, ESP32, Raspberry Pi).
+          </p>
+
+          <div class="callout callout-info">
+            <span class="callout-icon"><i class="fas fa-info-circle"></i></span>
+            <div class="callout-body">
+              <strong>Exemple :</strong> Un capteur de température DHT11 mesure la température ambiante et envoie
+              une valeur numérique (ex: 23°C) à l'Arduino via une broche GPIO.
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Qu'est-ce qu'un actionneur ?</h3>
+          <p class="text">
+            Un <strong>actionneur</strong> est un composant qui effectue une <strong>action physique</strong>
+            (mouvement, son, lumière) en réponse à un signal électrique envoyé par le microcontrôleur.
+          </p>
+
+          <div class="cards-grid">
+            <div class="card">
+              <div class="card-type" style="color:var(--accent3)"><i class="fas fa-thermometer-half"></i> CAPTEURS</div>
+              <div class="card-desc">Mesure → Signal électrique</div>
+              <div class="card-ex">DHT11, HC-SR04, LDR, PIR</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent2)"><i class="fas fa-cogs"></i> ACTIONNEURS</div>
+              <div class="card-desc">Signal électrique → Action</div>
+              <div class="card-ex">Moteurs, servos, relais, buzzers</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="retenir">
+          <div class="retenir-title">Points clés</div>
+          <ul>
+            <li>Les <strong>capteurs</strong> collectent des données (INPUT)</li>
+            <li>Les <strong>actionneurs</strong> effectuent des actions (OUTPUT)</li>
+            <li>Un système IoT combine les deux pour automatiser des tâches</li>
+            <li>Exemples : thermostat intelligent, éclairage automatique, robot éviteur d'obstacles</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CH 2 - CAPTEURS DE TEMPÉRATURE -->
+      <section class="chapter" id="temperature">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:var(--accent3);background:rgba(227,76,38,0.1);border-color:rgba(227,76,38,0.2)">CAPT.02</span>
+          <div class="chapter-title">Capteur de température<span>DHT11, DHT22, DS18B20, LM35</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">DHT11 / DHT22 (Température + Humidité)</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Capteur</th>
+                <th>Plage température</th>
+                <th>Précision</th>
+                <th>Prix</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>DHT11</td>
+                <td>0-50°C</td>
+                <td>±2°C</td>
+                <td>~2€</td>
+              </tr>
+              <tr>
+                <td>DHT22</td>
+                <td>-40 à 80°C</td>
+                <td>±0.5°C</td>
+                <td>~5€</td>
+              </tr>
+              <tr>
+                <td>DS18B20</td>
+                <td>-55 à 125°C</td>
+                <td>±0.5°C</td>
+                <td>~3€</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Code Arduino : DHT11</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Arduino C++</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="cm">// Installer : DHT sensor library by Adafruit</span>
+<span class="kw">#include</span> &lt;DHT.h&gt;
+
+<span class="kw">#define</span> DHTPIN <span class="num">2</span>      <span class="cm">// Broche DATA du DHT11</span>
+<span class="kw">#define</span> DHTTYPE DHT11
+
+DHT dht(DHTPIN, DHTTYPE);
+
+<span class="kw">void</span> <span class="fn">setup</span>() {
+  Serial.<span class="fn">begin</span>(<span class="num">9600</span>);
+  dht.<span class="fn">begin</span>();
+}
+
+<span class="kw">void</span> <span class="fn">loop</span>() {
+  <span class="kw">float</span> temp = dht.<span class="fn">readTemperature</span>();
+  <span class="kw">float</span> humidity = dht.<span class="fn">readHumidity</span>();
+  
+  <span class="kw">if</span> (<span class="fn">isnan</span>(temp) || <span class="fn">isnan</span>(humidity)) {
+    Serial.<span class="fn">println</span>(<span class="str">"Erreur capteur"</span>);
+    <span class="kw">return</span>;
+  }
+  
+  Serial.<span class="fn">print</span>(<span class="str">"Temp: "</span>);
+  Serial.<span class="fn">print</span>(temp);
+  Serial.<span class="fn">println</span>(<span class="str">" °C"</span>);
+  
+  Serial.<span class="fn">print</span>(<span class="str">"Humidité: "</span>);
+  Serial.<span class="fn">print</span>(humidity);
+  Serial.<span class="fn">println</span>(<span class="str">" %"</span>);
+  
+  <span class="fn">delay</span>(<span class="num">2000</span>);
+}</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 3 - CAPTEUR DE DISTANCE -->
+      <section class="chapter" id="distance">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:var(--accent3);background:rgba(227,76,38,0.1);border-color:rgba(227,76,38,0.2)">CAPT.03</span>
+          <div class="chapter-title">Capteur de distance<span>HC-SR04 Ultrason</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">HC-SR04 : Fonctionnement</h3>
+          <p class="text">
+            Le capteur <strong>HC-SR04</strong> utilise des <strong>ultrasons</strong> pour mesurer la distance.
+            Il émet une impulsion sonore et calcule le temps de retour de l'écho.
+          </p>
+
+          <div class="formula-box">
+            <div class="formula">Distance (cm) = (Temps × 340) / 2 / 10000</div>
+            <div class="formula-desc">340 m/s = vitesse du son • Division par 2 (aller-retour)</div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Code Arduino : HC-SR04</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Arduino C++</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="kw">const int</span> TRIG_PIN = <span class="num">9</span>;
+<span class="kw">const int</span> ECHO_PIN = <span class="num">10</span>;
+
+<span class="kw">void</span> <span class="fn">setup</span>() {
+  Serial.<span class="fn">begin</span>(<span class="num">9600</span>);
+  <span class="fn">pinMode</span>(TRIG_PIN, OUTPUT);
+  <span class="fn">pinMode</span>(ECHO_PIN, INPUT);
+}
+
+<span class="kw">void</span> <span class="fn">loop</span>() {
+  <span class="cm">// Envoyer une impulsion de 10µs</span>
+  <span class="fn">digitalWrite</span>(TRIG_PIN, LOW);
+  <span class="fn">delayMicroseconds</span>(<span class="num">2</span>);
+  <span class="fn">digitalWrite</span>(TRIG_PIN, HIGH);
+  <span class="fn">delayMicroseconds</span>(<span class="num">10</span>);
+  <span class="fn">digitalWrite</span>(TRIG_PIN, LOW);
+  
+  <span class="cm">// Mesurer le temps de retour</span>
+  <span class="kw">long</span> duration = <span class="fn">pulseIn</span>(ECHO_PIN, HIGH);
+  
+  <span class="cm">// Calculer la distance en cm</span>
+  <span class="kw">float</span> distance = (duration * <span class="num">0.034</span>) / <span class="num">2</span>;
+  
+  Serial.<span class="fn">print</span>(<span class="str">"Distance: "</span>);
+  Serial.<span class="fn">print</span>(distance);
+  Serial.<span class="fn">println</span>(<span class="str">" cm"</span>);
+  
+  <span class="fn">delay</span>(<span class="num">500</span>);
+}</pre>
+          </div>
+        </div>
+
+        <div class="callout callout-tip">
+          <span class="callout-icon"><i class="fas fa-lightbulb"></i></span>
+          <div class="callout-body">
+            <strong>Application :</strong> Robot éviteur d'obstacles, parking automatique, mesure de niveau d'eau.
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 4 - CAPTEUR DE LUMIÈRE -->
+      <section class="chapter" id="light">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:var(--accent3);background:rgba(227,76,38,0.1);border-color:rgba(227,76,38,0.2)">CAPT.04</span>
+          <div class="chapter-title">Capteur de lumière<span>LDR (Light Dependent Resistor)</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">LDR : Photorésistance</h3>
+          <p class="text">
+            Une <strong>LDR</strong> (photorésistance) est un composant dont la résistance varie selon l'intensité
+            lumineuse :
+          </p>
+          <ul style="color: var(--text); margin-left: 20px; margin-bottom: 16px;">
+            <li><strong>Forte luminosité</strong> → Résistance faible (~1 kΩ)</li>
+            <li><strong>Obscurité</strong> → Résistance élevée (~1 MΩ)</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Code Arduino : LDR</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Arduino C++</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="kw">const int</span> LDR_PIN = A0;
+<span class="kw">const int</span> LED_PIN = <span class="num">13</span>;
+
+<span class="kw">void</span> <span class="fn">setup</span>() {
+  Serial.<span class="fn">begin</span>(<span class="num">9600</span>);
+  <span class="fn">pinMode</span>(LED_PIN, OUTPUT);
+}
+
+<span class="kw">void</span> <span class="fn">loop</span>() {
+  <span class="kw">int</span> lightValue = <span class="fn">analogRead</span>(LDR_PIN);  <span class="cm">// 0-1023</span>
+  
+  Serial.<span class="fn">print</span>(<span class="str">"Lumière: "</span>);
+  Serial.<span class="fn">println</span>(lightValue);
+  
+  <span class="cm">// Allumer la LED si faible luminosité</span>
+  <span class="kw">if</span> (lightValue &lt; <span class="num">300</span>) {
+    <span class="fn">digitalWrite</span>(LED_PIN, HIGH);
+  } <span class="kw">else</span> {
+    <span class="fn">digitalWrite</span>(LED_PIN, LOW);
+  }
+  
+  <span class="fn">delay</span>(<span class="num">200</span>);
+}</pre>
+          </div>
+        </div>
+
+        <div class="callout callout-info">
+          <span class="callout-icon"><i class="fas fa-info-circle"></i></span>
+          <div class="callout-body">
+            <strong>Application :</strong> Éclairage automatique, suivi solaire, détection jour/nuit.
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 5 - MOTEURS -->
+      <section class="chapter" id="motors">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:var(--accent2);background:rgba(78,205,196,0.1);border-color:rgba(78,205,196,0.2)">ACT.01</span>
+          <div class="chapter-title">Moteurs<span>Moteur DC, moteur pas-à-pas, servomoteur</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Types de moteurs</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Usage</th>
+                <th>Contrôle</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Moteur DC</strong></td>
+                <td>Rotation continue (roues, ventilateurs)</td>
+                <td>PWM + Pont H (L298N)</td>
+              </tr>
+              <tr>
+                <td><strong>Servomoteur</strong></td>
+                <td>Rotation précise (-90° à +90°)</td>
+                <td>Signal PWM</td>
+              </tr>
+              <tr>
+                <td><strong>Moteur pas-à-pas</strong></td>
+                <td>Rotation ultra-précise (imprimante 3D)</td>
+                <td>Driver A4988</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Code Arduino : Servomoteur</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Arduino C++</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="kw">#include</span> &lt;Servo.h&gt;
+
+Servo monServo;
+
+<span class="kw">void</span> <span class="fn">setup</span>() {
+  monServo.<span class="fn">attach</span>(<span class="num">9</span>);  <span class="cm">// Broche 9</span>
+}
+
+<span class="kw">void</span> <span class="fn">loop</span>() {
+  monServo.<span class="fn">write</span>(<span class="num">0</span>);     <span class="cm">// Position 0°</span>
+  <span class="fn">delay</span>(<span class="num">1000</span>);
+  
+  monServo.<span class="fn">write</span>(<span class="num">90</span>);    <span class="cm">// Position 90°</span>
+  <span class="fn">delay</span>(<span class="num">1000</span>);
+  
+  monServo.<span class="fn">write</span>(<span class="num">180</span>);   <span class="cm">// Position 180°</span>
+  <span class="fn">delay</span>(<span class="num">1000</span>);
+}</pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Code Arduino : Moteur DC avec L298N</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Arduino C++</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="cm">// Connexions L298N</span>
+<span class="kw">const int</span> ENA = <span class="num">9</span>;   <span class="cm">// PWM (vitesse)</span>
+<span class="kw">const int</span> IN1 = <span class="num">7</span>;   <span class="cm">// Direction</span>
+<span class="kw">const int</span> IN2 = <span class="num">6</span>;
+
+<span class="kw">void</span> <span class="fn">setup</span>() {
+  <span class="fn">pinMode</span>(ENA, OUTPUT);
+  <span class="fn">pinMode</span>(IN1, OUTPUT);
+  <span class="fn">pinMode</span>(IN2, OUTPUT);
+}
+
+<span class="kw">void</span> <span class="fn">loop</span>() {
+  <span class="cm">// Avancer à 50% de vitesse</span>
+  <span class="fn">digitalWrite</span>(IN1, HIGH);
+  <span class="fn">digitalWrite</span>(IN2, LOW);
+  <span class="fn">analogWrite</span>(ENA, <span class="num">128</span>);  <span class="cm">// 50% = 128/255</span>
+  <span class="fn">delay</span>(<span class="num">2000</span>);
+  
+  <span class="cm">// Arrêter</span>
+  <span class="fn">analogWrite</span>(ENA, <span class="num">0</span>);
+  <span class="fn">delay</span>(<span class="num">1000</span>);
+  
+  <span class="cm">// Reculer</span>
+  <span class="fn">digitalWrite</span>(IN1, LOW);
+  <span class="fn">digitalWrite</span>(IN2, HIGH);
+  <span class="fn">analogWrite</span>(ENA, <span class="num">128</span>);
+  <span class="fn">delay</span>(<span class="num">2000</span>);
+}</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 6 - RELAIS -->
+      <section class="chapter" id="relay">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:var(--accent2);background:rgba(78,205,196,0.1);border-color:rgba(78,205,196,0.2)">ACT.02</span>
+          <div class="chapter-title">Relais<span>Contrôle d'appareils haute tension (230V)</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Qu'est-ce qu'un relais ?</h3>
+          <p class="text">
+            Un <strong>relais</strong> est un interrupteur électromécanique contrôlé par un signal électrique faible (5V
+            Arduino)
+            qui permet de contrôler des charges haute tension (230V lampe, ventilateur, etc.).
+          </p>
+
+          <div class="callout callout-warn">
+            <span class="callout-icon"><i class="fas fa-exclamation-triangle"></i></span>
+            <div class="callout-body">
+              <strong>Sécurité :</strong> Manipuler le 230V est <strong>dangereux</strong>. Toujours débrancher avant
+              câblage.
+              Si vous n'êtes pas sûr, demandez l'aide d'un électricien.
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Code Arduino : Relais</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Arduino C++</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="kw">const int</span> RELAY_PIN = <span class="num">8</span>;
+
+<span class="kw">void</span> <span class="fn">setup</span>() {
+  <span class="fn">pinMode</span>(RELAY_PIN, OUTPUT);
+}
+
+<span class="kw">void</span> <span class="fn">loop</span>() {
+  <span class="cm">// Allumer l'appareil (fermer le relais)</span>
+  <span class="fn">digitalWrite</span>(RELAY_PIN, HIGH);
+  <span class="fn">delay</span>(<span class="num">5000</span>);
+  
+  <span class="cm">// Éteindre l'appareil (ouvrir le relais)</span>
+  <span class="fn">digitalWrite</span>(RELAY_PIN, LOW);
+  <span class="fn">delay</span>(<span class="num">5000</span>);
+}</pre>
+          </div>
+        </div>
+
+        <div class="callout callout-tip">
+          <span class="callout-icon"><i class="fas fa-lightbulb"></i></span>
+          <div class="callout-body">
+            <strong>Application :</strong> Domotique (allumer/éteindre lampe, cafetière, chauffage via smartphone).
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 7 - PROJET COMPLET -->
+      <section class="chapter" id="project">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:var(--accent);background:rgba(240,180,41,0.1);border-color:rgba(240,180,41,0.2)">PROJ</span>
+          <div class="chapter-title">Projet complet<span>Système d'arrosage automatique</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Description du projet</h3>
+          <p class="text">
+            Un système d'<strong>arrosage automatique</strong> qui mesure l'humidité du sol et active une pompe
+            si le sol est trop sec. Utilise un capteur d'humidité du sol et un relais.
+          </p>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Code Arduino</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Arduino C++</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="kw">const int</span> SOIL_PIN = A0;      <span class="cm">// Capteur humidité sol</span>
+<span class="kw">const int</span> PUMP_RELAY = <span class="num">8</span>;   <span class="cm">// Relais pompe</span>
+<span class="kw">const int</span> THRESHOLD = <span class="num">500</span>;   <span class="cm">// Seuil sec/humide</span>
+
+<span class="kw">void</span> <span class="fn">setup</span>() {
+  Serial.<span class="fn">begin</span>(<span class="num">9600</span>);
+  <span class="fn">pinMode</span>(PUMP_RELAY, OUTPUT);
+  <span class="fn">digitalWrite</span>(PUMP_RELAY, LOW);  <span class="cm">// Pompe éteinte</span>
+}
+
+<span class="kw">void</span> <span class="fn">loop</span>() {
+  <span class="kw">int</span> soilMoisture = <span class="fn">analogRead</span>(SOIL_PIN);
+  
+  Serial.<span class="fn">print</span>(<span class="str">"Humidité sol: "</span>);
+  Serial.<span class="fn">println</span>(soilMoisture);
+  
+  <span class="kw">if</span> (soilMoisture &lt; THRESHOLD) {
+    Serial.<span class="fn">println</span>(<span class="str">"Sol sec → Pompe ON"</span>);
+    <span class="fn">digitalWrite</span>(PUMP_RELAY, HIGH);
+    <span class="fn">delay</span>(<span class="num">5000</span>);  <span class="cm">// Arroser 5 secondes</span>
+    <span class="fn">digitalWrite</span>(PUMP_RELAY, LOW);
+  } <span class="kw">else</span> {
+    Serial.<span class="fn">println</span>(<span class="str">"Sol humide → Pompe OFF"</span>);
+  }
+  
+  <span class="fn">delay</span>(<span class="num">10000</span>);  <span class="cm">// Vérifier toutes les 10 secondes</span>
+}</pre>
+          </div>
+        </div>
+
+        <div class="retenir">
+          <div class="retenir-title">Pour aller plus loin</div>
+          <ul>
+            <li>Ajouter un capteur DHT11 pour surveiller température et humidité ambiante</li>
+            <li>Utiliser un ESP32 pour envoyer les données sur un serveur web</li>
+            <li>Créer une interface web pour contrôler manuellement la pompe</li>
+            <li>Ajouter un écran LCD pour afficher les informations en temps réel</li>
+          </ul>
+        </div>
+      </section>
+
+
+      <!-- EXERCICES & TP CAPTEURS -->
+      <section class="chapter" id="exercices-capteurs">
+        <div class="chapter-header">
+          <span class="chapter-num" style="background:linear-gradient(135deg,#0d9488,#14b8a6);">EX</span>
+          <div class="chapter-title">Exercices &amp; Travaux Pratiques<span>Interfaçage et calibration de capteurs avec microcontrôleurs</span></div>
+        </div>
+        <div class="section">
+          <p class="section-intro">Ces exercices pratiques vous permettent de maîtriser l'interfaçage de capteurs variés (température, distance, luminosité, mouvement) avec des microcontrôleurs Arduino et ESP32.</p>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 1 — Capteur ultrasonique HC-SR04 <span class="niveau-badge niveau-facile">Facile</span></h4>
+            <ol>
+              <li>Branchez le HC-SR04 sur Arduino (Trig→broche 9, Echo→broche 10). Codez la mesure de distance et affichez-la en cm sur le moniteur série.</li>
+              <li>Calibrez le capteur avec un objet à distance connue. Calculez l'erreur absolue et relative.</li>
+              <li>Créez un radar de recul : LED verte si distance &gt; 50 cm, orange entre 20-50 cm, rouge &lt; 20 cm, buzzer si &lt; 10 cm.</li>
+              <li>Expliquez le principe physique : comment calculer la distance à partir du temps de vol d'une onde sonore ?</li>
+            </ol>
+          </div>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 2 — Moteur DC et servo <span class="niveau-badge niveau-moyen">Moyen</span></h4>
+            <ol>
+              <li>Contrôlez la vitesse d'un moteur DC via un transistor NPN (ou L298N) depuis Arduino avec PWM. Mappez la valeur d'un potentiomètre (0-1023) vers la vitesse (0-255).</li>
+              <li>Pilotez un servo-moteur SG90 avec la bibliothèque <code>Servo.h</code>. Balayez de 0° à 180° et retour. Synchronisez deux servos pour un bras robotique simple (2 degrés de liberté).</li>
+              <li>Combinez HC-SR04 + servo : créez un radar tournant qui scanne 180° et affiche les distances détectées.</li>
+            </ol>
+          </div>
+
+          <div class="tp-block">
+            <h4>🔬 TP — Serre connectée (Smart Garden) <span class="niveau-badge niveau-avance">Avancé — 3h</span></h4>
+            <p style="font-size:14px;color:var(--muted);margin-bottom:12px;"><strong>Objectif :</strong> Construire un système de monitoring et d'arrosage automatique pour une plante.</p>
+            <ol class="tp-etapes">
+              <li><strong>Capteurs :</strong> DHT22 (T°/humidité air), capteur d'humidité sol capacitif, LDR (luminosité).</li>
+              <li><strong>Actionneurs :</strong> Pompe à eau mini 5V pilotée via relais, ventilateur 5V via transistor, LED grow light via MOSFET.</li>
+              <li><strong>Logique :</strong> Arrosage automatique si humidité sol &lt; 30%. Ventilation si T° &gt; 28°C. Éclairage si luminosité &lt; seuil ET heure entre 8h-20h (RTC DS3231).</li>
+              <li><strong>Affichage :</strong> LCD I2C affichant en temps réel T°, humidité, état de la pompe.</li>
+              <li><strong>Logs :</strong> Toutes les 10 minutes, écrire les données sur une carte SD (module SD). Format CSV pour exploitation tableur.</li>
+              <li><strong>Rendu :</strong> Maquette fonctionnelle + code commenté + rapport avec graphiques des données collectées sur 24h.</li>
+            </ol>
+          </div>
+
+          <div class="quiz-block">
+            <h4>❓ Quiz de révision — Capteurs &amp; Actionneurs</h4>
+            <ol>
+              <li>Quelle est la différence entre un capteur actif et un capteur passif ? Donnez 2 exemples de chaque.</li>
+              <li>Expliquez le protocole I2C : comment fonctionne l'adressage des périphériques ? Combien peut-on en connecter sur un même bus ?</li>
+              <li>Qu'est-ce qu'un convertisseur ADC ? Quelle est la résolution de celui de l'Arduino Uno ? Quelle est la tension par pas ?</li>
+              <li>Pourquoi utiliser une diode de roue libre avec un moteur DC ou un relais ?</li>
+              <li>Citez 3 types de capteurs de distance et leur technologie (ultrasonique, infrarouge, laser). Avantages et limites de chacun.</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- NAVIGATION -->
+      <div class="page-nav">
+        <a href="raspberry-pi.html">
+          <span class="page-nav-label">← Précédent</span>
+          <span class="page-nav-title"><i class="fab fa-raspberry-pi"></i> Raspberry Pi</span>
+        </a>
+        <a href="vscode.html" class="next">
+          <span class="page-nav-label">Suivant →</span>
+          <span class="page-nav-title"><i class="fas fa-code"></i> VS Code</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-info">
+        <img src="assets/logo.png" alt="Logo" class="footer-logo">
+        <div class="footer-text">
+          <div class="footer-name">Adriel TATCHUM SIMO</div>
+          <div class="footer-job">Enseignant CIEL • Formateur Web & Électronique</div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Accueil</a>
+        <a href="html-complet.html">HTML</a>
+        <a href="css-complet.html">CSS</a>
+        <a href="javascript.html">JavaScript</a>
+      </div>
+      <div class="footer-copy">© 2026 Cours CIEL — Tous droits réservés</div>
+    </div>
+  </footer>
+
+  <button id="back-top" aria-label="Retour en haut">↑</button>
+
+  <script src="script.js"></script>
+  <script>
+    function toggleReponse(btn) {
+      const content = btn.nextElementSibling;
+      const isVisible = content.style.display === 'block';
+      content.style.display = isVisible ? 'none' : 'block';
+      btn.innerHTML = isVisible
+        ? '<i class="fas fa-eye"></i> Voir la réponse'
+        : '<i class="fas fa-eye-slash"></i> Masquer la réponse';
+      btn.style.background   = isVisible ? 'rgba(240,180,41,0.1)'  : 'rgba(0,117,143,0.15)';
+      btn.style.borderColor  = isVisible ? 'rgba(240,180,41,0.35)' : 'rgba(0,117,143,0.4)';
+      btn.style.color        = isVisible ? 'var(--accent)' : '#00b4d8';
+    }
+  </script>
+</body>
+
+</html>

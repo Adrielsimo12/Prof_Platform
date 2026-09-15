@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Réseau Informatique — Cours CIEL</title>
+  <meta name="description" content="Cours complet de réseau informatique : modèle OSI, TCP/IP, adressage IP, routage, protocoles et administration réseau niveau BAC.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="shared-styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+
+<body>
+
+  <div id="scroll-indicator"></div>
+  <button class="mobile-menu-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+
+  <aside id="sidebar">
+    <div class="sidebar-header">
+      <img src="assets/logo.png" alt="Logo CIEL" class="sidebar-logo">
+      <div class="sidebar-title">Cours CIEL<span>Adriel TATCHUM SIMO • Formateur</span></div>
+    </div>
+    <div class="search-container" style="padding: 12px 16px;">
+      <input type="text" id="searchInput" placeholder="Rechercher un cours..."
+        style="width:100%;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:13px;">
+    </div>
+    <div class="progress-container">
+      <div class="progress-label">Progression du cours</div>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 0%"></div>
+      </div>
+    </div>
+    <nav>
+      <div class="nav-group">
+        <div class="nav-group-title">Accueil</div>
+        <a href="index.html"><i class="fas fa-home"></i> Introduction</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 1 — Développement Web</div>
+        <a href="html-complet.html"><i class="fab fa-html5"></i> HTML Complet</a>
+        <a href="css-complet.html"><i class="fab fa-css3-alt"></i> CSS Complet</a>
+        <a href="javascript.html"><i class="fab fa-js"></i> JavaScript</a>
+        <a href="python-flask.html"><i class="fab fa-python"></i> Python & Flask</a>
+        <a href="mysql.html"><i class="fas fa-database"></i> MySQL</a>
+        <a href="projet-fullstack.html"><i class="fas fa-project-diagram"></i> Projet Full Stack</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 2 — Électronique</div>
+        <a href="electronique-bases.html"><i class="fas fa-bolt"></i> Bases Électronique</a>
+        <a href="composants.html"><i class="fas fa-microchip"></i> Composants</a>
+        <a href="arduino.html"><i class="fas fa-robot"></i> Arduino & ESP32</a>
+        <a href="raspberry-pi.html"><i class="fab fa-raspberry-pi"></i> Raspberry Pi</a>
+        <a href="capteurs.html"><i class="fas fa-thermometer-half"></i> Capteurs & Actionneurs</a>
+        <a href="maintenance-electronique.html"><i class="fas fa-tools"></i> Maintenance Électronique</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 3 — Réseaux & Sécurité</div>
+        <a href="reseau-informatique.html"><i class="fas fa-network-wired"></i> Réseau Informatique</a>
+        <a href="cybersecurite.html"><i class="fas fa-shield-alt"></i> Cybersécurité</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Outils & Workflow</div>
+        <a href="vscode.html"><i class="fas fa-code"></i> VS Code</a>
+        <a href="git.html"><i class="fab fa-git-alt"></i> Git & GitHub</a>
+        <a href="venv.html"><i class="fas fa-cube"></i> .venv Python</a>
+      </div>
+    </nav>
+    <div class="theme-toggle">
+      <button class="theme-btn"><i class="fas fa-sun"></i><span>Mode clair</span></button>
+    </div>
+  </aside>
+
+  <main id="main">
+<section id="hero">
+      <div class="hero-tag">Infrastructure IT</div>
+      <h1 class="hero-title">Réseau Informatique<br><em>Architecture & Protocoles</em></h1>
+      <p class="hero-desc">
+        Maîtrisez les fondamentaux des réseaux : modèle OSI, TCP/IP, adressage IP, routage, configuration et
+        administration.
+      </p>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-val">9</span><span class="stat-label">Chapitres</span></div>
+        <div class="stat"><span class="stat-val">3</span><span class="stat-label">Travaux Pratiques</span></div>
+        <div class="stat"><span class="stat-val">~3h</span><span class="stat-label">De lecture</span></div>
+      </div>
+    </section>
+
+
+    <!-- ══════ SECTION VIDÉO PÉDAGOGIQUE ══════ -->
+    <div class="video-ressource">
+      <div class="video-section-title"><i class="fab fa-youtube"></i> Vidéo pédagogique recommandée</div>
+      <div class="video-card">
+        <a href="https://www.youtube.com/watch?v=26jazyc7VNk" target="_blank" class="video-thumbnail">
+          <div class="video-thumbnail-bg">
+            <i class="fab fa-youtube video-yt-icon"></i>
+            <span class="video-yt-text">YOUTUBE</span>
+          </div>
+          <div class="video-play-overlay"><i class="fas fa-play"></i></div>
+        </a>
+        <div class="video-info">
+          <span class="video-badge"><i class="fas fa-clock"></i> 2h</span>
+          <div class="video-titre">Réseaux - Modèle OSI et TCP/IP</div>
+          <div class="video-chaine">Chaîne : Cookie connecté</div>
+          <div class="video-desc">Protocoles réseau, adressage IP, routage, VLAN et configuration switch/routeur.</div>
+          <a href="https://www.youtube.com/watch?v=26jazyc7VNk" target="_blank" class="video-watch-btn">
+            <i class="fab fa-youtube"></i> Voir sur YouTube
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════ TÉLÉCHARGEMENTS PDF ══════ -->
+    <div class="pdf-download-zone">
+      <a href="tp-reseau.pdf" download class="pdf-download-btn">
+        <i class="fas fa-file-pdf"></i> Télécharger le TP (PDF)
+      </a>
+      <a href="correction-reseau.pdf" download class="correction-download-btn">
+        <i class="fas fa-check-circle"></i> Télécharger les corrections (PDF)
+      </a>
+      <span class="pdf-info-text">Documents imprimables pour travail hors-ligne</span>
+    </div>
+
+    <div id="content">
+<!-- CH 1 - INTRODUCTION -->
+      <section class="chapter" id="intro">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#0066CC;background:rgba(0,102,204,0.1);border-color:rgba(0,102,204,0.2)">NET.01</span>
+          <div class="chapter-title">Introduction aux Réseaux<span>Concepts fondamentaux et architecture</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Qu'est-ce qu'un réseau informatique ?</h3>
+          <p class="text">
+            Un <strong>réseau informatique</strong> est un ensemble d'ordinateurs et d'équipements interconnectés
+            qui peuvent <strong>communiquer</strong> et <strong>partager des ressources</strong> (fichiers, imprimantes,
+            connexion Internet).
+          </p>
+
+          <div class="callout callout-info">
+            <span class="callout-icon"><i class="fas fa-info-circle"></i></span>
+            <div class="callout-body">
+              <strong>Objectifs d'un réseau :</strong> Partage de ressources, communication (email, messagerie),
+              accès à des données centralisées, travail collaboratif.
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Types de réseaux selon l'étendue</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Nom complet</th>
+                <th>Portée</th>
+                <th>Exemples</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>PAN</strong></td>
+                <td>Personal Area Network</td>
+                <td>~10 mètres</td>
+                <td>Bluetooth, smartphone ↔ écouteurs</td>
+              </tr>
+              <tr>
+                <td><strong>LAN</strong></td>
+                <td>Local Area Network</td>
+                <td>~100 mètres</td>
+                <td>Réseau d'entreprise, école, domicile</td>
+              </tr>
+              <tr>
+                <td><strong>MAN</strong></td>
+                <td>Metropolitan Area Network</td>
+                <td>~10 km</td>
+                <td>Réseau d'une ville, campus universitaire</td>
+              </tr>
+              <tr>
+                <td><strong>WAN</strong></td>
+                <td>Wide Area Network</td>
+                <td>Mondial</td>
+                <td>Internet, réseau d'entreprise multi-sites</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Équipements réseau essentiels</h3>
+          <div class="cards-grid">
+            <div class="card">
+              <div class="card-type" style="color:#0066CC"><i class="fas fa-ethernet"></i> Switch (Commutateur)</div>
+              <div class="card-desc">Connecte plusieurs appareils dans un LAN</div>
+              <div class="card-ex">Couche 2 (liaison de données)</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent2)"><i class="fas fa-project-diagram"></i> Routeur</div>
+              <div class="card-desc">Interconnecte plusieurs réseaux (ex: LAN ↔ Internet)</div>
+              <div class="card-ex">Couche 3 (réseau)</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent)"><i class="fas fa-wifi"></i> Point d'accès WiFi</div>
+              <div class="card-desc">Permet la connexion sans fil</div>
+              <div class="card-ex">802.11ac/ax (WiFi 5/6)</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent6)"><i class="fas fa-fire"></i> Pare-feu</div>
+              <div class="card-desc">Filtre le trafic entrant/sortant</div>
+              <div class="card-ex">Sécurité périmétrique</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="retenir">
+          <div class="retenir-title">Points clés</div>
+          <ul>
+            <li>Un réseau permet le partage de ressources et la communication</li>
+            <li>LAN = réseau local (entreprise, école)</li>
+            <li>WAN = réseau étendu (Internet)</li>
+            <li>Switch = connexion locale, Routeur = connexion entre réseaux</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CH 2 - MODÈLE OSI -->
+      <section class="chapter" id="osi">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#0066CC;background:rgba(0,102,204,0.1);border-color:rgba(0,102,204,0.2)">NET.02</span>
+          <div class="chapter-title">Modèle OSI<span>Les 7 couches du modèle de référence</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Qu'est-ce que le modèle OSI ?</h3>
+          <p class="text">
+            Le <strong>modèle OSI</strong> (Open Systems Interconnection) est un modèle de référence qui décrit comment
+            les données circulent dans un réseau en <strong>7 couches</strong>. Chaque couche a un rôle spécifique et
+            communique avec les couches adjacentes.
+          </p>
+
+          <div class="callout callout-tip">
+            <span class="callout-icon"><i class="fas fa-lightbulb"></i></span>
+            <div class="callout-body">
+              <strong>Astuce mnémotechnique (bas → haut) :</strong><br>
+              <strong>P</strong>lease <strong>D</strong>o <strong>N</strong>ot <strong>T</strong>hrow
+              <strong>S</strong>ausage <strong>P</strong>izza <strong>A</strong>way<br>
+              = <strong>P</strong>hysique, <strong>D</strong>onnées, <strong>N</strong>étwork,
+              <strong>T</strong>ransport,
+              <strong>S</strong>ession, <strong>P</strong>résentation, <strong>A</strong>pplication
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Les 7 couches du modèle OSI</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Couche</th>
+                <th>Nom</th>
+                <th>Rôle</th>
+                <th>Exemples</th>
+                <th>Unité</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background: rgba(220,20,60,0.05);">
+                <td><strong>7</strong></td>
+                <td>Application</td>
+                <td>Interface utilisateur, services</td>
+                <td>HTTP, FTP, SMTP, DNS</td>
+                <td>Données</td>
+              </tr>
+              <tr style="background: rgba(255,140,0,0.05);">
+                <td><strong>6</strong></td>
+                <td>Présentation</td>
+                <td>Formatage, chiffrement, compression</td>
+                <td>SSL/TLS, JPEG, ASCII</td>
+                <td>Données</td>
+              </tr>
+              <tr style="background: rgba(255,215,0,0.05);">
+                <td><strong>5</strong></td>
+                <td>Session</td>
+                <td>Gestion des sessions (ouverture/fermeture)</td>
+                <td>NetBIOS, RPC</td>
+                <td>Données</td>
+              </tr>
+              <tr style="background: rgba(50,205,50,0.05);">
+                <td><strong>4</strong></td>
+                <td>Transport</td>
+                <td>Transport fiable des données</td>
+                <td>TCP, UDP</td>
+                <td>Segment</td>
+              </tr>
+              <tr style="background: rgba(0,191,255,0.05);">
+                <td><strong>3</strong></td>
+                <td>Réseau</td>
+                <td>Adressage logique et routage</td>
+                <td>IP, ICMP, Routeurs</td>
+                <td>Paquet</td>
+              </tr>
+              <tr style="background: rgba(138,43,226,0.05);">
+                <td><strong>2</strong></td>
+                <td>Liaison de données</td>
+                <td>Adressage physique (MAC), détection d'erreurs</td>
+                <td>Ethernet, WiFi, Switch</td>
+                <td>Trame</td>
+              </tr>
+              <tr style="background: rgba(105,105,105,0.05);">
+                <td><strong>1</strong></td>
+                <td>Physique</td>
+                <td>Transmission des bits sur le support</td>
+                <td>Câbles, fibres, ondes radio</td>
+                <td>Bit</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Exemple de transmission HTTP</h3>
+          <p class="text">Quand vous ouvrez une page web (http://example.com), voici ce qui se passe à chaque couche :
+          </p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Encapsulation OSI</span>
+            </div>
+            <pre><span class="cm">┌─ COUCHE 7 (Application) ──────────────────────┐</span>
+│ Requête HTTP : GET /index.html HTTP/1.1       │
+│ Host: example.com                              │
+└────────────────────────────────────────────────┘
+            ↓ Encapsulation
+<span class="cm">┌─ COUCHE 4 (Transport) ────────────────────────┐</span>
+│ [En-tête TCP: Port 80] + Données HTTP         │
+└────────────────────────────────────────────────┘
+            ↓
+<span class="cm">┌─ COUCHE 3 (Réseau) ───────────────────────────┐</span>
+│ [En-tête IP: @IP source/dest] + Segment TCP   │
+└────────────────────────────────────────────────┘
+            ↓
+<span class="cm">┌─ COUCHE 2 (Liaison) ──────────────────────────┐</span>
+│ [En-tête Ethernet: @MAC] + Paquet IP          │
+└────────────────────────────────────────────────┘
+            ↓
+<span class="cm">┌─ COUCHE 1 (Physique) ─────────────────────────┐</span>
+│ 010110110101... (signaux électriques/optiques)│
+└────────────────────────────────────────────────┘</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 3 - TCP/IP -->
+      <section class="chapter" id="tcpip">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#0066CC;background:rgba(0,102,204,0.1);border-color:rgba(0,102,204,0.2)">NET.03</span>
+          <div class="chapter-title">Modèle TCP/IP<span>Architecture d'Internet</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">TCP/IP vs OSI</h3>
+          <p class="text">
+            Le <strong>modèle TCP/IP</strong> (Transmission Control Protocol / Internet Protocol) est le modèle
+            <strong>réellement utilisé</strong> sur Internet. Il est composé de <strong>4 couches</strong>
+            (simplification du modèle OSI).
+          </p>
+
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Modèle TCP/IP (4 couches)</th>
+                <th>Équivalent OSI</th>
+                <th>Protocoles</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>4. Application</strong></td>
+                <td>Couches 5, 6, 7</td>
+                <td>HTTP, FTP, SMTP, DNS, SSH</td>
+              </tr>
+              <tr>
+                <td><strong>3. Transport</strong></td>
+                <td>Couche 4</td>
+                <td>TCP, UDP</td>
+              </tr>
+              <tr>
+                <td><strong>2. Internet</strong></td>
+                <td>Couche 3</td>
+                <td>IP, ICMP, ARP</td>
+              </tr>
+              <tr>
+                <td><strong>1. Accès réseau</strong></td>
+                <td>Couches 1, 2</td>
+                <td>Ethernet, WiFi</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">TCP vs UDP</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Critère</th>
+                <th>TCP (fiable)</th>
+                <th>UDP (rapide)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Connexion</td>
+                <td>Orienté connexion (3-way handshake)</td>
+                <td>Sans connexion</td>
+              </tr>
+              <tr>
+                <td>Fiabilité</td>
+                <td>Garantit la livraison (accus</td>
+                <td>Aucune garantie</td>
+              </tr>
+              <tr>
+                <td>Ordre</td>
+                <td>Ordre garanti</td>
+                <td>Ordre non garanti</td>
+              </tr>
+              <tr>
+                <td>Vitesse</td>
+                <td>Plus lent</td>
+                <td>Très rapide</td>
+              </tr>
+              <tr>
+                <td>Usage</td>
+                <td>HTTP, FTP, Email</td>
+                <td>Streaming vidéo, jeux en ligne, DNS</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Établissement de connexion TCP (3-way handshake)</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Schéma</span>
+            </div>
+            <pre>Client                          Serveur
+  |                                 |
+  |  ──── SYN (seq=100) ────────>   |  <span class="cm">1. Demande de connexion</span>
+  |                                 |
+  |  <─── SYN-ACK (ack=101) ─────   |  <span class="cm">2. Accord + acquittement</span>
+  |                                 |
+  |  ──── ACK (ack=1) ───────────>  |  <span class="cm">3. Confirmation finale</span>
+  |                                 |
+  | Connexion établie ✓             |
+  |  ──── Données HTTP... ──────>   |</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 4 - ADRESSAGE IP -->
+      <section class="chapter" id="ip">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#0066CC;background:rgba(0,102,204,0.1);border-color:rgba(0,102,204,0.2)">NET.04</span>
+          <div class="chapter-title">Adressage IP<span>IPv4, IPv6, classes et masques de sous-réseau</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Qu'est-ce qu'une adresse IP ?</h3>
+          <p class="text">
+            Une <strong>adresse IP</strong> (Internet Protocol) est un identifiant numérique unique attribué à chaque
+            appareil connecté à un réseau. Elle permet de <strong>localiser</strong> et <strong>router</strong> les
+            paquets de données.
+          </p>
+
+          <div class="cards-grid">
+            <div class="card">
+              <div class="card-type" style="color:#0066CC"><i class="fas fa-hashtag"></i> IPv4</div>
+              <div class="card-desc">Format : 192.168.1.1 (4 octets)</div>
+              <div class="card-ex">~4,3 milliards d'adresses</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent2)"><i class="fas fa-infinity"></i> IPv6</div>
+              <div class="card-desc">Format : 2001:0db8::1 (128 bits)</div>
+              <div class="card-ex">340 sextillions d'adresses</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Classes d'adresses IPv4</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Classe</th>
+                <th>Plage</th>
+                <th>Masque par défaut</th>
+                <th>Usage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>A</td>
+                <td>1.0.0.0 → 126.255.255.255</td>
+                <td>255.0.0.0 (/8)</td>
+                <td>Très grands réseaux</td>
+              </tr>
+              <tr>
+                <td>B</td>
+                <td>128.0.0.0 → 191.255.255.255</td>
+                <td>255.255.0.0 (/16)</td>
+                <td>Réseaux moyens</td>
+              </tr>
+              <tr>
+                <td>C</td>
+                <td>192.0.0.0 → 223.255.255.255</td>
+                <td>255.255.255.0 (/24)</td>
+                <td>Petits réseaux</td>
+              </tr>
+              <tr>
+                <td>D</td>
+                <td>224.0.0.0 → 239.255.255.255</td>
+                <td>—</td>
+                <td>Multicast</td>
+              </tr>
+              <tr>
+                <td>E</td>
+                <td>240.0.0.0 → 255.255.255.255</td>
+                <td>—</td>
+                <td>Réservé (expérimental)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Adresses IP privées (RFC 1918)</h3>
+          <p class="text">Plages réservées pour les réseaux locaux (non routables sur Internet) :</p>
+          <ul style="color: var(--text); margin-left: 20px; margin-bottom: 16px;">
+            <li><strong>Classe A :</strong> 10.0.0.0 → 10.255.255.255 (/8)</li>
+            <li><strong>Classe B :</strong> 172.16.0.0 → 172.31.255.255 (/12)</li>
+            <li><strong>Classe C :</strong> 192.168.0.0 → 192.168.255.255 (/16)</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Masque de sous-réseau (Subnet Mask)</h3>
+          <p class="text">
+            Le <strong>masque</strong> détermine quelle partie de l'adresse IP représente le <strong>réseau</strong>
+            et quelle partie représente l'<strong>hôte</strong>.
+          </p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Exemple</span>
+            </div>
+            <pre><span class="str">Adresse IP :</span>    192.168.1.10
+<span class="str">Masque :</span>        255.255.255.0  (ou /24 en notation CIDR)
+
+<span class="cm">┌────────────┬─────┐</span>
+│  Réseau    │ Hôte│
+│ 192.168.1  │  10 │
+└────────────┴─────┘
+
+<span class="str">Adresse réseau :</span>     192.168.1.0
+<span class="str">Adresse broadcast :</span>  192.168.1.255
+<span class="str">Plage utilisable :</span>   192.168.1.1 → 192.168.1.254
+<span class="str">Nombre d'hôtes :</span>     254 (2⁸ - 2)</pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Commandes réseau utiles</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Bash / CMD</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="cm"># Afficher la configuration IP (Linux)</span>
+<span class="fn">ip</span> addr show
+<span class="fn">ifconfig</span>
+
+<span class="cm"># Afficher la configuration IP (Windows)</span>
+<span class="fn">ipconfig</span> /all
+
+<span class="cm"># Tester la connectivité</span>
+<span class="fn">ping</span> 8.8.8.8
+
+<span class="cm"># Tracer le chemin réseau</span>
+<span class="fn">traceroute</span> google.com  <span class="cm"># Linux</span>
+<span class="fn">tracert</span> google.com     <span class="cm"># Windows</span>
+
+<span class="cm"># Afficher la table de routage</span>
+<span class="fn">ip</span> route show          <span class="cm"># Linux</span>
+<span class="fn">route</span> print            <span class="cm"># Windows</span></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 5 - DNS -->
+      <section class="chapter" id="dns">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#0066CC;background:rgba(0,102,204,0.1);border-color:rgba(0,102,204,0.2)">NET.05</span>
+          <div class="chapter-title">DNS (Domain Name System)<span>Résolution de noms de domaine</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Qu'est-ce que le DNS ?</h3>
+          <p class="text">
+            Le <strong>DNS</strong> est un système qui traduit les <strong>noms de domaine</strong> (google.com)
+            en <strong>adresses IP</strong> (142.250.185.78). C'est "l'annuaire téléphonique d'Internet".
+          </p>
+
+          <div class="callout callout-tip">
+            <span class="callout-icon"><i class="fas fa-lightbulb"></i></span>
+            <div class="callout-body">
+              <strong>Analogie :</strong> DNS = Annuaire téléphonique. Vous cherchez "Restaurant La Fontaine"
+              et l'annuaire vous donne le numéro de téléphone.
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Processus de résolution DNS</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Étapes</span>
+            </div>
+            <pre><span class="num">1.</span> Vous tapez "www.google.com" dans le navigateur
+   ↓
+<span class="num">2.</span> Le navigateur vérifie son <span class="kw">cache DNS local</span>
+   ↓
+<span class="num">3.</span> Si non trouvé → interroge le <span class="kw">résolveur DNS</span> (FAI)
+   ↓
+<span class="num">4.</span> Résolveur vérifie son cache
+   ↓
+<span class="num">5.</span> Si non trouvé → interroge le <span class="kw">serveur racine</span> (.)
+   ↓
+<span class="num">6.</span> Serveur racine renvoie l'adresse du <span class="kw">serveur TLD</span> (.com)
+   ↓
+<span class="num">7.</span> Serveur TLD renvoie l'adresse du <span class="kw">serveur autoritatif</span> (google.com)
+   ↓
+<span class="num">8.</span> Serveur autoritatif renvoie l'<span class="str">adresse IP : 142.250.185.78</span>
+   ↓
+<span class="num">9.</span> Navigateur se connecte à cette IP</pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Types d'enregistrements DNS</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Exemple</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>A</strong></td>
+                <td>Adresse IPv4</td>
+                <td>example.com → 93.184.216.34</td>
+              </tr>
+              <tr>
+                <td><strong>AAAA</strong></td>
+                <td>Adresse IPv6</td>
+                <td>example.com → 2606:2800:220:1:...</td>
+              </tr>
+              <tr>
+                <td><strong>CNAME</strong></td>
+                <td>Alias (nom canonique)</td>
+                <td>www.example.com → example.com</td>
+              </tr>
+              <tr>
+                <td><strong>MX</strong></td>
+                <td>Serveur de messagerie</td>
+                <td>example.com → mail.example.com</td>
+              </tr>
+              <tr>
+                <td><strong>TXT</strong></td>
+                <td>Texte (vérification domaine)</td>
+                <td>SPF, DKIM</td>
+              </tr>
+              <tr>
+                <td><strong>NS</strong></td>
+                <td>Serveur de noms autoritatif</td>
+                <td>ns1.example.com</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Commandes DNS</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Bash</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="cm"># Résoudre un nom de domaine</span>
+<span class="fn">nslookup</span> google.com
+<span class="fn">dig</span> google.com
+
+<span class="cm"># Voir tous les enregistrements DNS</span>
+<span class="fn">dig</span> google.com ANY
+
+<span class="cm"># Interroger un serveur DNS spécifique</span>
+<span class="fn">dig</span> @8.8.8.8 google.com
+
+<span class="cm"># Vider le cache DNS (Windows)</span>
+<span class="fn">ipconfig</span> /flushdns
+
+<span class="cm"># Vider le cache DNS (Linux)</span>
+<span class="kw">sudo</span> systemd-resolve --flush-caches</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 6 - DHCP -->
+      <section class="chapter" id="dhcp">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#0066CC;background:rgba(0,102,204,0.1);border-color:rgba(0,102,204,0.2)">NET.06</span>
+          <div class="chapter-title">DHCP<span>Attribution automatique d'adresses IP</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Qu'est-ce que DHCP ?</h3>
+          <p class="text">
+            Le <strong>DHCP</strong> (Dynamic Host Configuration Protocol) est un protocole qui <strong>attribue
+              automatiquement</strong>
+            des adresses IP aux appareils qui se connectent au réseau. Sans DHCP, il faudrait configurer manuellement
+            chaque appareil.
+          </p>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Processus DHCP (DORA)</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Échanges DHCP</span>
+            </div>
+            <pre>Client                          Serveur DHCP
+  |                                    |
+  | ─ <span class="kw">DISCOVER</span> (broadcast) ───────>  |  <span class="cm">1. Recherche serveur DHCP</span>
+  |                                    |
+  | <─ <span class="kw">OFFER</span> (IP proposée) ─────────  |  <span class="cm">2. Offre d'une IP</span>
+  |                                    |
+  | ─ <span class="kw">REQUEST</span> (acceptation) ───────>  |  <span class="cm">3. Demande officielle</span>
+  |                                    |
+  | <─ <span class="kw">ACK</span> (confirmation) ───────────  |  <span class="cm">4. Confirmation (bail accordé)</span>
+  |                                    |
+  | Configuration terminée ✓           |</pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Informations fournies par DHCP</h3>
+          <ul style="color: var(--text); margin-left: 20px; margin-bottom: 16px;">
+            <li><strong>Adresse IP</strong> du client (ex: 192.168.1.50)</li>
+            <li><strong>Masque de sous-réseau</strong> (ex: 255.255.255.0)</li>
+            <li><strong>Passerelle par défaut</strong> (routeur, ex: 192.168.1.1)</li>
+            <li><strong>Serveur DNS</strong> (ex: 8.8.8.8)</li>
+            <li><strong>Durée du bail</strong> (ex: 24 heures)</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CH 7 - ROUTAGE -->
+      <section class="chapter" id="routing">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#0066CC;background:rgba(0,102,204,0.1);border-color:rgba(0,102,204,0.2)">NET.07</span>
+          <div class="chapter-title">Routage<span>Comment les données trouvent leur chemin</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Qu'est-ce que le routage ?</h3>
+          <p class="text">
+            Le <strong>routage</strong> est le processus par lequel les <strong>routeurs</strong> déterminent le
+            meilleur chemin
+            pour acheminer les paquets de données d'une source à une destination à travers plusieurs réseaux.
+          </p>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Types de routage</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Usage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Routage statique</strong></td>
+                <td>Routes configurées manuellement par l'administrateur</td>
+                <td>Petits réseaux simples</td>
+              </tr>
+              <tr>
+                <td><strong>Routage dynamique</strong></td>
+                <td>Routes apprises automatiquement via des protocoles</td>
+                <td>Grands réseaux complexes</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Protocoles de routage dynamique</h3>
+          <div class="cards-grid">
+            <div class="card">
+              <div class="card-type" style="color:#0066CC"><i class="fas fa-route"></i> RIP</div>
+              <div class="card-desc">Routing Information Protocol</div>
+              <div class="card-ex">Vecteur de distance, max 15 sauts</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent2)"><i class="fas fa-sitemap"></i> OSPF</div>
+              <div class="card-desc">Open Shortest Path First</div>
+              <div class="card-ex">État de lien, calcul du plus court chemin</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent)"><i class="fas fa-globe"></i> BGP</div>
+              <div class="card-desc">Border Gateway Protocol</div>
+              <div class="card-ex">Routage entre systèmes autonomes (Internet)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Configuration routage statique (Linux)</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Bash</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="cm"># Ajouter une route statique</span>
+<span class="kw">sudo</span> ip route add <span class="num">10.0.0.0/24</span> via <span class="num">192.168.1.1</span> dev eth0
+
+<span class="cm"># Supprimer une route</span>
+<span class="kw">sudo</span> ip route del <span class="num">10.0.0.0/24</span>
+
+<span class="cm"># Afficher la table de routage</span>
+<span class="fn">ip</span> route show
+
+<span class="cm"># Route par défaut (gateway)</span>
+<span class="kw">sudo</span> ip route add default via <span class="num">192.168.1.1</span></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 8 - VLAN -->
+      <section class="chapter" id="vlan">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#0066CC;background:rgba(0,102,204,0.1);border-color:rgba(0,102,204,0.2)">NET.08</span>
+          <div class="chapter-title">VLAN<span>Réseaux locaux virtuels</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Qu'est-ce qu'un VLAN ?</h3>
+          <p class="text">
+            Un <strong>VLAN</strong> (Virtual Local Area Network) permet de segmenter logiquement un réseau physique
+            en plusieurs réseaux virtuels indépendants. Chaque VLAN se comporte comme un réseau distinct.
+          </p>
+
+          <div class="callout callout-info">
+            <span class="callout-icon"><i class="fas fa-info-circle"></i></span>
+            <div class="callout-body">
+              <strong>Avantages :</strong> Sécurité (isolation du trafic), Performance (réduction du broadcast),
+              Organisation (regroupement logique par département).
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Exemple d'architecture VLAN</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Schéma</span>
+            </div>
+            <pre>┌────────────────────────────────────────┐
+│          Switch (1 seul physique)       │
+├────────────────────────────────────────┤
+│ <span class="kw">VLAN 10</span> : Administration (192.168.10.0/24) │
+│   ├─ PC Admin 1                         │
+│   └─ PC Admin 2                         │
+├────────────────────────────────────────┤
+│ <span class="kw">VLAN 20</span> : Commercial (192.168.20.0/24)    │
+│   ├─ PC Commercial 1                    │
+│   └─ PC Commercial 2                    │
+├────────────────────────────────────────┤
+│ <span class="kw">VLAN 30</span> : Invités (192.168.30.0/24)       │
+│   ├─ PC Invité 1                        │
+│   └─ PC Invité 2                        │
+└────────────────────────────────────────┘
+
+<span class="cm">⚠️ Les VLANs ne peuvent PAS communiquer entre eux sans routeur</span></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 9 - PROTOCOLES -->
+      <section class="chapter" id="protocols">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#0066CC;background:rgba(0,102,204,0.1);border-color:rgba(0,102,204,0.2)">NET.09</span>
+          <div class="chapter-title">Protocoles Réseau<span>HTTP, FTP, SSH, SMTP et autres</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Principaux protocoles applicatifs</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Protocole</th>
+                <th>Port</th>
+                <th>Usage</th>
+                <th>Sécurisé</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>HTTP</strong></td>
+                <td>80</td>
+                <td>Navigation web</td>
+                <td>❌ Non</td>
+              </tr>
+              <tr>
+                <td><strong>HTTPS</strong></td>
+                <td>443</td>
+                <td>Navigation web chiffrée</td>
+                <td>✓ Oui (TLS)</td>
+              </tr>
+              <tr>
+                <td><strong>FTP</strong></td>
+                <td>21</td>
+                <td>Transfert de fichiers</td>
+                <td>❌ Non</td>
+              </tr>
+              <tr>
+                <td><strong>SFTP/SCP</strong></td>
+                <td>22</td>
+                <td>Transfert fichiers sécurisé</td>
+                <td>✓ Oui (SSH)</td>
+              </tr>
+              <tr>
+                <td><strong>SSH</strong></td>
+                <td>22</td>
+                <td>Connexion à distance sécurisée</td>
+                <td>✓ Oui</td>
+              </tr>
+              <tr>
+                <td><strong>Telnet</strong></td>
+                <td>23</td>
+                <td>Connexion à distance (obsolète)</td>
+                <td>❌ Non</td>
+              </tr>
+              <tr>
+                <td><strong>SMTP</strong></td>
+                <td>25</td>
+                <td>Envoi d'emails</td>
+                <td>Partiellement</td>
+              </tr>
+              <tr>
+                <td><strong>DNS</strong></td>
+                <td>53</td>
+                <td>Résolution de noms</td>
+                <td>Partiellement</td>
+              </tr>
+              <tr>
+                <td><strong>DHCP</strong></td>
+                <td>67/68</td>
+                <td>Attribution d'IP automatique</td>
+                <td>❌ Non</td>
+              </tr>
+              <tr>
+                <td><strong>POP3</strong></td>
+                <td>110</td>
+                <td>Réception emails</td>
+                <td>❌ Non</td>
+              </tr>
+              <tr>
+                <td><strong>IMAP</strong></td>
+                <td>143</td>
+                <td>Réception emails (synchronisé)</td>
+                <td>Partiellement</td>
+              </tr>
+              <tr>
+                <td><strong>RDP</strong></td>
+                <td>3389</td>
+                <td>Bureau à distance Windows</td>
+                <td>Partiellement</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- TRAVAUX PRATIQUES -->
+      <section class="chapter" id="tp">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:var(--accent);background:rgba(240,180,41,0.1);border-color:rgba(240,180,41,0.2)">TP</span>
+          <div class="chapter-title">Travaux Pratiques<span>3 exercices réseau</span></div>
+        </div>
+
+        <!-- TP 1 -->
+        <div class="section">
+          <h3 class="section-title">TP 1 : Calcul de Sous-Réseaux (Subnetting)</h3>
+          <p class="text"><strong>Objectif :</strong> Diviser un réseau en sous-réseaux</p>
+
+          <div class="callout callout-info">
+            <span class="callout-icon"><i class="fas fa-tasks"></i></span>
+            <div class="callout-body">
+              <strong>Énoncé :</strong> Vous disposez du réseau <code>192.168.10.0/24</code>.
+              Divisez-le en 4 sous-réseaux de taille égale. Déterminez pour chaque sous-réseau :
+              <ul style="margin-top: 8px;">
+                <li>Adresse réseau</li>
+                <li>Première IP utilisable</li>
+                <li>Dernière IP utilisable</li>
+                <li>Adresse de broadcast</li>
+                <li>Nouveau masque</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="callout callout-tip">
+            <span class="callout-icon"><i class="fas fa-lightbulb"></i></span>
+            <div class="callout-body">
+              <strong>Solution :</strong><br><br>
+
+              4 sous-réseaux = 2² → besoin de 2 bits supplémentaires<br>
+              Nouveau masque : /24 + 2 = <strong>/26</strong> (255.255.255.192)<br>
+              Chaque sous-réseau : 2⁶ = 64 adresses (62 utilisables)<br><br>
+
+              <strong>Sous-réseau 1 :</strong><br>
+              • Réseau : 192.168.10.0/26<br>
+              • Première IP : 192.168.10.1<br>
+              • Dernière IP : 192.168.10.62<br>
+              • Broadcast : 192.168.10.63<br><br>
+
+              <strong>Sous-réseau 2 :</strong><br>
+              • Réseau : 192.168.10.64/26<br>
+              • Première IP : 192.168.10.65<br>
+              • Dernière IP : 192.168.10.126<br>
+              • Broadcast : 192.168.10.127<br><br>
+
+              <strong>Sous-réseau 3 :</strong><br>
+              • Réseau : 192.168.10.128/26<br>
+              • Première IP : 192.168.10.129<br>
+              • Dernière IP : 192.168.10.190<br>
+              • Broadcast : 192.168.10.191<br><br>
+
+              <strong>Sous-réseau 4 :</strong><br>
+              • Réseau : 192.168.10.192/26<br>
+              • Première IP : 192.168.10.193<br>
+              • Dernière IP : 192.168.10.254<br>
+              • Broadcast : 192.168.10.255
+            </div>
+          </div>
+        </div>
+
+        <!-- TP 2 -->
+        <div class="section">
+          <h3 class="section-title">TP 2 : Configuration d'un Serveur DHCP</h3>
+          <p class="text"><strong>Objectif :</strong> Installer et configurer un serveur DHCP sur Linux</p>
+
+          <div class="callout callout-info">
+            <span class="callout-icon"><i class="fas fa-tasks"></i></span>
+            <div class="callout-body">
+              <strong>Énoncé :</strong> Configurez un serveur DHCP qui attribue des IP dans la plage
+              192.168.1.100 → 192.168.1.200 avec un bail de 12 heures.
+            </div>
+          </div>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Solution Bash</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="cm"># 1. Installer le serveur DHCP</span>
+<span class="kw">sudo</span> apt update
+<span class="kw">sudo</span> apt install isc-dhcp-server
+
+<span class="cm"># 2. Éditer la configuration</span>
+<span class="kw">sudo</span> nano /etc/dhcp/dhcpd.conf
+
+<span class="cm"># 3. Ajouter la configuration suivante :</span>
+<span class="str">subnet 192.168.1.0 netmask 255.255.255.0 {
+  range 192.168.1.100 192.168.1.200;
+  option routers 192.168.1.1;
+  option subnet-mask 255.255.255.0;
+  option domain-name-servers 8.8.8.8, 8.8.4.4;
+  default-lease-time 43200;  # 12 heures
+  max-lease-time 86400;      # 24 heures
+}</span>
+
+<span class="cm"># 4. Spécifier l'interface réseau</span>
+<span class="kw">sudo</span> nano /etc/default/isc-dhcp-server
+<span class="cm"># Ajouter : INTERFACESv4="eth0"</span>
+
+<span class="cm"># 5. Démarrer le service</span>
+<span class="kw">sudo</span> systemctl start isc-dhcp-server
+<span class="kw">sudo</span> systemctl enable isc-dhcp-server
+
+<span class="cm"># 6. Vérifier l'état</span>
+<span class="kw">sudo</span> systemctl status isc-dhcp-server
+
+<span class="cm"># 7. Voir les baux attribués</span>
+<span class="kw">sudo</span> cat /var/lib/dhcp/dhcpd.leases</pre>
+          </div>
+        </div>
+
+        <!-- TP 3 -->
+        <div class="section">
+          <h3 class="section-title">TP 3 : Diagnostic Réseau avec Wireshark</h3>
+          <p class="text"><strong>Objectif :</strong> Analyser le trafic réseau avec Wireshark</p>
+
+          <div class="callout callout-info">
+            <span class="callout-icon"><i class="fas fa-tasks"></i></span>
+            <div class="callout-body">
+              <strong>Énoncé :</strong> Capturez et analysez une requête HTTP avec Wireshark
+            </div>
+          </div>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Marche à suivre</span>
+            </div>
+            <pre><span class="num">1.</span> Installer Wireshark
+   <span class="kw">sudo</span> apt install wireshark
+
+<span class="num">2.</span> Lancer Wireshark (en root ou avec sudo)
+   <span class="kw">sudo</span> wireshark
+
+<span class="num">3.</span> Sélectionner l'interface réseau (ex: eth0, wlan0)
+
+<span class="num">4.</span> Démarrer la capture (bouton bleu en haut à gauche)
+
+<span class="num">5.</span> Ouvrir un navigateur et aller sur http://example.com
+
+<span class="num">6.</span> Arrêter la capture
+
+<span class="num">7.</span> Filtrer le trafic HTTP :
+   Entrer dans la barre de filtre : <span class="str">http</span>
+
+<span class="num">8.</span> Analyser la requête HTTP :
+   - Clic droit sur un paquet HTTP GET
+   - Follow → TCP Stream
+   
+   <span class="cm">Vous verrez :</span>
+   <span class="str">GET /index.html HTTP/1.1
+   Host: example.com
+   User-Agent: Mozilla/5.0...
+   Accept: text/html...</span>
+
+<span class="num">9.</span> Observer les couches OSI :
+   - Frame (Physique)
+   - Ethernet II (Liaison)
+   - IPv4 (Réseau)
+   - TCP (Transport)
+   - HTTP (Application)</pre>
+          </div>
+
+          <div class="callout callout-tip">
+            <span class="callout-icon"><i class="fas fa-lightbulb"></i></span>
+            <div class="callout-body">
+              <strong>Filtres Wireshark utiles :</strong><br>
+              • <code>ip.addr == 192.168.1.1</code> : trafic d'une IP spécifique<br>
+              • <code>tcp.port == 80</code> : trafic HTTP<br>
+              • <code>dns</code> : requêtes DNS uniquement<br>
+              • <code>icmp</code> : paquets ping
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- EXERCICES & TP RÉSEAU -->
+      <section class="chapter" id="exercices-reseau">
+        <div class="chapter-header">
+          <span class="chapter-num" style="background:linear-gradient(135deg,#0891b2,#0e7490);">EX</span>
+          <div class="chapter-title">Exercices &amp; Travaux Pratiques<span>Adressage IP, sous-réseaux, configuration et analyse de trafic</span></div>
+        </div>
+        <div class="section">
+          <p class="section-intro">Ces exercices pratiques couvrent l'ensemble des notions réseau : adressage IP, calcul de sous-réseaux, configuration d'équipements et analyse de trafic avec Wireshark.</p>
+
+          <p class="section-exo-title"><i class="fas fa-pencil-alt"></i> Exercices de compréhension</p>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 1 — Adressage IP et sous-réseaux <span class="niveau-badge niveau-facile">Facile</span></h4>
+            <ol>
+              <li>Pour l'adresse <code>192.168.10.45/26</code> : calculez l'adresse réseau, l'adresse de broadcast, la plage d'hôtes utilisables, le nombre max d'hôtes.</li>
+              <li>Découpez le réseau <code>10.0.0.0/8</code> en sous-réseaux pour accueillir : 4 sites de 500 hôtes chacun. Utilisez le VLSM (découpage à taille variable). Donnez le plan d'adressage complet.</li>
+              <li>Convertissez : <code>192.168.1.100</code> en binaire, <code>11000000.10101000.00000001.01100100</code> en décimal pointé, <code>255.255.255.192</code> en notation CIDR.</li>
+              <li>Expliquez la différence entre adresses privées (RFC 1918) et adresses publiques. Quelles plages sont privées ?</li>
+            </ol>
+          </div>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 2 — Configuration réseau Linux <span class="niveau-badge niveau-moyen">Moyen</span></h4>
+            <ol>
+              <li>Avec les commandes <code>ip addr</code>, <code>ip route</code>, <code>ping</code>, <code>traceroute</code>, <code>nslookup</code>, <code>ss -tulnp</code> : diagnostiquez la connectivité d'une machine et expliquez chaque résultat.</li>
+              <li>Configurez une interface réseau statique avec <code>nmcli</code> ou en éditant <code>/etc/network/interfaces</code> : IP 192.168.1.50/24, passerelle 192.168.1.1, DNS 8.8.8.8 et 1.1.1.1.</li>
+              <li>Configurez un serveur DHCP minimal avec <code>isc-dhcp-server</code> qui distribue des adresses dans la plage 192.168.1.100-200 avec bail de 24h.</li>
+              <li>Mettez en place des règles <code>iptables</code> pour : bloquer tout le trafic entrant sauf SSH (port 22) et HTTP/HTTPS (80/443), autoriser tout le trafic sortant.</li>
+            </ol>
+          </div>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 3 — Analyse Wireshark <span class="niveau-badge niveau-avance">Avancé</span></h4>
+            <ol>
+              <li>Capturez le trafic pendant une navigation web. Identifiez dans Wireshark : une requête DNS, une handshake TCP (SYN, SYN-ACK, ACK), une requête HTTP GET, une réponse HTTP 200.</li>
+              <li>Utilisez les filtres Wireshark : <code>http.request.method == "GET"</code>, <code>tcp.flags.syn == 1</code>, <code>ip.addr == 8.8.8.8</code>.</li>
+              <li>Analysez un fichier PCAP fourni par le formateur et répondez : quelle IP communique le plus ? Quel protocole est le plus utilisé ? Y a-t-il des tentatives de scan de ports ?</li>
+            </ol>
+          </div>
+
+          <p class="section-exo-title"><i class="fas fa-flask"></i> Travaux Pratiques</p>
+
+          <div class="tp-block">
+            <h4>🔬 TP — Maquette réseau avec machines virtuelles <span class="niveau-badge niveau-avance">Avancé — 3h</span></h4>
+            <p style="font-size:14px;color:var(--muted);margin-bottom:12px;"><strong>Objectif :</strong> Simuler une infrastructure réseau d'entreprise avec VirtualBox ou VMware.</p>
+            <ol class="tp-etapes">
+              <li><strong>Topologie :</strong> 3 VMs Ubuntu : un routeur/passerelle (2 interfaces réseau), un serveur (192.168.1.10/24) et un client (192.168.1.20/24).</li>
+              <li><strong>Routage :</strong> Activer le forwarding IP sur le routeur (<code>echo 1 > /proc/sys/net/ipv4/ip_forward</code>). Configurer les routes statiques.</li>
+              <li><strong>Services :</strong> Installer et configurer Apache sur le serveur. Accéder au site depuis le client via IP. Puis configurer le DNS pour accéder via nom (<code>www.monsite.local</code>).</li>
+              <li><strong>Sécurité :</strong> Configurer ufw/iptables sur le serveur pour n'autoriser que SSH, HTTP, HTTPS depuis le réseau local.</li>
+              <li><strong>Documentation :</strong> Schéma réseau, plan d'adressage, captures Wireshark des flux, procédures de configuration.</li>
+            </ol>
+          </div>
+
+          <div class="quiz-block">
+            <h4>❓ Quiz de révision — Réseau</h4>
+            <ol>
+              <li>Quelles sont les 7 couches du modèle OSI ? Donnez un exemple de protocole pour chaque couche.</li>
+              <li>Expliquez le fonctionnement du protocole ARP. Qu'est-ce qu'une attaque ARP poisoning ?</li>
+              <li>Différence entre switch, hub, routeur et pare-feu. Quel équipement opère à quelle couche OSI ?</li>
+              <li>Qu'est-ce que le NAT (Network Address Translation) ? Pourquoi est-il indispensable aujourd'hui ?</li>
+              <li>Expliquez le processus DORA du protocole DHCP (Discover, Offer, Request, Acknowledge).</li>
+              <li>Quelle est la différence entre TCP et UDP ? Dans quel cas préférer UDP malgré l'absence de garantie de livraison ?</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- NAVIGATION -->
+      
+      <section class="chapter" id="exercices">
+        <div class="chapter-header">
+          <span class="chapter-num" style="background:linear-gradient(135deg,#6366f1,#818cf8);color:#fff;border:none">EX</span>
+          <div class="chapter-title">Exercices & Corrections<span>Entraînez-vous — Cliquez pour afficher les réponses</span></div>
+        </div>
+        <div class="section">
+          <p class="section-intro">Testez vos connaissances sur ce chapitre. Réfléchissez d'abord à chaque question, puis cliquez sur <em>"Voir la correction"</em>.</p>
+          <a href="pdfs/tp-reseau-informatique.pdf" download class="pdf-download-btn" style="margin-bottom:24px;display:inline-flex">
+            <i class="fas fa-file-pdf"></i> Télécharger le TP complet avec corrections (PDF)
+          </a>
+          
+          <div class="quiz-question">
+            <b>Exercice — Adressage IP et sous-réseaux</b>
+            <button class="reponse-btn" onclick="toggleReponse(this)">
+              <i class="fas fa-eye"></i> Voir la correction
+            </button>
+            <div class="reponse-content">
+<pre>Calcul sous-réseau 192.168.1.45/26 :
+• Masque /26 = 255.255.255.192 (64 adresses par réseau)
+• Réseau :    192.168.1.0  (multiple de 64 ≤ 45 → 0)
+• Broadcast : 192.168.1.63 (0 + 64 - 1)
+• Hôtes :     192.168.1.1 à 192.168.1.62 (62 hôtes)
+
+Découper 192.168.10.0/24 en 4 sous-réseaux :
+• /24 → /26 (4 blocs de 64 adresses)
+• 192.168.10.0/26   : hôtes .1 à .62   (62 hôtes)
+• 192.168.10.64/26  : hôtes .65 à .126 (62 hôtes)
+• 192.168.10.128/26 : hôtes .129 à .190 (62 hôtes)
+• 192.168.10.192/26 : hôtes .193 à .254 (62 hôtes)
+
+Plages IP privées (RFC 1918) :
+• 10.0.0.0/8       (16 millions d'adresses)
+• 172.16.0.0/12    (1 million d'adresses)
+• 192.168.0.0/16   (65 536 adresses)</pre>
+</div>
+          </div>
+          <div class="quiz-question">
+            <b>Exercice — Modèle OSI — rôle des couches</b>
+            <button class="reponse-btn" onclick="toggleReponse(this)">
+              <i class="fas fa-eye"></i> Voir la correction
+            </button>
+            <div class="reponse-content">
+<pre>Couche 7 — Application  : HTTP, FTP, SMTP, DNS
+Couche 6 — Présentation : SSL/TLS, chiffrement, compression
+Couche 5 — Session      : établissement/maintenance des sessions
+Couche 4 — Transport    : TCP (fiable), UDP (rapide), ports
+Couche 3 — Réseau       : IP, routage, adresses logiques
+Couche 2 — Liaison      : Ethernet, WiFi, adresses MAC, switch
+Couche 1 — Physique     : câbles, bits, signaux électriques
+
+Mnémotechnique : "Après Présentation, Sa Réunion Tient"
+(Application, Présentation, Session, Réseau, Transport... inversé)
+
+Protocoles courants et leur couche :
+• HTTP/HTTPS → couche 7 (Application)
+• TCP/UDP    → couche 4 (Transport)
+• IP/ICMP    → couche 3 (Réseau)
+• Ethernet   → couche 2 (Liaison)
+• WiFi 802.11 → couches 1+2</pre>
+</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="page-nav">
+        <a href="maintenance-electronique.html">
+          <span class="page-nav-label">← Précédent</span>
+          <span class="page-nav-title"><i class="fas fa-tools"></i> Maintenance Électronique</span>
+        </a>
+        <a href="cybersecurite.html" class="next">
+          <span class="page-nav-label">Suivant →</span>
+          <span class="page-nav-title"><i class="fas fa-shield-alt"></i> Cybersécurité</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-info">
+        <img src="assets/logo.png" alt="Logo" class="footer-logo">
+        <div class="footer-text">
+          <div class="footer-name">Adriel TATCHUM SIMO</div>
+          <div class="footer-job">Enseignant CIEL • Formateur Web & Électronique</div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Accueil</a>
+        <a href="html-complet.html">HTML</a>
+        <a href="css-complet.html">CSS</a>
+        <a href="javascript.html">JavaScript</a>
+      </div>
+      <div class="footer-copy">© 2026 Cours CIEL — Tous droits réservés</div>
+    </div>
+  </footer>
+
+  <button id="back-top" aria-label="Retour en haut">↑</button>
+
+  <script src="script.js"></script>
+  <script>
+    function toggleReponse(btn) {
+      const content = btn.nextElementSibling;
+      const isVisible = content.style.display === 'block';
+      content.style.display = isVisible ? 'none' : 'block';
+      btn.innerHTML = isVisible
+        ? '<i class="fas fa-eye"></i> Voir la réponse'
+        : '<i class="fas fa-eye-slash"></i> Masquer la réponse';
+      btn.style.background   = isVisible ? 'rgba(240,180,41,0.1)'  : 'rgba(0,117,143,0.15)';
+      btn.style.borderColor  = isVisible ? 'rgba(240,180,41,0.35)' : 'rgba(0,117,143,0.4)';
+      btn.style.color        = isVisible ? 'var(--accent)' : '#00b4d8';
+    }
+  </script>
+</body>
+
+</html>

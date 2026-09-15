@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Composants Électroniques — Cours CIEL</title>
+  <meta name="description" content="Cours complet sur les composants électroniques : résistances, condensateurs, transistors, LED, diodes.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="shared-styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+
+<body>
+
+  <div id="scroll-indicator"></div>
+  <button class="mobile-menu-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+
+  <aside id="sidebar">
+    <div class="sidebar-header">
+      <img src="assets/logo.png" alt="Logo CIEL" class="sidebar-logo">
+      <div class="sidebar-title">Cours CIEL<span>Adriel TATCHUM SIMO • Formateur</span></div>
+    </div>
+    <div class="search-container" style="padding: 12px 16px;">
+      <input type="text" id="searchInput" placeholder="Rechercher un cours..."
+        style="width:100%;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:13px;">
+    </div>
+    <div class="progress-container">
+      <div class="progress-label">Progression du cours</div>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 0%"></div>
+      </div>
+    </div>
+    <nav>
+      <div class="nav-group">
+        <div class="nav-group-title">Accueil</div>
+        <a href="index.html"><i class="fas fa-home"></i> Introduction</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 1 — Développement Web</div>
+        <a href="html-complet.html"><i class="fab fa-html5"></i> HTML Complet</a>
+        <a href="css-complet.html"><i class="fab fa-css3-alt"></i> CSS Complet</a>
+        <a href="javascript.html"><i class="fab fa-js"></i> JavaScript</a>
+        <a href="python-flask.html"><i class="fab fa-python"></i> Python & Flask</a>
+        <a href="mysql.html"><i class="fas fa-database"></i> MySQL</a>
+        <a href="projet-fullstack.html"><i class="fas fa-project-diagram"></i> Projet Full Stack</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 2 — Électronique</div>
+        <a href="electronique-bases.html"><i class="fas fa-bolt"></i> Bases Électronique</a>
+        <a href="composants.html"><i class="fas fa-microchip"></i> Composants</a>
+        <a href="arduino.html"><i class="fas fa-robot"></i> Arduino & ESP32</a>
+        <a href="raspberry-pi.html"><i class="fab fa-raspberry-pi"></i> Raspberry Pi</a>
+        <a href="capteurs.html"><i class="fas fa-thermometer-half"></i> Capteurs & Actionneurs</a>
+        <a href="maintenance-electronique.html"><i class="fas fa-tools"></i> Maintenance Électronique</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 3 — Réseaux & Sécurité</div>
+        <a href="reseau-informatique.html"><i class="fas fa-network-wired"></i> Réseau Informatique</a>
+        <a href="cybersecurite.html"><i class="fas fa-shield-alt"></i> Cybersécurité</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Outils & Workflow</div>
+        <a href="vscode.html"><i class="fas fa-code"></i> VS Code</a>
+        <a href="git.html"><i class="fab fa-git-alt"></i> Git & GitHub</a>
+        <a href="venv.html"><i class="fas fa-cube"></i> .venv Python</a>
+      </div>
+    </nav>
+    <div class="theme-toggle">
+      <button class="theme-btn"><i class="fas fa-sun"></i><span>Mode clair</span></button>
+    </div>
+  </aside>
+
+  <main id="main">
+<section id="hero">
+      <div class="hero-tag">Partie 2 — Électronique</div>
+      <h1 class="hero-title">Composants<br><em>Électroniques</em></h1>
+      <p class="hero-desc">
+        Découvrez les composants fondamentaux : résistances, condensateurs, transistors, LED, diodes.
+        Apprenez à les identifier, les lire et les utiliser dans vos circuits.
+      </p>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-val">10+</span><span class="stat-label">Composants</span></div>
+        <div class="stat"><span class="stat-val">Passifs</span><span class="stat-label">& Actifs</span></div>
+        <div class="stat"><span class="stat-val">~1h30</span><span class="stat-label">De lecture</span></div>
+      </div>
+    </section>
+
+
+    <!-- ══════ SECTION VIDÉO PÉDAGOGIQUE ══════ -->
+    <div class="video-ressource">
+      <div class="video-section-title"><i class="fab fa-youtube"></i> Vidéo pédagogique recommandée</div>
+      <div class="video-card">
+        <a href="https://www.youtube.com/watch?v=r-X9coYTOV4" target="_blank" class="video-thumbnail">
+          <div class="video-thumbnail-bg">
+            <i class="fab fa-youtube video-yt-icon"></i>
+            <span class="video-yt-text">YOUTUBE</span>
+          </div>
+          <div class="video-play-overlay"><i class="fas fa-play"></i></div>
+        </a>
+        <div class="video-info">
+          <span class="video-badge"><i class="fas fa-clock"></i> 2h</span>
+          <div class="video-titre">Les Composants Électroniques</div>
+          <div class="video-chaine">Chaîne : U=RI</div>
+          <div class="video-desc">Résistances, condensateurs, diodes, transistors : fonctionnement et utilisation.</div>
+          <a href="https://www.youtube.com/watch?v=r-X9coYTOV4" target="_blank" class="video-watch-btn">
+            <i class="fab fa-youtube"></i> Voir sur YouTube
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════ TÉLÉCHARGEMENTS PDF ══════ -->
+    <div class="pdf-download-zone">
+      <a href="tp-electronique.pdf" download class="pdf-download-btn">
+        <i class="fas fa-file-pdf"></i> Télécharger le TP (PDF)
+      </a>
+      <a href="correction-electronique.pdf" download class="correction-download-btn">
+        <i class="fas fa-check-circle"></i> Télécharger les corrections (PDF)
+      </a>
+      <span class="pdf-info-text">Documents imprimables pour travail hors-ligne</span>
+    </div>
+
+    <div id="content">
+</div><div id="content">
+
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <!-- CH 1 - RÉSISTANCES -->
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <section class="chapter" id="resistances">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:var(--accent2);background:rgba(78,205,196,0.1);border-color:rgba(78,205,196,0.2)">CP.01</span>
+          <div class="chapter-title">Les Résistances<span>Limiter le courant dans un circuit</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Qu'est-ce qu'une résistance ?</h3>
+          <p class="text">
+            Une <strong>résistance</strong> est un composant <strong>passif</strong> qui s'oppose au passage du courant.
+            Elle permet de <strong>limiter le courant</strong> et de <strong>diviser la tension</strong>. C'est le
+            composant le plus utilisé en électronique.
+          </p>
+
+          <div class="circuit-info">
+            <div class="circuit-item">
+              <div class="circuit-symbol">—∼∼∼—</div>
+              <div class="circuit-name">Schéma US</div>
+            </div>
+            <div class="circuit-item">
+              <div class="circuit-symbol">—□—</div>
+              <div class="circuit-name">Schéma EU</div>
+            </div>
+            <div class="circuit-item">
+              <div class="circuit-symbol">R</div>
+              <div class="circuit-name">Symbole</div>
+            </div>
+            <div class="circuit-item">
+              <div class="circuit-symbol">Ω</div>
+              <div class="circuit-name">Unité (Ohm)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Le code couleur des résistances</h3>
+          <p class="text">
+            Les résistances à <strong>4 ou 5 bandes</strong> utilisent un code couleur pour indiquer leur valeur.
+          </p>
+
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Couleur</th>
+                <th>Chiffre</th>
+                <th>Multiplicateur</th>
+                <th>Tolérance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background: rgba(0,0,0,0.3)">
+                <td style="color:#fff">Noir</td>
+                <td>0</td>
+                <td>×1</td>
+                <td>—</td>
+              </tr>
+              <tr style="background: rgba(139,69,19,0.3)">
+                <td style="color:#8B4513">Marron</td>
+                <td>1</td>
+                <td>×10</td>
+                <td>±1%</td>
+              </tr>
+              <tr style="background: rgba(255,0,0,0.2)">
+                <td style="color:#ff4444">Rouge</td>
+                <td>2</td>
+                <td>×100</td>
+                <td>±2%</td>
+              </tr>
+              <tr style="background: rgba(255,165,0,0.2)">
+                <td style="color:#FFA500">Orange</td>
+                <td>3</td>
+                <td>×1k</td>
+                <td>—</td>
+              </tr>
+              <tr style="background: rgba(255,255,0,0.15)">
+                <td style="color:#FFD700">Jaune</td>
+                <td>4</td>
+                <td>×10k</td>
+                <td>—</td>
+              </tr>
+              <tr style="background: rgba(0,128,0,0.2)">
+                <td style="color:#22c55e">Vert</td>
+                <td>5</td>
+                <td>×100k</td>
+                <td>±0.5%</td>
+              </tr>
+              <tr style="background: rgba(0,0,255,0.15)">
+                <td style="color:#3b82f6">Bleu</td>
+                <td>6</td>
+                <td>×1M</td>
+                <td>±0.25%</td>
+              </tr>
+              <tr style="background: rgba(128,0,128,0.2)">
+                <td style="color:#a855f7">Violet</td>
+                <td>7</td>
+                <td>×10M</td>
+                <td>±0.1%</td>
+              </tr>
+              <tr style="background: rgba(128,128,128,0.2)">
+                <td style="color:#888">Gris</td>
+                <td>8</td>
+                <td>—</td>
+                <td>—</td>
+              </tr>
+              <tr style="background: rgba(255,255,255,0.1)">
+                <td>Blanc</td>
+                <td>9</td>
+                <td>—</td>
+                <td>—</td>
+              </tr>
+              <tr style="background: rgba(212,175,55,0.2)">
+                <td style="color:#D4AF37">Or</td>
+                <td>—</td>
+                <td>×0.1</td>
+                <td>±5%</td>
+              </tr>
+              <tr style="background: rgba(192,192,192,0.2)">
+                <td style="color:#C0C0C0">Argent</td>
+                <td>—</td>
+                <td>×0.01</td>
+                <td>±10%</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Exemple — Lire une résistance 4 bandes</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm">Résistance avec bandes : Marron - Noir - Rouge - Or</span>
+
+<span class="kw">Lecture :</span>
+  Bande 1 (chiffre) : Marron = <span class="num">1</span>
+  Bande 2 (chiffre) : Noir   = <span class="num">0</span>
+  Bande 3 (multiplicateur) : Rouge = <span class="num">×100</span>
+  Bande 4 (tolérance) : Or = <span class="str">±5%</span>
+
+<span class="kw">Calcul :</span>
+  Valeur = <span class="num">10</span> × <span class="num">100</span> = <span class="str">1000 Ω = 1 kΩ</span> (±5%)
+
+<span class="cm">─────────────────────────────────────────────────</span>
+<span class="cm">Autre exemple : Rouge - Violet - Jaune - Or</span>
+
+  Bande 1 : Rouge  = <span class="num">2</span>
+  Bande 2 : Violet = <span class="num">7</span>
+  Bande 3 : Jaune  = <span class="num">×10k</span>
+  Bande 4 : Or     = <span class="str">±5%</span>
+
+  Valeur = <span class="num">27</span> × <span class="num">10000</span> = <span class="str">270 000 Ω = 270 kΩ</span></pre>
+          </div>
+
+          <div class="callout callout-tip">
+            <span class="callout-icon"><i class="fas fa-lightbulb"></i></span>
+            <div class="callout-body">
+              <strong>Mnémotechnique :</strong> "Ne Mangez Rien Ou Jeûnez, Voilà Bien Votre Grande Bêtise"<br>
+              (Noir, Marron, Rouge, Orange, Jaune, Vert, Bleu, Violet, Gris, Blanc)
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Valeurs standards (série E12)</h3>
+          <p class="text">
+            Les résistances sont fabriquées dans des <strong>valeurs normalisées</strong>. La série E12 (12 valeurs par
+            décade) est la plus courante :
+          </p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Valeurs E12 (×1, ×10, ×100, ×1k...)</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="num">1.0</span>  <span class="num">1.2</span>  <span class="num">1.5</span>  <span class="num">1.8</span>  <span class="num">2.2</span>  <span class="num">2.7</span>  <span class="num">3.3</span>  <span class="num">3.9</span>  <span class="num">4.7</span>  <span class="num">5.6</span>  <span class="num">6.8</span>  <span class="num">8.2</span>
+
+<span class="cm">Exemples de valeurs courantes :</span>
+<span class="str">100Ω</span>  <span class="str">220Ω</span>  <span class="str">330Ω</span>  <span class="str">470Ω</span>  <span class="str">1kΩ</span>  <span class="str">2.2kΩ</span>  <span class="str">4.7kΩ</span>  <span class="str">10kΩ</span></pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Puissance des résistances</h3>
+          <p class="text">
+            Chaque résistance a une <strong>puissance maximale</strong> qu'elle peut dissiper sans griller.
+            Les petites résistances classiques sont 1/4W (0.25W).
+          </p>
+
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Puissance</th>
+                <th>Taille typique</th>
+                <th>Usage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1/8 W (0.125W)</td>
+                <td>Très petit (CMS)</td>
+                <td>Électronique miniature</td>
+              </tr>
+              <tr>
+                <td>1/4 W (0.25W)</td>
+                <td>Standard petit</td>
+                <td>Arduino, électronique générale</td>
+              </tr>
+              <tr>
+                <td>1/2 W (0.5W)</td>
+                <td>Moyen</td>
+                <td>Courants modérés</td>
+              </tr>
+              <tr>
+                <td>1 W - 5 W</td>
+                <td>Grand</td>
+                <td>Alimentation, puissance</td>
+              </tr>
+              <tr>
+                <td>10 W+</td>
+                <td>Avec radiateur</td>
+                <td>Haute puissance</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="retenir">
+          <div class="retenir-title">À retenir — Résistances</div>
+          <ul>
+            <li>Code couleur : 2 chiffres + multiplicateur + tolérance</li>
+            <li>Valeurs standards : série E12 (1.0, 1.2, 1.5, 1.8, 2.2, 2.7...)</li>
+            <li>Puissance : ne pas dépasser (1/4W courant, vérifier avec P = R × I²)</li>
+            <li>Symbole : Ω (ohm), kΩ (kilo-ohm), MΩ (méga-ohm)</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <!-- CH 2 - CONDENSATEURS -->
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <section class="chapter" id="condensateurs">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:var(--accent2);background:rgba(78,205,196,0.1);border-color:rgba(78,205,196,0.2)">CP.02</span>
+          <div class="chapter-title">Les Condensateurs<span>Stocker de l'énergie électrique</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Qu'est-ce qu'un condensateur ?</h3>
+          <p class="text">
+            Un <strong>condensateur</strong> stocke de l'énergie sous forme de <strong>charge électrique</strong>.
+            Il peut se charger et se décharger rapidement, ce qui le rend utile pour le filtrage, le découplage et le
+            timing.
+          </p>
+
+          <div class="circuit-info">
+            <div class="circuit-item">
+              <div class="circuit-symbol">—||—</div>
+              <div class="circuit-name">Non polarisé</div>
+            </div>
+            <div class="circuit-item">
+              <div class="circuit-symbol">—|+—</div>
+              <div class="circuit-name">Polarisé</div>
+            </div>
+            <div class="circuit-item">
+              <div class="circuit-symbol">C</div>
+              <div class="circuit-name">Symbole</div>
+            </div>
+            <div class="circuit-item">
+              <div class="circuit-symbol">F</div>
+              <div class="circuit-name">Unité (Farad)</div>
+            </div>
+          </div>
+
+          <div class="callout callout-info">
+            <span class="callout-icon"><i class="fas fa-info-circle"></i></span>
+            <div class="callout-body">
+              <strong>Analogie :</strong> Un condensateur est comme un réservoir d'eau.
+              Il se remplit (charge) quand on lui fournit du courant, et se vide (décharge) quand on le connecte à une
+              charge.
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Types de condensateurs</h3>
+          <div class="cards-grid">
+            <div class="card">
+              <div class="card-type" style="color: var(--accent)">Électrolytiques</div>
+              <div class="card-desc">Grandes capacités (1μF - 10000μF). <strong>Polarisés</strong> : respecter + et -
+              </div>
+              <div class="card-ex">Filtrage alimentation</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color: var(--accent2)">Céramiques</div>
+              <div class="card-desc">Petites capacités (1pF - 1μF). Non polarisés, très courants.</div>
+              <div class="card-ex">Découplage, HF</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color: var(--accent6)">Film/Polyester</div>
+              <div class="card-desc">Moyennes capacités. Non polarisés, précis et stables.</div>
+              <div class="card-ex">Filtres, audio</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color: var(--accent3)">Tantale</div>
+              <div class="card-desc">Compacts, grandes capacités. <strong>Polarisés</strong>, sensibles.</div>
+              <div class="card-ex">Électronique compacte</div>
+            </div>
+          </div>
+
+          <div class="callout callout-warn">
+            <span class="callout-icon"><i class="fas fa-exclamation-triangle"></i></span>
+            <div class="callout-body">
+              <strong>Attention !</strong> Les condensateurs <strong>polarisés</strong> (électrolytiques, tantale)
+              doivent être branchés dans le bon sens. Une inversion peut les faire <strong>exploser</strong> !
+              La patte la plus longue est le +, ou le marquage - indique la patte négative.
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Lecture des valeurs</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Condensateurs céramiques — Code à 3 chiffres</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm">Format : 2 chiffres + multiplicateur (en pF)</span>
+
+<span class="kw">Exemple : 104</span>
+  Chiffres : <span class="num">10</span>
+  Multiplicateur : <span class="num">10^4</span> = <span class="num">10000</span>
+  Valeur = <span class="num">10</span> × <span class="num">10000</span> = <span class="str">100 000 pF = 100 nF = 0.1 μF</span>
+
+<span class="kw">Exemple : 222</span>
+  Valeur = <span class="num">22</span> × <span class="num">10^2</span> = <span class="num">22</span> × <span class="num">100</span> = <span class="str">2200 pF = 2.2 nF</span>
+
+<span class="kw">Exemple : 473</span>
+  Valeur = <span class="num">47</span> × <span class="num">10^3</span> = <span class="str">47000 pF = 47 nF</span>
+
+<span class="cm">─────────────────────────────────────────────────</span>
+<span class="cm">Conversions utiles :</span>
+  <span class="num">1</span> μF = <span class="num">1000</span> nF = <span class="num">1 000 000</span> pF
+  <span class="num">100</span> nF = <span class="num">0.1</span> μF (très courant, code <span class="str">104</span>)
+  <span class="num">10</span> nF = <span class="num">0.01</span> μF (code <span class="str">103</span>)</pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Utilisations des condensateurs</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Application</th>
+                <th>Type</th>
+                <th>Valeur typique</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Découplage alimentation</td>
+                <td>Céramique</td>
+                <td>100 nF (104)</td>
+              </tr>
+              <tr>
+                <td>Filtrage alimentation</td>
+                <td>Électrolytique</td>
+                <td>100 μF - 1000 μF</td>
+              </tr>
+              <tr>
+                <td>Anti-rebond bouton</td>
+                <td>Céramique</td>
+                <td>100 nF</td>
+              </tr>
+              <tr>
+                <td>Temporisation (RC)</td>
+                <td>Selon durée</td>
+                <td>Variable</td>
+              </tr>
+              <tr>
+                <td>Couplage audio</td>
+                <td>Film/Électrolytique</td>
+                <td>1 μF - 10 μF</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <!-- CH 3 - LED -->
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <section class="chapter" id="led">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:var(--accent2);background:rgba(78,205,196,0.1);border-color:rgba(78,205,196,0.2)">CP.03</span>
+          <div class="chapter-title">Les LED<span>Diodes électroluminescentes</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Qu'est-ce qu'une LED ?</h3>
+          <p class="text">
+            Une <strong>LED</strong> (Light Emitting Diode) est une diode qui <strong>émet de la lumière</strong> quand
+            elle est traversée par un courant.
+            C'est un composant <strong>polarisé</strong> : le courant ne passe que dans un sens.
+          </p>
+
+          <div class="circuit-info">
+            <div class="circuit-item">
+              <div class="circuit-symbol">▷|</div>
+              <div class="circuit-name">Symbole</div>
+            </div>
+            <div class="circuit-item">
+              <div class="circuit-symbol">+ (long)</div>
+              <div class="circuit-name">Anode</div>
+            </div>
+            <div class="circuit-item">
+              <div class="circuit-symbol">- (court)</div>
+              <div class="circuit-name">Cathode</div>
+            </div>
+            <div class="circuit-item">
+              <div class="circuit-symbol">~20mA</div>
+              <div class="circuit-name">Courant</div>
+            </div>
+          </div>
+
+          <div class="callout callout-warn">
+            <span class="callout-icon"><i class="fas fa-exclamation-triangle"></i></span>
+            <div class="callout-body">
+              <strong>Toujours avec une résistance !</strong> Une LED branchée directement sur une alimentation
+              sans résistance de limitation <strong>grille instantanément</strong>.
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Caractéristiques des LED</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Couleur</th>
+                <th>Tension directe (Vf)</th>
+                <th>Courant typique</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="color:#ff4444">Rouge</td>
+                <td>1.8V - 2.2V</td>
+                <td>20 mA</td>
+              </tr>
+              <tr>
+                <td style="color:#FFA500">Orange</td>
+                <td>2.0V - 2.2V</td>
+                <td>20 mA</td>
+              </tr>
+              <tr>
+                <td style="color:#FFD700">Jaune</td>
+                <td>2.0V - 2.4V</td>
+                <td>20 mA</td>
+              </tr>
+              <tr>
+                <td style="color:#22c55e">Vert</td>
+                <td>2.0V - 3.0V</td>
+                <td>20 mA</td>
+              </tr>
+              <tr>
+                <td style="color:#3b82f6">Bleu</td>
+                <td>3.0V - 3.5V</td>
+                <td>20 mA</td>
+              </tr>
+              <tr>
+                <td style="color:#fff">Blanc</td>
+                <td>3.0V - 3.5V</td>
+                <td>20 mA</td>
+              </tr>
+              <tr>
+                <td style="color:#666">Infrarouge</td>
+                <td>1.2V - 1.5V</td>
+                <td>20-50 mA</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Calcul de la résistance de protection</h3>
+          <div class="formula-box">
+            <div class="formula">R = (Valim - VLED) / ILED</div>
+            <div class="formula-desc">Résistance (Ω) = (Tension alimentation - Tension LED) / Courant LED</div>
+          </div>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Exemple — LED rouge sur Arduino (5V)</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="kw">Données :</span>
+  Valim = <span class="num">5</span> V (Arduino)
+  VLED  = <span class="num">2</span> V (rouge)
+  ILED  = <span class="num">20</span> mA = <span class="num">0.020</span> A
+
+<span class="kw">Calcul :</span>
+  R = (<span class="num">5</span> - <span class="num">2</span>) / <span class="num">0.020</span>
+  R = <span class="num">3</span> / <span class="num">0.020</span>
+  R = <span class="str">150 Ω</span>
+
+<span class="cm">→ Utiliser 150Ω ou 220Ω (valeur standard supérieure)</span>
+<span class="cm">→ Avec 220Ω : I = 3 / 220 = 13.6 mA (LED moins brillante mais OK)</span></pre>
+          </div>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Exemple — LED bleue sur 3.3V</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="kw">Données :</span>
+  Valim = <span class="num">3.3</span> V (ESP32, Raspberry Pi)
+  VLED  = <span class="num">3.2</span> V (bleue)
+  ILED  = <span class="num">10</span> mA = <span class="num">0.010</span> A (réduit pour ne pas surcharger)
+
+<span class="kw">Calcul :</span>
+  R = (<span class="num">3.3</span> - <span class="num">3.2</span>) / <span class="num">0.010</span>
+  R = <span class="num">0.1</span> / <span class="num">0.010</span>
+  R = <span class="str">10 Ω</span>
+
+<span class="cm">→ Très faible résistance car VLED proche de Valim</span>
+<span class="cm">→ Utiliser plutôt 33Ω ou 47Ω pour une marge de sécurité</span></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <!-- CH 4 - DIODES -->
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <section class="chapter" id="diodes">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:var(--accent2);background:rgba(78,205,196,0.1);border-color:rgba(78,205,196,0.2)">CP.04</span>
+          <div class="chapter-title">Les Diodes<span>Composant qui ne laisse passer le courant que dans un sens</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Qu'est-ce qu'une diode ?</h3>
+          <p class="text">
+            Une <strong>diode</strong> est un composant qui ne laisse passer le courant que dans <strong>un seul
+              sens</strong> :
+            de l'anode (+) vers la cathode (-). Dans le sens inverse, elle bloque le courant.
+          </p>
+
+          <div class="circuit-info">
+            <div class="circuit-item">
+              <div class="circuit-symbol">▷|</div>
+              <div class="circuit-name">Symbole</div>
+            </div>
+            <div class="circuit-item">
+              <div class="circuit-symbol">A→K</div>
+              <div class="circuit-name">Sens passant</div>
+            </div>
+            <div class="circuit-item">
+              <div class="circuit-symbol">~0.6V</div>
+              <div class="circuit-name">Chute de tension</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Types de diodes</h3>
+          <div class="cards-grid">
+            <div class="card">
+              <div class="card-type">1N4148</div>
+              <div class="card-desc">Diode signal rapide. Petits courants, commutation rapide.</div>
+              <div class="card-ex">I max: 200mA</div>
+            </div>
+            <div class="card">
+              <div class="card-type">1N4007</div>
+              <div class="card-desc">Diode de redressement. Courants moyens, très courante.</div>
+              <div class="card-ex">I max: 1A, 1000V</div>
+            </div>
+            <div class="card">
+              <div class="card-type">Schottky</div>
+              <div class="card-desc">Chute de tension faible (~0.3V), commutation très rapide.</div>
+              <div class="card-ex">Alimentations</div>
+            </div>
+            <div class="card">
+              <div class="card-type">Zener</div>
+              <div class="card-desc">Régulation de tension. Conduit en inverse à une tension précise.</div>
+              <div class="card-ex">3.3V, 5.1V, 12V</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Utilisations des diodes</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Application</th>
+                <th>Type de diode</th>
+                <th>Rôle</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Protection inversion polarité</td>
+                <td>1N4007</td>
+                <td>Empêche le courant inverse de détruire le circuit</td>
+              </tr>
+              <tr>
+                <td>Protection bobine (relais, moteur)</td>
+                <td>1N4148, 1N4007</td>
+                <td>Absorbe la surtension à la coupure</td>
+              </tr>
+              <tr>
+                <td>Redressement AC→DC</td>
+                <td>Pont de diodes</td>
+                <td>Convertit le courant alternatif en continu</td>
+              </tr>
+              <tr>
+                <td>Régulation de tension</td>
+                <td>Zener</td>
+                <td>Maintient une tension constante</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <!-- CH 5 - TRANSISTORS -->
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <section class="chapter" id="transistors">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:var(--accent2);background:rgba(78,205,196,0.1);border-color:rgba(78,205,196,0.2)">CP.05</span>
+          <div class="chapter-title">Les Transistors<span>Interrupteurs électroniques et amplificateurs</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Qu'est-ce qu'un transistor ?</h3>
+          <p class="text">
+            Un <strong>transistor</strong> est un composant à 3 pattes qui peut fonctionner comme un
+            <strong>interrupteur</strong>
+            commandé électriquement ou comme un <strong>amplificateur</strong>. Un petit courant contrôle un grand
+            courant.
+          </p>
+
+          <div class="cards-grid" style="grid-template-columns: 1fr 1fr">
+            <div class="card" style="border-color: rgba(240, 180, 41, 0.3)">
+              <div class="card-type" style="color: var(--accent)">Transistor NPN (BJT)</div>
+              <div class="card-desc">
+                3 pattes : <strong>Base</strong> (B), <strong>Collecteur</strong> (C), <strong>Émetteur</strong> (E)<br>
+                Courant B→E ouvre le passage C→E<br>
+                Ex: 2N2222, BC547
+              </div>
+            </div>
+            <div class="card" style="border-color: rgba(78, 205, 196, 0.3)">
+              <div class="card-type" style="color: var(--accent2)">MOSFET canal N</div>
+              <div class="card-desc">
+                3 pattes : <strong>Grille</strong> (G), <strong>Drain</strong> (D), <strong>Source</strong> (S)<br>
+                Tension sur G ouvre le passage D→S<br>
+                Ex: IRLZ44N, IRF520
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Transistor comme interrupteur</h3>
+          <p class="text">
+            Avec Arduino, on utilise souvent un transistor pour commander des charges qui demandent plus de courant
+            que ce que peut fournir une sortie (max 20-40mA) : moteurs, relais, bandes LED...
+          </p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Schéma — Transistor NPN comme interrupteur</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre>                    +12V
+                      │
+                    [CHARGE]   (moteur, relais, LED puissante)
+                      │
+                      ├──────── Collecteur (C)
+                      │
+    Arduino ──[1kΩ]──├──────── Base (B)      ← Transistor NPN
+    (Pin 9)          │                          (ex: 2N2222)
+                      │
+                    ──┴──────── Émetteur (E)
+                      │
+                     GND
+
+<span class="cm">Fonctionnement :</span>
+<span class="cm">  - Pin 9 = LOW  → Transistor bloqué → Charge éteinte</span>
+<span class="cm">  - Pin 9 = HIGH → Transistor passant → Charge allumée</span>
+
+<span class="cm">La résistance de base (1kΩ) limite le courant dans la base.</span></pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Transistors courants</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Référence</th>
+                <th>Type</th>
+                <th>I max</th>
+                <th>Usage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2N2222</td>
+                <td>NPN</td>
+                <td>600 mA</td>
+                <td>Usage général, petit courant</td>
+              </tr>
+              <tr>
+                <td>BC547</td>
+                <td>NPN</td>
+                <td>100 mA</td>
+                <td>Signaux faibles</td>
+              </tr>
+              <tr>
+                <td>TIP120</td>
+                <td>NPN Darlington</td>
+                <td>5 A</td>
+                <td>Moteurs, relais</td>
+              </tr>
+              <tr>
+                <td>IRLZ44N</td>
+                <td>MOSFET N</td>
+                <td>47 A</td>
+                <td>Charges puissantes, PWM</td>
+              </tr>
+              <tr>
+                <td>IRF520</td>
+                <td>MOSFET N</td>
+                <td>9 A</td>
+                <td>Module Arduino courant</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="retenir">
+          <div class="retenir-title">À retenir — Transistors</div>
+          <ul>
+            <li><strong>NPN</strong> : contrôlé par un courant de base, émetteur au GND</li>
+            <li><strong>MOSFET</strong> : contrôlé par une tension de grille, plus facile avec Arduino</li>
+            <li>Toujours une <strong>résistance de base</strong> avec un NPN (~1kΩ)</li>
+            <li>Pour les moteurs/relais : ajouter une <strong>diode de roue libre</strong></li>
+            <li>Les MOSFET "logic level" fonctionnent avec du 5V ou 3.3V sur la grille</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Navigation -->
+      <div class="page-nav">
+        <a href="electronique-bases.html">
+          <span class="page-nav-label">← Précédent</span>
+          <span class="page-nav-title"><i class="fas fa-bolt"></i> Bases Électronique</span>
+        </a>
+        <a href="arduino.html" class="next">
+          <span class="page-nav-label">Suivant →</span>
+          <span class="page-nav-title"><i class="fas fa-robot"></i> Arduino & ESP32</span>
+        </a>
+      </div>
+
+    </div>
+  
+      <!-- EXERCICES & TP COMPOSANTS -->
+      <section class="chapter" id="exercices-composants">
+        <div class="chapter-header">
+          <span class="chapter-num" style="background:linear-gradient(135deg,#7c3aed,#a78bfa);">EX</span>
+          <div class="chapter-title">Exercices &amp; Travaux Pratiques<span>Identification, mesure et utilisation des composants électroniques</span></div>
+        </div>
+        <div class="section">
+          <p class="section-intro">Ces exercices pratiques vous permettent de manipuler les composants électroniques courants, de les identifier, les mesurer et les utiliser dans des circuits fonctionnels.</p>
+
+          <p class="section-exo-title"><i class="fas fa-pencil-alt"></i> Exercices de compréhension</p>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 1 — Lecture des codes couleurs <span class="niveau-badge niveau-facile">Facile</span></h4>
+            <ol>
+              <li>Décodez les résistances à 4 bandes suivantes : Jaune-Violet-Rouge-Or, Brun-Noir-Orange-Argent, Rouge-Rouge-Brun-Or. Donnez la valeur nominale et la tolérance.</li>
+              <li>Mesurez avec un multimètre 10 résistances de votre kit. Comparez la valeur mesurée à la valeur du code couleur. Calculez l'écart en %. Toutes sont-elles dans leur tolérance ?</li>
+              <li>Calculez la résistance équivalente de 3 résistances identiques de 1 kΩ en série, puis en parallèle, puis en association mixte (2 en parallèle, puis ce groupe en série avec la 3ème).</li>
+            </ol>
+          </div>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 2 — Diodes et LEDs <span class="niveau-badge niveau-moyen">Moyen</span></h4>
+            <ol>
+              <li>Mesurez la tension de seuil d'une diode 1N4007 avec le multimètre en mode diode. Faites de même avec une LED rouge, verte et bleue. Comparez les valeurs.</li>
+              <li>Montez un redresseur demi-onde avec une 1N4007 et un condensateur de filtrage. Observez le signal à l'oscilloscope avant et après filtrage. Calculez le taux d'ondulation.</li>
+              <li>Calculez la résistance nécessaire pour alimenter une LED rouge (Vf=2V, If=20mA) depuis 3,3 V, 5 V et 12 V. Vérifiez expérimentalement.</li>
+            </ol>
+          </div>
+
+          <div class="tp-block">
+            <h4>🔬 TP — Multimètre et banc de mesure <span class="niveau-badge niveau-facile">Facile — 1h30</span></h4>
+            <p style="font-size:14px;color:var(--muted);margin-bottom:12px;"><strong>Objectif :</strong> Maîtriser l'utilisation du multimètre pour les mesures de base.</p>
+            <ol class="tp-etapes">
+              <li>Mesurez la tension d'une pile 9 V à vide et sous charge (résistance 100 Ω). Expliquez la chute de tension.</li>
+              <li>Identifiez 10 composants inconnus dans votre kit à l'aide du multimètre uniquement (résistance, continuité, diode, condensateur).</li>
+              <li>Construisez un circuit simple sur breadboard : alimentation 5 V, deux LEDs de couleurs différentes en série avec des résistances adaptées. Mesurez toutes les tensions et courants. Vérifiez la loi des mailles.</li>
+              <li>Rédigez un compte-rendu avec : schéma du circuit, tableau des mesures, comparaison calculs/mesures.</li>
+            </ol>
+          </div>
+
+          <div class="quiz-block">
+            <h4>❓ Quiz de révision — Composants</h4>
+            <ol>
+              <li>Qu'est-ce que la tolérance d'une résistance ? Une résistance 1 kΩ ±5% peut avoir quelle valeur min et max ?</li>
+              <li>Expliquez la différence entre un condensateur céramique et un condensateur électrolytique. Lequel est polarisé ?</li>
+              <li>Citez 3 types de transistors et leur usage principal (BJT NPN, BJT PNP, MOSFET N-channel).</li>
+              <li>Qu'est-ce qu'un optocoupleur ? Dans quel contexte est-il utilisé ?</li>
+              <li>Quelle est la différence entre un régulateur linéaire (LM7805) et un régulateur à découpage ? Avantages/inconvénients de chacun ?</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-info">
+        <img src="assets/logo.png" alt="Logo" class="footer-logo">
+        <div class="footer-text">
+          <div class="footer-name">Adriel TATCHUM SIMO</div>
+          <div class="footer-job">Enseignant CIEL • Formateur Web & Électronique</div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Accueil</a>
+        <a href="html-complet.html">HTML</a>
+        <a href="css-complet.html">CSS</a>
+        <a href="javascript.html">JavaScript</a>
+      </div>
+      <div class="footer-copy">© 2026 Cours CIEL — Tous droits réservés</div>
+    </div>
+  </footer>
+
+  <button id="back-top" aria-label="Retour en haut">↑</button>
+
+  <script src="script.js"></script>
+  <script>
+    function toggleReponse(btn) {
+      const content = btn.nextElementSibling;
+      const isVisible = content.style.display === 'block';
+      content.style.display = isVisible ? 'none' : 'block';
+      btn.innerHTML = isVisible
+        ? '<i class="fas fa-eye"></i> Voir la réponse'
+        : '<i class="fas fa-eye-slash"></i> Masquer la réponse';
+      btn.style.background   = isVisible ? 'rgba(240,180,41,0.1)'  : 'rgba(0,117,143,0.15)';
+      btn.style.borderColor  = isVisible ? 'rgba(240,180,41,0.35)' : 'rgba(0,117,143,0.4)';
+      btn.style.color        = isVisible ? 'var(--accent)' : '#00b4d8';
+    }
+  </script>
+</body>
+
+</html>

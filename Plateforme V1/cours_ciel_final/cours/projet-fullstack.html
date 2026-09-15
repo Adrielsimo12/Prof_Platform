@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projet Full Stack — Cours CIEL</title>
+  <meta name="description" content="Projet complet Full Stack : HTML/CSS/JS + Flask + MySQL sur réseau local.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="shared-styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+
+<body>
+
+  <div id="scroll-indicator"></div>
+  <button class="mobile-menu-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+
+  <aside id="sidebar">
+    <div class="sidebar-header">
+      <img src="assets/logo.png" alt="Logo CIEL" class="sidebar-logo">
+      <div class="sidebar-title">Cours CIEL<span>Adriel TATCHUM SIMO • Formateur</span></div>
+    </div>
+    <div class="search-container" style="padding: 12px 16px;">
+      <input type="text" id="searchInput" placeholder="Rechercher un cours..."
+        style="width:100%;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:13px;">
+    </div>
+    <div class="progress-container">
+      <div class="progress-label">Progression du cours</div>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 0%"></div>
+      </div>
+    </div>
+    <nav>
+      <div class="nav-group">
+        <div class="nav-group-title">Accueil</div>
+        <a href="index.html"><i class="fas fa-home"></i> Introduction</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 1 — Développement Web</div>
+        <a href="html-complet.html"><i class="fab fa-html5"></i> HTML Complet</a>
+        <a href="css-complet.html"><i class="fab fa-css3-alt"></i> CSS Complet</a>
+        <a href="javascript.html"><i class="fab fa-js"></i> JavaScript</a>
+        <a href="python-flask.html"><i class="fab fa-python"></i> Python & Flask</a>
+        <a href="mysql.html"><i class="fas fa-database"></i> MySQL</a>
+        <a href="projet-fullstack.html"><i class="fas fa-project-diagram"></i> Projet Full Stack</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 2 — Électronique</div>
+        <a href="electronique-bases.html"><i class="fas fa-bolt"></i> Bases Électronique</a>
+        <a href="composants.html"><i class="fas fa-microchip"></i> Composants</a>
+        <a href="arduino.html"><i class="fas fa-robot"></i> Arduino & ESP32</a>
+        <a href="raspberry-pi.html"><i class="fab fa-raspberry-pi"></i> Raspberry Pi</a>
+        <a href="capteurs.html"><i class="fas fa-thermometer-half"></i> Capteurs & Actionneurs</a>
+        <a href="maintenance-electronique.html"><i class="fas fa-tools"></i> Maintenance Électronique</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 3 — Réseaux & Sécurité</div>
+        <a href="reseau-informatique.html"><i class="fas fa-network-wired"></i> Réseau Informatique</a>
+        <a href="cybersecurite.html"><i class="fas fa-shield-alt"></i> Cybersécurité</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Outils & Workflow</div>
+        <a href="vscode.html"><i class="fas fa-code"></i> VS Code</a>
+        <a href="git.html"><i class="fab fa-git-alt"></i> Git & GitHub</a>
+        <a href="venv.html"><i class="fas fa-cube"></i> .venv Python</a>
+      </div>
+    </nav>
+    <div class="theme-toggle">
+      <button class="theme-btn"><i class="fas fa-sun"></i><span>Mode clair</span></button>
+    </div>
+  </aside>
+
+  <main id="main">
+<section id="hero">
+      <div class="hero-tag">★ PROJET FINAL</div>
+      <h1 class="hero-title">Projet<br><em>Full Stack</em></h1>
+      <p class="hero-desc">
+        Application complète de gestion d'élèves : HTML/CSS/JS + Flask + MySQL, déployée sur réseau local Windows 11.
+      </p>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-val">5</span><span class="stat-label">Technologies</span></div>
+        <div class="stat"><span class="stat-val">3</span><span class="stat-label">Couches</span></div>
+        <div class="stat"><span class="stat-val">~3h</span><span class="stat-label">Réalisation</span></div>
+      </div>
+    </section>
+
+
+    <!-- ══════ SECTION VIDÉO PÉDAGOGIQUE ══════ -->
+    <div class="video-ressource">
+      <div class="video-section-title"><i class="fab fa-youtube"></i> Vidéo pédagogique recommandée</div>
+      <div class="video-card">
+        <a href="https://www.youtube.com/watch?v=lqJ3KlZVZYk" target="_blank" class="video-thumbnail">
+          <div class="video-thumbnail-bg">
+            <i class="fab fa-youtube video-yt-icon"></i>
+            <span class="video-yt-text">YOUTUBE</span>
+          </div>
+          <div class="video-play-overlay"><i class="fas fa-play"></i></div>
+        </a>
+        <div class="video-info">
+          <span class="video-badge"><i class="fas fa-clock"></i> 4h</span>
+          <div class="video-titre">Projet Full Stack Complet</div>
+          <div class="video-chaine">Chaîne : Grafikart</div>
+          <div class="video-desc">Créez une application web complète : HTML/CSS/JS + Python Flask + MySQL.</div>
+          <a href="https://www.youtube.com/watch?v=lqJ3KlZVZYk" target="_blank" class="video-watch-btn">
+            <i class="fab fa-youtube"></i> Voir sur YouTube
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════ TÉLÉCHARGEMENTS PDF ══════ -->
+    <div class="pdf-download-zone">
+      <a href="tp-projet-fullstack.pdf" download class="pdf-download-btn">
+        <i class="fas fa-file-pdf"></i> Télécharger le TP (PDF)
+      </a>
+      <a href="correction-fullstack.pdf" download class="correction-download-btn">
+        <i class="fas fa-check-circle"></i> Télécharger les corrections (PDF)
+      </a>
+      <span class="pdf-info-text">Documents imprimables pour travail hors-ligne</span>
+    </div>
+
+    <div id="content">
+</div><div id="content">
+
+      <!-- ARCHITECTURE -->
+      <section class="chapter" id="architecture">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:var(--accent);background:rgba(240,180,41,0.1);border-color:rgba(240,180,41,0.2)">PROJ.01</span>
+          <div class="chapter-title">Architecture du projet<span>Structure des fichiers et technologies</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Structure des fichiers</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Structure du projet</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre>mon_projet/
+│
+├── .venv/                  ← environnement virtuel Python
+│
+├── backend/
+│   ├── app.py              ← serveur Flask (API REST)
+│   ├── config.py           ← paramètres MySQL
+│   └── requirements.txt    ← dépendances Python
+│
+├── frontend/
+│   ├── index.html          ← page principale
+│   ├── style.css           ← feuille de styles
+│   └── script.js           ← appels API + DOM
+│
+└── sql/
+    └── init.sql            ← création BDD + données initiales</pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Les 3 couches</h3>
+          <div class="cards-grid" style="grid-template-columns: repeat(3, 1fr)">
+            <div class="card" style="border-color: rgba(227, 76, 38, 0.3)">
+              <div class="card-type" style="color: #e34c26"><i class="fas fa-desktop"></i> Frontend</div>
+              <div class="card-desc">Interface utilisateur visible dans le navigateur</div>
+              <div class="card-ex">HTML • CSS • JavaScript</div>
+            </div>
+            <div class="card" style="border-color: rgba(48, 105, 152, 0.3)">
+              <div class="card-type" style="color: #306998"><i class="fas fa-server"></i> Backend</div>
+              <div class="card-desc">API REST qui traite les requêtes</div>
+              <div class="card-ex">Python • Flask</div>
+            </div>
+            <div class="card" style="border-color: rgba(0, 117, 143, 0.3)">
+              <div class="card-type" style="color: #00758f"><i class="fas fa-database"></i> Base de données</div>
+              <div class="card-desc">Stockage persistant des données</div>
+              <div class="card-ex">MySQL</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BASE DE DONNÉES -->
+      <section class="chapter" id="bdd">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:var(--accent);background:rgba(240,180,41,0.1);border-color:rgba(240,180,41,0.2)">PROJ.02</span>
+          <div class="chapter-title">1. Base de données MySQL<span>Script de création</span></div>
+        </div>
+
+        <div class="section">
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">SQL — sql/init.sql</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="kw">CREATE DATABASE IF NOT EXISTS</span> gestion_eleves <span class="kw">CHARACTER SET</span> utf8mb4;
+<span class="kw">USE</span> gestion_eleves;
+
+<span class="kw">CREATE TABLE IF NOT EXISTS</span> eleves (
+    id        <span class="cls">INT</span> <span class="kw">PRIMARY KEY AUTO_INCREMENT</span>,
+    nom       <span class="cls">VARCHAR</span>(<span class="num">50</span>)  <span class="kw">NOT NULL</span>,
+    prenom    <span class="cls">VARCHAR</span>(<span class="num">50</span>)  <span class="kw">NOT NULL</span>,
+    classe    <span class="cls">VARCHAR</span>(<span class="num">20</span>),
+    note      <span class="cls">DECIMAL</span>(<span class="num">4</span>,<span class="num">2</span>),
+    created   <span class="cls">DATETIME</span> <span class="kw">DEFAULT</span> <span class="fn">NOW</span>()
+);
+
+<span class="kw">INSERT INTO</span> eleves (nom, prenom, classe, note) <span class="kw">VALUES</span>
+  (<span class="str">'Dupont'</span>,  <span class="str">'Alice'</span>, <span class="str">'CIEL'</span>, <span class="num">16.5</span>),
+  (<span class="str">'Martin'</span>,  <span class="str">'Bob'</span>,   <span class="str">'CIEL'</span>, <span class="num">12.0</span>),
+  (<span class="str">'Leroy'</span>,   <span class="str">'Chloé'</span>, <span class="str">'SIO'</span>,  <span class="num">14.5</span>);</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- BACKEND -->
+      <section class="chapter" id="backend">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:var(--accent);background:rgba(240,180,41,0.1);border-color:rgba(240,180,41,0.2)">PROJ.03</span>
+          <div class="chapter-title">2. Backend Flask<span>API REST complète</span></div>
+        </div>
+
+        <div class="section">
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Python — backend/app.py</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="kw">import</span> pymysql
+<span class="kw">from</span> flask <span class="kw">import</span> Flask, jsonify, request
+<span class="kw">from</span> flask_cors <span class="kw">import</span> CORS
+
+app = <span class="fn">Flask</span>(__name__)
+<span class="fn">CORS</span>(app)
+
+DB = {
+    <span class="str">'host'</span>: <span class="str">'localhost'</span>, 
+    <span class="str">'user'</span>: <span class="str">'root'</span>,
+    <span class="str">'password'</span>: <span class="str">'votre_mdp'</span>, 
+    <span class="str">'database'</span>: <span class="str">'gestion_eleves'</span>,
+    <span class="str">'charset'</span>: <span class="str">'utf8mb4'</span>, 
+    <span class="str">'cursorclass'</span>: pymysql.cursors.DictCursor
+}
+
+<span class="kw">def</span> <span class="fn">db</span>(): 
+    <span class="kw">return</span> pymysql.<span class="fn">connect</span>(**DB)
+
+<span class="cm"># GET /api/eleves — lire tous les élèves</span>
+<span class="op">@</span>app.<span class="fn">route</span>(<span class="str">'/api/eleves'</span>)
+<span class="kw">def</span> <span class="fn">liste</span>():
+    c = <span class="fn">db</span>()
+    <span class="kw">with</span> c.<span class="fn">cursor</span>() <span class="kw">as</span> cur: 
+        cur.<span class="fn">execute</span>(<span class="str">"SELECT * FROM eleves"</span>)
+        r = cur.<span class="fn">fetchall</span>()
+    c.<span class="fn">close</span>()
+    <span class="kw">return</span> <span class="fn">jsonify</span>(r)
+
+<span class="cm"># POST /api/eleves — créer un élève</span>
+<span class="op">@</span>app.<span class="fn">route</span>(<span class="str">'/api/eleves'</span>, methods=[<span class="str">'POST'</span>])
+<span class="kw">def</span> <span class="fn">creer</span>():
+    d = request.<span class="fn">get_json</span>()
+    c = <span class="fn">db</span>()
+    <span class="kw">with</span> c.<span class="fn">cursor</span>() <span class="kw">as</span> cur:
+        cur.<span class="fn">execute</span>(
+            <span class="str">"INSERT INTO eleves (nom,prenom,classe,note) VALUES (%s,%s,%s,%s)"</span>,
+            (d[<span class="str">'nom'</span>], d[<span class="str">'prenom'</span>], d.<span class="fn">get</span>(<span class="str">'classe'</span>,<span class="str">''</span>), d.<span class="fn">get</span>(<span class="str">'note'</span>,<span class="num">0</span>))
+        )
+        c.<span class="fn">commit</span>()
+        nid = cur.lastrowid
+    c.<span class="fn">close</span>()
+    <span class="kw">return</span> <span class="fn">jsonify</span>({<span class="str">"id"</span>: nid}), <span class="num">201</span>
+
+<span class="cm"># DELETE /api/eleves/&lt;id&gt;</span>
+<span class="op">@</span>app.<span class="fn">route</span>(<span class="str">'/api/eleves/&lt;int:id&gt;'</span>, methods=[<span class="str">'DELETE'</span>])
+<span class="kw">def</span> <span class="fn">supprimer</span>(id):
+    c = <span class="fn">db</span>()
+    <span class="kw">with</span> c.<span class="fn">cursor</span>() <span class="kw">as</span> cur:
+        cur.<span class="fn">execute</span>(<span class="str">"DELETE FROM eleves WHERE id=%s"</span>, (id,))
+        c.<span class="fn">commit</span>()
+    c.<span class="fn">close</span>()
+    <span class="kw">return</span> <span class="fn">jsonify</span>({<span class="str">"ok"</span>: <span class="kw">True</span>})
+
+<span class="kw">if</span> __name__ == <span class="str">'__main__'</span>:
+    app.<span class="fn">run</span>(debug=<span class="kw">True</span>, host=<span class="str">'0.0.0.0'</span>, port=<span class="num">5000</span>)</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- FRONTEND -->
+      <section class="chapter" id="frontend">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:var(--accent);background:rgba(240,180,41,0.1);border-color:rgba(240,180,41,0.2)">PROJ.04</span>
+          <div class="chapter-title">3. Frontend HTML + JS<span>Interface utilisateur</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Page HTML</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">HTML — frontend/index.html</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="kw">&lt;!DOCTYPE html&gt;</span>
+<span class="kw">&lt;html</span> lang=<span class="str">"fr"</span><span class="kw">&gt;</span>
+<span class="kw">&lt;head&gt;</span>
+  <span class="kw">&lt;meta</span> charset=<span class="str">"UTF-8"</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;title&gt;</span>Gestion Élèves<span class="kw">&lt;/title&gt;</span>
+  <span class="kw">&lt;link</span> rel=<span class="str">"stylesheet"</span> href=<span class="str">"style.css"</span><span class="kw">&gt;</span>
+<span class="kw">&lt;/head&gt;</span>
+<span class="kw">&lt;body&gt;</span>
+  <span class="kw">&lt;h1&gt;</span>Gestion des Élèves CIEL<span class="kw">&lt;/h1&gt;</span>
+
+  <span class="cm">&lt;!-- Formulaire d'ajout --&gt;</span>
+  <span class="kw">&lt;form</span> id=<span class="str">"formAjout"</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;input</span> id=<span class="str">"nom"</span> type=<span class="str">"text"</span> placeholder=<span class="str">"Nom"</span> required<span class="kw">&gt;</span>
+    <span class="kw">&lt;input</span> id=<span class="str">"prenom"</span> type=<span class="str">"text"</span> placeholder=<span class="str">"Prénom"</span> required<span class="kw">&gt;</span>
+    <span class="kw">&lt;input</span> id=<span class="str">"classe"</span> type=<span class="str">"text"</span> placeholder=<span class="str">"Classe"</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;input</span> id=<span class="str">"note"</span> type=<span class="str">"number"</span> placeholder=<span class="str">"Note"</span> step=<span class="str">"0.5"</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;button</span> type=<span class="str">"submit"</span><span class="kw">&gt;</span>Ajouter<span class="kw">&lt;/button&gt;</span>
+  <span class="kw">&lt;/form&gt;</span>
+
+  <span class="cm">&lt;!-- Tableau des élèves --&gt;</span>
+  <span class="kw">&lt;table</span> id=<span class="str">"tableau"</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;thead&gt;&lt;tr&gt;</span>
+      <span class="kw">&lt;th&gt;</span>ID<span class="kw">&lt;/th&gt;&lt;th&gt;</span>Nom<span class="kw">&lt;/th&gt;&lt;th&gt;</span>Prénom<span class="kw">&lt;/th&gt;</span>
+      <span class="kw">&lt;th&gt;</span>Classe<span class="kw">&lt;/th&gt;&lt;th&gt;</span>Note<span class="kw">&lt;/th&gt;&lt;th&gt;</span>Action<span class="kw">&lt;/th&gt;</span>
+    <span class="kw">&lt;/tr&gt;&lt;/thead&gt;</span>
+    <span class="kw">&lt;tbody</span> id=<span class="str">"corps"</span><span class="kw">&gt;&lt;/tbody&gt;</span>
+  <span class="kw">&lt;/table&gt;</span>
+
+  <span class="kw">&lt;script</span> src=<span class="str">"script.js"</span><span class="kw">&gt;&lt;/script&gt;</span>
+<span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">JavaScript</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">JavaScript — frontend/script.js</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm">// ⚠️ Remplacer 192.168.1.10 par l'IP du PC serveur</span>
+<span class="kw">const</span> API = <span class="str">'http://192.168.1.10:5000/api'</span>;
+
+<span class="cm">// Charger et afficher les élèves</span>
+<span class="kw">async function</span> <span class="fn">charger</span>() {
+  <span class="kw">const</span> eleves = <span class="kw">await</span> (<span class="kw">await</span> <span class="fn">fetch</span>(<span class="str">`${API}/eleves`</span>)).<span class="fn">json</span>();
+  <span class="kw">const</span> tbody  = <span class="fn">document</span>.<span class="fn">getElementById</span>(<span class="str">'corps'</span>);
+  tbody.innerHTML = eleves.<span class="fn">map</span>(e => <span class="str">`
+    &lt;tr&gt;
+      &lt;td&gt;${e.id}&lt;/td&gt;&lt;td&gt;${e.nom}&lt;/td&gt;&lt;td&gt;${e.prenom}&lt;/td&gt;
+      &lt;td&gt;${e.classe}&lt;/td&gt;&lt;td&gt;${e.note}&lt;/td&gt;
+      &lt;td&gt;&lt;button onclick="supprimer(${e.id})"&gt;Supprimer&lt;/button&gt;&lt;/td&gt;
+    &lt;/tr&gt;`</span>).<span class="fn">join</span>(<span class="str">''</span>);
+}
+
+<span class="cm">// Ajouter un élève</span>
+<span class="fn">document</span>.<span class="fn">getElementById</span>(<span class="str">'formAjout'</span>)
+  .<span class="fn">addEventListener</span>(<span class="str">'submit'</span>, <span class="kw">async</span> e => {
+    e.<span class="fn">preventDefault</span>();
+    <span class="kw">await</span> <span class="fn">fetch</span>(<span class="str">`${API}/eleves`</span>, {
+      method:  <span class="str">'POST'</span>,
+      headers: { <span class="str">'Content-Type'</span>: <span class="str">'application/json'</span> },
+      body: <span class="fn">JSON</span>.<span class="fn">stringify</span>({
+        nom:    <span class="fn">document</span>.<span class="fn">getElementById</span>(<span class="str">'nom'</span>).value,
+        prenom: <span class="fn">document</span>.<span class="fn">getElementById</span>(<span class="str">'prenom'</span>).value,
+        classe: <span class="fn">document</span>.<span class="fn">getElementById</span>(<span class="str">'classe'</span>).value,
+        note:   +<span class="fn">document</span>.<span class="fn">getElementById</span>(<span class="str">'note'</span>).value
+      })
+    });
+    e.target.<span class="fn">reset</span>();
+    <span class="fn">charger</span>();
+  });
+
+<span class="cm">// Supprimer un élève</span>
+<span class="kw">async function</span> <span class="fn">supprimer</span>(id) {
+  <span class="kw">if</span> (!<span class="fn">confirm</span>(<span class="str">'Supprimer cet élève ?'</span>)) <span class="kw">return</span>;
+  <span class="kw">await</span> <span class="fn">fetch</span>(<span class="str">`${API}/eleves/${id}`</span>, { method: <span class="str">'DELETE'</span> });
+  <span class="fn">charger</span>();
+}
+
+<span class="cm">// Charger au démarrage</span>
+<span class="fn">charger</span>();</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- DÉPLOIEMENT -->
+      <section class="chapter" id="deploiement">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:var(--accent);background:rgba(240,180,41,0.1);border-color:rgba(240,180,41,0.2)">PROJ.05</span>
+          <div class="chapter-title">4. Déploiement réseau local<span>Windows 11 — accessible à toute la classe</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="callout callout-info">
+            <span class="callout-icon"><i class="fas fa-globe"></i></span>
+            <div class="callout-body">
+              <strong>Principe :</strong> le PC du professeur (ou un PC dédié) fait office de serveur.
+              Tous les élèves du réseau local (même Wi-Fi / même switch) accèdent à l'application via l'adresse IP du
+              serveur.
+            </div>
+          </div>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Étapes — PC Serveur (Windows 11)</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm">══ ÉTAPE 1 — Trouver l'adresse IP du serveur ══════════</span>
+<span class="cm"># Dans PowerShell ou CMD :</span>
+<span class="fn">ipconfig</span>
+<span class="cm"># Repérer "Adresse IPv4" → ex : 192.168.1.10</span>
+
+<span class="cm">══ ÉTAPE 2 — Installer les prérequis ════════════════</span>
+<span class="cm"># Installer Python 3.11+ depuis python.org</span>
+<span class="cm"># Installer MySQL Community Server depuis dev.mysql.com</span>
+
+<span class="cm">══ ÉTAPE 3 — Préparer la base de données ════════════</span>
+<span class="cm"># Ouvrir MySQL Workbench ou le terminal MySQL :</span>
+mysql -u root -p
+<span class="cm"># Puis exécuter le fichier sql/init.sql</span>
+source C:/mon_projet/sql/init.sql
+
+<span class="cm">══ ÉTAPE 4 — Lancer le serveur Flask ════════════════</span>
+<span class="fn">cd</span> C:\mon_projet
+.\.venv\Scripts\Activate.ps1
+<span class="fn">cd</span> backend
+<span class="fn">python</span> app.py
+<span class="cm"># → "Running on http://0.0.0.0:5000"</span>
+
+<span class="cm">══ ÉTAPE 5 — Ouvrir le pare-feu Windows ════════════</span>
+<span class="cm"># PowerShell (admin) :</span>
+New-NetFirewallRule -DisplayName <span class="str">"Flask 5000"</span> -Direction Inbound -Protocol TCP -LocalPort <span class="num">5000</span> -Action Allow
+
+<span class="cm">══ ÉTAPE 6 — Servir le frontend ═════════════════════</span>
+<span class="cm"># Dans un 2ème terminal :</span>
+<span class="fn">cd</span> C:\mon_projet\frontend
+<span class="fn">python</span> -m http.server <span class="num">8080</span>
+<span class="cm"># → Accessible sur http://192.168.1.10:8080</span>
+
+<span class="cm">══ ÉTAPE 7 — Connexion depuis les PC élèves ═════════</span>
+<span class="cm"># Ouvrir un navigateur et saisir :</span>
+<span class="cm"># http://192.168.1.10:8080   ← application</span>
+<span class="cm"># http://192.168.1.10:5000/api/eleves ← API directe</span></pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Dépannage</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Problème</th>
+                <th>Solution</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Connexion refusée (ECONNREFUSED)</td>
+                <td>Flask n'est pas lancé, ou pare-feu bloque le port 5000</td>
+              </tr>
+              <tr>
+                <td>Erreur CORS</td>
+                <td>Vérifier que flask-cors est installé et CORS(app) présent</td>
+              </tr>
+              <tr>
+                <td>Page blanche</td>
+                <td>Serveur HTTP (python -m http.server) pas lancé</td>
+              </tr>
+              <tr>
+                <td>Erreur MySQL 1045</td>
+                <td>Mauvais mot de passe dans config.py</td>
+              </tr>
+              <tr>
+                <td>ModuleNotFoundError</td>
+                <td>.venv non activé — lancer Activate.ps1 d'abord</td>
+              </tr>
+              <tr>
+                <td>IP introuvable</td>
+                <td>Vérifier que serveur et clients sont sur le même réseau</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="retenir">
+          <div class="retenir-title">Récapitulatif du projet complet</div>
+          <ul>
+            <li><strong>HTML</strong> → structure de la page (formulaire + tableau)</li>
+            <li><strong>CSS</strong> → mise en forme visuelle</li>
+            <li><strong>JavaScript</strong> → appels API avec <code>fetch()</code>, manipulation du DOM</li>
+            <li><strong>Python + Flask</strong> → API REST (routes GET, POST, DELETE)</li>
+            <li><strong>MySQL</strong> → stockage persistant des données</li>
+            <li><strong>.venv</strong> → isolation des dépendances Python</li>
+            <li><strong>host='0.0.0.0'</strong> → accessible sur tout le réseau local</li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="page-nav">
+        <a href="mysql.html">
+          <span class="page-nav-label">← Précédent</span>
+          <span class="page-nav-title"><i class="fas fa-database"></i> MySQL</span>
+        </a>
+        <a href="electronique-bases.html" class="next">
+          <span class="page-nav-label">Partie 2 →</span>
+          <span class="page-nav-title"><i class="fas fa-bolt"></i> Électronique</span>
+        </a>
+      </div>
+
+    </div>
+  
+      <!-- EXERCICES & TP FULLSTACK -->
+      <section class="chapter" id="exercices-fullstack">
+        <div class="chapter-header">
+          <span class="chapter-num" style="background:linear-gradient(135deg,#7c3aed,#2563eb);">EX</span>
+          <div class="chapter-title">Exercices &amp; Travaux Pratiques<span>Conception et développement d'une application web complète</span></div>
+        </div>
+        <div class="section">
+          <p class="section-intro">Le projet Full Stack est l'aboutissement de votre formation. Ces exercices préparatoires et le TP final vous permettent d'intégrer toutes les compétences acquises dans une application web professionnelle et déployée.</p>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 1 — Architecture MVC Flask <span class="niveau-badge niveau-moyen">Moyen</span></h4>
+            <ol>
+              <li>Restructurez une application Flask monolithique en utilisant les Blueprints : <code>auth</code>, <code>api</code>, <code>admin</code>, <code>main</code> — chacun dans son propre dossier avec ses routes, templates et modèles.</li>
+              <li>Implémentez une Application Factory (<code>create_app(config)</code>) permettant de créer l'application avec différentes configurations (développement, test, production).</li>
+              <li>Ajoutez la gestion des erreurs globale : pages d'erreur personnalisées pour 404, 403, 500 et gestionnaire d'exceptions JSON pour l'API.</li>
+            </ol>
+          </div>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 2 — Tests automatisés <span class="niveau-badge niveau-avance">Avancé</span></h4>
+            <ol>
+              <li>Écrivez des tests unitaires avec pytest pour vos modèles SQLAlchemy : création, lecture, mise à jour, suppression, et validation des contraintes.</li>
+              <li>Écrivez des tests d'intégration pour vos routes Flask : testez chaque endpoint avec le client de test Flask (<code>app.test_client()</code>).</li>
+              <li>Mesurez la couverture de tests avec <code>pytest-cov</code>. Visez &gt; 80% de couverture.</li>
+              <li>Ajoutez des tests end-to-end avec Selenium ou Playwright pour simuler un utilisateur réel navigant sur votre site.</li>
+            </ol>
+          </div>
+
+          <div class="tp-block">
+            <h4>🔬 TP FINAL — Application Full Stack de gestion CIEL <span class="niveau-badge niveau-avance">Avancé — 8h (projet noté)</span></h4>
+            <p style="font-size:14px;color:var(--muted);margin-bottom:12px;"><strong>Objectif :</strong> Développer et déployer une application web de gestion pour la filière CIEL (gestion des élèves, des projets IoT et des ressources).</p>
+            <p style="font-size:14px;font-weight:600;margin-bottom:8px;">Fonctionnalités requises :</p>
+            <ol class="tp-etapes">
+              <li><strong>Authentification :</strong> Inscription, connexion, rôles (admin, professeur, élève) avec Flask-Login. Réinitialisation de mot de passe par email.</li>
+              <li><strong>Gestion des élèves :</strong> CRUD complet, import CSV, export PDF des bulletins, photos de profil uploadées et redimensionnées avec Pillow.</li>
+              <li><strong>Projets IoT :</strong> Chaque projet peut avoir un statut, une description, des membres, des fichiers attachés et un historique de modifications.</li>
+              <li><strong>Dashboard :</strong> Statistiques en temps réel (Chart.js), activité récente, alertes.</li>
+              <li><strong>API REST :</strong> Endpoints JSON documentés pour l'intégration avec les projets Arduino/ESP32 (envoi de données capteurs vers la base de données).</li>
+              <li><strong>Déploiement :</strong> Déploiement sur un VPS ou Render/Railway avec HTTPS, variables d'environnement sécurisées et base de données PostgreSQL.</li>
+              <li><strong>Livrable :</strong> Code sur GitHub (README complet, instructions d'installation, variables d'env documentées) + URL de l'application déployée + rapport de 5 pages.</li>
+            </ol>
+            <div class="callout callout-tip" style="margin-top:16px;">
+              <span class="callout-icon">🏆</span>
+              <div class="callout-body"><strong>Critères d'évaluation :</strong> Fonctionnalité (40%) + Qualité du code / bonnes pratiques (25%) + Design et UX (15%) + Déploiement et documentation (20%).</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-info">
+        <img src="assets/logo.png" alt="Logo" class="footer-logo">
+        <div class="footer-text">
+          <div class="footer-name">Adriel TATCHUM SIMO</div>
+          <div class="footer-job">Enseignant CIEL • Formateur Web & Électronique</div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Accueil</a>
+        <a href="html-complet.html">HTML</a>
+        <a href="css-complet.html">CSS</a>
+        <a href="javascript.html">JavaScript</a>
+      </div>
+      <div class="footer-copy">© 2026 Cours CIEL — Tous droits réservés</div>
+    </div>
+  </footer>
+
+  <button id="back-top" aria-label="Retour en haut">↑</button>
+
+  <script src="script.js"></script>
+  <script>
+    function toggleReponse(btn) {
+      const content = btn.nextElementSibling;
+      const isVisible = content.style.display === 'block';
+      content.style.display = isVisible ? 'none' : 'block';
+      btn.innerHTML = isVisible
+        ? '<i class="fas fa-eye"></i> Voir la réponse'
+        : '<i class="fas fa-eye-slash"></i> Masquer la réponse';
+      btn.style.background   = isVisible ? 'rgba(240,180,41,0.1)'  : 'rgba(0,117,143,0.15)';
+      btn.style.borderColor  = isVisible ? 'rgba(240,180,41,0.35)' : 'rgba(0,117,143,0.4)';
+      btn.style.color        = isVisible ? 'var(--accent)' : '#00b4d8';
+    }
+  </script>
+</body>
+
+</html>

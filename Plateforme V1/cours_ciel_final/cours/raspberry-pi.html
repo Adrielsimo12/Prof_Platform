@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raspberry Pi — Cours CIEL</title>
+  <meta name="description" content="Cours complet Raspberry Pi : GPIO, projets pratiques, Python, capteurs et électronique.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="shared-styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+
+<body>
+
+  <div id="scroll-indicator"></div>
+  <button class="mobile-menu-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+
+  <aside id="sidebar">
+    <div class="sidebar-header">
+      <img src="assets/logo.png" alt="Logo CIEL" class="sidebar-logo">
+      <div class="sidebar-title">Cours CIEL<span>Adriel TATCHUM SIMO • Formateur</span></div>
+    </div>
+    <div class="search-container" style="padding: 12px 16px;">
+      <input type="text" id="searchInput" placeholder="Rechercher un cours..."
+        style="width:100%;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:13px;">
+    </div>
+    <div class="progress-container">
+      <div class="progress-label">Progression du cours</div>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 0%"></div>
+      </div>
+    </div>
+    <nav>
+      <div class="nav-group">
+        <div class="nav-group-title">Accueil</div>
+        <a href="index.html"><i class="fas fa-home"></i> Introduction</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 1 — Développement Web</div>
+        <a href="html-complet.html"><i class="fab fa-html5"></i> HTML Complet</a>
+        <a href="css-complet.html"><i class="fab fa-css3-alt"></i> CSS Complet</a>
+        <a href="javascript.html"><i class="fab fa-js"></i> JavaScript</a>
+        <a href="python-flask.html"><i class="fab fa-python"></i> Python & Flask</a>
+        <a href="mysql.html"><i class="fas fa-database"></i> MySQL</a>
+        <a href="projet-fullstack.html"><i class="fas fa-project-diagram"></i> Projet Full Stack</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 2 — Électronique</div>
+        <a href="electronique-bases.html"><i class="fas fa-bolt"></i> Bases Électronique</a>
+        <a href="composants.html"><i class="fas fa-microchip"></i> Composants</a>
+        <a href="arduino.html"><i class="fas fa-robot"></i> Arduino & ESP32</a>
+        <a href="raspberry-pi.html"><i class="fab fa-raspberry-pi"></i> Raspberry Pi</a>
+        <a href="capteurs.html"><i class="fas fa-thermometer-half"></i> Capteurs & Actionneurs</a>
+        <a href="maintenance-electronique.html"><i class="fas fa-tools"></i> Maintenance Électronique</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 3 — Réseaux & Sécurité</div>
+        <a href="reseau-informatique.html"><i class="fas fa-network-wired"></i> Réseau Informatique</a>
+        <a href="cybersecurite.html"><i class="fas fa-shield-alt"></i> Cybersécurité</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Outils & Workflow</div>
+        <a href="vscode.html"><i class="fas fa-code"></i> VS Code</a>
+        <a href="git.html"><i class="fab fa-git-alt"></i> Git & GitHub</a>
+        <a href="venv.html"><i class="fas fa-cube"></i> .venv Python</a>
+      </div>
+    </nav>
+    <div class="theme-toggle">
+      <button class="theme-btn"><i class="fas fa-sun"></i><span>Mode clair</span></button>
+    </div>
+  </aside>
+
+  <main id="main">
+<section id="hero">
+      <div class="hero-tag">Électronique avancée</div>
+      <h1 class="hero-title">Raspberry Pi<br><em>Mini-ordinateur programmable</em></h1>
+      <p class="hero-desc">
+        Découvrez le Raspberry Pi : GPIO, programmation Python, projets IoT et intégration avec capteurs et actionneurs.
+      </p>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-val">6</span><span class="stat-label">Chapitres</span></div>
+        <div class="stat"><span class="stat-val">15+</span><span class="stat-label">Exemples</span></div>
+        <div class="stat"><span class="stat-val">~1h30</span><span class="stat-label">De lecture</span></div>
+      </div>
+    </section>
+
+
+    <!-- ══════ SECTION VIDÉO PÉDAGOGIQUE ══════ -->
+    <div class="video-ressource">
+      <div class="video-section-title"><i class="fab fa-youtube"></i> Vidéo pédagogique recommandée</div>
+      <div class="video-card">
+        <a href="https://www.youtube.com/watch?v=Kv6-_--y7CM" target="_blank" class="video-thumbnail">
+          <div class="video-thumbnail-bg">
+            <i class="fab fa-youtube video-yt-icon"></i>
+            <span class="video-yt-text">YOUTUBE</span>
+          </div>
+          <div class="video-play-overlay"><i class="fas fa-play"></i></div>
+        </a>
+        <div class="video-info">
+          <span class="video-badge"><i class="fas fa-clock"></i> 2h</span>
+          <div class="video-titre">Raspberry Pi - Guide Complet</div>
+          <div class="video-chaine">Chaîne : Raspberry Pi FR</div>
+          <div class="video-desc">Installation, configuration, GPIO et projets Python pour Raspberry Pi.</div>
+          <a href="https://www.youtube.com/watch?v=Kv6-_--y7CM" target="_blank" class="video-watch-btn">
+            <i class="fab fa-youtube"></i> Voir sur YouTube
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════ TÉLÉCHARGEMENTS PDF ══════ -->
+    <div class="pdf-download-zone">
+      <a href="tp-raspberry-pi.pdf" download class="pdf-download-btn">
+        <i class="fas fa-file-pdf"></i> Télécharger le TP (PDF)
+      </a>
+      <a href="correction-arduino.pdf" download class="correction-download-btn">
+        <i class="fas fa-check-circle"></i> Télécharger les corrections (PDF)
+      </a>
+      <span class="pdf-info-text">Documents imprimables pour travail hors-ligne</span>
+    </div>
+
+    <div id="content">
+</div><div id="content">
+
+      <!-- CH 1 - INTRODUCTION -->
+      <section class="chapter" id="intro">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#C51A4A;background:rgba(197,26,74,0.1);border-color:rgba(197,26,74,0.2)">RPI.01</span>
+          <div class="chapter-title">Introduction au Raspberry Pi<span>Qu'est-ce qu'un Raspberry Pi et pourquoi
+              l'utiliser ?</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Qu'est-ce qu'un Raspberry Pi ?</h3>
+          <p class="text">
+            Le <strong>Raspberry Pi</strong> est un <strong>nano-ordinateur</strong> de la taille d'une carte de crédit,
+            développé par la Fondation Raspberry Pi. Il possède un processeur ARM, de la RAM, des ports USB, HDMI,
+            Ethernet
+            et surtout : des <strong>broches GPIO</strong> (General Purpose Input/Output) pour contrôler des composants
+            électroniques.
+          </p>
+
+          <div class="callout callout-info">
+            <span class="callout-icon"><i class="fas fa-info-circle"></i></span>
+            <div class="callout-body">
+              <strong>Modèles populaires :</strong> Raspberry Pi 4 (jusqu'à 8 Go RAM), Raspberry Pi 3B+, Raspberry Pi
+              Zero (ultra compact),
+              Raspberry Pi Pico (microcontrôleur).
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Comparaison Raspberry Pi vs Arduino</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Critère</th>
+                <th>Raspberry Pi</th>
+                <th>Arduino</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Type</td>
+                <td>Ordinateur complet (OS Linux)</td>
+                <td>Microcontrôleur (firmware)</td>
+              </tr>
+              <tr>
+                <td>Puissance</td>
+                <td>Haute (multi-tâches, navigateur web)</td>
+                <td>Faible (une tâche à la fois)</td>
+              </tr>
+              <tr>
+                <td>Prix</td>
+                <td>35€ - 75€</td>
+                <td>5€ - 25€</td>
+              </tr>
+              <tr>
+                <td>Langage</td>
+                <td>Python, C++, JavaScript, etc.</td>
+                <td>C/C++ (Arduino IDE)</td>
+              </tr>
+              <tr>
+                <td>GPIO</td>
+                <td>✓ Oui (40 broches)</td>
+                <td>✓ Oui (digital/analog pins)</td>
+              </tr>
+              <tr>
+                <td>Usage</td>
+                <td>Serveur web, IA, multimedia, IoT</td>
+                <td>Capteurs temps réel, robotique</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="retenir">
+          <div class="retenir-title">Points clés</div>
+          <ul>
+            <li>Le Raspberry Pi est un mini-ordinateur avec un système d'exploitation Linux</li>
+            <li>Idéal pour des projets IoT, serveurs web, domotique et apprentissage machine</li>
+            <li>Possède 40 broches GPIO pour contrôler LED, moteurs, capteurs</li>
+            <li>Se programme principalement en Python (RPi.GPIO, gpiozero)</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CH 2 - INSTALLATION -->
+      <section class="chapter" id="setup">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#C51A4A;background:rgba(197,26,74,0.1);border-color:rgba(197,26,74,0.2)">RPI.02</span>
+          <div class="chapter-title">Installation & Configuration<span>Raspberry Pi OS, SSH, connexion à distance</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Étapes d'installation</h3>
+          <p class="text">
+            Pour démarrer avec votre Raspberry Pi, suivez ces étapes :
+          </p>
+
+          <div class="cards-grid">
+            <div class="card">
+              <div class="card-type" style="color:#C51A4A"><i class="fas fa-download"></i> 1. Télécharger</div>
+              <div class="card-desc">Raspberry Pi Imager depuis le site officiel</div>
+              <div class="card-ex">raspberrypi.com/software</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent2)"><i class="fas fa-sd-card"></i> 2. Flasher</div>
+              <div class="card-desc">Raspberry Pi OS sur une carte microSD (16 Go min.)</div>
+              <div class="card-ex">Choisir OS Lite ou Desktop</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent)"><i class="fas fa-plug"></i> 3. Brancher</div>
+              <div class="card-desc">Insérer la carte SD, connecter clavier, écran, alimentation</div>
+              <div class="card-ex">5V 3A minimum (USB-C)</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent6)"><i class="fas fa-terminal"></i> 4. Configurer</div>
+              <div class="card-desc">Premier démarrage : langue, WiFi, mot de passe</div>
+              <div class="card-ex">sudo raspi-config</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Activer SSH pour connexion à distance</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Bash</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="cm"># Activer SSH</span>
+<span class="kw">sudo</span> raspi-config
+<span class="cm"># Interface Options → SSH → Enable</span>
+
+<span class="cm"># Trouver l'adresse IP du Raspberry Pi</span>
+<span class="fn">hostname</span> -I
+
+<span class="cm"># Se connecter depuis un autre ordinateur</span>
+<span class="fn">ssh</span> pi@192.168.1.100
+<span class="cm"># Mot de passe par défaut : raspberry (à changer !)</span></pre>
+          </div>
+        </div>
+
+        <div class="callout callout-warn">
+          <span class="callout-icon"><i class="fas fa-exclamation-triangle"></i></span>
+          <div class="callout-body">
+            <strong>Sécurité :</strong> Changez immédiatement le mot de passe par défaut avec <code>passwd</code>
+            pour éviter les accès non autorisés.
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 3 - GPIO -->
+      <section class="chapter" id="gpio">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#C51A4A;background:rgba(197,26,74,0.1);border-color:rgba(197,26,74,0.2)">RPI.03</span>
+          <div class="chapter-title">Les broches GPIO<span>Contrôle d'entrées et sorties numériques</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Schéma des GPIO (40 broches)</h3>
+          <p class="text">
+            Le Raspberry Pi possède <strong>40 broches GPIO</strong> numérotées. Certaines sont dédiées à l'alimentation
+            (3.3V, 5V, GND), d'autres au contrôle (GPIO numérotés de 2 à 27).
+          </p>
+
+          <div class="callout callout-tip">
+            <span class="callout-icon"><i class="fas fa-lightbulb"></i></span>
+            <div class="callout-body">
+              <strong>Numérotation :</strong> Il existe deux systèmes : <strong>numérotation physique</strong> (1-40)
+              et <strong>numérotation BCM</strong> (GPIO 2, GPIO 3, etc.). En Python, on utilise généralement BCM.
+            </div>
+          </div>
+
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Type de broche</th>
+                <th>Fonction</th>
+                <th>Exemple</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>3.3V</td>
+                <td>Alimentation 3.3V</td>
+                <td>Alimenter capteurs logiques</td>
+              </tr>
+              <tr>
+                <td>5V</td>
+                <td>Alimentation 5V</td>
+                <td>Moteurs, LED puissantes</td>
+              </tr>
+              <tr>
+                <td>GND (Ground)</td>
+                <td>Masse / 0V</td>
+                <td>Référence commune</td>
+              </tr>
+              <tr>
+                <td>GPIO</td>
+                <td>Entrée/Sortie numérique</td>
+                <td>Contrôle LED, lecture bouton</td>
+              </tr>
+              <tr>
+                <td>I2C / SPI / UART</td>
+                <td>Protocoles de communication</td>
+                <td>Écran OLED, capteurs avancés</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Allumer une LED avec Python</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Python</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="cm"># Installation de la librairie GPIO</span>
+<span class="cm"># sudo apt install python3-rpi.gpio</span>
+
+<span class="kw">import</span> RPi.GPIO <span class="kw">as</span> GPIO
+<span class="kw">import</span> time
+
+<span class="cm"># Configuration</span>
+GPIO.<span class="fn">setmode</span>(GPIO.BCM)  <span class="cm"># Numérotation BCM</span>
+GPIO.<span class="fn">setwarnings</span>(<span class="kw">False</span>)
+LED_PIN = <span class="num">17</span>  <span class="cm"># GPIO 17 (broche physique 11)</span>
+
+<span class="cm"># Définir GPIO 17 en sortie</span>
+GPIO.<span class="fn">setup</span>(LED_PIN, GPIO.OUT)
+
+<span class="cm"># Allumer la LED</span>
+GPIO.<span class="fn">output</span>(LED_PIN, GPIO.HIGH)
+time.<span class="fn">sleep</span>(<span class="num">2</span>)
+
+<span class="cm"># Éteindre la LED</span>
+GPIO.<span class="fn">output</span>(LED_PIN, GPIO.LOW)
+
+<span class="cm"># Nettoyer les GPIO</span>
+GPIO.<span class="fn">cleanup</span>()</pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Faire clignoter une LED (blink)</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Python</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="kw">import</span> RPi.GPIO <span class="kw">as</span> GPIO
+<span class="kw">import</span> time
+
+GPIO.<span class="fn">setmode</span>(GPIO.BCM)
+LED_PIN = <span class="num">17</span>
+GPIO.<span class="fn">setup</span>(LED_PIN, GPIO.OUT)
+
+<span class="kw">try</span>:
+    <span class="kw">while</span> <span class="kw">True</span>:
+        GPIO.<span class="fn">output</span>(LED_PIN, GPIO.HIGH)  <span class="cm"># Allumer</span>
+        time.<span class="fn">sleep</span>(<span class="num">0.5</span>)
+        GPIO.<span class="fn">output</span>(LED_PIN, GPIO.LOW)   <span class="cm"># Éteindre</span>
+        time.<span class="fn">sleep</span>(<span class="num">0.5</span>)
+<span class="kw">except</span> <span class="cls">KeyboardInterrupt</span>:
+    GPIO.<span class="fn">cleanup</span>()  <span class="cm"># Arrêter proprement avec Ctrl+C</span></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 4 - BOUTON -->
+      <section class="chapter" id="input">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#C51A4A;background:rgba(197,26,74,0.1);border-color:rgba(197,26,74,0.2)">RPI.04</span>
+          <div class="chapter-title">Lecture d'entrées<span>Boutons, interrupteurs et résistances pull-up/down</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Lire l'état d'un bouton</h3>
+          <p class="text">
+            Pour lire un signal d'entrée (bouton, capteur numérique), on configure la broche en <code>GPIO.IN</code>
+            et on utilise <code>GPIO.input()</code>.
+          </p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Python</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="kw">import</span> RPi.GPIO <span class="kw">as</span> GPIO
+
+GPIO.<span class="fn">setmode</span>(GPIO.BCM)
+BUTTON_PIN = <span class="num">27</span>  <span class="cm"># GPIO 27</span>
+
+<span class="cm"># Activer résistance pull-up interne (bouton = LOW quand appuyé)</span>
+GPIO.<span class="fn">setup</span>(BUTTON_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+
+<span class="kw">while</span> <span class="kw">True</span>:
+    button_state = GPIO.<span class="fn">input</span>(BUTTON_PIN)
+    <span class="kw">if</span> button_state == GPIO.LOW:
+        <span class="fn">print</span>(<span class="str">"Bouton appuyé !"</span>)
+    <span class="kw">else</span>:
+        <span class="fn">print</span>(<span class="str">"Bouton relâché"</span>)
+    time.<span class="fn">sleep</span>(<span class="num">0.1</span>)</pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Résistances Pull-Up et Pull-Down</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Comportement</th>
+                <th>Usage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>PUD_UP</code></td>
+                <td>Broche à 3.3V par défaut (HIGH)</td>
+                <td>Bouton connecté à GND → LOW quand appuyé</td>
+              </tr>
+              <tr>
+                <td><code>PUD_DOWN</code></td>
+                <td>Broche à 0V par défaut (LOW)</td>
+                <td>Bouton connecté à 3.3V → HIGH quand appuyé</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- CH 5 - PROJETS -->
+      <section class="chapter" id="projects">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#C51A4A;background:rgba(197,26,74,0.1);border-color:rgba(197,26,74,0.2)">RPI.05</span>
+          <div class="chapter-title">Projets pratiques<span>Feu tricolore, détecteur de mouvement, serveur web</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Projet 1 : Feu tricolore automatique</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Python</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="kw">import</span> RPi.GPIO <span class="kw">as</span> GPIO
+<span class="kw">import</span> time
+
+GPIO.<span class="fn">setmode</span>(GPIO.BCM)
+
+<span class="cm"># Broches des LED</span>
+LED_ROUGE = <span class="num">17</span>
+LED_ORANGE = <span class="num">27</span>
+LED_VERTE = <span class="num">22</span>
+
+<span class="cm"># Configuration en sortie</span>
+GPIO.<span class="fn">setup</span>(LED_ROUGE, GPIO.OUT)
+GPIO.<span class="fn">setup</span>(LED_ORANGE, GPIO.OUT)
+GPIO.<span class="fn">setup</span>(LED_VERTE, GPIO.OUT)
+
+<span class="kw">def</span> <span class="fn">feu_tricolore</span>():
+    <span class="kw">while</span> <span class="kw">True</span>:
+        <span class="cm"># Feu ROUGE</span>
+        GPIO.<span class="fn">output</span>(LED_ROUGE, GPIO.HIGH)
+        time.<span class="fn">sleep</span>(<span class="num">5</span>)
+        
+        <span class="cm"># Feu ORANGE</span>
+        GPIO.<span class="fn">output</span>(LED_ROUGE, GPIO.LOW)
+        GPIO.<span class="fn">output</span>(LED_ORANGE, GPIO.HIGH)
+        time.<span class="fn">sleep</span>(<span class="num">2</span>)
+        
+        <span class="cm"># Feu VERT</span>
+        GPIO.<span class="fn">output</span>(LED_ORANGE, GPIO.LOW)
+        GPIO.<span class="fn">output</span>(LED_VERTE, GPIO.HIGH)
+        time.<span class="fn">sleep</span>(<span class="num">5</span>)
+        
+        <span class="cm"># Retour ORANGE</span>
+        GPIO.<span class="fn">output</span>(LED_VERTE, GPIO.LOW)
+        GPIO.<span class="fn">output</span>(LED_ORANGE, GPIO.HIGH)
+        time.<span class="fn">sleep</span>(<span class="num">2</span>)
+        GPIO.<span class="fn">output</span>(LED_ORANGE, GPIO.LOW)
+
+<span class="kw">try</span>:
+    <span class="fn">feu_tricolore</span>()
+<span class="kw">except</span> <span class="cls">KeyboardInterrupt</span>:
+    GPIO.<span class="fn">cleanup</span>()</pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Projet 2 : Station météo avec capteur DHT11</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Python</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="cm"># Installation : sudo pip3 install Adafruit_DHT</span>
+
+<span class="kw">import</span> Adafruit_DHT
+<span class="kw">import</span> time
+
+<span class="cm"># Type de capteur et broche GPIO</span>
+SENSOR = Adafruit_DHT.DHT11
+PIN = <span class="num">4</span>  <span class="cm"># GPIO 4</span>
+
+<span class="kw">while</span> <span class="kw">True</span>:
+    humidite, temperature = Adafruit_DHT.<span class="fn">read_retry</span>(SENSOR, PIN)
+    
+    <span class="kw">if</span> humidite <span class="kw">is not None and</span> temperature <span class="kw">is not None</span>:
+        <span class="fn">print</span>(<span class="str">f"Température : {temperature:.1f}°C"</span>)
+        <span class="fn">print</span>(<span class="str">f"Humidité : {humidite:.1f}%"</span>)
+    <span class="kw">else</span>:
+        <span class="fn">print</span>(<span class="str">"Erreur de lecture du capteur"</span>)
+    
+    time.<span class="fn">sleep</span>(<span class="num">2</span>)</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 6 - RESSOURCES -->
+      <section class="chapter" id="resources">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#C51A4A;background:rgba(197,26,74,0.1);border-color:rgba(197,26,74,0.2)">RPI.06</span>
+          <div class="chapter-title">Ressources & Communauté<span>Documentation officielle et projets inspirants</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Librairies Python utiles</h3>
+          <div class="cards-grid">
+            <div class="card">
+              <div class="card-type" style="color:#C51A4A"><i class="fab fa-python"></i> RPi.GPIO</div>
+              <div class="card-desc">Librairie officielle pour contrôler les GPIO</div>
+              <div class="card-ex">sudo apt install python3-rpi.gpio</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent2)"><i class="fas fa-cubes"></i> gpiozero</div>
+              <div class="card-desc">Interface simplifiée et moderne</div>
+              <div class="card-ex">from gpiozero import LED</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent)"><i class="fas fa-flask"></i> Flask</div>
+              <div class="card-desc">Créer un serveur web pour contrôler le Pi</div>
+              <div class="card-ex">pip3 install flask</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent6)"><i class="fas fa-wifi"></i> Blinka</div>
+              <div class="card-desc">Support CircuitPython sur Raspberry Pi</div>
+              <div class="card-ex">pip3 install adafruit-blinka</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="retenir">
+          <div class="retenir-title">Pour aller plus loin</div>
+          <ul>
+            <li>Documentation officielle : <strong>raspberrypi.com/documentation</strong></li>
+            <li>Forum : <strong>forums.raspberrypi.com</strong></li>
+            <li>Projets inspirants : <strong>projects.raspberrypi.org</strong></li>
+            <li>Tutoriels vidéo : Rechercher "Raspberry Pi GPIO projects" sur YouTube</li>
+            <li>Combiner avec Flask pour créer des interfaces web de contrôle IoT</li>
+          </ul>
+        </div>
+      </section>
+
+
+      <!-- EXERCICES & TP RASPBERRY PI -->
+      <section class="chapter" id="exercices-rpi">
+        <div class="chapter-header">
+          <span class="chapter-num" style="background:linear-gradient(135deg,#c13584,#e1306c);">EX</span>
+          <div class="chapter-title">Exercices &amp; Travaux Pratiques<span>Administration Linux, GPIO, serveurs et projets Raspberry Pi</span></div>
+        </div>
+        <div class="section">
+          <p class="section-intro">Le Raspberry Pi combine puissance d'un ordinateur Linux et flexibilité d'un microcontrôleur. Ces exercices couvrent l'administration système, la programmation GPIO et les projets serveurs.</p>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 1 — Administration Linux de base <span class="niveau-badge niveau-facile">Facile</span></h4>
+            <ol>
+              <li>Installez Raspberry Pi OS Lite. Configurez le WiFi, activez SSH, et connectez-vous via <code>ssh pi@adresse_ip</code> depuis votre PC.</li>
+              <li>Maîtrisez les commandes essentielles : <code>ls -la</code>, <code>cd</code>, <code>mkdir</code>, <code>cp</code>, <code>mv</code>, <code>rm -rf</code>, <code>chmod 755</code>, <code>chown</code>, <code>top</code>, <code>df -h</code>, <code>free -m</code>.</li>
+              <li>Créez un script bash <code>maintenance.sh</code> qui : met à jour le système (<code>apt update && apt upgrade -y</code>), affiche l'utilisation CPU/RAM/disque, et envoie un rapport par email (avec <code>msmtp</code>).</li>
+              <li>Programmez ce script avec <code>crontab -e</code> pour s'exécuter tous les dimanches à 3h du matin.</li>
+            </ol>
+          </div>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 2 — GPIO avec Python <span class="niveau-badge niveau-moyen">Moyen</span></h4>
+            <ol>
+              <li>Utilisez la bibliothèque <code>RPi.GPIO</code> pour contrôler une LED (GPIO 18) et lire un bouton (GPIO 24, mode pull-up interne).</li>
+              <li>Implémentez une LED RGB avec PWM sur 3 broches GPIO. Créez une fonction <code>set_color(r, g, b)</code> et animez des transitions de couleur douces.</li>
+              <li>Créez un serveur Flask sur le Raspberry Pi qui expose une API pour contrôler les LEDs depuis n'importe quel appareil du réseau local.</li>
+            </ol>
+          </div>
+
+          <div class="tp-block">
+            <h4>🔬 TP — Serveur multimédia personnel (NAS + Streaming) <span class="niveau-badge niveau-avance">Avancé — 4h</span></h4>
+            <p style="font-size:14px;color:var(--muted);margin-bottom:12px;"><strong>Objectif :</strong> Transformer un Raspberry Pi en serveur multimédia accessible depuis tout le réseau local.</p>
+            <ol class="tp-etapes">
+              <li><strong>NAS basique :</strong> Monter un disque USB (auto-mount au démarrage via <code>/etc/fstab</code>), partager via Samba pour accès Windows/Mac/Linux.</li>
+              <li><strong>Streaming vidéo :</strong> Installer Jellyfin ou Plex Media Server. Configurer les bibliothèques de films/séries/musique.</li>
+              <li><strong>IP statique :</strong> Assigner une IP fixe au Raspberry Pi via la box internet ou en modifiant <code>dhcpcd.conf</code>.</li>
+              <li><strong>Surveillance :</strong> Installer Netdata pour monitorer en temps réel CPU, RAM, température, réseau.</li>
+              <li><strong>Sauvegarde :</strong> Script de sauvegarde automatique des fichiers importants vers le cloud (rclone vers Google Drive).</li>
+            </ol>
+          </div>
+
+          <div class="quiz-block">
+            <h4>❓ Quiz de révision — Raspberry Pi</h4>
+            <ol>
+              <li>Quelle est la différence entre GPIO en mode BCM et en mode BOARD ?</li>
+              <li>Pourquoi le Raspberry Pi n'a-t-il pas de convertisseur ADC natif contrairement à l'Arduino ? Comment palier ce manque ?</li>
+              <li>Expliquez la différence entre un thread et un processus. Comment utiliser <code>threading</code> en Python pour des tâches parallèles sur RPi ?</li>
+              <li>Qu'est-ce que <code>systemd</code> ? Comment créer un service qui lance votre script Python automatiquement au démarrage ?</li>
+              <li>Quelles précautions prendre avec la carte SD du Raspberry Pi pour éviter la corruption des données ?</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- NAVIGATION -->
+      <div class="page-nav">
+        <a href="arduino.html">
+          <span class="page-nav-label">← Précédent</span>
+          <span class="page-nav-title"><i class="fas fa-robot"></i> Arduino & ESP32</span>
+        </a>
+        <a href="capteurs.html" class="next">
+          <span class="page-nav-label">Suivant →</span>
+          <span class="page-nav-title"><i class="fas fa-thermometer-half"></i> Capteurs & Actionneurs</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-info">
+        <img src="assets/logo.png" alt="Logo" class="footer-logo">
+        <div class="footer-text">
+          <div class="footer-name">Adriel TATCHUM SIMO</div>
+          <div class="footer-job">Enseignant CIEL • Formateur Web & Électronique</div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Accueil</a>
+        <a href="html-complet.html">HTML</a>
+        <a href="css-complet.html">CSS</a>
+        <a href="javascript.html">JavaScript</a>
+      </div>
+      <div class="footer-copy">© 2026 Cours CIEL — Tous droits réservés</div>
+    </div>
+  </footer>
+
+  <button id="back-top" aria-label="Retour en haut">↑</button>
+
+  <script src="script.js"></script>
+  <script>
+    function toggleReponse(btn) {
+      const content = btn.nextElementSibling;
+      const isVisible = content.style.display === 'block';
+      content.style.display = isVisible ? 'none' : 'block';
+      btn.innerHTML = isVisible
+        ? '<i class="fas fa-eye"></i> Voir la réponse'
+        : '<i class="fas fa-eye-slash"></i> Masquer la réponse';
+      btn.style.background   = isVisible ? 'rgba(240,180,41,0.1)'  : 'rgba(0,117,143,0.15)';
+      btn.style.borderColor  = isVisible ? 'rgba(240,180,41,0.35)' : 'rgba(0,117,143,0.4)';
+      btn.style.color        = isVisible ? 'var(--accent)' : '#00b4d8';
+    }
+  </script>
+</body>
+
+</html>

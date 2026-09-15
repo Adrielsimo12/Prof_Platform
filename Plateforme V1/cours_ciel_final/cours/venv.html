@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>.venv Python — Cours CIEL</title>
+  <meta name="description" content="Maîtrisez les environnements virtuels Python : création, activation, gestion des dépendances avec pip et requirements.txt.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="shared-styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+
+<body>
+
+  <div id="scroll-indicator"></div>
+  <button class="mobile-menu-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+
+  <aside id="sidebar">
+    <div class="sidebar-header">
+      <img src="assets/logo.png" alt="Logo CIEL" class="sidebar-logo">
+      <div class="sidebar-title">Cours CIEL<span>Adriel TATCHUM SIMO • Formateur</span></div>
+    </div>
+    <div class="search-container" style="padding: 12px 16px;">
+      <input type="text" id="searchInput" placeholder="Rechercher un cours..."
+        style="width:100%;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:13px;">
+    </div>
+    <div class="progress-container">
+      <div class="progress-label">Progression du cours</div>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 0%"></div>
+      </div>
+    </div>
+    <nav>
+      <div class="nav-group">
+        <div class="nav-group-title">Accueil</div>
+        <a href="index.html"><i class="fas fa-home"></i> Introduction</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 1 — Développement Web</div>
+        <a href="html-complet.html"><i class="fab fa-html5"></i> HTML Complet</a>
+        <a href="css-complet.html"><i class="fab fa-css3-alt"></i> CSS Complet</a>
+        <a href="javascript.html"><i class="fab fa-js"></i> JavaScript</a>
+        <a href="python-flask.html"><i class="fab fa-python"></i> Python & Flask</a>
+        <a href="mysql.html"><i class="fas fa-database"></i> MySQL</a>
+        <a href="projet-fullstack.html"><i class="fas fa-project-diagram"></i> Projet Full Stack</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 2 — Électronique</div>
+        <a href="electronique-bases.html"><i class="fas fa-bolt"></i> Bases Électronique</a>
+        <a href="composants.html"><i class="fas fa-microchip"></i> Composants</a>
+        <a href="arduino.html"><i class="fas fa-robot"></i> Arduino & ESP32</a>
+        <a href="raspberry-pi.html"><i class="fab fa-raspberry-pi"></i> Raspberry Pi</a>
+        <a href="capteurs.html"><i class="fas fa-thermometer-half"></i> Capteurs & Actionneurs</a>
+        <a href="maintenance-electronique.html"><i class="fas fa-tools"></i> Maintenance Électronique</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 3 — Réseaux & Sécurité</div>
+        <a href="reseau-informatique.html"><i class="fas fa-network-wired"></i> Réseau Informatique</a>
+        <a href="cybersecurite.html"><i class="fas fa-shield-alt"></i> Cybersécurité</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Outils & Workflow</div>
+        <a href="vscode.html"><i class="fas fa-code"></i> VS Code</a>
+        <a href="git.html"><i class="fab fa-git-alt"></i> Git & GitHub</a>
+        <a href="venv.html"><i class="fas fa-cube"></i> .venv Python</a>
+      </div>
+    </nav>
+    <div class="theme-toggle">
+      <button class="theme-btn"><i class="fas fa-sun"></i><span>Mode clair</span></button>
+    </div>
+  </aside>
+
+  <main id="main">
+<section id="hero">
+      <div class="hero-tag">Environnements Python</div>
+      <h1 class="hero-title">Environnements virtuels<br><em>.venv Python</em></h1>
+      <p class="hero-desc">
+        Apprenez à créer et gérer des environnements virtuels Python pour isoler les dépendances de chaque projet.
+      </p>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-val">4</span><span class="stat-label">Chapitres</span></div>
+        <div class="stat"><span class="stat-val">10+</span><span class="stat-label">Commandes</span></div>
+        <div class="stat"><span class="stat-val">~45min</span><span class="stat-label">De lecture</span></div>
+      </div>
+    </section>
+
+
+    <!-- ══════ SECTION VIDÉO PÉDAGOGIQUE ══════ -->
+    <div class="video-ressource">
+      <div class="video-section-title"><i class="fab fa-youtube"></i> Vidéo pédagogique recommandée</div>
+      <div class="video-card">
+        <a href="https://www.youtube.com/watch?v=GZvSYJDk-us" target="_blank" class="video-thumbnail">
+          <div class="video-thumbnail-bg">
+            <i class="fab fa-youtube video-yt-icon"></i>
+            <span class="video-yt-text">YOUTUBE</span>
+          </div>
+          <div class="video-play-overlay"><i class="fas fa-play"></i></div>
+        </a>
+        <div class="video-info">
+          <span class="video-badge"><i class="fas fa-clock"></i> 30min</span>
+          <div class="video-titre">Environnements Virtuels Python</div>
+          <div class="video-chaine">Chaîne : Docstring</div>
+          <div class="video-desc">Créez et gérez vos environnements virtuels avec venv et pip.</div>
+          <a href="https://www.youtube.com/watch?v=GZvSYJDk-us" target="_blank" class="video-watch-btn">
+            <i class="fab fa-youtube"></i> Voir sur YouTube
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════ TÉLÉCHARGEMENTS PDF ══════ -->
+    <div class="pdf-download-zone">
+      <a href="tp-python-flask.pdf" download class="pdf-download-btn">
+        <i class="fas fa-file-pdf"></i> Télécharger le TP (PDF)
+      </a>
+      <a href="correction-python-flask.pdf" download class="correction-download-btn">
+        <i class="fas fa-check-circle"></i> Télécharger les corrections (PDF)
+      </a>
+      <span class="pdf-info-text">Documents imprimables pour travail hors-ligne</span>
+    </div>
+
+    <div id="content">
+</div><div id="content">
+
+      <!-- CH 1 - INTRODUCTION -->
+      <section class="chapter" id="intro">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#306998;background:rgba(48,105,152,0.1);border-color:rgba(48,105,152,0.2)">ENV.01</span>
+          <div class="chapter-title">Pourquoi utiliser .venv ?<span>Isolation des dépendances et reproductibilité</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Le problème sans environnements virtuels</h3>
+          <p class="text">
+            Imaginons que vous ayez deux projets Python :
+          </p>
+          <ul style="color: var(--text); margin-left: 20px; margin-bottom: 16px;">
+            <li><strong>Projet A</strong> nécessite Flask 2.3.0</li>
+            <li><strong>Projet B</strong> nécessite Flask 3.0.0</li>
+          </ul>
+          <p class="text">
+            Si vous installez Flask globalement, les deux projets utiliseront la même version, ce qui peut créer des
+            <strong>conflits</strong>.
+          </p>
+
+          <div class="callout callout-warn">
+            <span class="callout-icon"><i class="fas fa-exclamation-triangle"></i></span>
+            <div class="callout-body">
+              <strong>Problème :</strong> Installer des packages Python globalement pollue le système et rend difficile
+              le partage de projets avec d'autres développeurs.
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">La solution : environnements virtuels</h3>
+          <p class="text">
+            Un <strong>environnement virtuel</strong> est un dossier isolé contenant une copie de Python et ses propres
+            packages.
+            Chaque projet a son propre environnement, évitant les conflits.
+          </p>
+
+          <div class="cards-grid">
+            <div class="card">
+              <div class="card-type" style="color:#306998"><i class="fas fa-box"></i> Isolation</div>
+              <div class="card-desc">Chaque projet a ses propres dépendances</div>
+              <div class="card-ex">Flask 2.3 pour projet A, Flask 3.0 pour projet B</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent2)"><i class="fas fa-sync-alt"></i> Reproductibilité</div>
+              <div class="card-desc">Partage facile avec requirements.txt</div>
+              <div class="card-ex">Tous les collaborateurs ont les mêmes versions</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent)"><i class="fas fa-shield-alt"></i> Sécurité</div>
+              <div class="card-desc">Ne pas polluer le Python système</div>
+              <div class="card-ex">Évite les bugs système</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="retenir">
+          <div class="retenir-title">Points clés</div>
+          <ul>
+            <li>Toujours créer un environnement virtuel par projet Python</li>
+            <li>Le dossier <code>.venv</code> (ou <code>venv</code>) contient l'environnement</li>
+            <li>Activer l'environnement avant d'installer des packages ou d'exécuter du code</li>
+            <li>Ajouter <code>.venv/</code> dans <code>.gitignore</code> (ne pas versionner l'environnement)</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CH 2 - CRÉATION -->
+      <section class="chapter" id="creation">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#306998;background:rgba(48,105,152,0.1);border-color:rgba(48,105,152,0.2)">ENV.02</span>
+          <div class="chapter-title">Créer un environnement virtuel<span>venv, activation et désactivation</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Créer un environnement virtuel</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Bash</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="cm"># Se placer dans le dossier du projet</span>
+<span class="fn">cd</span> mon-projet-python
+
+<span class="cm"># Créer un environnement virtuel nommé .venv</span>
+<span class="fn">python3</span> -m venv .venv
+
+<span class="cm"># Sur Windows (si python3 n'existe pas)</span>
+<span class="fn">python</span> -m venv .venv</pre>
+          </div>
+
+          <p class="text">
+            Cela crée un dossier <code>.venv</code> (le point au début le rend caché sur Linux/macOS) contenant :
+          </p>
+          <ul style="color: var(--text); margin-left: 20px; margin-bottom: 16px;">
+            <li><code>bin/</code> (ou <code>Scripts/</code> sur Windows) : scripts d'activation et exécutables</li>
+            <li><code>lib/</code> : packages Python installés</li>
+            <li><code>include/</code> : headers C (pour packages natifs)</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Activer l'environnement virtuel</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Système</th>
+                <th>Commande d'activation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Linux/macOS</td>
+                <td><code>source .venv/bin/activate</code></td>
+              </tr>
+              <tr>
+                <td>Windows (cmd)</td>
+                <td><code>.venv\Scripts\activate.bat</code></td>
+              </tr>
+              <tr>
+                <td>Windows (PowerShell)</td>
+                <td><code>.venv\Scripts\Activate.ps1</code></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="text">Une fois activé, vous verrez <code>(.venv)</code> au début de votre ligne de commande :</p>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Bash</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="cm"># Avant activation</span>
+user@laptop:~/mon-projet$ 
+
+<span class="cm"># Après activation</span>
+(.venv) user@laptop:~/mon-projet$</pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Désactiver l'environnement</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Bash</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="cm"># Désactiver l'environnement (sur tous les systèmes)</span>
+<span class="fn">deactivate</span></pre>
+          </div>
+        </div>
+
+        <div class="callout callout-tip">
+          <span class="callout-icon"><i class="fas fa-lightbulb"></i></span>
+          <div class="callout-body">
+            <strong>VS Code :</strong> Si vous ouvrez un dossier contenant un <code>.venv</code>, VS Code le détecte
+            automatiquement
+            et propose de l'utiliser. Le terminal intégré l'activera automatiquement !
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 3 - GESTION DES PACKAGES -->
+      <section class="chapter" id="packages">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#306998;background:rgba(48,105,152,0.1);border-color:rgba(48,105,152,0.2)">ENV.03</span>
+          <div class="chapter-title">Gestion des packages<span>pip install, freeze, requirements.txt</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Installer des packages avec pip</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Bash</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="cm"># TOUJOURS activer l'environnement d'abord</span>
+<span class="fn">source</span> .venv/bin/activate
+
+<span class="cm"># Installer un package</span>
+<span class="fn">pip</span> install flask
+
+<span class="cm"># Installer plusieurs packages</span>
+<span class="fn">pip</span> install flask flask-cors requests
+
+<span class="cm"># Installer une version spécifique</span>
+<span class="fn">pip</span> install flask==3.0.0
+
+<span class="cm"># Mettre à jour pip (recommandé)</span>
+<span class="fn">pip</span> install --upgrade pip</pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Lister les packages installés</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Bash</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="cm"># Voir tous les packages installés</span>
+<span class="fn">pip</span> list
+
+<span class="cm"># Voir les informations d'un package</span>
+<span class="fn">pip</span> show flask</pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Créer requirements.txt</h3>
+          <p class="text">
+            Le fichier <code>requirements.txt</code> liste toutes les dépendances du projet.
+            Il permet à d'autres développeurs de recréer exactement le même environnement.
+          </p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Bash</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="cm"># Générer requirements.txt avec les versions exactes</span>
+<span class="fn">pip</span> freeze > requirements.txt
+
+<span class="cm"># Contenu exemple de requirements.txt :</span>
+<span class="cm"># Flask==3.0.0</span>
+<span class="cm"># Flask-CORS==4.0.0</span>
+<span class="cm"># requests==2.31.0</span></pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Installer depuis requirements.txt</h3>
+          <p class="text">
+            Lorsqu'un nouveau développeur clone le projet, il peut recréer l'environnement :
+          </p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Bash</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="cm"># 1. Créer l'environnement virtuel</span>
+<span class="fn">python3</span> -m venv .venv
+
+<span class="cm"># 2. Activer</span>
+<span class="fn">source</span> .venv/bin/activate
+
+<span class="cm"># 3. Installer toutes les dépendances</span>
+<span class="fn">pip</span> install -r requirements.txt</pre>
+          </div>
+        </div>
+
+        <div class="callout callout-info">
+          <span class="callout-icon"><i class="fas fa-info-circle"></i></span>
+          <div class="callout-body">
+            <strong>Bonnes pratiques :</strong> Mettez à jour <code>requirements.txt</code> après chaque nouvelle
+            installation
+            avec <code>pip freeze > requirements.txt</code>.
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 4 - WORKFLOW -->
+      <section class="chapter" id="workflow">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#306998;background:rgba(48,105,152,0.1);border-color:rgba(48,105,152,0.2)">ENV.04</span>
+          <div class="chapter-title">Workflow complet<span>De la création au déploiement</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Démarrer un nouveau projet Python</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Bash</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="cm"># 1. Créer un dossier projet</span>
+<span class="fn">mkdir</span> mon-api-flask
+<span class="fn">cd</span> mon-api-flask
+
+<span class="cm"># 2. Créer l'environnement virtuel</span>
+<span class="fn">python3</span> -m venv .venv
+
+<span class="cm"># 3. Activer</span>
+<span class="fn">source</span> .venv/bin/activate
+
+<span class="cm"># 4. Installer les packages nécessaires</span>
+<span class="fn">pip</span> install flask flask-cors
+
+<span class="cm"># 5. Créer requirements.txt</span>
+<span class="fn">pip</span> freeze > requirements.txt
+
+<span class="cm"># 6. Initialiser Git</span>
+<span class="fn">git</span> init
+
+<span class="cm"># 7. Créer .gitignore</span>
+<span class="fn">echo</span> <span class="str">".venv/"</span> > .gitignore
+<span class="fn">echo</span> <span class="str">"__pycache__/"</span> >> .gitignore
+<span class="fn">echo</span> <span class="str">".env"</span> >> .gitignore
+
+<span class="cm"># 8. Premier commit</span>
+<span class="fn">git</span> add .
+<span class="fn">git</span> commit -m <span class="str">"Initial commit"</span></pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Travailler sur un projet existant</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Bash</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="cm"># 1. Cloner le projet depuis GitHub</span>
+<span class="fn">git</span> clone https://github.com/user/mon-projet.git
+<span class="fn">cd</span> mon-projet
+
+<span class="cm"># 2. Créer l'environnement virtuel</span>
+<span class="fn">python3</span> -m venv .venv
+
+<span class="cm"># 3. Activer</span>
+<span class="fn">source</span> .venv/bin/activate
+
+<span class="cm"># 4. Installer les dépendances depuis requirements.txt</span>
+<span class="fn">pip</span> install -r requirements.txt
+
+<span class="cm"># 5. Lancer l'application</span>
+<span class="fn">python</span> app.py</pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Workflow quotidien</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Action</th>
+                <th>Commande</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Démarrer le travail</td>
+                <td><code>source .venv/bin/activate</code></td>
+              </tr>
+              <tr>
+                <td>Installer un nouveau package</td>
+                <td><code>pip install nom-package</code></td>
+              </tr>
+              <tr>
+                <td>Mettre à jour requirements.txt</td>
+                <td><code>pip freeze > requirements.txt</code></td>
+              </tr>
+              <tr>
+                <td>Exécuter le code</td>
+                <td><code>python app.py</code></td>
+              </tr>
+              <tr>
+                <td>Terminer la session</td>
+                <td><code>deactivate</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="retenir">
+          <div class="retenir-title">Checklist projet Python</div>
+          <ul>
+            <li>✓ Créer <code>.venv</code> pour chaque projet</li>
+            <li>✓ Activer l'environnement avant toute commande <code>pip</code> ou <code>python</code></li>
+            <li>✓ Créer <code>requirements.txt</code> et le mettre à jour régulièrement</li>
+            <li>✓ Ajouter <code>.venv/</code> dans <code>.gitignore</code></li>
+            <li>✓ Documenter les étapes d'installation dans <code>README.md</code></li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Alternatives et outils avancés</h3>
+          <div class="cards-grid">
+            <div class="card">
+              <div class="card-type" style="color:#306998"><i class="fas fa-cube"></i> venv (standard)</div>
+              <div class="card-desc">Module intégré à Python</div>
+              <div class="card-ex">Recommandé pour débutants</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent2)"><i class="fas fa-box-open"></i> virtualenv</div>
+              <div class="card-desc">Version améliorée et plus rapide</div>
+              <div class="card-ex">pip install virtualenv</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent)"><i class="fas fa-magic"></i> pipenv</div>
+              <div class="card-desc">Gestion moderne avec Pipfile</div>
+              <div class="card-ex">Combine pip + venv</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent6)"><i class="fas fa-rocket"></i> poetry</div>
+              <div class="card-desc">Gestionnaire de dépendances avancé</div>
+              <div class="card-ex">Pour projets professionnels</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout callout-tip">
+          <span class="callout-icon"><i class="fas fa-lightbulb"></i></span>
+          <div class="callout-body">
+            <strong>Astuce :</strong> Pour les projets simples, restez sur <code>venv</code> +
+            <code>requirements.txt</code>.
+            Pour des projets complexes avec beaucoup de dépendances, explorez <code>poetry</code> ou
+            <code>pipenv</code>.
+          </div>
+        </div>
+      </section>
+
+
+      <!-- EXERCICES & TP VENV -->
+      <section class="chapter" id="exercices-venv">
+        <div class="chapter-header">
+          <span class="chapter-num" style="background:linear-gradient(135deg,#3776ab,#4b8fc5);">EX</span>
+          <div class="chapter-title">Exercices &amp; Travaux Pratiques<span>Gestion des environnements Python et des dépendances</span></div>
+        </div>
+        <div class="section">
+          <p class="section-intro">La gestion correcte des environnements Python est essentielle pour éviter les conflits de dépendances et garantir la reproductibilité de vos projets.</p>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 1 — Gestion de base des venv <span class="niveau-badge niveau-facile">Facile</span></h4>
+            <ol>
+              <li>Créez deux projets Python avec des versions différentes d'une même bibliothèque (ex: Flask 2.x dans le projet A, Flask 3.x dans le projet B). Démontrez qu'ils coexistent sans conflit.</li>
+              <li>Exportez les dépendances avec <code>pip freeze &gt; requirements.txt</code>. Créez un nouveau venv et installez toutes les dépendances depuis ce fichier. Vérifiez l'identité des environnements.</li>
+              <li>Utilisez <code>pip list --outdated</code> pour identifier les packages obsolètes. Mettez-les à jour sélectivement et testez que l'application fonctionne encore.</li>
+            </ol>
+          </div>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 2 — Outils avancés (poetry, pipenv) <span class="niveau-badge niveau-moyen">Moyen</span></h4>
+            <ol>
+              <li>Comparez <code>venv + pip</code>, <code>pipenv</code> et <code>poetry</code> en créant le même projet avec chacun des trois. Notez les différences en termes de workflow, fichiers créés et commandes.</li>
+              <li>Avec <strong>Poetry</strong> : initialisez un projet (<code>poetry init</code>), ajoutez des dépendances de production et de développement, publiez le <code>pyproject.toml</code> sur GitHub. Faites cloner et installer par un camarade avec <code>poetry install</code>.</li>
+              <li>Créez un <code>Makefile</code> avec les cibles <code>setup</code>, <code>run</code>, <code>test</code> et <code>clean</code> pour automatiser la gestion du projet.</li>
+            </ol>
+          </div>
+
+          <div class="tp-block">
+            <h4>🔬 TP — Pipeline de développement Python professionnel <span class="niveau-badge niveau-avance">Avancé — 2h</span></h4>
+            <ol class="tp-etapes">
+              <li><strong>Structure :</strong> Créez un projet Python bien structuré avec <code>src/</code>, <code>tests/</code>, <code>docs/</code>, <code>.github/workflows/</code>.</li>
+              <li><strong>Qualité :</strong> Configurer <code>black</code> (formatage), <code>flake8</code> (lint), <code>mypy</code> (types statiques), <code>pytest</code> (tests unitaires).</li>
+              <li><strong>Pre-commit hooks :</strong> Installer <code>pre-commit</code> et configurer les hooks qui vérifient automatiquement la qualité du code avant chaque commit.</li>
+              <li><strong>CI/CD :</strong> Créer un workflow GitHub Actions qui installe les dépendances, lance les tests et vérifie le formatage à chaque push.</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- NAVIGATION -->
+      <div class="page-nav">
+        <a href="git.html">
+          <span class="page-nav-label">← Précédent</span>
+          <span class="page-nav-title"><i class="fab fa-git-alt"></i> Git & GitHub</span>
+        </a>
+        <a href="index.html" class="next">
+          <span class="page-nav-label">Retour →</span>
+          <span class="page-nav-title"><i class="fas fa-home"></i> Accueil</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-info">
+        <img src="assets/logo.png" alt="Logo" class="footer-logo">
+        <div class="footer-text">
+          <div class="footer-name">Adriel TATCHUM SIMO</div>
+          <div class="footer-job">Enseignant CIEL • Formateur Web & Électronique</div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Accueil</a>
+        <a href="html-complet.html">HTML</a>
+        <a href="css-complet.html">CSS</a>
+        <a href="javascript.html">JavaScript</a>
+      </div>
+      <div class="footer-copy">© 2026 Cours CIEL — Tous droits réservés</div>
+    </div>
+  </footer>
+
+  <button id="back-top" aria-label="Retour en haut">↑</button>
+
+  <script src="script.js"></script>
+  <script>
+    function toggleReponse(btn) {
+      const content = btn.nextElementSibling;
+      const isVisible = content.style.display === 'block';
+      content.style.display = isVisible ? 'none' : 'block';
+      btn.innerHTML = isVisible
+        ? '<i class="fas fa-eye"></i> Voir la réponse'
+        : '<i class="fas fa-eye-slash"></i> Masquer la réponse';
+      btn.style.background   = isVisible ? 'rgba(240,180,41,0.1)'  : 'rgba(0,117,143,0.15)';
+      btn.style.borderColor  = isVisible ? 'rgba(240,180,41,0.35)' : 'rgba(0,117,143,0.4)';
+      btn.style.color        = isVisible ? 'var(--accent)' : '#00b4d8';
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+.venv/
+**/backend/venv/
+**/backend/__pycache__/
+**/__pycache__/
+**/backend/.env
+**/backend/storage/*
+!**/backend/storage/.gitkeep
+**/frontend/node_modules/
+**/frontend/dist/
+.env
+*.log
+*.pyc
+.DS_Store

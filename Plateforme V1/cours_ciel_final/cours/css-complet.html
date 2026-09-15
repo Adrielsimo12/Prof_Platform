@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Complet — Cours CIEL</title>
+  <meta name="description" content="Cours complet CSS3 avec tous les sélecteurs, propriétés et exemples pratiques.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="shared-styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+
+<body>
+
+  <div id="scroll-indicator"></div>
+  <button class="mobile-menu-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+
+  <aside id="sidebar">
+    <div class="sidebar-header">
+      <img src="assets/logo.png" alt="Logo CIEL" class="sidebar-logo">
+      <div class="sidebar-title">Cours CIEL<span>Adriel TATCHUM SIMO • Formateur</span></div>
+    </div>
+    <div class="search-container" style="padding: 12px 16px;">
+      <input type="text" id="searchInput" placeholder="Rechercher un cours..."
+        style="width:100%;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:13px;">
+    </div>
+    <div class="progress-container">
+      <div class="progress-label">Progression du cours</div>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 0%"></div>
+      </div>
+    </div>
+    <nav>
+      <div class="nav-group">
+        <div class="nav-group-title">Accueil</div>
+        <a href="index.html"><i class="fas fa-home"></i> Introduction</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 1 — Développement Web</div>
+        <a href="html-complet.html"><i class="fab fa-html5"></i> HTML Complet</a>
+        <a href="css-complet.html"><i class="fab fa-css3-alt"></i> CSS Complet</a>
+        <a href="javascript.html"><i class="fab fa-js"></i> JavaScript</a>
+        <a href="python-flask.html"><i class="fab fa-python"></i> Python & Flask</a>
+        <a href="mysql.html"><i class="fas fa-database"></i> MySQL</a>
+        <a href="projet-fullstack.html"><i class="fas fa-project-diagram"></i> Projet Full Stack</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 2 — Électronique</div>
+        <a href="electronique-bases.html"><i class="fas fa-bolt"></i> Bases Électronique</a>
+        <a href="composants.html"><i class="fas fa-microchip"></i> Composants</a>
+        <a href="arduino.html"><i class="fas fa-robot"></i> Arduino & ESP32</a>
+        <a href="raspberry-pi.html"><i class="fab fa-raspberry-pi"></i> Raspberry Pi</a>
+        <a href="capteurs.html"><i class="fas fa-thermometer-half"></i> Capteurs & Actionneurs</a>
+        <a href="maintenance-electronique.html"><i class="fas fa-tools"></i> Maintenance Électronique</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 3 — Réseaux & Sécurité</div>
+        <a href="reseau-informatique.html"><i class="fas fa-network-wired"></i> Réseau Informatique</a>
+        <a href="cybersecurite.html"><i class="fas fa-shield-alt"></i> Cybersécurité</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Outils & Workflow</div>
+        <a href="vscode.html"><i class="fas fa-code"></i> VS Code</a>
+        <a href="git.html"><i class="fab fa-git-alt"></i> Git & GitHub</a>
+        <a href="venv.html"><i class="fas fa-cube"></i> .venv Python</a>
+      </div>
+    </nav>
+    <div class="theme-toggle">
+      <button class="theme-btn"><i class="fas fa-sun"></i><span>Mode clair</span></button>
+    </div>
+  </aside>
+
+  <main id="main">
+<section id="hero">
+      <div class="hero-tag">Chapitre complet</div>
+      <h1 class="hero-title">CSS3<br><em>Mise en forme du Web</em></h1>
+      <p class="hero-desc">
+        Maîtrisez CSS3 : sélecteurs, box model, Flexbox, Grid, animations et responsive design.
+        Des bases aux techniques avancées avec exemples visuels.
+      </p>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-val">80+</span><span class="stat-label">Propriétés</span></div>
+        <div class="stat"><span class="stat-val">25+</span><span class="stat-label">Exemples</span></div>
+        <div class="stat"><span class="stat-val">~2h30</span><span class="stat-label">De lecture</span></div>
+      </div>
+    </section>
+
+
+    <!-- ══════ SECTION VIDÉO PÉDAGOGIQUE ══════ -->
+    <div class="video-ressource">
+      <div class="video-section-title"><i class="fab fa-youtube"></i> Vidéo pédagogique recommandée</div>
+      <div class="video-card">
+        <a href="https://www.youtube.com/watch?v=PE8FQ6zihhw" target="_blank" class="video-thumbnail">
+          <div class="video-thumbnail-bg">
+            <i class="fab fa-youtube video-yt-icon"></i>
+            <span class="video-yt-text">YOUTUBE</span>
+          </div>
+          <div class="video-play-overlay"><i class="fas fa-play"></i></div>
+        </a>
+        <div class="video-info">
+          <span class="video-badge"><i class="fas fa-clock"></i> 3h</span>
+          <div class="video-titre">CSS Complet - Flexbox, Grid et Animations</div>
+          <div class="video-chaine">Chaîne : Grafikart</div>
+          <div class="video-desc">Maîtrisez CSS3 : sélecteurs, box model, Flexbox, Grid, animations et design responsive.</div>
+          <a href="https://www.youtube.com/watch?v=PE8FQ6zihhw" target="_blank" class="video-watch-btn">
+            <i class="fab fa-youtube"></i> Voir sur YouTube
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════ TÉLÉCHARGEMENTS PDF ══════ -->
+    <div class="pdf-download-zone">
+      <a href="tp-css-complet.pdf" download class="pdf-download-btn">
+        <i class="fas fa-file-pdf"></i> Télécharger le TP (PDF)
+      </a>
+      <a href="correction-css.pdf" download class="correction-download-btn">
+        <i class="fas fa-check-circle"></i> Télécharger les corrections (PDF)
+      </a>
+      <span class="pdf-info-text">Documents imprimables pour travail hors-ligne</span>
+    </div>
+
+    <div id="content">
+</div><div id="content">
+
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <!-- CH 1 - INTRODUCTION CSS -->
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <section class="chapter" id="intro-css">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#264de4;background:rgba(38,77,228,0.1);border-color:rgba(38,77,228,0.2)">C.01</span>
+          <div class="chapter-title">Introduction à CSS<span>Syntaxe, intégration et premiers styles</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Qu'est-ce que CSS ?</h3>
+          <p class="text">
+            <strong>CSS</strong> (Cascading Style Sheets) contrôle l'<strong>apparence visuelle</strong> des pages web :
+            couleurs, polices, espacements, mises en page, animations. Il sépare le <strong>contenu</strong> (HTML) de
+            la <strong>présentation</strong> (CSS).
+          </p>
+
+          <div class="callout callout-info">
+            <span class="callout-icon"><i class="fas fa-info-circle"></i></span>
+            <div class="callout-body">
+              <strong>"Cascading"</strong> signifie que les styles peuvent se superposer et s'hériter.
+              Un style défini sur un parent s'applique aux enfants, sauf si redéfini.
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">3 façons d'intégrer CSS</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">HTML — Méthodes d'intégration CSS</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm">&lt;!-- 1. CSS EXTERNE (recommandé) --&gt;</span>
+<span class="kw">&lt;head&gt;</span>
+  <span class="kw">&lt;link</span> rel=<span class="str">"stylesheet"</span> href=<span class="str">"style.css"</span><span class="kw">&gt;</span>
+<span class="kw">&lt;/head&gt;</span>
+
+<span class="cm">&lt;!-- 2. CSS INTERNE (dans la page) --&gt;</span>
+<span class="kw">&lt;head&gt;</span>
+  <span class="kw">&lt;style&gt;</span>
+    h1 { color: blue; }
+    p { font-size: 16px; }
+  <span class="kw">&lt;/style&gt;</span>
+<span class="kw">&lt;/head&gt;</span>
+
+<span class="cm">&lt;!-- 3. CSS EN LIGNE (à éviter) --&gt;</span>
+<span class="kw">&lt;p</span> style=<span class="str">"color: red; font-size: 18px;"</span><span class="kw">&gt;</span>Texte rouge<span class="kw">&lt;/p&gt;</span></pre>
+          </div>
+
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Méthode</th>
+                <th>Avantages</th>
+                <th>Inconvénients</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Externe</strong></td>
+                <td>Réutilisable, maintenable, mise en cache</td>
+                <td>Requête HTTP supplémentaire</td>
+              </tr>
+              <tr>
+                <td><strong>Interne</strong></td>
+                <td>Pas de fichier séparé</td>
+                <td>Non réutilisable entre pages</td>
+              </tr>
+              <tr>
+                <td><strong>En ligne</strong></td>
+                <td>Style immédiat</td>
+                <td>Non maintenable, priorité haute</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Syntaxe CSS</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">CSS — Anatomie d'une règle</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm">/* Structure d'une règle CSS */</span>
+<span class="fn">sélecteur</span> {
+  propriété: valeur;
+  propriété: valeur;
+}
+
+<span class="cm">/* Exemple concret */</span>
+<span class="fn">h1</span> {
+  color: <span class="str">#264de4</span>;           <span class="cm">/* couleur du texte */</span>
+  font-size: <span class="num">32px</span>;         <span class="cm">/* taille de police */</span>
+  font-weight: <span class="str">bold</span>;       <span class="cm">/* graisse */</span>
+  text-align: <span class="str">center</span>;      <span class="cm">/* alignement */</span>
+  margin-bottom: <span class="num">20px</span>;    <span class="cm">/* marge en bas */</span>
+}
+
+<span class="cm">/* Plusieurs sélecteurs, mêmes styles */</span>
+<span class="fn">h1</span>, <span class="fn">h2</span>, <span class="fn">h3</span> {
+  font-family: <span class="str">'Arial'</span>, sans-serif;
+}</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <!-- CH 2 - SÉLECTEURS -->
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <section class="chapter" id="selecteurs">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#264de4;background:rgba(38,77,228,0.1);border-color:rgba(38,77,228,0.2)">C.02</span>
+          <div class="chapter-title">Les Sélecteurs CSS<span>Cibler précisément les éléments HTML</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Sélecteurs de base</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">CSS — Sélecteurs fondamentaux</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm">/* SÉLECTEUR DE BALISE — cible tous les éléments */</span>
+<span class="fn">p</span> { color: <span class="str">#333</span>; }
+<span class="fn">h1</span> { font-size: <span class="num">2rem</span>; }
+<span class="fn">a</span> { text-decoration: <span class="str">none</span>; }
+
+<span class="cm">/* SÉLECTEUR DE CLASSE — cible .nom-classe */</span>
+<span class="fn">.bouton</span> { 
+  background: <span class="str">#264de4</span>; 
+  color: <span class="str">white</span>; 
+  padding: <span class="num">10px 20px</span>;
+}
+<span class="fn">.erreur</span> { color: <span class="str">red</span>; }
+<span class="fn">.carte</span> { border: <span class="num">1px solid</span> <span class="str">#ccc</span>; }
+
+<span class="cm">/* SÉLECTEUR D'ID — cible #nom-id (unique) */</span>
+<span class="fn">#menu-principal</span> { 
+  position: <span class="str">fixed</span>; 
+  top: <span class="num">0</span>; 
+}
+<span class="fn">#logo</span> { width: <span class="num">150px</span>; }
+
+<span class="cm">/* SÉLECTEUR UNIVERSEL — cible tout */</span>
+<span class="fn">*</span> { 
+  box-sizing: <span class="str">border-box</span>;  <span class="cm">/* Bonne pratique globale */</span>
+  margin: <span class="num">0</span>;
+  padding: <span class="num">0</span>;
+}</pre>
+          </div>
+
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Sélecteur</th>
+                <th>Syntaxe</th>
+                <th>Exemple HTML ciblé</th>
+                <th>Spécificité</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Balise</td>
+                <td><code>p</code></td>
+                <td><code>&lt;p&gt;...&lt;/p&gt;</code></td>
+                <td>0-0-1</td>
+              </tr>
+              <tr>
+                <td>Classe</td>
+                <td><code>.nom</code></td>
+                <td><code>&lt;div class="nom"&gt;</code></td>
+                <td>0-1-0</td>
+              </tr>
+              <tr>
+                <td>ID</td>
+                <td><code>#nom</code></td>
+                <td><code>&lt;div id="nom"&gt;</code></td>
+                <td>1-0-0</td>
+              </tr>
+              <tr>
+                <td>Universel</td>
+                <td><code>*</code></td>
+                <td>Tous les éléments</td>
+                <td>0-0-0</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Sélecteurs combinés</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">CSS — Combinateurs</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm">/* DESCENDANT (espace) — enfant à n'importe quel niveau */</span>
+<span class="fn">nav a</span> { color: <span class="str">white</span>; }          <span class="cm">/* tous les &lt;a&gt; dans &lt;nav&gt; */</span>
+<span class="fn">.carte p</span> { margin: <span class="num">10px</span>; }      <span class="cm">/* tous les &lt;p&gt; dans .carte */</span>
+
+<span class="cm">/* ENFANT DIRECT (>) — uniquement enfant immédiat */</span>
+<span class="fn">ul > li</span> { list-style: <span class="str">square</span>; }  <span class="cm">/* &lt;li&gt; enfants directs de &lt;ul&gt; */</span>
+<span class="fn">.menu > a</span> { font-weight: <span class="str">bold</span>; }
+
+<span class="cm">/* FRÈRE ADJACENT (+) — élément suivant immédiat */</span>
+<span class="fn">h2 + p</span> { font-size: <span class="num">1.2em</span>; }    <span class="cm">/* premier &lt;p&gt; après &lt;h2&gt; */</span>
+<span class="fn">label + input</span> { margin-left: <span class="num">10px</span>; }
+
+<span class="cm">/* FRÈRES GÉNÉRAUX (~) — tous les frères suivants */</span>
+<span class="fn">h2 ~ p</span> { color: <span class="str">gray</span>; }          <span class="cm">/* tous les &lt;p&gt; après &lt;h2&gt; */</span>
+
+<span class="cm">/* COMBINAISON BALISE + CLASSE */</span>
+<span class="fn">p.important</span> { color: <span class="str">red</span>; }      <span class="cm">/* &lt;p class="important"&gt; */</span>
+<span class="fn">a.btn.primary</span> { ... }           <span class="cm">/* &lt;a class="btn primary"&gt; */</span></pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Pseudo-classes</h3>
+          <p class="text">
+            Les <strong>pseudo-classes</strong> ciblent un <strong>état</strong> particulier d'un élément (survol,
+            focus, premier enfant...).
+          </p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">CSS — Pseudo-classes</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm">/* ÉTATS D'INTERACTION */</span>
+<span class="fn">a:hover</span> { color: <span class="str">#F0B429</span>; }       <span class="cm">/* survol souris */</span>
+<span class="fn">a:active</span> { color: <span class="str">red</span>; }          <span class="cm">/* pendant le clic */</span>
+<span class="fn">a:visited</span> { color: <span class="str">purple</span>; }     <span class="cm">/* lien déjà visité */</span>
+<span class="fn">input:focus</span> { 
+  outline: <span class="num">2px solid</span> <span class="str">#4ECDC4</span>;
+  border-color: <span class="str">#4ECDC4</span>;
+}
+
+<span class="cm">/* POSITION DANS LE PARENT */</span>
+<span class="fn">li:first-child</span> { font-weight: <span class="str">bold</span>; }   <span class="cm">/* premier enfant */</span>
+<span class="fn">li:last-child</span> { border: <span class="str">none</span>; }        <span class="cm">/* dernier enfant */</span>
+<span class="fn">tr:nth-child(2n)</span> { background: <span class="str">#f5f5f5</span>; }  <span class="cm">/* lignes paires */</span>
+<span class="fn">tr:nth-child(odd)</span> { background: <span class="str">#fff</span>; }   <span class="cm">/* lignes impaires */</span>
+<span class="fn">p:nth-child(3)</span> { color: <span class="str">blue</span>; }         <span class="cm">/* 3ème enfant */</span>
+
+<span class="cm">/* ÉTAT DE FORMULAIRE */</span>
+<span class="fn">input:disabled</span> { opacity: <span class="num">0.5</span>; }
+<span class="fn">input:checked</span> { accent-color: <span class="str">#264de4</span>; }
+<span class="fn">input:required</span> { border-left: <span class="num">3px solid</span> <span class="str">red</span>; }
+<span class="fn">input:valid</span> { border-color: <span class="str">green</span>; }
+<span class="fn">input:invalid</span> { border-color: <span class="str">red</span>; }
+
+<span class="cm">/* NÉGATION */</span>
+<span class="fn">p:not(.special)</span> { color: <span class="str">gray</span>; }  <span class="cm">/* tous les p sauf .special */</span></pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Pseudo-éléments</h3>
+          <p class="text">
+            Les <strong>pseudo-éléments</strong> (avec <code>::</code>) créent des éléments virtuels ou ciblent une
+            partie d'un élément.
+          </p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">CSS — Pseudo-éléments</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm">/* ::before et ::after — contenu généré */</span>
+<span class="fn">.obligatoire::after</span> {
+  content: <span class="str">" *"</span>;
+  color: <span class="str">red</span>;
+}
+
+<span class="fn">.citation::before</span> {
+  content: <span class="str">"« "</span>;
+  color: <span class="str">#999</span>;
+}
+<span class="fn">.citation::after</span> {
+  content: <span class="str">" »"</span>;
+  color: <span class="str">#999</span>;
+}
+
+<span class="cm">/* Icône décorative */</span>
+<span class="fn">.lien-externe::after</span> {
+  content: <span class="str">" ↗"</span>;
+  font-size: <span class="num">0.8em</span>;
+}
+
+<span class="cm">/* ::first-letter et ::first-line */</span>
+<span class="fn">p::first-letter</span> {
+  font-size: <span class="num">2em</span>;
+  font-weight: <span class="str">bold</span>;
+  color: <span class="str">#264de4</span>;
+  float: <span class="str">left</span>;
+  margin-right: <span class="num">5px</span>;
+}
+
+<span class="fn">p::first-line</span> {
+  font-variant: <span class="str">small-caps</span>;
+}
+
+<span class="cm">/* ::selection — texte sélectionné */</span>
+<span class="fn">::selection</span> {
+  background: <span class="str">#F0B429</span>;
+  color: <span class="str">#000</span>;
+}
+
+<span class="cm">/* ::placeholder — texte indicatif des inputs */</span>
+<span class="fn">input::placeholder</span> {
+  color: <span class="str">#999</span>;
+  font-style: <span class="str">italic</span>;
+}</pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Sélecteurs d'attributs</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">CSS — Sélecteurs d'attributs</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm">/* [attr] — a l'attribut */</span>
+<span class="fn">[disabled]</span> { opacity: <span class="num">0.5</span>; }
+<span class="fn">[required]</span> { border-left: <span class="num">3px solid</span> <span class="str">red</span>; }
+
+<span class="cm">/* [attr="valeur"] — valeur exacte */</span>
+<span class="fn">[type="submit"]</span> { background: <span class="str">#264de4</span>; }
+<span class="fn">[target="_blank"]</span> { ... }
+
+<span class="cm">/* [attr^="début"] — commence par */</span>
+<span class="fn">[href^="https"]</span> { color: <span class="str">green</span>; }  <span class="cm">/* liens HTTPS */</span>
+<span class="fn">[class^="btn-"]</span> { padding: <span class="num">10px</span>; } <span class="cm">/* classes btn-* */</span>
+
+<span class="cm">/* [attr$="fin"] — termine par */</span>
+<span class="fn">[href$=".pdf"]</span> { color: <span class="str">red</span>; }     <span class="cm">/* liens PDF */</span>
+<span class="fn">[src$=".svg"]</span> { width: <span class="num">24px</span>; }    <span class="cm">/* images SVG */</span>
+
+<span class="cm">/* [attr*="contient"] — contient */</span>
+<span class="fn">[href*="google"]</span> { ... }          <span class="cm">/* liens vers Google */</span>
+
+<span class="cm">/* [attr~="mot"] — contient le mot (séparé par espaces) */</span>
+<span class="fn">[class~="important"]</span> { font-weight: <span class="str">bold</span>; }</pre>
+          </div>
+        </div>
+
+        <div class="retenir">
+          <div class="retenir-title">Spécificité CSS (priorité)</div>
+          <ul>
+            <li><strong>Inline style</strong> (style="") : 1000 points</li>
+            <li><strong>ID</strong> (#id) : 100 points</li>
+            <li><strong>Classe</strong> (.classe), pseudo-classe (:hover), attribut : 10 points</li>
+            <li><strong>Balise</strong> (div), pseudo-élément (::before) : 1 point</li>
+            <li>En cas d'égalité, la dernière règle l'emporte</li>
+            <li><code>!important</code> surpasse tout (à éviter)</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <!-- CH 3 - BOX MODEL -->
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <section class="chapter" id="box-model">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#264de4;background:rgba(38,77,228,0.1);border-color:rgba(38,77,228,0.2)">C.03</span>
+          <div class="chapter-title">Le Box Model<span>Comprendre les dimensions des éléments</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Les 4 couches du Box Model</h3>
+          <p class="text">
+            Chaque élément HTML est une <strong>boîte rectangulaire</strong> composée de 4 couches :
+            <strong>content</strong> (contenu), <strong>padding</strong> (rembourrage), <strong>border</strong>
+            (bordure), <strong>margin</strong> (marge).
+          </p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">CSS — Box Model</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="fn">.boite</span> {
+  <span class="cm">/* CONTENU — dimensions de base */</span>
+  width: <span class="num">300px</span>;
+  height: <span class="num">200px</span>;
+  
+  <span class="cm">/* PADDING — espace intérieur (entre contenu et bordure) */</span>
+  padding: <span class="num">20px</span>;              <span class="cm">/* tous les côtés */</span>
+  padding: <span class="num">10px 20px</span>;         <span class="cm">/* vertical | horizontal */</span>
+  padding: <span class="num">10px 20px 15px 25px</span>; <span class="cm">/* haut | droite | bas | gauche */</span>
+  padding-top: <span class="num">10px</span>;
+  padding-right: <span class="num">20px</span>;
+  padding-bottom: <span class="num">15px</span>;
+  padding-left: <span class="num">25px</span>;
+  
+  <span class="cm">/* BORDER — bordure */</span>
+  border: <span class="num">2px solid</span> <span class="str">#333</span>;    <span class="cm">/* épaisseur | style | couleur */</span>
+  border-radius: <span class="num">8px</span>;         <span class="cm">/* coins arrondis */</span>
+  border-top: <span class="num">3px dashed</span> <span class="str">red</span>;
+  
+  <span class="cm">/* MARGIN — espace extérieur (entre éléments) */</span>
+  margin: <span class="num">20px</span>;               <span class="cm">/* tous les côtés */</span>
+  margin: <span class="num">20px auto</span>;          <span class="cm">/* centrage horizontal */</span>
+  margin-bottom: <span class="num">30px</span>;
+}
+
+<span class="cm">/* CRUCIAL : inclure padding et border dans width */</span>
+<span class="fn">*</span> {
+  box-sizing: <span class="str">border-box</span>;     <span class="cm">/* Toujours utiliser ! */</span>
+}</pre>
+          </div>
+
+          <div class="callout callout-warn">
+            <span class="callout-icon"><i class="fas fa-exclamation-triangle"></i></span>
+            <div class="callout-body">
+              <strong>Toujours ajouter</strong> <code>box-sizing: border-box</code> globalement.
+              Sans cela, <code>width: 300px</code> + <code>padding: 20px</code> = 340px de largeur totale !
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Styles de bordure</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Propriété</th>
+                <th>Valeurs</th>
+                <th>Exemple</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>border-style</code></td>
+                <td>solid, dashed, dotted, double, groove, ridge, none</td>
+                <td><code>border-style: dashed</code></td>
+              </tr>
+              <tr>
+                <td><code>border-width</code></td>
+                <td>px, em, thin, medium, thick</td>
+                <td><code>border-width: 2px</code></td>
+              </tr>
+              <tr>
+                <td><code>border-color</code></td>
+                <td>couleur</td>
+                <td><code>border-color: #264de4</code></td>
+              </tr>
+              <tr>
+                <td><code>border-radius</code></td>
+                <td>px, %, 50% = cercle</td>
+                <td><code>border-radius: 10px</code></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">CSS — Bordures avancées</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm">/* Coins arrondis personnalisés */</span>
+<span class="fn">.carte</span> {
+  border-radius: <span class="num">10px 10px 0 0</span>;    <span class="cm">/* haut-G haut-D bas-D bas-G */</span>
+}
+
+<span class="cm">/* Cercle parfait */</span>
+<span class="fn">.avatar</span> {
+  width: <span class="num">100px</span>;
+  height: <span class="num">100px</span>;
+  border-radius: <span class="num">50%</span>;
+}
+
+<span class="cm">/* Bordure d'un seul côté */</span>
+<span class="fn">.separation</span> {
+  border-bottom: <span class="num">1px solid</span> <span class="str">#eee</span>;
+}
+
+<span class="cm">/* Ombre portée */</span>
+<span class="fn">.carte</span> {
+  box-shadow: <span class="num">0 4px 6px</span> <span class="fn">rgba</span>(<span class="num">0,0,0,0.1</span>);
+  <span class="cm">/* décalage-x | décalage-y | flou | couleur */</span>
+}
+
+<span class="cm">/* Ombre intérieure */</span>
+<span class="fn">.inset</span> {
+  box-shadow: <span class="str">inset</span> <span class="num">0 2px 4px</span> <span class="fn">rgba</span>(<span class="num">0,0,0,0.1</span>);
+}</pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Display : block, inline, inline-block</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">CSS — Display</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm">/* BLOCK — prend toute la largeur, retour à la ligne */</span>
+<span class="fn">div</span>, <span class="fn">p</span>, <span class="fn">h1</span>, <span class="fn">section</span> { display: <span class="str">block</span>; }  <span class="cm">/* par défaut */</span>
+
+<span class="cm">/* INLINE — sur la même ligne, pas de width/height */</span>
+<span class="fn">span</span>, <span class="fn">a</span>, <span class="fn">strong</span> { display: <span class="str">inline</span>; }  <span class="cm">/* par défaut */</span>
+
+<span class="cm">/* INLINE-BLOCK — sur la même ligne MAIS avec width/height */</span>
+<span class="fn">.bouton</span> {
+  display: <span class="str">inline-block</span>;
+  width: <span class="num">150px</span>;            <span class="cm">/* fonctionne ! */</span>
+  padding: <span class="num">10px 20px</span>;
+}
+
+<span class="cm">/* NONE — masque l'élément (ne prend pas de place) */</span>
+<span class="fn">.cache</span> { display: <span class="str">none</span>; }
+
+<span class="cm">/* VISIBILITY — masque mais garde la place */</span>
+<span class="fn">.invisible</span> { visibility: <span class="str">hidden</span>; }</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <!-- CH 4 - FLEXBOX -->
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <section class="chapter" id="flexbox">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#264de4;background:rgba(38,77,228,0.1);border-color:rgba(38,77,228,0.2)">C.04</span>
+          <div class="chapter-title">Flexbox<span>Mise en page flexible moderne</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Principe de Flexbox</h3>
+          <p class="text">
+            <strong>Flexbox</strong> est un système de mise en page <strong>unidimensionnel</strong> (ligne OU colonne).
+            On applique <code>display: flex</code> sur le <strong>conteneur parent</strong>, puis on contrôle
+            l'alignement et la distribution des <strong>enfants</strong>.
+          </p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">CSS — Flexbox Conteneur</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="fn">.conteneur</span> {
+  display: <span class="str">flex</span>;                   <span class="cm">/* Active Flexbox */</span>
+  
+  <span class="cm">/* DIRECTION — axe principal */</span>
+  flex-direction: <span class="str">row</span>;            <span class="cm">/* → horizontal (défaut) */</span>
+  flex-direction: <span class="str">column</span>;         <span class="cm">/* ↓ vertical */</span>
+  flex-direction: <span class="str">row-reverse</span>;    <span class="cm">/* ← horizontal inversé */</span>
+  
+  <span class="cm">/* JUSTIFICATION — axe principal */</span>
+  justify-content: <span class="str">flex-start</span>;    <span class="cm">/* → début (défaut) */</span>
+  justify-content: <span class="str">flex-end</span>;      <span class="cm">/* → fin */</span>
+  justify-content: <span class="str">center</span>;        <span class="cm">/* → centre */</span>
+  justify-content: <span class="str">space-between</span>; <span class="cm">/* → espace entre */</span>
+  justify-content: <span class="str">space-around</span>;  <span class="cm">/* → espace autour */</span>
+  justify-content: <span class="str">space-evenly</span>;  <span class="cm">/* → espace égal */</span>
+  
+  <span class="cm">/* ALIGNEMENT — axe secondaire */</span>
+  align-items: <span class="str">stretch</span>;          <span class="cm">/* étire (défaut) */</span>
+  align-items: <span class="str">flex-start</span>;       <span class="cm">/* haut */</span>
+  align-items: <span class="str">flex-end</span>;         <span class="cm">/* bas */</span>
+  align-items: <span class="str">center</span>;           <span class="cm">/* centre vertical */</span>
+  
+  <span class="cm">/* GAP — espace entre éléments */</span>
+  gap: <span class="num">20px</span>;                      <span class="cm">/* tous les côtés */</span>
+  gap: <span class="num">10px 20px</span>;                 <span class="cm">/* vertical | horizontal */</span>
+  
+  <span class="cm">/* RETOUR À LA LIGNE */</span>
+  flex-wrap: <span class="str">nowrap</span>;             <span class="cm">/* pas de retour (défaut) */</span>
+  flex-wrap: <span class="str">wrap</span>;               <span class="cm">/* retour à la ligne si besoin */</span>
+}</pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Propriétés des enfants flex</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">CSS — Flex Items</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="fn">.enfant</span> {
+  <span class="cm">/* FLEX — raccourci grow | shrink | basis */</span>
+  flex: <span class="num">1</span>;                        <span class="cm">/* prend l'espace disponible */</span>
+  flex: <span class="num">0 0 200px</span>;                <span class="cm">/* largeur fixe 200px */</span>
+  
+  <span class="cm">/* FLEX-GROW — facteur de croissance */</span>
+  flex-grow: <span class="num">0</span>;                   <span class="cm">/* ne grandit pas (défaut) */</span>
+  flex-grow: <span class="num">1</span>;                   <span class="cm">/* prend l'espace disponible */</span>
+  flex-grow: <span class="num">2</span>;                   <span class="cm">/* prend 2x plus que flex-grow: 1 */</span>
+  
+  <span class="cm">/* FLEX-SHRINK — facteur de rétrécissement */</span>
+  flex-shrink: <span class="num">1</span>;                 <span class="cm">/* peut rétrécir (défaut) */</span>
+  flex-shrink: <span class="num">0</span>;                 <span class="cm">/* ne rétrécit jamais */</span>
+  
+  <span class="cm">/* FLEX-BASIS — taille de base */</span>
+  flex-basis: <span class="str">auto</span>;              <span class="cm">/* selon contenu (défaut) */</span>
+  flex-basis: <span class="num">200px</span>;             <span class="cm">/* largeur initiale */</span>
+  
+  <span class="cm">/* ALIGN-SELF — alignement individuel */</span>
+  align-self: <span class="str">center</span>;            <span class="cm">/* centre cet élément seulement */</span>
+  
+  <span class="cm">/* ORDER — ordre d'affichage */</span>
+  order: <span class="num">-1</span>;                      <span class="cm">/* afficher en premier */</span>
+  order: <span class="num">1</span>;                       <span class="cm">/* afficher après les order: 0 */</span>
+}</pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Exemples pratiques Flexbox</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">CSS — Exemples courants</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm">/* CENTRAGE PARFAIT */</span>
+<span class="fn">.centre-absolu</span> {
+  display: <span class="str">flex</span>;
+  justify-content: <span class="str">center</span>;
+  align-items: <span class="str">center</span>;
+  height: <span class="num">100vh</span>;
+}
+
+<span class="cm">/* BARRE DE NAVIGATION */</span>
+<span class="fn">nav</span> {
+  display: <span class="str">flex</span>;
+  justify-content: <span class="str">space-between</span>;
+  align-items: <span class="str">center</span>;
+  padding: <span class="num">12px 24px</span>;
+}
+
+<span class="cm">/* GRILLE DE CARTES FLEXIBLE */</span>
+<span class="fn">.grille-cartes</span> {
+  display: <span class="str">flex</span>;
+  flex-wrap: <span class="str">wrap</span>;
+  gap: <span class="num">20px</span>;
+}
+<span class="fn">.grille-cartes .carte</span> {
+  flex: <span class="num">1 1 300px</span>;   <span class="cm">/* min 300px, s'adapte */</span>
+  max-width: <span class="num">400px</span>;
+}
+
+<span class="cm">/* FOOTER EN BAS DE PAGE */</span>
+<span class="fn">body</span> {
+  display: <span class="str">flex</span>;
+  flex-direction: <span class="str">column</span>;
+  min-height: <span class="num">100vh</span>;
+}
+<span class="fn">main</span> { flex: <span class="num">1</span>; }         <span class="cm">/* prend tout l'espace */</span>
+<span class="fn">footer</span> { flex-shrink: <span class="num">0</span>; }  <span class="cm">/* reste en bas */</span>
+
+<span class="cm">/* SIDEBAR + CONTENU */</span>
+<span class="fn">.layout</span> {
+  display: <span class="str">flex</span>;
+}
+<span class="fn">.sidebar</span> {
+  flex: <span class="num">0 0 250px</span>;      <span class="cm">/* largeur fixe */</span>
+}
+<span class="fn">.contenu</span> {
+  flex: <span class="num">1</span>;               <span class="cm">/* prend le reste */</span>
+}</pre>
+          </div>
+        </div>
+
+        <div class="retenir">
+          <div class="retenir-title">À retenir — Flexbox</div>
+          <ul>
+            <li><code>display: flex</code> s'applique au <strong>parent</strong></li>
+            <li><code>justify-content</code> = axe principal (horizontal si row)</li>
+            <li><code>align-items</code> = axe secondaire (vertical si row)</li>
+            <li><code>gap</code> remplace les marges entre éléments</li>
+            <li><code>flex: 1</code> sur un enfant = prend tout l'espace disponible</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <!-- CH 5 - CSS GRID -->
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <section class="chapter" id="css-grid">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#264de4;background:rgba(38,77,228,0.1);border-color:rgba(38,77,228,0.2)">C.05</span>
+          <div class="chapter-title">CSS Grid<span>Mise en page bidimensionnelle</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Principe de Grid</h3>
+          <p class="text">
+            <strong>CSS Grid</strong> est un système de mise en page <strong>bidimensionnel</strong> (lignes ET
+            colonnes).
+            Idéal pour les layouts complexes avec des éléments de tailles différentes.
+          </p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">CSS — Grid Container</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="fn">.grille</span> {
+  display: <span class="str">grid</span>;
+  
+  <span class="cm">/* COLONNES */</span>
+  grid-template-columns: <span class="num">200px 1fr 200px</span>;    <span class="cm">/* 3 colonnes */</span>
+  grid-template-columns: <span class="fn">repeat</span>(<span class="num">3</span>, <span class="num">1fr</span>);    <span class="cm">/* 3 colonnes égales */</span>
+  grid-template-columns: <span class="fn">repeat</span>(<span class="num">auto-fill</span>, <span class="fn">minmax</span>(<span class="num">250px</span>, <span class="num">1fr</span>));
+  
+  <span class="cm">/* LIGNES */</span>
+  grid-template-rows: <span class="num">100px auto 50px</span>;      <span class="cm">/* 3 lignes */</span>
+  
+  <span class="cm">/* GAP */</span>
+  gap: <span class="num">20px</span>;
+  row-gap: <span class="num">10px</span>;
+  column-gap: <span class="num">20px</span>;
+  
+  <span class="cm">/* ALIGNEMENT */</span>
+  justify-items: <span class="str">center</span>;    <span class="cm">/* horizontal des items */</span>
+  align-items: <span class="str">center</span>;      <span class="cm">/* vertical des items */</span>
+  place-items: <span class="str">center</span>;      <span class="cm">/* raccourci align + justify */</span>
+}</pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Placement des éléments</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">CSS — Grid Items</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm">/* Placement précis d'un élément */</span>
+<span class="fn">.element</span> {
+  grid-column: <span class="num">1</span> / <span class="num">3</span>;         <span class="cm">/* colonnes 1 à 2 */</span>
+  grid-row: <span class="num">1</span> / <span class="num">2</span>;            <span class="cm">/* ligne 1 */</span>
+  
+  <span class="cm">/* Raccourci */</span>
+  grid-area: <span class="num">1</span> / <span class="num">1</span> / <span class="num">2</span> / <span class="num">3</span>;   <span class="cm">/* row-start / col-start / row-end / col-end */</span>
+}
+
+<span class="cm">/* Span — s'étendre sur plusieurs */</span>
+<span class="fn">.large</span> {
+  grid-column: <span class="str">span 2</span>;        <span class="cm">/* prend 2 colonnes */</span>
+  grid-row: <span class="str">span 2</span>;           <span class="cm">/* prend 2 lignes */</span>
+}
+
+<span class="cm">/* Template areas (noms) */</span>
+<span class="fn">.page</span> {
+  display: <span class="str">grid</span>;
+  grid-template-areas:
+    <span class="str">"header header header"</span>
+    <span class="str">"sidebar main main"</span>
+    <span class="str">"footer footer footer"</span>;
+  grid-template-columns: <span class="num">250px 1fr 1fr</span>;
+  grid-template-rows: <span class="num">80px 1fr 60px</span>;
+}
+
+<span class="fn">header</span>  { grid-area: <span class="str">header</span>; }
+<span class="fn">aside</span>   { grid-area: <span class="str">sidebar</span>; }
+<span class="fn">main</span>    { grid-area: <span class="str">main</span>; }
+<span class="fn">footer</span>  { grid-area: <span class="str">footer</span>; }</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <!-- CH 6 - RESPONSIVE -->
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <section class="chapter" id="responsive">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#264de4;background:rgba(38,77,228,0.1);border-color:rgba(38,77,228,0.2)">C.06</span>
+          <div class="chapter-title">Responsive Design<span>Adapter le site à tous les écrans</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Media Queries</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">CSS — Media Queries</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm">/* MOBILE FIRST — styles de base pour mobile */</span>
+<span class="fn">.container</span> {
+  padding: <span class="num">16px</span>;
+}
+
+<span class="cm">/* Tablettes (≥768px) */</span>
+<span class="fn">@media</span> (min-width: <span class="num">768px</span>) {
+  <span class="fn">.container</span> {
+    padding: <span class="num">24px</span>;
+    max-width: <span class="num">720px</span>;
+    margin: <span class="num">0 auto</span>;
+  }
+}
+
+<span class="cm">/* Desktop (≥1024px) */</span>
+<span class="fn">@media</span> (min-width: <span class="num">1024px</span>) {
+  <span class="fn">.container</span> {
+    padding: <span class="num">32px</span>;
+    max-width: <span class="num">960px</span>;
+  }
+  
+  <span class="fn">.sidebar</span> {
+    display: <span class="str">block</span>;  <span class="cm">/* visible sur desktop */</span>
+  }
+}
+
+<span class="cm">/* Grand écran (≥1280px) */</span>
+<span class="fn">@media</span> (min-width: <span class="num">1280px</span>) {
+  <span class="fn">.container</span> {
+    max-width: <span class="num">1200px</span>;
+  }
+}
+
+<span class="cm">/* Cibler uniquement mobile */</span>
+<span class="fn">@media</span> (max-width: <span class="num">767px</span>) {
+  <span class="fn">.menu-desktop</span> { display: <span class="str">none</span>; }
+  <span class="fn">.menu-mobile</span> { display: <span class="str">block</span>; }
+}</pre>
+          </div>
+
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Breakpoint</th>
+                <th>Largeur</th>
+                <th>Appareil typique</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>xs</td>
+                <td>&lt; 576px</td>
+                <td>Petit mobile</td>
+              </tr>
+              <tr>
+                <td>sm</td>
+                <td>≥ 576px</td>
+                <td>Mobile</td>
+              </tr>
+              <tr>
+                <td>md</td>
+                <td>≥ 768px</td>
+                <td>Tablette</td>
+              </tr>
+              <tr>
+                <td>lg</td>
+                <td>≥ 992px</td>
+                <td>Desktop</td>
+              </tr>
+              <tr>
+                <td>xl</td>
+                <td>≥ 1200px</td>
+                <td>Grand écran</td>
+              </tr>
+              <tr>
+                <td>xxl</td>
+                <td>≥ 1400px</td>
+                <td>Très grand écran</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Unités relatives</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Unité</th>
+                <th>Description</th>
+                <th>Usage recommandé</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>px</code></td>
+                <td>Pixels (fixe)</td>
+                <td>Bordures, petits détails</td>
+              </tr>
+              <tr>
+                <td><code>%</code></td>
+                <td>Pourcentage du parent</td>
+                <td>Largeurs flexibles</td>
+              </tr>
+              <tr>
+                <td><code>em</code></td>
+                <td>Relatif à la taille de police du parent</td>
+                <td>Marges, paddings</td>
+              </tr>
+              <tr>
+                <td><code>rem</code></td>
+                <td>Relatif à la taille de police racine (html)</td>
+                <td>Tailles de texte</td>
+              </tr>
+              <tr>
+                <td><code>vw</code></td>
+                <td>1% de la largeur du viewport</td>
+                <td>Éléments pleine largeur</td>
+              </tr>
+              <tr>
+                <td><code>vh</code></td>
+                <td>1% de la hauteur du viewport</td>
+                <td>Sections pleine hauteur</td>
+              </tr>
+              <tr>
+                <td><code>fr</code></td>
+                <td>Fraction de l'espace disponible (Grid)</td>
+                <td>Colonnes Grid</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Navigation -->
+      <div class="page-nav">
+        <a href="html-complet.html">
+          <span class="page-nav-label">← Précédent</span>
+          <span class="page-nav-title"><i class="fab fa-html5"></i> HTML Complet</span>
+        </a>
+        <a href="javascript.html" class="next">
+          <span class="page-nav-label">Suivant →</span>
+          <span class="page-nav-title"><i class="fab fa-js"></i> JavaScript</span>
+        </a>
+      </div>
+
+    </div>
+  
+      <!-- EXERCICES & TP CSS -->
+      <section class="chapter" id="exercices-css">
+        <div class="chapter-header">
+          <span class="chapter-num" style="background:linear-gradient(135deg,#264de4,#2965f1);">EX</span>
+          <div class="chapter-title">Exercices &amp; Travaux Pratiques<span>Mise en pratique du CSS : sélecteurs, Flexbox, Grid, animations</span></div>
+        </div>
+        <div class="section">
+          <p class="section-intro">Ces exercices couvrent l'ensemble du spectre CSS, des sélecteurs de base aux animations complexes et au design responsive avancé.</p>
+
+          <p class="section-exo-title"><i class="fas fa-pencil-alt"></i> Exercices de compréhension</p>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 1 — Spécificité CSS <span class="niveau-badge niveau-facile">Facile</span></h4>
+            <ol>
+              <li>Pour chaque sélecteur, calculez sa spécificité : <code>p</code>, <code>.container</code>, <code>#header</code>, <code>div.nav a:hover</code>, <code>*</code>, <code>input[type="text"]</code>.</li>
+              <li>Créez un exemple HTML/CSS où un élément est ciblé par 4 règles contradictoires. Prédisez quelle couleur sera appliquée avant d'ouvrir le navigateur.</li>
+              <li>Sans utiliser <code>!important</code>, comment forcer une règle à s'appliquer malgré une spécificité plus faible ? (donnez 2 méthodes).</li>
+            </ol>
+          </div>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 2 — Layout Flexbox <span class="niveau-badge niveau-moyen">Moyen</span></h4>
+            <ol>
+              <li>Créez une barre de navigation horizontale avec logo à gauche, liens au centre et bouton "Connexion" à droite, en utilisant uniquement Flexbox.</li>
+              <li>Réalisez une galerie de 6 cartes de taille égale qui s'adaptent automatiquement en 3 colonnes sur desktop, 2 sur tablette et 1 sur mobile (sans media queries, avec <code>flex-wrap</code> et <code>flex-basis</code>).</li>
+              <li>Centrez parfaitement (horizontalement et verticalement) un élément dans un conteneur de hauteur 100vh.</li>
+              <li>Créez un layout "Sainte Trinité" : header, footer fixes + sidebar + contenu principal qui remplit l'espace restant.</li>
+            </ol>
+          </div>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 3 — CSS Grid avancé <span class="niveau-badge niveau-moyen">Moyen</span></h4>
+            <ol>
+              <li>Reproduisez le layout d'un magazine : une grille 12 colonnes avec un article principal qui occupe 8 colonnes, une sidebar sur 4 colonnes, et des petites cartes en bas.</li>
+              <li>Utilisez <code>grid-template-areas</code> pour nommer les zones et les affecter avec <code>grid-area</code>.</li>
+              <li>Créez une grille de photos de style masonry (hauteurs variables) avec <code>grid-auto-rows</code> et <code>grid-row: span X</code>.</li>
+              <li><strong>Bonus :</strong> Comparez les avantages de Flexbox vs Grid. Quand utiliser l'un, quand utiliser l'autre ?</li>
+            </ol>
+          </div>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 4 — Animations CSS <span class="niveau-badge niveau-avance">Avancé</span></h4>
+            <ol>
+              <li>Créez un bouton avec un effet de <em>pulse</em> (onde circulaire qui s'étend) au survol, en utilisant uniquement <code>@keyframes</code> et <code>box-shadow</code>.</li>
+              <li>Animez un loader de chargement : trois points qui rebondissent en décalé (<code>animation-delay</code>).</li>
+              <li>Créez une carte qui se retourne en 3D au survol (face avant = résumé, face arrière = détails) avec <code>perspective</code>, <code>transform-style: preserve-3d</code> et <code>backface-visibility</code>.</li>
+              <li>Optimisation : expliquez pourquoi il faut préférer animer <code>transform</code> et <code>opacity</code> plutôt que <code>width</code>/<code>height</code>/<code>top</code>/<code>left</code>.</li>
+            </ol>
+          </div>
+
+          <p class="section-exo-title"><i class="fas fa-flask"></i> Travaux Pratiques</p>
+
+          <div class="tp-block">
+            <h4>🔬 TP 1 — Reproduire un design Figma <span class="niveau-badge niveau-moyen">Moyen — 2h</span></h4>
+            <p style="font-size:14px;color:var(--muted);margin-bottom:12px;"><strong>Objectif :</strong> Intégrer pixel-perfect une maquette en HTML/CSS.</p>
+            <ol class="tp-etapes">
+              <li>À partir de la maquette fournie par le formateur (ou choisissez sur <a href="https://www.figma.com/community" target="_blank">Figma Community</a>), identifiez : la grille, la typographie, la palette de couleurs et les espacements.</li>
+              <li>Créez les variables CSS : <code>--color-primary</code>, <code>--color-bg</code>, <code>--font-heading</code>, <code>--spacing-md</code>, etc.</li>
+              <li>Intégrez d'abord la version mobile (mobile-first), puis ajoutez les media queries pour tablette (768px) et desktop (1200px).</li>
+              <li>Utilisez Flexbox pour les composants et Grid pour le layout général.</li>
+              <li><strong>Rendu :</strong> Capture écran à 3 breakpoints (375px, 768px, 1440px) + code commenté.</li>
+            </ol>
+          </div>
+
+          <div class="tp-block">
+            <h4>🔬 TP 2 — Système de design complet (Design System) <span class="niveau-badge niveau-avance">Avancé — 4h</span></h4>
+            <p style="font-size:14px;color:var(--muted);margin-bottom:12px;"><strong>Objectif :</strong> Créer une librairie CSS de composants réutilisables avec thème clair/sombre.</p>
+            <ol class="tp-etapes">
+              <li><strong>Variables CSS :</strong> Définir un token system complet (couleurs sémantiques, typographie, espacement, ombres, rayons de bordure) pour le thème clair ET sombre via <code>prefers-color-scheme</code>.</li>
+              <li><strong>Composants :</strong> Boutons (5 variantes), badges, alertes, cartes, formulaires, navigation, modal, tooltip — tous avec états <code>hover</code>, <code>focus</code>, <code>active</code>, <code>disabled</code>.</li>
+              <li><strong>Page de documentation :</strong> Une page HTML qui présente tous les composants avec leur code source affiché à côté (comme Storybook en simplifié).</li>
+              <li><strong>Accessibilité :</strong> Contraste WCAG AA minimum sur tous les composants. Focus visible sur tous les éléments interactifs.</li>
+            </ol>
+          </div>
+
+          <div class="quiz-block">
+            <h4>❓ Quiz de révision — CSS</h4>
+            <ol>
+              <li>Quelle est la différence entre <code>display: none</code> et <code>visibility: hidden</code> ?</li>
+              <li>Qu'est-ce que le "Box Model" CSS ? Quelle propriété change son comportement fondamentalement ?</li>
+              <li>Expliquez le concept de BEM (Block Element Modifier) et donnez un exemple d'application.</li>
+              <li>Pourquoi <code>position: absolute</code> sort-il l'élément du flux normal ? Par rapport à quoi est-il positionné ?</li>
+              <li>Quelle est la différence entre <code>em</code>, <code>rem</code>, <code>vh</code> et <code>vw</code> ?</li>
+              <li>Comment fonctionne <code>z-index</code> ? Pourquoi parfois ça ne marche pas ?</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-info">
+        <img src="assets/logo.png" alt="Logo" class="footer-logo">
+        <div class="footer-text">
+          <div class="footer-name">Adriel TATCHUM SIMO</div>
+          <div class="footer-job">Enseignant CIEL • Formateur Web & Électronique</div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Accueil</a>
+        <a href="html-complet.html">HTML</a>
+        <a href="css-complet.html">CSS</a>
+        <a href="javascript.html">JavaScript</a>
+      </div>
+      <div class="footer-copy">© 2026 Cours CIEL — Tous droits réservés</div>
+    </div>
+  </footer>
+
+  <button id="back-top" aria-label="Retour en haut">↑</button>
+
+  <script src="script.js"></script>
+  <script>
+    function toggleReponse(btn) {
+      const content = btn.nextElementSibling;
+      const isVisible = content.style.display === 'block';
+      content.style.display = isVisible ? 'none' : 'block';
+      btn.innerHTML = isVisible
+        ? '<i class="fas fa-eye"></i> Voir la réponse'
+        : '<i class="fas fa-eye-slash"></i> Masquer la réponse';
+      btn.style.background   = isVisible ? 'rgba(240,180,41,0.1)'  : 'rgba(0,117,143,0.15)';
+      btn.style.borderColor  = isVisible ? 'rgba(240,180,41,0.35)' : 'rgba(0,117,143,0.4)';
+      btn.style.color        = isVisible ? 'var(--accent)' : '#00b4d8';
+    }
+  </script>
+</body>
+
+</html>

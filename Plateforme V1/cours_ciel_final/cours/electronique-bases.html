@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bases Électronique — Cours CIEL</title>
+  <meta name="description" content="Cours complet sur les bases de l'électronique : loi d'Ohm, tension, courant, résistance.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="shared-styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+
+<body>
+
+  <div id="scroll-indicator"></div>
+  <button class="mobile-menu-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+
+  <aside id="sidebar">
+    <div class="sidebar-header">
+      <img src="assets/logo.png" alt="Logo CIEL" class="sidebar-logo">
+      <div class="sidebar-title">Cours CIEL<span>Adriel TATCHUM SIMO • Formateur</span></div>
+    </div>
+    <div class="search-container" style="padding: 12px 16px;">
+      <input type="text" id="searchInput" placeholder="Rechercher un cours..."
+        style="width:100%;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:13px;">
+    </div>
+    <div class="progress-container">
+      <div class="progress-label">Progression du cours</div>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 0%"></div>
+      </div>
+    </div>
+    <nav>
+      <div class="nav-group">
+        <div class="nav-group-title">Accueil</div>
+        <a href="index.html"><i class="fas fa-home"></i> Introduction</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 1 — Développement Web</div>
+        <a href="html-complet.html"><i class="fab fa-html5"></i> HTML Complet</a>
+        <a href="css-complet.html"><i class="fab fa-css3-alt"></i> CSS Complet</a>
+        <a href="javascript.html"><i class="fab fa-js"></i> JavaScript</a>
+        <a href="python-flask.html"><i class="fab fa-python"></i> Python & Flask</a>
+        <a href="mysql.html"><i class="fas fa-database"></i> MySQL</a>
+        <a href="projet-fullstack.html"><i class="fas fa-project-diagram"></i> Projet Full Stack</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 2 — Électronique</div>
+        <a href="electronique-bases.html"><i class="fas fa-bolt"></i> Bases Électronique</a>
+        <a href="composants.html"><i class="fas fa-microchip"></i> Composants</a>
+        <a href="arduino.html"><i class="fas fa-robot"></i> Arduino & ESP32</a>
+        <a href="raspberry-pi.html"><i class="fab fa-raspberry-pi"></i> Raspberry Pi</a>
+        <a href="capteurs.html"><i class="fas fa-thermometer-half"></i> Capteurs & Actionneurs</a>
+        <a href="maintenance-electronique.html"><i class="fas fa-tools"></i> Maintenance Électronique</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 3 — Réseaux & Sécurité</div>
+        <a href="reseau-informatique.html"><i class="fas fa-network-wired"></i> Réseau Informatique</a>
+        <a href="cybersecurite.html"><i class="fas fa-shield-alt"></i> Cybersécurité</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Outils & Workflow</div>
+        <a href="vscode.html"><i class="fas fa-code"></i> VS Code</a>
+        <a href="git.html"><i class="fab fa-git-alt"></i> Git & GitHub</a>
+        <a href="venv.html"><i class="fas fa-cube"></i> .venv Python</a>
+      </div>
+    </nav>
+    <div class="theme-toggle">
+      <button class="theme-btn"><i class="fas fa-sun"></i><span>Mode clair</span></button>
+    </div>
+  </aside>
+
+  <main id="main">
+<section id="hero">
+      <div class="hero-tag">Partie 2 — Électronique</div>
+      <h1 class="hero-title">Bases de<br><em>l'Électronique</em></h1>
+      <p class="hero-desc">
+        Maîtrisez les fondamentaux de l'électronique : tension, courant, résistance, loi d'Ohm, puissance.
+        Les bases indispensables avant de manipuler des composants et des microcontrôleurs.
+      </p>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-val">5</span><span class="stat-label">Concepts clés</span></div>
+        <div class="stat"><span class="stat-val">10+</span><span class="stat-label">Formules</span></div>
+        <div class="stat"><span class="stat-val">~1h</span><span class="stat-label">De lecture</span></div>
+      </div>
+    </section>
+
+
+    <!-- ══════ SECTION VIDÉO PÉDAGOGIQUE ══════ -->
+    <div class="video-ressource">
+      <div class="video-section-title"><i class="fab fa-youtube"></i> Vidéo pédagogique recommandée</div>
+      <div class="video-card">
+        <a href="https://www.youtube.com/watch?v=tc5fZCwX2Xc" target="_blank" class="video-thumbnail">
+          <div class="video-thumbnail-bg">
+            <i class="fab fa-youtube video-yt-icon"></i>
+            <span class="video-yt-text">YOUTUBE</span>
+          </div>
+          <div class="video-play-overlay"><i class="fas fa-play"></i></div>
+        </a>
+        <div class="video-info">
+          <span class="video-badge"><i class="fas fa-clock"></i> 1h30</span>
+          <div class="video-titre">Électronique - Les Fondamentaux</div>
+          <div class="video-chaine">Chaîne : Électro-Bidouilleur</div>
+          <div class="video-desc">Loi d'Ohm, tension, courant, résistance, puissance et composants de base.</div>
+          <a href="https://www.youtube.com/watch?v=tc5fZCwX2Xc" target="_blank" class="video-watch-btn">
+            <i class="fab fa-youtube"></i> Voir sur YouTube
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════ TÉLÉCHARGEMENTS PDF ══════ -->
+    <div class="pdf-download-zone">
+      <a href="tp-electronique.pdf" download class="pdf-download-btn">
+        <i class="fas fa-file-pdf"></i> Télécharger le TP (PDF)
+      </a>
+      <a href="correction-electronique.pdf" download class="correction-download-btn">
+        <i class="fas fa-check-circle"></i> Télécharger les corrections (PDF)
+      </a>
+      <span class="pdf-info-text">Documents imprimables pour travail hors-ligne</span>
+    </div>
+
+    <div id="content">
+<!-- ══════════════════════════════════════════════════════════════ -->
+      <!-- CH 1 - INTRODUCTION ÉLECTRONIQUE -->
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <section class="chapter" id="intro-elec">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:var(--accent);background:rgba(240,180,41,0.1);border-color:rgba(240,180,41,0.2)">E.01</span>
+          <div class="chapter-title">Introduction à l'électronique<span>Qu'est-ce que l'électricité ? Les grandeurs
+              fondamentales</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">L'électricité : un flux d'électrons</h3>
+          <p class="text">
+            L'<strong>électricité</strong> est le mouvement ordonné d'<strong>électrons</strong> (particules chargées
+            négativement)
+            dans un conducteur. Ce flux, appelé <strong>courant électrique</strong>, transporte de l'énergie qui peut
+            être
+            convertie en lumière, chaleur, mouvement, etc.
+          </p>
+
+          <div class="callout callout-info">
+            <span class="callout-icon"><i class="fas fa-info-circle"></i></span>
+            <div class="callout-body">
+              <strong>Analogie de l'eau :</strong> Imaginez l'électricité comme de l'eau dans un tuyau.<br>
+              • <strong>Tension (V)</strong> = pression de l'eau<br>
+              • <strong>Courant (I)</strong> = débit d'eau<br>
+              • <strong>Résistance (R)</strong> = étroitesse du tuyau
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Les 3 grandeurs fondamentales</h3>
+          <div class="cards-grid">
+            <div class="card" style="border-color: rgba(240, 180, 41, 0.3)">
+              <div class="card-type" style="color: var(--accent)"><i class="fas fa-bolt"></i> Tension (U ou V)</div>
+              <div class="card-desc">Force qui "pousse" les électrons. Mesurée en <strong>Volts (V)</strong>.</div>
+              <div class="card-ex">Pile 1.5V • USB 5V • Secteur 230V</div>
+            </div>
+            <div class="card" style="border-color: rgba(78, 205, 196, 0.3)">
+              <div class="card-type" style="color: var(--accent2)"><i class="fas fa-water"></i> Courant (I)</div>
+              <div class="card-desc">Quantité d'électrons qui circulent. Mesuré en <strong>Ampères (A)</strong>.</div>
+              <div class="card-ex">LED ~20mA • USB 500mA • Prise 16A</div>
+            </div>
+            <div class="card" style="border-color: rgba(167, 139, 250, 0.3)">
+              <div class="card-type" style="color: var(--accent6)"><i class="fas fa-minus"></i> Résistance (R)</div>
+              <div class="card-desc">Opposition au passage du courant. Mesurée en <strong>Ohms (Ω)</strong>.</div>
+              <div class="card-ex">Fil cuivre ~0Ω • Résistance 1kΩ</div>
+            </div>
+          </div>
+
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Grandeur</th>
+                <th>Symbole</th>
+                <th>Unité</th>
+                <th>Symbole unité</th>
+                <th>Appareil de mesure</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Tension</strong></td>
+                <td>U (ou V)</td>
+                <td>Volt</td>
+                <td>V</td>
+                <td>Voltmètre (en parallèle)</td>
+              </tr>
+              <tr>
+                <td><strong>Courant</strong></td>
+                <td>I</td>
+                <td>Ampère</td>
+                <td>A</td>
+                <td>Ampèremètre (en série)</td>
+              </tr>
+              <tr>
+                <td><strong>Résistance</strong></td>
+                <td>R</td>
+                <td>Ohm</td>
+                <td>Ω</td>
+                <td>Ohmmètre (circuit hors tension)</td>
+              </tr>
+              <tr>
+                <td><strong>Puissance</strong></td>
+                <td>P</td>
+                <td>Watt</td>
+                <td>W</td>
+                <td>Wattmètre</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Multiples et sous-multiples</h3>
+          <p class="text">
+            En électronique, les valeurs peuvent être très grandes ou très petites. On utilise des
+            <strong>préfixes</strong> :
+          </p>
+
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Préfixe</th>
+                <th>Symbole</th>
+                <th>Facteur</th>
+                <th>Exemple</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Méga</td>
+                <td>M</td>
+                <td>×1 000 000</td>
+                <td>1 MΩ = 1 000 000 Ω</td>
+              </tr>
+              <tr>
+                <td>Kilo</td>
+                <td>k</td>
+                <td>×1 000</td>
+                <td>1 kΩ = 1 000 Ω</td>
+              </tr>
+              <tr>
+                <td>(unité)</td>
+                <td>—</td>
+                <td>×1</td>
+                <td>1 V, 1 A, 1 Ω</td>
+              </tr>
+              <tr>
+                <td>Milli</td>
+                <td>m</td>
+                <td>×0.001</td>
+                <td>1 mA = 0.001 A</td>
+              </tr>
+              <tr>
+                <td>Micro</td>
+                <td>μ</td>
+                <td>×0.000001</td>
+                <td>1 μF = 0.000001 F</td>
+              </tr>
+              <tr>
+                <td>Nano</td>
+                <td>n</td>
+                <td>×0.000000001</td>
+                <td>1 nF = 0.000000001 F</td>
+              </tr>
+              <tr>
+                <td>Pico</td>
+                <td>p</td>
+                <td>×10⁻¹²</td>
+                <td>1 pF = 10⁻¹² F</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="callout callout-tip">
+            <span class="callout-icon"><i class="fas fa-lightbulb"></i></span>
+            <div class="callout-body">
+              <strong>Conversion rapide :</strong><br>
+              • 220 mA = 0.220 A = 220 / 1000 A<br>
+              • 4.7 kΩ = 4700 Ω = 4.7 × 1000 Ω<br>
+              • 2.2 MΩ = 2 200 000 Ω
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <!-- CH 2 - LOI D'OHM -->
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <section class="chapter" id="loi-ohm">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:var(--accent);background:rgba(240,180,41,0.1);border-color:rgba(240,180,41,0.2)">E.02</span>
+          <div class="chapter-title">La Loi d'Ohm<span>La relation fondamentale U = R × I</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">La formule magique</h3>
+          <p class="text">
+            La <strong>loi d'Ohm</strong> relie les 3 grandeurs fondamentales. C'est LA formule à connaître par cœur en
+            électronique.
+          </p>
+
+          <div class="formula-box">
+            <div class="formula">U = R × I</div>
+            <div class="formula-desc">Tension (V) = Résistance (Ω) × Courant (A)</div>
+          </div>
+
+          <p class="text">Cette formule peut être réarrangée pour trouver n'importe quelle valeur :</p>
+
+          <div class="cards-grid" style="grid-template-columns: repeat(3, 1fr)">
+            <div class="card">
+              <div class="card-type" style="color: var(--accent)">Trouver U</div>
+              <div class="formula-box" style="padding: 16px; margin: 0">
+                <div class="formula" style="font-size: 20px">U = R × I</div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color: var(--accent2)">Trouver I</div>
+              <div class="formula-box" style="padding: 16px; margin: 0">
+                <div class="formula" style="font-size: 20px">I = U / R</div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color: var(--accent6)">Trouver R</div>
+              <div class="formula-box" style="padding: 16px; margin: 0">
+                <div class="formula" style="font-size: 20px">R = U / I</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Exemples de calculs</h3>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Exemple 1 — Trouver le courant</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm">Problème : Une LED de résistance 100Ω est alimentée en 5V.</span>
+<span class="cm">           Quel courant la traverse ?</span>
+
+<span class="kw">Données :</span>
+  U = <span class="num">5</span> V
+  R = <span class="num">100</span> Ω
+  I = ?
+
+<span class="kw">Formule :</span>  I = U / R
+
+<span class="kw">Calcul :</span>   I = <span class="num">5</span> / <span class="num">100</span>
+           I = <span class="num">0.05</span> A
+           I = <span class="str">50 mA</span></pre>
+          </div>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Exemple 2 — Calculer une résistance de protection LED</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm">Problème : On veut alimenter une LED rouge (2V, 20mA) avec une source 5V.</span>
+<span class="cm">           Quelle résistance mettre en série ?</span>
+
+<span class="kw">Données :</span>
+  Tension source = <span class="num">5</span> V
+  Tension LED    = <span class="num">2</span> V
+  Courant LED    = <span class="num">20</span> mA = <span class="num">0.020</span> A
+
+<span class="kw">Raisonnement :</span>
+  La résistance doit "absorber" la tension en trop : 5V - 2V = 3V
+
+<span class="kw">Formule :</span>  R = U / I
+
+<span class="kw">Calcul :</span>   R = <span class="num">3</span> / <span class="num">0.020</span>
+           R = <span class="str">150 Ω</span>
+
+<span class="cm">→ On utilisera une résistance de 150Ω ou la valeur standard supérieure (220Ω)</span></pre>
+          </div>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Exemple 3 — Trouver la tension</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm">Problème : Un courant de 2A traverse une résistance de 47Ω.</span>
+<span class="cm">           Quelle tension est aux bornes de cette résistance ?</span>
+
+<span class="kw">Données :</span>
+  I = <span class="num">2</span> A
+  R = <span class="num">47</span> Ω
+  U = ?
+
+<span class="kw">Formule :</span>  U = R × I
+
+<span class="kw">Calcul :</span>   U = <span class="num">47</span> × <span class="num">2</span>
+           U = <span class="str">94 V</span></pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Calculateur Loi d'Ohm</h3>
+          <div class="live-demo" id="ohm-calculator">
+            <div class="live-demo-title"><i class="fas fa-calculator"></i> Calculateur interactif</div>
+            <p class="text">Entrez 2 valeurs, la 3ème sera calculée automatiquement.</p>
+            <div class="cards-grid" style="grid-template-columns: repeat(3, 1fr); margin-bottom: 16px;">
+              <div>
+                <label style="display: block; margin-bottom: 8px; color: var(--muted);">Tension U (Volts)</label>
+                <input type="number" data-var="U" placeholder="ex: 5"
+                  style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--text); font-size: 16px;">
+              </div>
+              <div>
+                <label style="display: block; margin-bottom: 8px; color: var(--muted);">Courant I (Ampères)</label>
+                <input type="number" data-var="I" placeholder="ex: 0.02" step="0.001"
+                  style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--text); font-size: 16px;">
+              </div>
+              <div>
+                <label style="display: block; margin-bottom: 8px; color: var(--muted);">Résistance R (Ohms)</label>
+                <input type="number" data-var="R" placeholder="ex: 220"
+                  style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--text); font-size: 16px;">
+              </div>
+            </div>
+            <div class="calc-result"
+              style="padding: 16px; background: var(--code-bg); border-radius: 8px; font-family: 'JetBrains Mono', monospace; color: var(--accent);">
+              <span style="color: var(--muted)">Entrez 2 valeurs pour calculer la 3ème</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="retenir">
+          <div class="retenir-title">À retenir — Loi d'Ohm</div>
+          <ul>
+            <li><strong>U = R × I</strong> — la formule fondamentale</li>
+            <li>Pour trouver I : <strong>I = U / R</strong></li>
+            <li>Pour trouver R : <strong>R = U / I</strong></li>
+            <li>Toujours convertir en unités de base (V, A, Ω) avant de calculer</li>
+            <li>La résistance de protection d'une LED : R = (Valim - VLED) / ILED</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <!-- CH 3 - PUISSANCE -->
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <section class="chapter" id="puissance">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:var(--accent);background:rgba(240,180,41,0.1);border-color:rgba(240,180,41,0.2)">E.03</span>
+          <div class="chapter-title">Puissance électrique<span>Calcul de la puissance et de l'énergie</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">La puissance (P)</h3>
+          <p class="text">
+            La <strong>puissance</strong> est la quantité d'énergie consommée (ou produite) par unité de temps.
+            Elle se mesure en <strong>Watts (W)</strong>.
+          </p>
+
+          <div class="formula-box">
+            <div class="formula">P = U × I</div>
+            <div class="formula-desc">Puissance (W) = Tension (V) × Courant (A)</div>
+          </div>
+
+          <p class="text">Grâce à la loi d'Ohm, on peut aussi écrire :</p>
+
+          <div class="cards-grid" style="grid-template-columns: repeat(3, 1fr)">
+            <div class="card">
+              <div class="card-type">Formule 1</div>
+              <div class="formula-box" style="padding: 12px; margin: 0">
+                <div class="formula" style="font-size: 18px">P = U × I</div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-type">Formule 2</div>
+              <div class="formula-box" style="padding: 12px; margin: 0">
+                <div class="formula" style="font-size: 18px">P = R × I²</div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-type">Formule 3</div>
+              <div class="formula-box" style="padding: 12px; margin: 0">
+                <div class="formula" style="font-size: 18px">P = U² / R</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Exemples de calculs de puissance</h3>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Exemple — Puissance d'une LED</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm">Problème : Une LED fonctionne à 2V et 20mA. Quelle puissance consomme-t-elle ?</span>
+
+<span class="kw">Données :</span>
+  U = <span class="num">2</span> V
+  I = <span class="num">20</span> mA = <span class="num">0.020</span> A
+
+<span class="kw">Formule :</span>  P = U × I
+
+<span class="kw">Calcul :</span>   P = <span class="num">2</span> × <span class="num">0.020</span>
+           P = <span class="num">0.04</span> W
+           P = <span class="str">40 mW</span></pre>
+          </div>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Exemple — Puissance dissipée dans une résistance</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm">Problème : Une résistance de 220Ω est traversée par un courant de 100mA.</span>
+<span class="cm">           Quelle puissance dissipe-t-elle ? (pour choisir sa taille)</span>
+
+<span class="kw">Données :</span>
+  R = <span class="num">220</span> Ω
+  I = <span class="num">100</span> mA = <span class="num">0.1</span> A
+
+<span class="kw">Formule :</span>  P = R × I²
+
+<span class="kw">Calcul :</span>   P = <span class="num">220</span> × (<span class="num">0.1</span>)²
+           P = <span class="num">220</span> × <span class="num">0.01</span>
+           P = <span class="str">2.2 W</span>
+
+<span class="cm">→ Il faut une résistance de puissance ≥ 2.2W (ex: 3W ou 5W)</span>
+<span class="cm">→ Une résistance 1/4W standard grillerait !</span></pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">L'énergie (E)</h3>
+          <p class="text">
+            L'<strong>énergie</strong> est la puissance multipliée par le temps. C'est ce qu'on paie sur la facture
+            d'électricité.
+          </p>
+
+          <div class="formula-box">
+            <div class="formula">E = P × t</div>
+            <div class="formula-desc">Énergie (Wh ou J) = Puissance (W) × Temps (h ou s)</div>
+          </div>
+
+          <div class="callout callout-info">
+            <span class="callout-icon"><i class="fas fa-info-circle"></i></span>
+            <div class="callout-body">
+              <strong>Unités d'énergie :</strong><br>
+              • <strong>Joule (J)</strong> = 1 Watt pendant 1 seconde (unité SI)<br>
+              • <strong>Watt-heure (Wh)</strong> = 1 Watt pendant 1 heure = 3600 J<br>
+              • <strong>Kilowatt-heure (kWh)</strong> = 1000 Wh (facture EDF)
+            </div>
+          </div>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Exemple — Autonomie d'une batterie</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm">Problème : Une batterie de 2000 mAh alimente un circuit qui consomme 100 mA.</span>
+<span class="cm">           Quelle est l'autonomie ?</span>
+
+<span class="kw">Données :</span>
+  Capacité = <span class="num">2000</span> mAh (milliampères-heures)
+  Consommation = <span class="num">100</span> mA
+
+<span class="kw">Formule :</span>  Autonomie = Capacité / Consommation
+
+<span class="kw">Calcul :</span>   Autonomie = <span class="num">2000</span> / <span class="num">100</span>
+           Autonomie = <span class="str">20 heures</span>
+
+<span class="cm">→ La batterie durera environ 20 heures (en théorie)</span></pre>
+          </div>
+        </div>
+
+        <div class="retenir">
+          <div class="retenir-title">À retenir — Puissance et Énergie</div>
+          <ul>
+            <li><strong>P = U × I</strong> — puissance en Watts</li>
+            <li>Aussi : <strong>P = R × I²</strong> et <strong>P = U² / R</strong></li>
+            <li><strong>E = P × t</strong> — énergie consommée</li>
+            <li>Les résistances ont une puissance max (1/4W, 1/2W, 1W, 5W...)</li>
+            <li>Capacité batterie en mAh = autonomie × consommation moyenne</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <!-- CH 4 - CIRCUITS SÉRIE ET PARALLÈLE -->
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <section class="chapter" id="circuits">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:var(--accent);background:rgba(240,180,41,0.1);border-color:rgba(240,180,41,0.2)">E.04</span>
+          <div class="chapter-title">Circuits Série et Parallèle<span>Association de composants</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Circuit en série</h3>
+          <p class="text">
+            Dans un circuit <strong>série</strong>, les composants sont connectés les uns à la suite des autres.
+            Le courant est le <strong>même</strong> partout, mais la tension se <strong>répartit</strong>.
+          </p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Schéma — Circuit série</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre>        R1 = 100Ω         R2 = 220Ω         R3 = 330Ω
+   +──────/\/\/\──────────/\/\/\──────────/\/\/\──────+
+   │                                                  │
+   │                                                  │
+  (+)                                                (-)
+   │                     5V                           │
+   +──────────────────────────────────────────────────+</pre>
+          </div>
+
+          <div class="cards-grid" style="grid-template-columns: 1fr 1fr">
+            <div class="card" style="border-color: rgba(240, 180, 41, 0.3)">
+              <div class="card-type" style="color: var(--accent)">Lois du circuit série</div>
+              <div class="card-desc">
+                <strong>Courant :</strong> I = I₁ = I₂ = I₃ (même partout)<br>
+                <strong>Tension :</strong> U = U₁ + U₂ + U₃ (se répartit)<br>
+                <strong>Résistance :</strong> Rtotal = R₁ + R₂ + R₃
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-type">Exemple de calcul</div>
+              <div class="card-desc">
+                Rtotal = 100 + 220 + 330 = <strong>650 Ω</strong><br>
+                I = U / R = 5 / 650 = <strong>7.7 mA</strong><br>
+                U₁ = R₁ × I = 100 × 0.0077 = <strong>0.77 V</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Circuit en parallèle</h3>
+          <p class="text">
+            Dans un circuit <strong>parallèle</strong>, les composants sont branchés sur les mêmes points.
+            La tension est la <strong>même</strong> aux bornes de chaque composant, mais le courant se
+            <strong>divise</strong>.
+          </p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Schéma — Circuit parallèle</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre>              +────────/\/\/\────────+
+              │        R1=100Ω       │
+              │                      │
+   +──────────+────────/\/\/\────────+──────────+
+   │          │        R2=220Ω       │          │
+   │          │                      │          │
+  (+)         +────────/\/\/\────────+         (-)
+   │                   R3=330Ω                  │
+   │                    5V                      │
+   +────────────────────────────────────────────+</pre>
+          </div>
+
+          <div class="cards-grid" style="grid-template-columns: 1fr 1fr">
+            <div class="card" style="border-color: rgba(78, 205, 196, 0.3)">
+              <div class="card-type" style="color: var(--accent2)">Lois du circuit parallèle</div>
+              <div class="card-desc">
+                <strong>Tension :</strong> U = U₁ = U₂ = U₃ (même partout)<br>
+                <strong>Courant :</strong> I = I₁ + I₂ + I₃ (se divise)<br>
+                <strong>Résistance :</strong> 1/Rtotal = 1/R₁ + 1/R₂ + 1/R₃
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-type">Exemple de calcul</div>
+              <div class="card-desc">
+                I₁ = 5/100 = 50 mA<br>
+                I₂ = 5/220 = 22.7 mA<br>
+                I₃ = 5/330 = 15.2 mA<br>
+                Itotal = <strong>87.9 mA</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="callout callout-tip">
+            <span class="callout-icon"><i class="fas fa-lightbulb"></i></span>
+            <div class="callout-body">
+              <strong>Astuce pour 2 résistances en parallèle :</strong><br>
+              <code>Rtotal = (R₁ × R₂) / (R₁ + R₂)</code><br>
+              Exemple : (100 × 220) / (100 + 220) = 22000 / 320 = <strong>68.75 Ω</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Diviseur de tension</h3>
+          <p class="text">
+            Le <strong>diviseur de tension</strong> permet d'obtenir une tension plus faible à partir d'une source.
+            C'est un circuit série de 2 résistances.
+          </p>
+
+          <div class="formula-box">
+            <div class="formula">Vout = Vin × R₂ / (R₁ + R₂)</div>
+            <div class="formula-desc">Tension de sortie entre R₂ et la masse</div>
+          </div>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Exemple — Convertir 5V en 3.3V</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm">Problème : Obtenir 3.3V à partir de 5V avec un diviseur de tension</span>
+
+<span class="kw">Formule :</span>  Vout = Vin × R₂ / (R₁ + R₂)
+           <span class="num">3.3</span> = <span class="num">5</span> × R₂ / (R₁ + R₂)
+
+<span class="kw">Solution avec R₁ = 1kΩ :</span>
+           <span class="num">3.3</span> / <span class="num">5</span> = R₂ / (<span class="num">1000</span> + R₂)
+           <span class="num">0.66</span> × (<span class="num">1000</span> + R₂) = R₂
+           <span class="num">660</span> + <span class="num">0.66</span>R₂ = R₂
+           <span class="num">660</span> = <span class="num">0.34</span>R₂
+           R₂ = <span class="num">1941</span> Ω ≈ <span class="str">2kΩ</span>
+
+<span class="cm">→ Avec R₁ = 1kΩ et R₂ = 2kΩ, on obtient ~3.3V</span>
+<span class="cm">→ Vérification : 5 × 2000 / (1000 + 2000) = 5 × 2/3 = 3.33V ✓</span></pre>
+          </div>
+        </div>
+
+        <div class="retenir">
+          <div class="retenir-title">À retenir — Circuits</div>
+          <ul>
+            <li><strong>Série :</strong> même courant, tensions s'additionnent, R_total = R₁ + R₂ + ...</li>
+            <li><strong>Parallèle :</strong> même tension, courants s'additionnent, 1/R_total = 1/R₁ + 1/R₂ + ...</li>
+            <li><strong>Diviseur de tension :</strong> Vout = Vin × R₂ / (R₁ + R₂)</li>
+            <li>En parallèle, R_total est toujours plus petite que la plus petite résistance</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <!-- CH 5 - COURANT CONTINU VS ALTERNATIF -->
+      <!-- ══════════════════════════════════════════════════════════════ -->
+      <section class="chapter" id="dc-ac">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:var(--accent);background:rgba(240,180,41,0.1);border-color:rgba(240,180,41,0.2)">E.05</span>
+          <div class="chapter-title">Courant Continu et Alternatif<span>DC vs AC — Les deux types d'électricité</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Courant Continu (DC)</h3>
+          <p class="text">
+            Le <strong>courant continu</strong> (DC - Direct Current) circule toujours dans le <strong>même
+              sens</strong>.
+            La tension reste <strong>constante</strong>. C'est le type de courant fourni par les piles, batteries et
+            alimentations électroniques.
+          </p>
+
+          <div class="cards-grid" style="grid-template-columns: 1fr 1fr">
+            <div class="card" style="border-color: rgba(78, 205, 196, 0.3)">
+              <div class="card-type" style="color: var(--accent2)"><i class="fas fa-battery-full"></i> Sources DC</div>
+              <div class="card-desc">
+                • Piles (1.5V, 9V)<br>
+                • Batteries (3.7V Li-ion, 12V voiture)<br>
+                • Panneaux solaires<br>
+                • Alimentations USB (5V)<br>
+                • Chargeurs (transforment AC en DC)
+              </div>
+            </div>
+            <div class="card" style="border-color: rgba(78, 205, 196, 0.3)">
+              <div class="card-type" style="color: var(--accent2)"><i class="fas fa-microchip"></i> Utilisations DC
+              </div>
+              <div class="card-desc">
+                • Électronique (Arduino, Raspberry Pi)<br>
+                • Téléphones, ordinateurs portables<br>
+                • LED<br>
+                • Moteurs DC<br>
+                • Capteurs
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Courant Alternatif (AC)</h3>
+          <p class="text">
+            Le <strong>courant alternatif</strong> (AC - Alternating Current) change de sens
+            <strong>périodiquement</strong>.
+            En France, il alterne 50 fois par seconde (<strong>50 Hz</strong>). C'est le courant du réseau électrique.
+          </p>
+
+          <div class="cards-grid" style="grid-template-columns: 1fr 1fr">
+            <div class="card" style="border-color: rgba(240, 180, 41, 0.3)">
+              <div class="card-type" style="color: var(--accent)"><i class="fas fa-plug"></i> Caractéristiques AC
+                (France)</div>
+              <div class="card-desc">
+                • Tension : <strong>230V</strong> (valeur efficace)<br>
+                • Fréquence : <strong>50 Hz</strong><br>
+                • Tension crête : 325V<br>
+                • Forme : sinusoïdale
+              </div>
+            </div>
+            <div class="card" style="border-color: rgba(240, 180, 41, 0.3)">
+              <div class="card-type" style="color: var(--accent)"><i class="fas fa-home"></i> Utilisations AC</div>
+              <div class="card-desc">
+                • Réseau électrique domestique<br>
+                • Électroménager (frigo, lave-linge)<br>
+                • Éclairage (ampoules)<br>
+                • Moteurs industriels<br>
+                • Transformateurs
+              </div>
+            </div>
+          </div>
+
+          <div class="callout callout-warn">
+            <span class="callout-icon"><i class="fas fa-exclamation-triangle"></i></span>
+            <div class="callout-body">
+              <strong>DANGER !</strong> Le courant secteur 230V AC est <strong>mortel</strong>.
+              Ne jamais travailler sur des circuits branchés au secteur sans formation et équipement adapté.
+              En électronique débutant, on travaille uniquement en <strong>basse tension DC</strong> (5V, 12V).
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Comparaison DC vs AC</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Caractéristique</th>
+                <th>Courant Continu (DC)</th>
+                <th>Courant Alternatif (AC)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Direction</td>
+                <td>Toujours le même sens</td>
+                <td>Change de sens périodiquement</td>
+              </tr>
+              <tr>
+                <td>Tension</td>
+                <td>Constante</td>
+                <td>Varie (sinusoïdale)</td>
+              </tr>
+              <tr>
+                <td>Symbole</td>
+                <td>= ou ⎓</td>
+                <td>~ ou ∿</td>
+              </tr>
+              <tr>
+                <td>Sources</td>
+                <td>Piles, batteries, panneaux solaires</td>
+                <td>Réseau électrique, générateurs</td>
+              </tr>
+              <tr>
+                <td>Stockage</td>
+                <td>Facile (batteries)</td>
+                <td>Difficile (doit être converti)</td>
+              </tr>
+              <tr>
+                <td>Transport longue distance</td>
+                <td>Pertes importantes</td>
+                <td>Efficace (transformateurs)</td>
+              </tr>
+              <tr>
+                <td>Électronique</td>
+                <td>Compatible directement</td>
+                <td>Doit être converti en DC</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="retenir">
+          <div class="retenir-title">À retenir — DC vs AC</div>
+          <ul>
+            <li><strong>DC</strong> = courant continu, sens constant (piles, batteries, USB)</li>
+            <li><strong>AC</strong> = courant alternatif, change de sens (prise secteur 230V)</li>
+            <li>L'électronique fonctionne en <strong>DC basse tension</strong> (3.3V, 5V, 12V)</li>
+            <li>Un <strong>adaptateur secteur</strong> convertit AC → DC</li>
+            <li>⚠️ Ne JAMAIS manipuler le 230V sans formation</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Navigation -->
+      
+      <section class="chapter" id="exercices">
+        <div class="chapter-header">
+          <span class="chapter-num" style="background:linear-gradient(135deg,#6366f1,#818cf8);color:#fff;border:none">EX</span>
+          <div class="chapter-title">Exercices & Corrections<span>Entraînez-vous — Cliquez pour afficher les réponses</span></div>
+        </div>
+        <div class="section">
+          <p class="section-intro">Testez vos connaissances sur ce chapitre. Réfléchissez d'abord à chaque question, puis cliquez sur <em>"Voir la correction"</em>.</p>
+          <a href="pdfs/tp-electronique-bases.pdf" download class="pdf-download-btn" style="margin-bottom:24px;display:inline-flex">
+            <i class="fas fa-file-pdf"></i> Télécharger le TP complet avec corrections (PDF)
+          </a>
+          
+          <div class="quiz-question">
+            <b>Exercice — Loi d'Ohm</b>
+            <button class="reponse-btn" onclick="toggleReponse(this)">
+              <i class="fas fa-eye"></i> Voir la correction
+            </button>
+            <div class="reponse-content">
+<pre>Exemples de calculs :
+
+1. R=470Ω, U=5V → I = U/R = 5/470 = 10,6 mA
+   Puissance : P = U×I = 5 × 0,0106 = 53 mW
+
+2. LED rouge (Vf=2V, If=20mA) sous 5V :
+   R = (U_alim - U_LED) / I = (5-2) / 0,020 = 150 Ω
+   → Choisir 150Ω ou 180Ω (valeur E12)
+
+3. Circuit série R1=100Ω, R2=220Ω, R3=470Ω sous 5V :
+   R_total = 100+220+470 = 790Ω
+   I = 5/790 = 6,33 mA
+   U_R1 = 0,633V, U_R2 = 1,393V, U_R3 = 2,975V
+   Vérification : 0,633 + 1,393 + 2,975 ≈ 5V ✓</pre>
+</div>
+          </div>
+          <div class="quiz-question">
+            <b>Exercice — Circuits série et parallèle</b>
+            <button class="reponse-btn" onclick="toggleReponse(this)">
+              <i class="fas fa-eye"></i> Voir la correction
+            </button>
+            <div class="reponse-content">
+<pre>Résistances en SÉRIE :
+R_eq = R1 + R2 + R3
+Même courant partout. Tensions s'additionnent.
+
+Résistances en PARALLÈLE :
+1/R_eq = 1/R1 + 1/R2 + 1/R3
+Même tension aux bornes. Courants s'additionnent.
+
+Exemple parallèle (100Ω // 220Ω // 470Ω) :
+1/R_eq = 1/100 + 1/220 + 1/470
+1/R_eq = 0,01 + 0,00455 + 0,00213 = 0,01668
+R_eq = 1/0,01668 ≈ 59,9 Ω
+
+Pont diviseur de tension :
+V_out = V_in × R2 / (R1 + R2)
+Avec R1=1kΩ, R2=2,2kΩ, V=5V :
+V_out = 5 × 2200/3200 = 3,44V</pre>
+</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="page-nav">
+        <a href="index.html">
+          <span class="page-nav-label">← Précédent</span>
+          <span class="page-nav-title"><i class="fas fa-home"></i> Introduction</span>
+        </a>
+        <a href="composants.html" class="next">
+          <span class="page-nav-label">Suivant →</span>
+          <span class="page-nav-title"><i class="fas fa-microchip"></i> Composants</span>
+        </a>
+      </div>
+
+    </div>
+  
+      <!-- EXERCICES & TP ELECTRONIQUE -->
+      <section class="chapter" id="exercices-elec">
+        <div class="chapter-header">
+          <span class="chapter-num" style="background:linear-gradient(135deg,#f59e0b,#ef4444);">EX</span>
+          <div class="chapter-title">Exercices &amp; Travaux Pratiques<span>Lois de l'électricité, circuits résistifs, condensateurs et analyse de signaux</span></div>
+        </div>
+        <div class="section">
+          <p class="section-intro">Ces exercices couvrent les fondamentaux de l'électronique analogique, des lois de Kirchhoff à l'analyse de circuits avec condensateurs et inductances. Chaque exercice inclut des calculs théoriques et une vérification expérimentale.</p>
+
+          <div class="callout callout-warn">
+            <span class="callout-icon">⚡</span>
+            <div class="callout-body"><strong>Sécurité :</strong> Ne travaillez jamais sur des circuits sous tension supérieure à 12 V sans supervision. Utilisez toujours des résistances de protection avec les LEDs. Vérifiez la polarité avant de brancher les condensateurs électrolytiques.</div>
+          </div>
+
+          <p class="section-exo-title"><i class="fas fa-pencil-alt"></i> Exercices de compréhension</p>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 1 — Loi d'Ohm et diviseur de tension <span class="niveau-badge niveau-facile">Facile</span></h4>
+            <ol>
+              <li>Dans un circuit série R1=1 kΩ, R2=2,2 kΩ alimenté en 9 V : calculez le courant total, la tension aux bornes de chaque résistance, la puissance dissipée par chaque résistance et la puissance totale.</li>
+              <li>Calculez la résistance équivalente de : 3 résistances en parallèle (470 Ω, 1 kΩ, 2,2 kΩ), puis ce groupe en série avec 330 Ω.</li>
+              <li>Pont diviseur : R1=10 kΩ, R2=4,7 kΩ, Vcc=12 V. Calculez Vout. Quel serait R2 pour obtenir exactement 5 V en sortie ?</li>
+              <li><strong>Mesure :</strong> Vérifiez vos calculs avec un multimètre. Notez les écarts et expliquez les causes (tolérance des résistances, résistance interne du multimètre).</li>
+            </ol>
+          </div>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 2 — Circuits RC (condensateur) <span class="niveau-badge niveau-moyen">Moyen</span></h4>
+            <ol>
+              <li>Circuit RC série : R=10 kΩ, C=100 µF, Vcc=9 V. Calculez la constante de temps τ. Donnez la tension aux bornes du condensateur à t=τ, 2τ, 3τ, 5τ.</li>
+              <li>Tracez la courbe de charge et de décharge sur papier millimétré.</li>
+              <li>Filtre passe-bas RC : calculez la fréquence de coupure pour R=1 kΩ, C=100 nF. Calculez l'atténuation en dB à 10 Hz, 1 kHz, 10 kHz.</li>
+              <li><strong>Expérimental :</strong> Sur breadboard, montez le circuit, branchez un oscilloscope (ou Audacity sur PC avec signal audio) et observez le déphasage et l'atténuation à différentes fréquences.</li>
+            </ol>
+          </div>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 3 — Transistor BJT en commutation <span class="niveau-badge niveau-moyen">Moyen</span></h4>
+            <ol>
+              <li>Transistor NPN 2N2222 : β=200, Vbe=0,7 V, Vce_sat=0,2 V, Vcc=12 V, charge RL=560 Ω. Calculez Ic_sat, Ib_min pour saturer le transistor, et choisissez Rb pour Vcommande=3,3 V (Arduino).</li>
+              <li>Montez le circuit sur breadboard avec une LED comme charge (remplacer RL par LED + résistance). Commandez le transistor avec une broche Arduino.</li>
+              <li>Ajoutez une diode de roue libre (1N4007) si vous remplacez la LED par un relais ou moteur. Expliquez son rôle.</li>
+            </ol>
+          </div>
+
+          <p class="section-exo-title"><i class="fas fa-flask"></i> Travaux Pratiques</p>
+
+          <div class="tp-block">
+            <h4>🔬 TP — Alimentation stabilisée 5 V <span class="niveau-badge niveau-moyen">Moyen — 2h</span></h4>
+            <p style="font-size:14px;color:var(--muted);margin-bottom:12px;"><strong>Objectif :</strong> Construire et mesurer une alimentation régulée 5 V à partir d'un transformateur 9 V.</p>
+            <ol class="tp-etapes">
+              <li><strong>Redressement :</strong> Pont de Graetz (4 diodes 1N4007). Mesurer la tension ondulée en sortie.</li>
+              <li><strong>Filtrage :</strong> Condensateur de filtrage C=1000 µF. Calculer le taux d'ondulation. Observer à l'oscilloscope.</li>
+              <li><strong>Régulation :</strong> Régulateur LM7805 (TO-220). Ajouter condensateurs de découplage 100 nF. Mesurer la tension de sortie à vide et en charge (100 mA).</li>
+              <li><strong>Protection :</strong> Fusible 500 mA sur l'entrée. LED d'alimentation avec résistance de 1 kΩ.</li>
+              <li><strong>Rapport :</strong> Schéma annoté, tableau de mesures (tension, courant, température du LM7805 sous charge), calcul du rendement.</li>
+            </ol>
+          </div>
+
+          <div class="quiz-block">
+            <h4>❓ Quiz de révision — Électronique</h4>
+            <ol>
+              <li>Énoncer les deux lois de Kirchhoff et donnez un exemple d'application de chacune.</li>
+              <li>Quelle est la différence entre un semi-conducteur de type N et de type P ?</li>
+              <li>Expliquez la différence entre un AOP (Amplificateur Opérationnel) en montage inverseur et non-inverseur. Donnez le gain de chacun.</li>
+              <li>Qu'est-ce que l'impédance ? Pourquoi est-ce une généralisation de la résistance ?</li>
+              <li>Citez 5 composants électroniques, leur symbole schématique et leur rôle dans un circuit.</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-info">
+        <img src="assets/logo.png" alt="Logo" class="footer-logo">
+        <div class="footer-text">
+          <div class="footer-name">Adriel TATCHUM SIMO</div>
+          <div class="footer-job">Enseignant CIEL • Formateur Web & Électronique</div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Accueil</a>
+        <a href="html-complet.html">HTML</a>
+        <a href="css-complet.html">CSS</a>
+        <a href="javascript.html">JavaScript</a>
+      </div>
+      <div class="footer-copy">© 2026 Cours CIEL — Tous droits réservés</div>
+    </div>
+  </footer>
+
+  <button id="back-top" aria-label="Retour en haut">↑</button>
+
+  <script src="script.js"></script>
+  <script>
+    function toggleReponse(btn) {
+      const content = btn.nextElementSibling;
+      const isVisible = content.style.display === 'block';
+      content.style.display = isVisible ? 'none' : 'block';
+      btn.innerHTML = isVisible
+        ? '<i class="fas fa-eye"></i> Voir la réponse'
+        : '<i class="fas fa-eye-slash"></i> Masquer la réponse';
+      btn.style.background   = isVisible ? 'rgba(240,180,41,0.1)'  : 'rgba(0,117,143,0.15)';
+      btn.style.borderColor  = isVisible ? 'rgba(240,180,41,0.35)' : 'rgba(0,117,143,0.4)';
+      btn.style.color        = isVisible ? 'var(--accent)' : '#00b4d8';
+    }
+  </script>
+</body>
+
+</html>

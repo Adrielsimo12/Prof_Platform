@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arduino & ESP32 — Cours CIEL</title>
+  <meta name="description" content="Cours complet Arduino et ESP32 : programmation, capteurs, actionneurs, WiFi et projets IoT.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="shared-styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+
+<body>
+
+  <div id="scroll-indicator"></div>
+  <button class="mobile-menu-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+
+  <aside id="sidebar">
+    <div class="sidebar-header">
+      <img src="assets/logo.png" alt="Logo CIEL" class="sidebar-logo">
+      <div class="sidebar-title">Cours CIEL<span>Adriel TATCHUM SIMO • Formateur</span></div>
+    </div>
+    <div class="search-container" style="padding: 12px 16px;">
+      <input type="text" id="searchInput" placeholder="Rechercher un cours..."
+        style="width:100%;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:13px;">
+    </div>
+    <div class="progress-container">
+      <div class="progress-label">Progression du cours</div>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 0%"></div>
+      </div>
+    </div>
+    <nav>
+      <div class="nav-group">
+        <div class="nav-group-title">Accueil</div>
+        <a href="index.html"><i class="fas fa-home"></i> Introduction</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 1 — Développement Web</div>
+        <a href="html-complet.html"><i class="fab fa-html5"></i> HTML Complet</a>
+        <a href="css-complet.html"><i class="fab fa-css3-alt"></i> CSS Complet</a>
+        <a href="javascript.html"><i class="fab fa-js"></i> JavaScript</a>
+        <a href="python-flask.html"><i class="fab fa-python"></i> Python & Flask</a>
+        <a href="mysql.html"><i class="fas fa-database"></i> MySQL</a>
+        <a href="projet-fullstack.html"><i class="fas fa-project-diagram"></i> Projet Full Stack</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 2 — Électronique</div>
+        <a href="electronique-bases.html"><i class="fas fa-bolt"></i> Bases Électronique</a>
+        <a href="composants.html"><i class="fas fa-microchip"></i> Composants</a>
+        <a href="arduino.html"><i class="fas fa-robot"></i> Arduino & ESP32</a>
+        <a href="raspberry-pi.html"><i class="fab fa-raspberry-pi"></i> Raspberry Pi</a>
+        <a href="capteurs.html"><i class="fas fa-thermometer-half"></i> Capteurs & Actionneurs</a>
+        <a href="maintenance-electronique.html"><i class="fas fa-tools"></i> Maintenance Électronique</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 3 — Réseaux & Sécurité</div>
+        <a href="reseau-informatique.html"><i class="fas fa-network-wired"></i> Réseau Informatique</a>
+        <a href="cybersecurite.html"><i class="fas fa-shield-alt"></i> Cybersécurité</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Outils & Workflow</div>
+        <a href="vscode.html"><i class="fas fa-code"></i> VS Code</a>
+        <a href="git.html"><i class="fab fa-git-alt"></i> Git & GitHub</a>
+        <a href="venv.html"><i class="fas fa-cube"></i> .venv Python</a>
+      </div>
+    </nav>
+    <div class="theme-toggle">
+      <button class="theme-btn"><i class="fas fa-sun"></i><span>Mode clair</span></button>
+    </div>
+  </aside>
+
+  <main id="main">
+<section id="hero">
+      <div class="hero-tag">Microcontrôleurs</div>
+      <h1 class="hero-title">Arduino & ESP32<br><em>Programmation embarquée</em></h1>
+      <p class="hero-desc">
+        Découvrez la programmation Arduino (C/C++) et ESP32 (WiFi, Bluetooth). Projets pratiques avec LED, capteurs,
+        moteurs et IoT.
+      </p>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-val">8</span><span class="stat-label">Chapitres</span></div>
+        <div class="stat"><span class="stat-val">20+</span><span class="stat-label">Exemples</span></div>
+        <div class="stat"><span class="stat-val">~2h</span><span class="stat-label">De lecture</span></div>
+      </div>
+    </section>
+
+
+    <!-- ══════ SECTION VIDÉO PÉDAGOGIQUE ══════ -->
+    <div class="video-ressource">
+      <div class="video-section-title"><i class="fab fa-youtube"></i> Vidéo pédagogique recommandée</div>
+      <div class="video-card">
+        <a href="https://www.youtube.com/watch?v=JdsnCEKzSFU" target="_blank" class="video-thumbnail">
+          <div class="video-thumbnail-bg">
+            <i class="fab fa-youtube video-yt-icon"></i>
+            <span class="video-yt-text">YOUTUBE</span>
+          </div>
+          <div class="video-play-overlay"><i class="fas fa-play"></i></div>
+        </a>
+        <div class="video-info">
+          <span class="video-badge"><i class="fas fa-clock"></i> 2h30</span>
+          <div class="video-titre">Arduino pour Débutants</div>
+          <div class="video-chaine">Chaîne : U=RI</div>
+          <div class="video-desc">Programmation Arduino : LED, capteurs, moteurs et premiers projets IoT.</div>
+          <a href="https://www.youtube.com/watch?v=JdsnCEKzSFU" target="_blank" class="video-watch-btn">
+            <i class="fab fa-youtube"></i> Voir sur YouTube
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════ TÉLÉCHARGEMENTS PDF ══════ -->
+    <div class="pdf-download-zone">
+      <a href="tp-arduino.pdf" download class="pdf-download-btn">
+        <i class="fas fa-file-pdf"></i> Télécharger le TP (PDF)
+      </a>
+      <a href="correction-arduino.pdf" download class="correction-download-btn">
+        <i class="fas fa-check-circle"></i> Télécharger les corrections (PDF)
+      </a>
+      <span class="pdf-info-text">Documents imprimables pour travail hors-ligne</span>
+    </div>
+
+    <div id="content">
+<!-- CH 1 - INTRODUCTION ARDUINO -->
+      <section class="chapter" id="arduino-intro">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#00979D;background:rgba(0,151,157,0.1);border-color:rgba(0,151,157,0.2)">ARD.01</span>
+          <div class="chapter-title">Introduction à Arduino<span>Microcontrôleur open-source pour l'électronique</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Qu'est-ce qu'Arduino ?</h3>
+          <p class="text">
+            <strong>Arduino</strong> est une plateforme de prototypage électronique <strong>open-source</strong> basée
+            sur un
+            microcontrôleur. Elle permet de lire des capteurs, contrôler des LED, moteurs, afficheurs, et communiquer
+            avec d'autres appareils.
+          </p>
+
+          <div class="cards-grid">
+            <div class="card">
+              <div class="card-type" style="color:#00979D"><i class="fas fa-microchip"></i> Arduino UNO</div>
+              <div class="card-desc">Modèle le plus populaire pour débutants</div>
+              <div class="card-ex">ATmega328P • 14 GPIO • 6 PWM</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent2)"><i class="fas fa-bolt"></i> Arduino NANO</div>
+              <div class="card-desc">Version compacte pour projets embarqués</div>
+              <div class="card-ex">Mini-USB • Breadboard friendly</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent)"><i class="fas fa-tachometer-alt"></i> Arduino MEGA
+              </div>
+              <div class="card-desc">Plus de mémoire et GPIO (54 pins)</div>
+              <div class="card-ex">Pour projets complexes</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Arduino IDE : Installation</h3>
+          <p class="text">
+            Téléchargez l'<strong>Arduino IDE</strong> (Integrated Development Environment) depuis
+            <code>arduino.cc/software</code>.
+            C'est l'éditeur officiel pour programmer vos cartes Arduino.
+          </p>
+
+          <div class="callout callout-tip">
+            <span class="callout-icon"><i class="fas fa-lightbulb"></i></span>
+            <div class="callout-body">
+              <strong>Alternative moderne :</strong> Arduino IDE 2.0 offre une interface améliorée avec auto-complétion
+              et débogage.
+            </div>
+          </div>
+        </div>
+
+        <div class="retenir">
+          <div class="retenir-title">Premiers pas</div>
+          <ul>
+            <li>Arduino se programme en <strong>C/C++</strong> (syntaxe simplifiée)</li>
+            <li>Structure de base : <code>setup()</code> (initialisation) et <code>loop()</code> (boucle infinie)</li>
+            <li>Brancher la carte via USB, sélectionner le port COM dans Arduino IDE</li>
+            <li>Cliquer sur "Téléverser" (Upload) pour envoyer le code sur la carte</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CH 2 - PREMIER PROGRAMME -->
+      <section class="chapter" id="blink">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#00979D;background:rgba(0,151,157,0.1);border-color:rgba(0,151,157,0.2)">ARD.02</span>
+          <div class="chapter-title">Premier programme : Blink<span>Faire clignoter une LED</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Code Blink (LED intégrée)</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Arduino C++</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="cm">// Fonction exécutée une fois au démarrage</span>
+<span class="kw">void</span> <span class="fn">setup</span>() {
+  <span class="fn">pinMode</span>(LED_BUILTIN, OUTPUT);  <span class="cm">// LED intégrée (pin 13 sur UNO)</span>
+}
+
+<span class="cm">// Fonction exécutée en boucle infinie</span>
+<span class="kw">void</span> <span class="fn">loop</span>() {
+  <span class="fn">digitalWrite</span>(LED_BUILTIN, HIGH);  <span class="cm">// Allumer</span>
+  <span class="fn">delay</span>(<span class="num">1000</span>);                      <span class="cm">// Attendre 1 seconde</span>
+  <span class="fn">digitalWrite</span>(LED_BUILTIN, LOW);   <span class="cm">// Éteindre</span>
+  <span class="fn">delay</span>(<span class="num">1000</span>);                      <span class="cm">// Attendre 1 seconde</span>
+}</pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Contrôle d'une LED externe</h3>
+          <p class="text">Connectez une LED avec une résistance 220Ω entre la pin 9 et GND.</p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Arduino C++</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="kw">const int</span> LED_PIN = <span class="num">9</span>;  <span class="cm">// Broche numérique 9</span>
+
+<span class="kw">void</span> <span class="fn">setup</span>() {
+  <span class="fn">pinMode</span>(LED_PIN, OUTPUT);
+}
+
+<span class="kw">void</span> <span class="fn">loop</span>() {
+  <span class="fn">digitalWrite</span>(LED_PIN, HIGH);
+  <span class="fn">delay</span>(<span class="num">500</span>);
+  <span class="fn">digitalWrite</span>(LED_PIN, LOW);
+  <span class="fn">delay</span>(<span class="num">500</span>);
+}</pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">PWM : Variation d'intensité lumineuse</h3>
+          <p class="text">
+            Les broches PWM (~3, ~5, ~6, ~9, ~10, ~11 sur Arduino UNO) permettent de simuler un signal analogique
+            entre 0 (0V) et 255 (5V).
+          </p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Arduino C++</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="kw">const int</span> LED_PIN = <span class="num">9</span>;
+
+<span class="kw">void</span> <span class="fn">setup</span>() {
+  <span class="fn">pinMode</span>(LED_PIN, OUTPUT);
+}
+
+<span class="kw">void</span> <span class="fn">loop</span>() {
+  <span class="cm">// Augmenter progressivement l'intensité</span>
+  <span class="kw">for</span> (<span class="kw">int</span> i = <span class="num">0</span>; i <= <span class="num">255</span>; i++) {
+    <span class="fn">analogWrite</span>(LED_PIN, i);
+    <span class="fn">delay</span>(<span class="num">10</span>);
+  }
+  
+  <span class="cm">// Diminuer progressivement</span>
+  <span class="kw">for</span> (<span class="kw">int</span> i = <span class="num">255</span>; i >= <span class="num">0</span>; i--) {
+    <span class="fn">analogWrite</span>(LED_PIN, i);
+    <span class="fn">delay</span>(<span class="num">10</span>);
+  }
+}</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 3 - ENTRÉES NUMÉRIQUES -->
+      <section class="chapter" id="digital-input">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#00979D;background:rgba(0,151,157,0.1);border-color:rgba(0,151,157,0.2)">ARD.03</span>
+          <div class="chapter-title">Entrées numériques<span>Lecture de boutons et interrupteurs</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Lire un bouton</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Arduino C++</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="kw">const int</span> BUTTON_PIN = <span class="num">2</span>;
+<span class="kw">const int</span> LED_PIN = <span class="num">13</span>;
+
+<span class="kw">void</span> <span class="fn">setup</span>() {
+  <span class="fn">pinMode</span>(BUTTON_PIN, INPUT_PULLUP);  <span class="cm">// Résistance pull-up interne</span>
+  <span class="fn">pinMode</span>(LED_PIN, OUTPUT);
+}
+
+<span class="kw">void</span> <span class="fn">loop</span>() {
+  <span class="kw">int</span> buttonState = <span class="fn">digitalRead</span>(BUTTON_PIN);
+  
+  <span class="kw">if</span> (buttonState == LOW) {  <span class="cm">// Bouton appuyé (masse)</span>
+    <span class="fn">digitalWrite</span>(LED_PIN, HIGH);
+  } <span class="kw">else</span> {
+    <span class="fn">digitalWrite</span>(LED_PIN, LOW);
+  }
+}</pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Débounce : éviter les rebonds</h3>
+          <p class="text">Les boutons mécaniques génèrent des "rebonds" (plusieurs signaux lors d'un appui). On ajoute
+            un délai :</p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Arduino C++</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="kw">const int</span> BUTTON_PIN = <span class="num">2</span>;
+<span class="kw">int</span> lastButtonState = HIGH;
+<span class="kw">int</span> ledState = LOW;
+
+<span class="kw">void</span> <span class="fn">setup</span>() {
+  <span class="fn">pinMode</span>(BUTTON_PIN, INPUT_PULLUP);
+  <span class="fn">pinMode</span>(LED_BUILTIN, OUTPUT);
+}
+
+<span class="kw">void</span> <span class="fn">loop</span>() {
+  <span class="kw">int</span> buttonState = <span class="fn">digitalRead</span>(BUTTON_PIN);
+  
+  <span class="kw">if</span> (buttonState == LOW && lastButtonState == HIGH) {
+    ledState = !ledState;  <span class="cm">// Inverser l'état</span>
+    <span class="fn">digitalWrite</span>(LED_BUILTIN, ledState);
+    <span class="fn">delay</span>(<span class="num">50</span>);  <span class="cm">// Debounce de 50ms</span>
+  }
+  
+  lastButtonState = buttonState;
+}</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 4 - ENTRÉES ANALOGIQUES -->
+      <section class="chapter" id="analog-input">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#00979D;background:rgba(0,151,157,0.1);border-color:rgba(0,151,157,0.2)">ARD.04</span>
+          <div class="chapter-title">Entrées analogiques<span>Potentiomètres, capteurs de lumière (LDR),
+              température</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Lire un potentiomètre</h3>
+          <p class="text">Les broches A0-A5 lisent des valeurs analogiques (0-1023 correspondant à 0-5V).</p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Arduino C++</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="kw">const int</span> POT_PIN = A0;
+<span class="kw">const int</span> LED_PIN = <span class="num">9</span>;
+
+<span class="kw">void</span> <span class="fn">setup</span>() {
+  <span class="fn">pinMode</span>(LED_PIN, OUTPUT);
+  Serial.<span class="fn">begin</span>(<span class="num">9600</span>);  <span class="cm">// Communication série (moniteur série)</span>
+}
+
+<span class="kw">void</span> <span class="fn">loop</span>() {
+  <span class="kw">int</span> potValue = <span class="fn">analogRead</span>(POT_PIN);  <span class="cm">// 0-1023</span>
+  <span class="kw">int</span> brightness = <span class="fn">map</span>(potValue, <span class="num">0</span>, <span class="num">1023</span>, <span class="num">0</span>, <span class="num">255</span>);  <span class="cm">// Convertir en 0-255</span>
+  
+  <span class="fn">analogWrite</span>(LED_PIN, brightness);
+  
+  Serial.<span class="fn">print</span>(<span class="str">"Potentiomètre : "</span>);
+  Serial.<span class="fn">println</span>(potValue);
+  
+  <span class="fn">delay</span>(<span class="num">100</span>);
+}</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 5 - ESP32 INTRODUCTION -->
+      <section class="chapter" id="esp32">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#E7352C;background:rgba(231,53,44,0.1);border-color:rgba(231,53,44,0.2)">ESP.01</span>
+          <div class="chapter-title">Introduction à l'ESP32<span>Microcontrôleur avec WiFi et Bluetooth intégrés</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Qu'est-ce que l'ESP32 ?</h3>
+          <p class="text">
+            L'<strong>ESP32</strong> est un microcontrôleur <strong>low-cost</strong> développé par Espressif Systems.
+            Il embarque le <strong>WiFi</strong> et le <strong>Bluetooth</strong>, ce qui en fait un choix idéal pour
+            les projets <strong>IoT</strong>.
+          </p>
+
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Caractéristique</th>
+                <th>ESP32</th>
+                <th>Arduino UNO</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Processeur</td>
+                <td>Dual-core 240 MHz</td>
+                <td>Single-core 16 MHz</td>
+              </tr>
+              <tr>
+                <td>Mémoire Flash</td>
+                <td>4 Mo</td>
+                <td>32 Ko</td>
+              </tr>
+              <tr>
+                <td>RAM</td>
+                <td>520 Ko</td>
+                <td>2 Ko</td>
+              </tr>
+              <tr>
+                <td>WiFi</td>
+                <td>✓ Intégré</td>
+                <td>✗ Module externe</td>
+              </tr>
+              <tr>
+                <td>Bluetooth</td>
+                <td>✓ BLE 4.2</td>
+                <td>✗ Non</td>
+              </tr>
+              <tr>
+                <td>GPIO</td>
+                <td>34 pins</td>
+                <td>14 pins</td>
+              </tr>
+              <tr>
+                <td>Prix</td>
+                <td>~3-8€</td>
+                <td>~20€</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Configuration Arduino IDE pour ESP32</h3>
+          <p class="text">Pour programmer l'ESP32 avec Arduino IDE :</p>
+
+          <ol style="color: var(--text); margin-left: 20px; margin-bottom: 16px;">
+            <li>Ouvrir <strong>Fichier → Préférences</strong></li>
+            <li>Dans "URL de gestionnaire de cartes supplémentaires", ajouter :<br>
+              <code>https://dl.espressif.com/dl/package_esp32_index.json</code>
+            </li>
+            <li>Aller dans <strong>Outils → Type de carte → Gestionnaire de carte</strong></li>
+            <li>Chercher "ESP32" et installer le package officiel</li>
+            <li>Sélectionner votre modèle : <strong>ESP32 Dev Module</strong> (le plus courant)</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- CH 6 - ESP32 WIFI -->
+      <section class="chapter" id="esp32-wifi">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#E7352C;background:rgba(231,53,44,0.1);border-color:rgba(231,53,44,0.2)">ESP.02</span>
+          <div class="chapter-title">ESP32 : Connexion WiFi<span>Se connecter à un réseau et créer un serveur web</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Connexion à un réseau WiFi</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Arduino C++ (ESP32)</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="kw">#include</span> &lt;WiFi.h&gt;
+
+<span class="kw">const char*</span> ssid = <span class="str">"VotreSSID"</span>;
+<span class="kw">const char*</span> password = <span class="str">"VotreMotDePasse"</span>;
+
+<span class="kw">void</span> <span class="fn">setup</span>() {
+  Serial.<span class="fn">begin</span>(<span class="num">115200</span>);
+  
+  <span class="cm">// Connexion WiFi</span>
+  WiFi.<span class="fn">begin</span>(ssid, password);
+  Serial.<span class="fn">print</span>(<span class="str">"Connexion WiFi"</span>);
+  
+  <span class="kw">while</span> (WiFi.<span class="fn">status</span>() != WL_CONNECTED) {
+    <span class="fn">delay</span>(<span class="num">500</span>);
+    Serial.<span class="fn">print</span>(<span class="str">"."</span>);
+  }
+  
+  Serial.<span class="fn">println</span>(<span class="str">"\nConnecté !"</span>);
+  Serial.<span class="fn">print</span>(<span class="str">"Adresse IP : "</span>);
+  Serial.<span class="fn">println</span>(WiFi.<span class="fn">localIP</span>());
+}
+
+<span class="kw">void</span> <span class="fn">loop</span>() {
+  <span class="cm">// Votre code ici</span>
+}</pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Créer un serveur web simple</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Arduino C++ (ESP32)</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="kw">#include</span> &lt;WiFi.h&gt;
+<span class="kw">#include</span> &lt;WebServer.h&gt;
+
+<span class="kw">const char*</span> ssid = <span class="str">"VotreSSID"</span>;
+<span class="kw">const char*</span> password = <span class="str">"VotreMotDePasse"</span>;
+
+WebServer server(<span class="num">80</span>);
+
+<span class="kw">void</span> <span class="fn">handleRoot</span>() {
+  server.<span class="fn">send</span>(<span class="num">200</span>, <span class="str">"text/html"</span>, <span class="str">"&lt;h1&gt;Bonjour depuis ESP32 !&lt;/h1&gt;"</span>);
+}
+
+<span class="kw">void</span> <span class="fn">setup</span>() {
+  Serial.<span class="fn">begin</span>(<span class="num">115200</span>);
+  WiFi.<span class="fn">begin</span>(ssid, password);
+  
+  <span class="kw">while</span> (WiFi.<span class="fn">status</span>() != WL_CONNECTED) {
+    <span class="fn">delay</span>(<span class="num">500</span>);
+    Serial.<span class="fn">print</span>(<span class="str">"."</span>);
+  }
+  
+  Serial.<span class="fn">println</span>(<span class="str">"\nIP : "</span> + WiFi.<span class="fn">localIP</span>().<span class="fn">toString</span>());
+  
+  <span class="cm">// Routes</span>
+  server.<span class="fn">on</span>(<span class="str">"/"</span>, handleRoot);
+  server.<span class="fn">begin</span>();
+  Serial.<span class="fn">println</span>(<span class="str">"Serveur démarré"</span>);
+}
+
+<span class="kw">void</span> <span class="fn">loop</span>() {
+  server.<span class="fn">handleClient</span>();
+}</pre>
+          </div>
+        </div>
+
+        <div class="callout callout-tip">
+          <span class="callout-icon"><i class="fas fa-lightbulb"></i></span>
+          <div class="callout-body">
+            <strong>Test :</strong> Une fois le code uploadé, ouvrez un navigateur et tapez l'adresse IP affichée
+            dans le moniteur série (ex: http://192.168.1.50). Vous verrez la page HTML !
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 7 - PROJETS -->
+      <section class="chapter" id="projects">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:var(--accent);background:rgba(240,180,41,0.1);border-color:rgba(240,180,41,0.2)">PROJ</span>
+          <div class="chapter-title">Projets pratiques<span>Station météo, robot éviteur d'obstacles, domotique</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Projet 1 : Mesure de température avec DHT11</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Arduino C++</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="cm">// Installer la librairie : DHT sensor library by Adafruit</span>
+<span class="kw">#include</span> &lt;DHT.h&gt;
+
+<span class="kw">#define</span> DHTPIN <span class="num">2</span>
+<span class="kw">#define</span> DHTTYPE DHT11
+
+DHT dht(DHTPIN, DHTTYPE);
+
+<span class="kw">void</span> <span class="fn">setup</span>() {
+  Serial.<span class="fn">begin</span>(<span class="num">9600</span>);
+  dht.<span class="fn">begin</span>();
+}
+
+<span class="kw">void</span> <span class="fn">loop</span>() {
+  <span class="kw">float</span> temperature = dht.<span class="fn">readTemperature</span>();
+  <span class="kw">float</span> humidite = dht.<span class="fn">readHumidity</span>();
+  
+  <span class="kw">if</span> (<span class="fn">isnan</span>(temperature) || <span class="fn">isnan</span>(humidite)) {
+    Serial.<span class="fn">println</span>(<span class="str">"Erreur de lecture"</span>);
+    <span class="kw">return</span>;
+  }
+  
+  Serial.<span class="fn">print</span>(<span class="str">"Température : "</span>);
+  Serial.<span class="fn">print</span>(temperature);
+  Serial.<span class="fn">println</span>(<span class="str">" °C"</span>);
+  
+  Serial.<span class="fn">print</span>(<span class="str">"Humidité : "</span>);
+  Serial.<span class="fn">print</span>(humidite);
+  Serial.<span class="fn">println</span>(<span class="str">" %"</span>);
+  
+  <span class="fn">delay</span>(<span class="num">2000</span>);
+}</pre>
+          </div>
+        </div>
+
+        <div class="retenir">
+          <div class="retenir-title">Ressources utiles</div>
+          <ul>
+            <li><strong>Arduino Reference :</strong> arduino.cc/reference</li>
+            <li><strong>ESP32 Documentation :</strong> docs.espressif.com</li>
+            <li><strong>Projets Arduino :</strong> projecthub.arduino.cc</li>
+            <li><strong>Forum ESP32 :</strong> esp32.com</li>
+            <li><strong>Tutoriels vidéo :</strong> Rechercher "ESP32 IoT projects" sur YouTube</li>
+          </ul>
+        </div>
+      </section>
+
+
+      <!-- EXERCICES & TP ARDUINO -->
+      <section class="chapter" id="exercices-arduino">
+        <div class="chapter-header">
+          <span class="chapter-num" style="background:linear-gradient(135deg,#6366f1,#8b5cf6);">EX</span>
+          <div class="chapter-title">Exercices &amp; Travaux Pratiques<span>Mise en pratique des notions Arduino &amp; ESP32</span></div>
+        </div>
+        <div class="section">
+          <p class="section-intro">Cette section regroupe tous les exercices progressifs et travaux pratiques qui accompagnent le cours Arduino &amp; ESP32. Les exercices sont classés par niveau de difficulté.</p>
+
+          <div class="callout callout-info">
+            <span class="callout-icon">💡</span>
+            <div class="callout-body"><strong>Avant de commencer :</strong> Assurez-vous d'avoir installé l'Arduino IDE, d'avoir branché votre carte via USB, et d'avoir sélectionné le bon port COM dans <em>Outils &gt; Port</em>.</div>
+          </div>
+
+          <p class="section-exo-title"><i class="fas fa-pencil-alt"></i> Exercices de compréhension</p>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 1 — Le clignotement paramétré <span class="niveau-badge niveau-facile">Facile</span></h4>
+            <ol>
+              <li>Modifiez le programme Blink de base pour que la LED clignote <strong>5 fois rapidement</strong> (100 ms), puis <strong>2 fois lentement</strong> (1 seconde), et ainsi de suite en boucle.</li>
+              <li>Utilisez des constantes (<code>const int</code>) pour définir la durée courte et la durée longue.</li>
+              <li>Ajoutez un message sur le <strong>moniteur série</strong> indiquant l'état de la LED ("<em>LED ON</em>" / "<em>LED OFF</em>").</li>
+              <li><strong>Bonus :</strong> Utilisez un tableau <code>int delays[] = {100,100,100,100,100,1000,1000};</code> pour piloter le rythme en parcourant le tableau avec une boucle <code>for</code>.</li>
+            </ol>
+          </div>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 2 — Feu tricolore <span class="niveau-badge niveau-moyen">Moyen</span></h4>
+            <ol>
+              <li>Connectez 3 LEDs (rouge, orange, verte) aux broches 9, 10, 11.</li>
+              <li>Programmez un feu tricolore : vert 3 s → orange 1 s → rouge 3 s → répétition.</li>
+              <li>Ajoutez un <strong>mode nuit</strong> : quand un bouton (broche 2) est maintenu appuyé, seule la LED orange clignote à 0,5 Hz.</li>
+              <li><strong>Question :</strong> Pourquoi utilise-t-on des résistances de 220 Ω en série avec les LEDs ? Calculez la valeur exacte pour une LED rouge (Vf = 2V, If = 20mA, Vcc = 5V).</li>
+            </ol>
+          </div>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 3 — Capteur de lumière réactif <span class="niveau-badge niveau-moyen">Moyen</span></h4>
+            <ol>
+              <li>Branchez une photorésistance (LDR) en diviseur de tension sur la broche A0.</li>
+              <li>Lisez la valeur analogique et affichez-la toutes les 500 ms sur le moniteur série.</li>
+              <li>Allumez une LED si la valeur est inférieure à 300 (obscurité), éteignez-la sinon.</li>
+              <li>Utilisez <code>map()</code> pour convertir la plage 0-1023 vers une luminosité PWM 0-255 et contrôler l'intensité d'une LED via <code>analogWrite()</code>.</li>
+              <li><strong>Réflexion :</strong> Quelle est la résolution du convertisseur ADC de l'Arduino Uno ? Quelle tension correspond à la valeur 512 ?</li>
+            </ol>
+          </div>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 4 — ESP32 WiFi + LED Web <span class="niveau-badge niveau-avance">Avancé</span></h4>
+            <ol>
+              <li>Créez un serveur Web minimal sur l'ESP32 qui affiche une page HTML avec deux boutons : "Allumer" et "Éteindre".</li>
+              <li>Chaque bouton envoie une requête GET <code>/on</code> ou <code>/off</code> qui contrôle la LED GPIO2.</li>
+              <li>Ajoutez sur la page l'état actuel de la LED en temps réel (rechargement automatique toutes les 2 s avec <code>meta refresh</code>).</li>
+              <li><strong>Bonus :</strong> Ajoutez un slider HTML pour régler l'intensité via PWM (requête <code>/pwm?val=X</code>).</li>
+            </ol>
+          </div>
+
+          <p class="section-exo-title"><i class="fas fa-flask"></i> Travaux Pratiques</p>
+
+          <div class="tp-block">
+            <h4>🔬 TP 1 — Station météo Arduino <span class="niveau-badge niveau-moyen">Moyen — 2h</span></h4>
+            <p style="font-size:14px;color:var(--muted);margin-bottom:12px;"><strong>Objectif :</strong> Construire une mini-station météo affichant température et humidité sur un écran LCD I2C.</p>
+            <p style="font-size:14px;font-weight:600;margin-bottom:8px;">Matériel nécessaire :</p>
+            <ul>
+              <li>Arduino Uno ou Nano</li>
+              <li>Capteur DHT11 ou DHT22</li>
+              <li>Écran LCD 16×2 avec module I2C (adresse 0x27)</li>
+              <li>Câbles Dupont, breadboard</li>
+            </ul>
+            <p style="font-size:14px;font-weight:600;margin:12px 0 8px;">Étapes :</p>
+            <ol class="tp-etapes">
+              <li><strong>Câblage DHT11 :</strong> VCC→5V, GND→GND, DATA→broche 7. Ajouter résistance pull-up 10 kΩ entre DATA et VCC.</li>
+              <li><strong>Câblage LCD I2C :</strong> VCC→5V, GND→GND, SDA→A4, SCL→A5.</li>
+              <li><strong>Bibliothèques :</strong> Installer <em>DHT sensor library</em> (Adafruit) et <em>LiquidCrystal_I2C</em> via le gestionnaire de bibliothèques.</li>
+              <li><strong>Code :</strong> Lire la température et l'humidité, les afficher sur les deux lignes du LCD. Mettre à jour toutes les 2 s.</li>
+              <li><strong>Validation :</strong> Comparer les valeurs avec un thermomètre de référence. Calculer l'erreur en %.</li>
+              <li><strong>Extension :</strong> Ajouter une LED rouge qui s'allume si T > 30 °C ou humidité > 80 %. Ajouter un buzzer qui sonne 3 fois en cas d'alerte.</li>
+            </ol>
+            <div class="callout callout-tip" style="margin-top:16px;">
+              <span class="callout-icon">✅</span>
+              <div class="callout-body"><strong>Rendu attendu :</strong> Code Arduino commenté + schéma de câblage (Fritzing ou dessin annoté) + tableau de mesures comparatives + rapport de 1 page décrivant les difficultés rencontrées.</div>
+            </div>
+          </div>
+
+          <div class="tp-block">
+            <h4>🔬 TP 2 — Contrôleur IoT ESP32 avec tableau de bord Web <span class="niveau-badge niveau-avance">Avancé — 3h</span></h4>
+            <p style="font-size:14px;color:var(--muted);margin-bottom:12px;"><strong>Objectif :</strong> Créer un tableau de bord web hébergé sur l'ESP32 pour surveiller et contrôler plusieurs périphériques.</p>
+            <ol class="tp-etapes">
+              <li><strong>Capteurs :</strong> Connecter un DHT22 (T°/humidité), un LDR (luminosité) et un HC-SR04 (distance ultrasonique).</li>
+              <li><strong>Serveur Web :</strong> Utiliser la bibliothèque <code>AsyncWebServer</code> pour servir une page HTML responsive.</li>
+              <li><strong>API JSON :</strong> Créer une route <code>/api/sensors</code> qui retourne les données en JSON (mise à jour via fetch JavaScript toutes les 3 s).</li>
+              <li><strong>Contrôles :</strong> Boutons web pour allumer/éteindre une LED, un relais et un ventilateur DC.</li>
+              <li><strong>Historique :</strong> Stocker les 20 dernières mesures en RAM (tableau circulaire) et les afficher sous forme de graphique ASCII sur la page.</li>
+              <li><strong>OTA :</strong> Activer la mise à jour Over-The-Air (<code>ArduinoOTA</code>) pour flasher le code sans câble USB.</li>
+            </ol>
+          </div>
+
+          <div class="quiz-block">
+            <h4>❓ Quiz de révision — Arduino &amp; ESP32</h4>
+            <ol>
+              <li>Quelle est la différence entre <code>pinMode(pin, OUTPUT)</code> et <code>pinMode(pin, INPUT_PULLUP)</code> ?</li>
+              <li>Pourquoi <code>delay(1000)</code> bloque-t-il tout le programme ? Quelle est l'alternative non-bloquante ?</li>
+              <li>L'Arduino Uno possède combien de broches PWM ? Citez-les.</li>
+              <li>Quelle est la fréquence du processeur de l'ESP32 ? Combien de cœurs possède-t-il ?</li>
+              <li>Expliquez la différence entre la communication I2C et SPI. Dans quel cas préférer l'un ou l'autre ?</li>
+              <li>Un capteur renvoie 0–5 V, mais l'ESP32 accepte max 3,3 V sur ses GPIO. Comment adapter le signal ?</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- NAVIGATION -->
+      <div class="page-nav">
+        <a href="composants.html">
+          <span class="page-nav-label">← Précédent</span>
+          <span class="page-nav-title"><i class="fas fa-microchip"></i> Composants</span>
+        </a>
+        <a href="raspberry-pi.html" class="next">
+          <span class="page-nav-label">Suivant →</span>
+          <span class="page-nav-title"><i class="fab fa-raspberry-pi"></i> Raspberry Pi</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-info">
+        <img src="assets/logo.png" alt="Logo" class="footer-logo">
+        <div class="footer-text">
+          <div class="footer-name">Adriel TATCHUM SIMO</div>
+          <div class="footer-job">Enseignant CIEL • Formateur Web & Électronique</div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Accueil</a>
+        <a href="html-complet.html">HTML</a>
+        <a href="css-complet.html">CSS</a>
+        <a href="javascript.html">JavaScript</a>
+      </div>
+      <div class="footer-copy">© 2026 Cours CIEL — Tous droits réservés</div>
+    </div>
+  </footer>
+
+  <button id="back-top" aria-label="Retour en haut">↑</button>
+
+  <script src="script.js"></script>
+  <script>
+    function toggleReponse(btn) {
+      const content = btn.nextElementSibling;
+      const isVisible = content.style.display === 'block';
+      content.style.display = isVisible ? 'none' : 'block';
+      btn.innerHTML = isVisible
+        ? '<i class="fas fa-eye"></i> Voir la réponse'
+        : '<i class="fas fa-eye-slash"></i> Masquer la réponse';
+      btn.style.background   = isVisible ? 'rgba(240,180,41,0.1)'  : 'rgba(0,117,143,0.15)';
+      btn.style.borderColor  = isVisible ? 'rgba(240,180,41,0.35)' : 'rgba(0,117,143,0.4)';
+      btn.style.color        = isVisible ? 'var(--accent)' : '#00b4d8';
+    }
+  </script>
+</body>
+
+</html>

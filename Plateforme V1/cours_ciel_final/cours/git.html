@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Git & GitHub — Cours CIEL</title>
+  <meta name="description" content="Maîtrisez Git et GitHub : contrôle de version, branches, commits, collaboration et hébergement de projets.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="shared-styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+
+<body>
+
+  <div id="scroll-indicator"></div>
+  <button class="mobile-menu-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+
+  <aside id="sidebar">
+    <div class="sidebar-header">
+      <img src="assets/logo.png" alt="Logo CIEL" class="sidebar-logo">
+      <div class="sidebar-title">Cours CIEL<span>Adriel TATCHUM SIMO • Formateur</span></div>
+    </div>
+    <div class="search-container" style="padding: 12px 16px;">
+      <input type="text" id="searchInput" placeholder="Rechercher un cours..."
+        style="width:100%;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:13px;">
+    </div>
+    <div class="progress-container">
+      <div class="progress-label">Progression du cours</div>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 0%"></div>
+      </div>
+    </div>
+    <nav>
+      <div class="nav-group">
+        <div class="nav-group-title">Accueil</div>
+        <a href="index.html"><i class="fas fa-home"></i> Introduction</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 1 — Développement Web</div>
+        <a href="html-complet.html"><i class="fab fa-html5"></i> HTML Complet</a>
+        <a href="css-complet.html"><i class="fab fa-css3-alt"></i> CSS Complet</a>
+        <a href="javascript.html"><i class="fab fa-js"></i> JavaScript</a>
+        <a href="python-flask.html"><i class="fab fa-python"></i> Python & Flask</a>
+        <a href="mysql.html"><i class="fas fa-database"></i> MySQL</a>
+        <a href="projet-fullstack.html"><i class="fas fa-project-diagram"></i> Projet Full Stack</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 2 — Électronique</div>
+        <a href="electronique-bases.html"><i class="fas fa-bolt"></i> Bases Électronique</a>
+        <a href="composants.html"><i class="fas fa-microchip"></i> Composants</a>
+        <a href="arduino.html"><i class="fas fa-robot"></i> Arduino & ESP32</a>
+        <a href="raspberry-pi.html"><i class="fab fa-raspberry-pi"></i> Raspberry Pi</a>
+        <a href="capteurs.html"><i class="fas fa-thermometer-half"></i> Capteurs & Actionneurs</a>
+        <a href="maintenance-electronique.html"><i class="fas fa-tools"></i> Maintenance Électronique</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 3 — Réseaux & Sécurité</div>
+        <a href="reseau-informatique.html"><i class="fas fa-network-wired"></i> Réseau Informatique</a>
+        <a href="cybersecurite.html"><i class="fas fa-shield-alt"></i> Cybersécurité</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Outils & Workflow</div>
+        <a href="vscode.html"><i class="fas fa-code"></i> VS Code</a>
+        <a href="git.html"><i class="fab fa-git-alt"></i> Git & GitHub</a>
+        <a href="venv.html"><i class="fas fa-cube"></i> .venv Python</a>
+      </div>
+    </nav>
+    <div class="theme-toggle">
+      <button class="theme-btn"><i class="fas fa-sun"></i><span>Mode clair</span></button>
+    </div>
+  </aside>
+
+  <main id="main">
+<section id="hero">
+      <div class="hero-tag">Contrôle de version</div>
+      <h1 class="hero-title">Git & GitHub<br><em>Gestion de projets collaboratifs</em></h1>
+      <p class="hero-desc">
+        Apprenez Git (système de contrôle de version) et GitHub (plateforme collaborative). Commits, branches, pull
+        requests et déploiement.
+      </p>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-val">6</span><span class="stat-label">Chapitres</span></div>
+        <div class="stat"><span class="stat-val">25+</span><span class="stat-label">Commandes</span></div>
+        <div class="stat"><span class="stat-val">~1h30</span><span class="stat-label">De lecture</span></div>
+      </div>
+    </section>
+
+
+    <!-- ══════ SECTION VIDÉO PÉDAGOGIQUE ══════ -->
+    <div class="video-ressource">
+      <div class="video-section-title"><i class="fab fa-youtube"></i> Vidéo pédagogique recommandée</div>
+      <div class="video-card">
+        <a href="https://www.youtube.com/watch?v=rP3T0Ee6pLU" target="_blank" class="video-thumbnail">
+          <div class="video-thumbnail-bg">
+            <i class="fab fa-youtube video-yt-icon"></i>
+            <span class="video-yt-text">YOUTUBE</span>
+          </div>
+          <div class="video-play-overlay"><i class="fas fa-play"></i></div>
+        </a>
+        <div class="video-info">
+          <span class="video-badge"><i class="fas fa-clock"></i> 2h</span>
+          <div class="video-titre">Git et GitHub - Formation Complète</div>
+          <div class="video-chaine">Chaîne : Grafikart</div>
+          <div class="video-desc">Versionning, branches, merge, Pull Request et collaboration sur GitHub.</div>
+          <a href="https://www.youtube.com/watch?v=rP3T0Ee6pLU" target="_blank" class="video-watch-btn">
+            <i class="fab fa-youtube"></i> Voir sur YouTube
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════ TÉLÉCHARGEMENTS PDF ══════ -->
+    <div class="pdf-download-zone">
+      <a href="tp-git.pdf" download class="pdf-download-btn">
+        <i class="fas fa-file-pdf"></i> Télécharger le TP (PDF)
+      </a>
+      <a href="correction-fullstack.pdf" download class="correction-download-btn">
+        <i class="fas fa-check-circle"></i> Télécharger les corrections (PDF)
+      </a>
+      <span class="pdf-info-text">Documents imprimables pour travail hors-ligne</span>
+    </div>
+
+    <div id="content">
+</div><div id="content">
+
+      <!-- CH 1 - INTRODUCTION -->
+      <section class="chapter" id="intro">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#F05032;background:rgba(240,80,50,0.1);border-color:rgba(240,80,50,0.2)">GIT.01</span>
+          <div class="chapter-title">Introduction à Git<span>Pourquoi utiliser Git ?</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Qu'est-ce que Git ?</h3>
+          <p class="text">
+            <strong>Git</strong> est un système de <strong>contrôle de version</strong> qui permet de :
+          </p>
+          <ul style="color: var(--text); margin-left: 20px; margin-bottom: 16px;">
+            <li>Suivre l'<strong>historique</strong> de chaque modification du code</li>
+            <li>Revenir à une version antérieure en cas d'erreur</li>
+            <li>Collaborer efficacement avec d'autres développeurs</li>
+            <li>Gérer plusieurs versions (branches) d'un projet en parallèle</li>
+          </ul>
+
+          <div class="callout callout-info">
+            <span class="callout-icon"><i class="fas fa-info-circle"></i></span>
+            <div class="callout-body">
+              <strong>Git ≠ GitHub :</strong> Git est l'outil de gestion de version local. GitHub est une plateforme en
+              ligne
+              pour héberger et partager des dépôts Git (alternatives : GitLab, Bitbucket).
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Installation de Git</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Système</th>
+                <th>Installation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Windows</td>
+                <td>Télécharger depuis <code>git-scm.com</code></td>
+              </tr>
+              <tr>
+                <td>macOS</td>
+                <td><code>brew install git</code> (avec Homebrew)</td>
+              </tr>
+              <tr>
+                <td>Linux (Ubuntu/Debian)</td>
+                <td><code>sudo apt install git</code></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="text">Vérifier l'installation :</p>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Bash</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="fn">git</span> --version
+<span class="cm"># Résultat : git version 2.40.1</span></pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Configuration initiale</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Bash</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="cm"># Configurer votre identité</span>
+<span class="fn">git</span> config --global user.name <span class="str">"Votre Nom"</span>
+<span class="fn">git</span> config --global user.email <span class="str">"votre.email@example.com"</span>
+
+<span class="cm"># Vérifier la configuration</span>
+<span class="fn">git</span> config --list</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 2 - COMMANDES DE BASE -->
+      <section class="chapter" id="basic-commands">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#F05032;background:rgba(240,80,50,0.1);border-color:rgba(240,80,50,0.2)">GIT.02</span>
+          <div class="chapter-title">Commandes de base<span>init, add, commit, status, log</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Créer un dépôt Git (repository)</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Bash</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="cm"># Se placer dans le dossier du projet</span>
+<span class="fn">cd</span> mon-projet
+
+<span class="cm"># Initialiser Git</span>
+<span class="fn">git</span> init
+<span class="cm"># Crée un dossier caché .git qui contient l'historique</span></pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Workflow Git de base</h3>
+          <div class="cards-grid">
+            <div class="card">
+              <div class="card-type" style="color:var(--accent)"><i class="fas fa-file-code"></i> 1. Travailler</div>
+              <div class="card-desc">Modifier/créer des fichiers dans votre projet</div>
+              <div class="card-ex">index.html, style.css, etc.</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent2)"><i class="fas fa-plus-circle"></i> 2. Ajouter (stage)
+              </div>
+              <div class="card-desc">Préparer les fichiers pour le commit</div>
+              <div class="card-ex">git add .</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:#F05032"><i class="fas fa-save"></i> 3. Valider (commit)</div>
+              <div class="card-desc">Sauvegarder les changements dans l'historique</div>
+              <div class="card-ex">git commit -m "message"</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Commandes essentielles</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Bash</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="cm"># Voir l'état des fichiers (modifiés, non suivis, etc.)</span>
+<span class="fn">git</span> status
+
+<span class="cm"># Ajouter un fichier spécifique à la zone de staging</span>
+<span class="fn">git</span> add index.html
+
+<span class="cm"># Ajouter TOUS les fichiers modifiés</span>
+<span class="fn">git</span> add .
+
+<span class="cm"># Valider les changements avec un message descriptif</span>
+<span class="fn">git</span> commit -m <span class="str">"Ajout de la page d'accueil"</span>
+
+<span class="cm"># Voir l'historique des commits</span>
+<span class="fn">git</span> log
+
+<span class="cm"># Historique condensé (une ligne par commit)</span>
+<span class="fn">git</span> log --oneline</pre>
+          </div>
+        </div>
+
+        <div class="callout callout-tip">
+          <span class="callout-icon"><i class="fas fa-lightbulb"></i></span>
+          <div class="callout-body">
+            <strong>Bonnes pratiques :</strong> Écrivez des messages de commit clairs et descriptifs.
+            Ex : "Ajout de la fonctionnalité de recherche" plutôt que "Update".
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 3 - BRANCHES -->
+      <section class="chapter" id="branches">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#F05032;background:rgba(240,80,50,0.1);border-color:rgba(240,80,50,0.2)">GIT.03</span>
+          <div class="chapter-title">Branches<span>Travailler sur plusieurs versions en parallèle</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Qu'est-ce qu'une branche ?</h3>
+          <p class="text">
+            Une <strong>branche</strong> est une version parallèle de votre projet. Par défaut, vous êtes sur la branche
+            <code>main</code>
+            (ou <code>master</code>). Créer une branche permet de développer une fonctionnalité sans affecter le code
+            principal.
+          </p>
+
+          <div class="callout callout-info">
+            <span class="callout-icon"><i class="fas fa-info-circle"></i></span>
+            <div class="callout-body">
+              <strong>Exemple :</strong> Vous travaillez sur une nouvelle fonctionnalité "login". Créez une branche
+              <code>feature-login</code>,
+              développez-y votre code, testez-le, puis fusionnez-la dans <code>main</code> quand c'est prêt.
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Commandes de gestion des branches</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Bash</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="cm"># Voir toutes les branches</span>
+<span class="fn">git</span> branch
+
+<span class="cm"># Créer une nouvelle branche</span>
+<span class="fn">git</span> branch feature-login
+
+<span class="cm"># Changer de branche (basculer sur feature-login)</span>
+<span class="fn">git</span> checkout feature-login
+
+<span class="cm"># Créer ET basculer sur une nouvelle branche (raccourci)</span>
+<span class="fn">git</span> checkout -b feature-contact
+
+<span class="cm"># Fusionner une branche dans la branche actuelle</span>
+<span class="fn">git</span> checkout main
+<span class="fn">git</span> merge feature-login
+
+<span class="cm"># Supprimer une branche</span>
+<span class="fn">git</span> branch -d feature-login</pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Workflow avec branches</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Étape</th>
+                <th>Commande</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1. Créer une branche</td>
+                <td><code>git checkout -b nouvelle-fonctionnalite</code></td>
+              </tr>
+              <tr>
+                <td>2. Travailler sur la branche</td>
+                <td>Modifier les fichiers, <code>git add .</code>, <code>git commit -m "..."</code></td>
+              </tr>
+              <tr>
+                <td>3. Revenir sur main</td>
+                <td><code>git checkout main</code></td>
+              </tr>
+              <tr>
+                <td>4. Fusionner la branche</td>
+                <td><code>git merge nouvelle-fonctionnalite</code></td>
+              </tr>
+              <tr>
+                <td>5. Supprimer la branche</td>
+                <td><code>git branch -d nouvelle-fonctionnalite</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- CH 4 - GITHUB -->
+      <section class="chapter" id="github">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#181717;background:rgba(24,23,23,0.1);border-color:rgba(24,23,23,0.2)">GH.01</span>
+          <div class="chapter-title">GitHub<span>Héberger et partager vos projets</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Créer un compte GitHub</h3>
+          <p class="text">
+            Rendez-vous sur <strong>github.com</strong> et créez un compte gratuit. GitHub vous permet d'héberger
+            vos projets Git en ligne, de collaborer avec d'autres développeurs et de contribuer à des projets
+            open-source.
+          </p>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Créer un dépôt (repository) sur GitHub</h3>
+          <ol style="color: var(--text); margin-left: 20px; margin-bottom: 16px;">
+            <li>Cliquer sur le bouton <strong>"New repository"</strong> sur GitHub</li>
+            <li>Donner un nom au dépôt (ex: <code>mon-site-web</code>)</li>
+            <li>Choisir "Public" ou "Private"</li>
+            <li>Cliquer sur <strong>"Create repository"</strong></li>
+          </ol>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Lier votre projet local à GitHub</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Bash</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="cm"># Ajouter l'URL du dépôt distant (remote)</span>
+<span class="fn">git</span> remote add origin https://github.com/votre-nom/mon-site-web.git
+
+<span class="cm"># Vérifier les dépôts distants</span>
+<span class="fn">git</span> remote -v
+
+<span class="cm"># Envoyer (push) votre code sur GitHub (branche main)</span>
+<span class="fn">git</span> push -u origin main
+
+<span class="cm"># Les prochains push seront plus simples :</span>
+<span class="fn">git</span> push</pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Cloner un dépôt existant</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Bash</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="cm"># Télécharger un projet depuis GitHub</span>
+<span class="fn">git</span> clone https://github.com/utilisateur/nom-du-projet.git
+
+<span class="cm"># Se déplacer dans le dossier cloné</span>
+<span class="fn">cd</span> nom-du-projet</pre>
+          </div>
+        </div>
+
+        <div class="callout callout-tip">
+          <span class="callout-icon"><i class="fas fa-lightbulb"></i></span>
+          <div class="callout-body">
+            <strong>SSH vs HTTPS :</strong> Pour éviter de taper votre mot de passe à chaque push, configurez une clé
+            SSH.
+            Voir la documentation GitHub : <code>docs.github.com/authentication/connecting-to-github-with-ssh</code>
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 5 - COLLABORATION -->
+      <section class="chapter" id="collaboration">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#181717;background:rgba(24,23,23,0.1);border-color:rgba(24,23,23,0.2)">GH.02</span>
+          <div class="chapter-title">Collaboration<span>Pull, fetch, pull requests</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Récupérer les modifications (pull)</h3>
+          <p class="text">
+            Si quelqu'un a modifié le code sur GitHub (ou si vous avez travaillé depuis un autre ordinateur),
+            utilisez <code>git pull</code> pour récupérer les dernières modifications.
+          </p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Bash</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="cm"># Récupérer et fusionner les modifications de GitHub</span>
+<span class="fn">git</span> pull origin main
+
+<span class="cm"># Raccourci (si branche tracking configurée)</span>
+<span class="fn">git</span> pull</pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Pull Requests (PR)</h3>
+          <p class="text">
+            Une <strong>Pull Request</strong> est une demande pour fusionner une branche dans une autre (souvent de
+            <code>feature-X</code> vers <code>main</code>).
+            C'est le mécanisme standard pour contribuer à un projet sur GitHub.
+          </p>
+
+          <ol style="color: var(--text); margin-left: 20px; margin-bottom: 16px;">
+            <li>Créer une branche : <code>git checkout -b nouvelle-feature</code></li>
+            <li>Faire des commits sur cette branche</li>
+            <li>Pousser la branche sur GitHub : <code>git push origin nouvelle-feature</code></li>
+            <li>Sur GitHub, cliquer sur <strong>"Compare & pull request"</strong></li>
+            <li>Ajouter une description et cliquer sur <strong>"Create pull request"</strong></li>
+            <li>Les collaborateurs peuvent relire le code, commenter, puis fusionner (merge)</li>
+          </ol>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Résoudre les conflits</h3>
+          <p class="text">
+            Parfois, Git ne peut pas fusionner automatiquement (conflit). Vous devez éditer manuellement les fichiers
+            concernés,
+            retirer les marqueurs de conflit (<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code>,
+            <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>),
+            puis faire un commit.
+          </p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Bash</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="cm"># Si conflit lors d'un merge</span>
+<span class="fn">git</span> merge feature-X
+<span class="cm"># Git indique les fichiers en conflit</span>
+
+<span class="cm"># Ouvrir les fichiers en conflit dans VS Code</span>
+<span class="cm"># Résoudre manuellement, puis :</span>
+<span class="fn">git</span> add .
+<span class="fn">git</span> commit -m <span class="str">"Résolution du conflit"</span></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 6 - BONNES PRATIQUES -->
+      <section class="chapter" id="best-practices">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:var(--accent);background:rgba(240,180,41,0.1);border-color:rgba(240,180,41,0.2)">TIPS</span>
+          <div class="chapter-title">Bonnes pratiques<span>.gitignore, commits fréquents, messages clairs</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Fichier .gitignore</h3>
+          <p class="text">
+            Le fichier <code>.gitignore</code> permet d'exclure certains fichiers/dossiers du suivi Git
+            (node_modules, fichiers de config sensibles, fichiers temporaires, etc.).
+          </p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">.gitignore</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="cm"># Dossiers</span>
+node_modules/
+__pycache__/
+venv/
+.venv/
+
+<span class="cm"># Fichiers sensibles</span>
+.env
+config.json
+
+<span class="cm"># Fichiers OS</span>
+.DS_Store
+Thumbs.db
+
+<span class="cm"># IDE</span>
+.vscode/
+.idea/</pre>
+          </div>
+        </div>
+
+        <div class="retenir">
+          <div class="retenir-title">Conseils d'expert</div>
+          <ul>
+            <li><strong>Commits fréquents :</strong> Faites des commits réguliers avec des messages clairs</li>
+            <li><strong>Une fonctionnalité = une branche :</strong> Ne travaillez jamais directement sur
+              <code>main</code></li>
+            <li><strong>Pull avant push :</strong> Toujours faire <code>git pull</code> avant <code>git push</code> pour
+              éviter les conflits</li>
+            <li><strong>README.md :</strong> Ajoutez un fichier README pour documenter votre projet</li>
+            <li><strong>Sauvegardes régulières :</strong> Poussez votre code sur GitHub régulièrement</li>
+            <li><strong>Ne jamais commit de secrets :</strong> Mots de passe, clés API → utilisez .gitignore et
+              variables d'environnement</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Ressources</h3>
+          <div class="cards-grid">
+            <div class="card">
+              <div class="card-type" style="color:#F05032"><i class="fas fa-book"></i> Documentation Git</div>
+              <div class="card-desc">Documentation officielle complète</div>
+              <div class="card-ex">git-scm.com/doc</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:#181717"><i class="fab fa-github"></i> GitHub Docs</div>
+              <div class="card-desc">Guides et tutoriels GitHub</div>
+              <div class="card-ex">docs.github.com</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent)"><i class="fas fa-graduation-cap"></i> Learn Git
+                Branching</div>
+              <div class="card-desc">Tutoriel interactif visuel</div>
+              <div class="card-ex">learngitbranching.js.org</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- EXERCICES & TP GIT -->
+      <section class="chapter" id="exercices-git">
+        <div class="chapter-header">
+          <span class="chapter-num" style="background:linear-gradient(135deg,#f05032,#de4c36);">EX</span>
+          <div class="chapter-title">Exercices &amp; Travaux Pratiques<span>Versioning, branches, merge, rebase et collaboration GitHub</span></div>
+        </div>
+        <div class="section">
+          <p class="section-intro">Git est un outil fondamental du développeur moderne. Ces exercices vous guident de l'initialisation d'un dépôt jusqu'à la gestion de conflits complexes et la collaboration en équipe via GitHub.</p>
+
+          <p class="section-exo-title"><i class="fas fa-pencil-alt"></i> Exercices de compréhension</p>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 1 — Commandes Git fondamentales <span class="niveau-badge niveau-facile">Facile</span></h4>
+            <ol>
+              <li>Initialisez un dépôt Git local. Créez 3 fichiers, faites un premier commit. Modifiez un fichier, utilisez <code>git diff</code> pour voir les changements, puis committez.</li>
+              <li>Consultez <code>git log --oneline --graph --all</code> et expliquez chaque partie de l'affichage.</li>
+              <li>Créez un fichier <code>.gitignore</code> qui ignore : tous les fichiers <code>.env</code>, le dossier <code>node_modules/</code>, les fichiers <code>.pyc</code> et le dossier <code>__pycache__/</code>.</li>
+              <li>Utilisez <code>git stash</code> pour sauvegarder des modifications en cours sans committer. Récupérez-les avec <code>git stash pop</code>. Quand utiliser stash ?</li>
+            </ol>
+          </div>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 2 — Branches et stratégies de merge <span class="niveau-badge niveau-moyen">Moyen</span></h4>
+            <ol>
+              <li>Créez une branche <code>feature/login</code> depuis <code>main</code>. Faites 3 commits dessus. Revenez sur <code>main</code>, faites 1 commit. Mergez la feature avec <code>--no-ff</code> et observez le graphe.</li>
+              <li>Créez intentionnellement un conflit de merge : modifiez la même ligne du même fichier sur deux branches différentes. Résolvez le conflit manuellement dans VS Code. Committez la résolution.</li>
+              <li>Utilisez <code>git rebase</code> sur la même situation. Comparez le graphe obtenu avec le merge. Quelle est la règle d'or du rebase ?</li>
+              <li>Utilisez <code>git cherry-pick HASH</code> pour appliquer un seul commit d'une branche sur une autre. Quand est-ce utile ?</li>
+            </ol>
+          </div>
+
+          <p class="section-exo-title"><i class="fas fa-flask"></i> Travaux Pratiques</p>
+
+          <div class="tp-block">
+            <h4>🔬 TP — Workflow Git en équipe (simulation) <span class="niveau-badge niveau-avance">Avancé — 2h</span></h4>
+            <p style="font-size:14px;color:var(--muted);margin-bottom:12px;"><strong>Objectif :</strong> Simuler un workflow Git Flow complet avec GitHub.</p>
+            <ol class="tp-etapes">
+              <li><strong>Setup :</strong> Créez un dépôt GitHub. Invitez un camarade comme collaborateur. Définissez des règles de protection sur <code>main</code> (merge uniquement via PR approuvée).</li>
+              <li><strong>Git Flow :</strong> Créer les branches <code>main</code> (production), <code>develop</code> (intégration), <code>feature/X</code> (fonctionnalités).</li>
+              <li><strong>Pull Requests :</strong> Chaque fonctionnalité est développée sur sa branche, puis soumise en PR vers <code>develop</code>. L'autre étudiant review et approuve ou demande des modifications.</li>
+              <li><strong>Issues :</strong> Créez des issues GitHub pour chaque tâche. Liez les commits aux issues avec <code>git commit -m "feat: add login page (closes #5)"</code>.</li>
+              <li><strong>CI :</strong> Ajoutez un fichier <code>.github/workflows/ci.yml</code> qui lance automatiquement les tests à chaque push.</li>
+            </ol>
+          </div>
+
+          <div class="quiz-block">
+            <h4>❓ Quiz de révision — Git</h4>
+            <ol>
+              <li>Quelle est la différence entre <code>git fetch</code> et <code>git pull</code> ?</li>
+              <li>Expliquez ce que fait <code>git reset --hard HEAD~2</code>. Quelle est la différence avec <code>--soft</code> et <code>--mixed</code> ?</li>
+              <li>Qu'est-ce qu'un dépôt "bare" (<code>git init --bare</code>) ? Dans quel contexte est-il utilisé ?</li>
+              <li>Expliquez la différence entre <code>git merge</code>, <code>git rebase</code> et <code>git squash</code>. Quand utiliser chacun ?</li>
+              <li>Qu'est-ce qu'un tag Git ? Quelle est la différence entre un tag léger et un tag annoté ?</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- NAVIGATION -->
+      <div class="page-nav">
+        <a href="vscode.html">
+          <span class="page-nav-label">← Précédent</span>
+          <span class="page-nav-title"><i class="fas fa-code"></i> VS Code</span>
+        </a>
+        <a href="venv.html" class="next">
+          <span class="page-nav-label">Suivant →</span>
+          <span class="page-nav-title"><i class="fas fa-cube"></i> .venv Python</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-info">
+        <img src="assets/logo.png" alt="Logo" class="footer-logo">
+        <div class="footer-text">
+          <div class="footer-name">Adriel TATCHUM SIMO</div>
+          <div class="footer-job">Enseignant CIEL • Formateur Web & Électronique</div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Accueil</a>
+        <a href="html-complet.html">HTML</a>
+        <a href="css-complet.html">CSS</a>
+        <a href="javascript.html">JavaScript</a>
+      </div>
+      <div class="footer-copy">© 2026 Cours CIEL — Tous droits réservés</div>
+    </div>
+  </footer>
+
+  <button id="back-top" aria-label="Retour en haut">↑</button>
+
+  <script src="script.js"></script>
+  <script>
+    function toggleReponse(btn) {
+      const content = btn.nextElementSibling;
+      const isVisible = content.style.display === 'block';
+      content.style.display = isVisible ? 'none' : 'block';
+      btn.innerHTML = isVisible
+        ? '<i class="fas fa-eye"></i> Voir la réponse'
+        : '<i class="fas fa-eye-slash"></i> Masquer la réponse';
+      btn.style.background   = isVisible ? 'rgba(240,180,41,0.1)'  : 'rgba(0,117,143,0.15)';
+      btn.style.borderColor  = isVisible ? 'rgba(240,180,41,0.35)' : 'rgba(0,117,143,0.4)';
+      btn.style.color        = isVisible ? 'var(--accent)' : '#00b4d8';
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VS Code — Cours CIEL</title>
+  <meta name="description" content="Maîtrisez Visual Studio Code : installation, extensions, raccourcis clavier et workflow de développement.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="shared-styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+
+<body>
+
+  <div id="scroll-indicator"></div>
+  <button class="mobile-menu-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+
+  <aside id="sidebar">
+    <div class="sidebar-header">
+      <img src="assets/logo.png" alt="Logo CIEL" class="sidebar-logo">
+      <div class="sidebar-title">Cours CIEL<span>Adriel TATCHUM SIMO • Formateur</span></div>
+    </div>
+    <div class="search-container" style="padding: 12px 16px;">
+      <input type="text" id="searchInput" placeholder="Rechercher un cours..."
+        style="width:100%;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:13px;">
+    </div>
+    <div class="progress-container">
+      <div class="progress-label">Progression du cours</div>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 0%"></div>
+      </div>
+    </div>
+    <nav>
+      <div class="nav-group">
+        <div class="nav-group-title">Accueil</div>
+        <a href="index.html"><i class="fas fa-home"></i> Introduction</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 1 — Développement Web</div>
+        <a href="html-complet.html"><i class="fab fa-html5"></i> HTML Complet</a>
+        <a href="css-complet.html"><i class="fab fa-css3-alt"></i> CSS Complet</a>
+        <a href="javascript.html"><i class="fab fa-js"></i> JavaScript</a>
+        <a href="python-flask.html"><i class="fab fa-python"></i> Python & Flask</a>
+        <a href="mysql.html"><i class="fas fa-database"></i> MySQL</a>
+        <a href="projet-fullstack.html"><i class="fas fa-project-diagram"></i> Projet Full Stack</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 2 — Électronique</div>
+        <a href="electronique-bases.html"><i class="fas fa-bolt"></i> Bases Électronique</a>
+        <a href="composants.html"><i class="fas fa-microchip"></i> Composants</a>
+        <a href="arduino.html"><i class="fas fa-robot"></i> Arduino & ESP32</a>
+        <a href="raspberry-pi.html"><i class="fab fa-raspberry-pi"></i> Raspberry Pi</a>
+        <a href="capteurs.html"><i class="fas fa-thermometer-half"></i> Capteurs & Actionneurs</a>
+        <a href="maintenance-electronique.html"><i class="fas fa-tools"></i> Maintenance Électronique</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 3 — Réseaux & Sécurité</div>
+        <a href="reseau-informatique.html"><i class="fas fa-network-wired"></i> Réseau Informatique</a>
+        <a href="cybersecurite.html"><i class="fas fa-shield-alt"></i> Cybersécurité</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Outils & Workflow</div>
+        <a href="vscode.html"><i class="fas fa-code"></i> VS Code</a>
+        <a href="git.html"><i class="fab fa-git-alt"></i> Git & GitHub</a>
+        <a href="venv.html"><i class="fas fa-cube"></i> .venv Python</a>
+      </div>
+    </nav>
+    <div class="theme-toggle">
+      <button class="theme-btn"><i class="fas fa-sun"></i><span>Mode clair</span></button>
+    </div>
+  </aside>
+
+  <main id="main">
+<section id="hero">
+      <div class="hero-tag">Outil de développement</div>
+      <h1 class="hero-title">Visual Studio Code<br><em>Éditeur de code moderne</em></h1>
+      <p class="hero-desc">
+        Maîtrisez VS Code : installation, extensions essentielles, raccourcis clavier et astuces pour coder plus vite.
+      </p>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-val">5</span><span class="stat-label">Chapitres</span></div>
+        <div class="stat"><span class="stat-val">20+</span><span class="stat-label">Astuces</span></div>
+        <div class="stat"><span class="stat-val">~1h</span><span class="stat-label">De lecture</span></div>
+      </div>
+    </section>
+
+
+    <!-- ══════ SECTION VIDÉO PÉDAGOGIQUE ══════ -->
+    <div class="video-ressource">
+      <div class="video-section-title"><i class="fab fa-youtube"></i> Vidéo pédagogique recommandée</div>
+      <div class="video-card">
+        <a href="https://www.youtube.com/watch?v=s2Gi8C-d65s" target="_blank" class="video-thumbnail">
+          <div class="video-thumbnail-bg">
+            <i class="fab fa-youtube video-yt-icon"></i>
+            <span class="video-yt-text">YOUTUBE</span>
+          </div>
+          <div class="video-play-overlay"><i class="fas fa-play"></i></div>
+        </a>
+        <div class="video-info">
+          <span class="video-badge"><i class="fas fa-clock"></i> 45min</span>
+          <div class="video-titre">VS Code - Configuration Complète</div>
+          <div class="video-chaine">Chaîne : Grafikart</div>
+          <div class="video-desc">Extensions essentielles, raccourcis, débogage et personnalisation de VS Code.</div>
+          <a href="https://www.youtube.com/watch?v=s2Gi8C-d65s" target="_blank" class="video-watch-btn">
+            <i class="fab fa-youtube"></i> Voir sur YouTube
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════ TÉLÉCHARGEMENTS PDF ══════ -->
+    <div class="pdf-download-zone">
+      <a href="tp-vscode.pdf" download class="pdf-download-btn">
+        <i class="fas fa-file-pdf"></i> Télécharger le TP (PDF)
+      </a>
+      <a href="correction-fullstack.pdf" download class="correction-download-btn">
+        <i class="fas fa-check-circle"></i> Télécharger les corrections (PDF)
+      </a>
+      <span class="pdf-info-text">Documents imprimables pour travail hors-ligne</span>
+    </div>
+
+    <div id="content">
+</div><div id="content">
+
+      <!-- CH 1 - INTRODUCTION -->
+      <section class="chapter" id="intro">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#007ACC;background:rgba(0,122,204,0.1);border-color:rgba(0,122,204,0.2)">VSC.01</span>
+          <div class="chapter-title">Introduction à VS Code<span>Pourquoi utiliser Visual Studio Code ?</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Qu'est-ce que VS Code ?</h3>
+          <p class="text">
+            <strong>Visual Studio Code</strong> (VS Code) est un <strong>éditeur de code gratuit</strong> et open-source
+            développé par Microsoft.
+            Il supporte des dizaines de langages (HTML, CSS, JavaScript, Python, C++, etc.) et dispose d'un écosystème
+            d'extensions très riche.
+          </p>
+
+          <div class="cards-grid">
+            <div class="card">
+              <div class="card-type" style="color:#007ACC"><i class="fas fa-bolt"></i> Rapide & léger</div>
+              <div class="card-desc">Démarrage instantané, faible consommation RAM</div>
+              <div class="card-ex">Bien plus rapide que les IDE lourds</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent2)"><i class="fas fa-puzzle-piece"></i> Extensions</div>
+              <div class="card-desc">Marketplace avec 30 000+ extensions</div>
+              <div class="card-ex">Python, Live Server, Prettier...</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent)"><i class="fas fa-code-branch"></i> Git intégré</div>
+              <div class="card-desc">Gestion de version sans quitter l'éditeur</div>
+              <div class="card-ex">Commit, push, pull directement</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent6)"><i class="fas fa-terminal"></i> Terminal intégré</div>
+              <div class="card-desc">Exécuter des commandes sans changer de fenêtre</div>
+              <div class="card-ex">npm, python, git...</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Installation</h3>
+          <p class="text">Téléchargez VS Code depuis le site officiel : <code>code.visualstudio.com</code></p>
+
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Système</th>
+                <th>Installation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Windows</td>
+                <td>Télécharger .exe et installer</td>
+              </tr>
+              <tr>
+                <td>macOS</td>
+                <td>Télécharger .dmg et glisser dans Applications</td>
+              </tr>
+              <tr>
+                <td>Linux (Ubuntu/Debian)</td>
+                <td><code>sudo snap install code --classic</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="retenir">
+          <div class="retenir-title">Pourquoi VS Code ?</div>
+          <ul>
+            <li>Gratuit, open-source et multiplateforme (Windows, macOS, Linux)</li>
+            <li>IntelliSense : auto-complétion intelligente du code</li>
+            <li>Débogage intégré pour JavaScript, Python, C++, etc.</li>
+            <li>Interface personnalisable : thèmes, icônes, raccourcis</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CH 2 - INTERFACE -->
+      <section class="chapter" id="interface">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#007ACC;background:rgba(0,122,204,0.1);border-color:rgba(0,122,204,0.2)">VSC.02</span>
+          <div class="chapter-title">Interface & Navigation<span>Panneau latéral, explorateur, recherche,
+              terminal</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Structure de l'interface</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Zone</th>
+                <th>Description</th>
+                <th>Raccourci</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Barre d'activité</strong></td>
+                <td>Icônes à gauche (Explorateur, Recherche, Git, etc.)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td><strong>Explorateur</strong></td>
+                <td>Arborescence des fichiers du projet</td>
+                <td><code>Ctrl+Shift+E</code></td>
+              </tr>
+              <tr>
+                <td><strong>Recherche</strong></td>
+                <td>Rechercher/remplacer dans tout le projet</td>
+                <td><code>Ctrl+Shift+F</code></td>
+              </tr>
+              <tr>
+                <td><strong>Contrôle de source</strong></td>
+                <td>Git : commits, branches, historique</td>
+                <td><code>Ctrl+Shift+G</code></td>
+              </tr>
+              <tr>
+                <td><strong>Extensions</strong></td>
+                <td>Installer et gérer les extensions</td>
+                <td><code>Ctrl+Shift+X</code></td>
+              </tr>
+              <tr>
+                <td><strong>Terminal intégré</strong></td>
+                <td>Ligne de commande intégrée</td>
+                <td><code>Ctrl+`</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Palette de commandes</h3>
+          <p class="text">
+            La <strong>palette de commandes</strong> (<code>Ctrl+Shift+P</code> ou <code>F1</code>) permet d'accéder à
+            toutes les fonctionnalités de VS Code.
+          </p>
+
+          <div class="callout callout-tip">
+            <span class="callout-icon"><i class="fas fa-lightbulb"></i></span>
+            <div class="callout-body">
+              <strong>Exemple :</strong> Tapez <code>Ctrl+Shift+P</code> puis "Format Document" pour auto-formatter
+              votre code.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 3 - EXTENSIONS -->
+      <section class="chapter" id="extensions">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#007ACC;background:rgba(0,122,204,0.1);border-color:rgba(0,122,204,0.2)">VSC.03</span>
+          <div class="chapter-title">Extensions essentielles<span>Boostez votre productivité</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Extensions pour le développement web</h3>
+          <div class="cards-grid">
+            <div class="card">
+              <div class="card-type" style="color:#e34c26"><i class="fab fa-html5"></i> Live Server</div>
+              <div class="card-desc">Serveur local avec rechargement automatique</div>
+              <div class="card-ex">Clic droit → Open with Live Server</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent)"><i class="fas fa-magic"></i> Prettier</div>
+              <div class="card-desc">Formateur de code automatique</div>
+              <div class="card-ex">HTML, CSS, JS, JSON</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent2)"><i class="fas fa-check-circle"></i> ESLint</div>
+              <div class="card-desc">Détection d'erreurs JavaScript</div>
+              <div class="card-ex">Qualité de code améliorée</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:#264de4"><i class="fab fa-css3-alt"></i> CSS Peek</div>
+              <div class="card-desc">Visualiser les classes CSS au survol</div>
+              <div class="card-ex">Ctrl+Click pour aller à la définition</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Extensions pour Python</h3>
+          <div class="cards-grid">
+            <div class="card">
+              <div class="card-type" style="color:#306998"><i class="fab fa-python"></i> Python (Microsoft)</div>
+              <div class="card-desc">IntelliSense, linting, débogage Python</div>
+              <div class="card-ex">Extension officielle</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent6)"><i class="fas fa-flask"></i> Pylance</div>
+              <div class="card-desc">Auto-complétion avancée pour Python</div>
+              <div class="card-ex">Analyse de type statique</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Extensions pour Arduino & ESP32</h3>
+          <div class="cards-grid">
+            <div class="card">
+              <div class="card-type" style="color:#00979D"><i class="fas fa-robot"></i> Arduino</div>
+              <div class="card-desc">Support Arduino dans VS Code</div>
+              <div class="card-ex">Téléverser code depuis VS Code</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent3)"><i class="fas fa-microchip"></i> PlatformIO</div>
+              <div class="card-desc">Alternative complète à Arduino IDE</div>
+              <div class="card-ex">Supporte ESP32, STM32, etc.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Extensions utilitaires</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Extension</th>
+                <th>Fonction</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Auto Rename Tag</strong></td>
+                <td>Renommer balises HTML ouvrantes/fermantes simultanément</td>
+              </tr>
+              <tr>
+                <td><strong>Bracket Pair Colorizer</strong></td>
+                <td>Colorer les parenthèses/crochets par niveau</td>
+              </tr>
+              <tr>
+                <td><strong>Path Intellisense</strong></td>
+                <td>Auto-complétion des chemins de fichiers</td>
+              </tr>
+              <tr>
+                <td><strong>GitLens</strong></td>
+                <td>Historique Git avancé ligne par ligne</td>
+              </tr>
+              <tr>
+                <td><strong>Material Icon Theme</strong></td>
+                <td>Icônes de fichiers plus visuelles</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout callout-info">
+          <span class="callout-icon"><i class="fas fa-info-circle"></i></span>
+          <div class="callout-body">
+            <strong>Installation :</strong> <code>Ctrl+Shift+X</code> → Rechercher l'extension → Cliquer sur "Install"
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 4 - RACCOURCIS -->
+      <section class="chapter" id="shortcuts">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#007ACC;background:rgba(0,122,204,0.1);border-color:rgba(0,122,204,0.2)">VSC.04</span>
+          <div class="chapter-title">Raccourcis clavier<span>Gagnez un temps précieux</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Raccourcis essentiels (Windows/Linux)</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Action</th>
+                <th>Raccourci Windows</th>
+                <th>Raccourci macOS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ouvrir fichier</td>
+                <td><code>Ctrl+O</code></td>
+                <td><code>Cmd+O</code></td>
+              </tr>
+              <tr>
+                <td>Sauvegarder</td>
+                <td><code>Ctrl+S</code></td>
+                <td><code>Cmd+S</code></td>
+              </tr>
+              <tr>
+                <td>Palette de commandes</td>
+                <td><code>Ctrl+Shift+P</code></td>
+                <td><code>Cmd+Shift+P</code></td>
+              </tr>
+              <tr>
+                <td>Recherche rapide de fichier</td>
+                <td><code>Ctrl+P</code></td>
+                <td><code>Cmd+P</code></td>
+              </tr>
+              <tr>
+                <td>Rechercher dans fichier</td>
+                <td><code>Ctrl+F</code></td>
+                <td><code>Cmd+F</code></td>
+              </tr>
+              <tr>
+                <td>Rechercher dans projet</td>
+                <td><code>Ctrl+Shift+F</code></td>
+                <td><code>Cmd+Shift+F</code></td>
+              </tr>
+              <tr>
+                <td>Remplacer</td>
+                <td><code>Ctrl+H</code></td>
+                <td><code>Cmd+H</code></td>
+              </tr>
+              <tr>
+                <td>Terminal intégré</td>
+                <td><code>Ctrl+`</code></td>
+                <td><code>Cmd+`</code></td>
+              </tr>
+              <tr>
+                <td>Commenter ligne</td>
+                <td><code>Ctrl+/</code></td>
+                <td><code>Cmd+/</code></td>
+              </tr>
+              <tr>
+                <td>Dupliquer ligne</td>
+                <td><code>Shift+Alt+↓</code></td>
+                <td><code>Shift+Opt+↓</code></td>
+              </tr>
+              <tr>
+                <td>Déplacer ligne</td>
+                <td><code>Alt+↑/↓</code></td>
+                <td><code>Opt+↑/↓</code></td>
+              </tr>
+              <tr>
+                <td>Multi-curseurs</td>
+                <td><code>Ctrl+Alt+↑/↓</code></td>
+                <td><code>Cmd+Opt+↑/↓</code></td>
+              </tr>
+              <tr>
+                <td>Formater document</td>
+                <td><code>Shift+Alt+F</code></td>
+                <td><code>Shift+Opt+F</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Astuces de pro</h3>
+          <div class="callout callout-tip">
+            <span class="callout-icon"><i class="fas fa-lightbulb"></i></span>
+            <div class="callout-body">
+              <strong>Multi-curseurs :</strong> Maintenez <code>Alt</code> et cliquez à plusieurs endroits pour écrire
+              simultanément.
+            </div>
+          </div>
+
+          <div class="callout callout-tip">
+            <span class="callout-icon"><i class="fas fa-lightbulb"></i></span>
+            <div class="callout-body">
+              <strong>Sélection colonne :</strong> Maintenez <code>Shift+Alt</code> et sélectionnez verticalement avec
+              la souris.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 5 - CONFIGURATION -->
+      <section class="chapter" id="config">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#007ACC;background:rgba(0,122,204,0.1);border-color:rgba(0,122,204,0.2)">VSC.05</span>
+          <div class="chapter-title">Configuration & personnalisation<span>settings.json, thèmes, snippets</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Paramètres recommandés</h3>
+          <p class="text">Ouvrir les paramètres : <code>Ctrl+,</code> ou <code>Fichier → Préférences → Paramètres</code>
+          </p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">JSON (settings.json)</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre>{
+  <span class="str">"editor.fontSize"</span>: <span class="num">14</span>,
+  <span class="str">"editor.fontFamily"</span>: <span class="str">"'Fira Code', 'Consolas', monospace"</span>,
+  <span class="str">"editor.fontLigatures"</span>: <span class="kw">true</span>,
+  <span class="str">"editor.tabSize"</span>: <span class="num">2</span>,
+  <span class="str">"editor.formatOnSave"</span>: <span class="kw">true</span>,
+  <span class="str">"editor.minimap.enabled"</span>: <span class="kw">false</span>,
+  <span class="str">"workbench.colorTheme"</span>: <span class="str">"One Dark Pro"</span>,
+  <span class="str">"workbench.iconTheme"</span>: <span class="str">"material-icon-theme"</span>,
+  <span class="str">"terminal.integrated.fontSize"</span>: <span class="num">13</span>,
+  <span class="str">"files.autoSave"</span>: <span class="str">"afterDelay"</span>
+}</pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Thèmes populaires</h3>
+          <div class="cards-grid">
+            <div class="card">
+              <div class="card-type" style="color:var(--accent6)"><i class="fas fa-moon"></i> One Dark Pro</div>
+              <div class="card-desc">Thème sombre moderne et élégant</div>
+              <div class="card-ex">Inspiré d'Atom</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent2)"><i class="fas fa-palette"></i> Dracula Official</div>
+              <div class="card-desc">Couleurs vives et contrastées</div>
+              <div class="card-ex">Très populaire</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent)"><i class="fas fa-sun"></i> GitHub Theme</div>
+              <div class="card-desc">Thème clair inspiré de GitHub</div>
+              <div class="card-ex">Pour ceux qui préfèrent le clair</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="retenir">
+          <div class="retenir-title">Ressources</div>
+          <ul>
+            <li>Documentation officielle : <strong>code.visualstudio.com/docs</strong></li>
+            <li>Raccourcis clavier : <strong>Ctrl+K Ctrl+S</strong> (ouvre la liste complète)</li>
+            <li>Marketplace : <strong>marketplace.visualstudio.com</strong></li>
+            <li>Tutoriels vidéo : Rechercher "VS Code tips" sur YouTube</li>
+          </ul>
+        </div>
+      </section>
+
+
+      <!-- EXERCICES & TP VSCODE -->
+      <section class="chapter" id="exercices-vscode">
+        <div class="chapter-header">
+          <span class="chapter-num" style="background:linear-gradient(135deg,#007acc,#1e9dc8);">EX</span>
+          <div class="chapter-title">Exercices &amp; Travaux Pratiques<span>Productivité maximale avec VS Code : raccourcis, extensions et debugging</span></div>
+        </div>
+        <div class="section">
+          <p class="section-intro">VS Code est bien plus qu'un éditeur de texte. Maîtriser ses fonctionnalités avancées peut doubler votre productivité. Ces exercices vous guident vers une utilisation experte.</p>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 1 — Raccourcis clavier essentiels <span class="niveau-badge niveau-facile">Facile</span></h4>
+            <ol>
+              <li>Apprenez et pratiquez ces 20 raccourcis jusqu'à les maîtriser instinctivement : <code>Ctrl+P</code> (fichier rapide), <code>Ctrl+Shift+P</code> (palette), <code>Ctrl+D</code> (sélection suivante), <code>Alt+Click</code> (multi-curseur), <code>Ctrl+/</code> (commentaire), <code>Alt+↑/↓</code> (déplacer ligne), <code>Ctrl+B</code> (sidebar), <code>F12</code> (aller à définition), <code>Ctrl+Shift+K</code> (supprimer ligne), <code>Ctrl+`</code> (terminal).</li>
+              <li>Créez votre propre <code>keybindings.json</code> avec 3 raccourcis personnalisés pour vos actions les plus fréquentes.</li>
+            </ol>
+          </div>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 2 — Débogage intégré <span class="niveau-badge niveau-moyen">Moyen</span></h4>
+            <ol>
+              <li>Configurez le débogueur VS Code pour Python : créez un fichier <code>.vscode/launch.json</code> avec une configuration qui démarre votre script Flask en mode debug.</li>
+              <li>Mettez des points d'arrêt, utilisez la console de débogage, inspectez les variables locales et globales, parcourez le code pas à pas (F10, F11, Shift+F11).</li>
+              <li>Configurez le débogueur JavaScript pour Node.js et déboguez une fonction asynchrone complexe.</li>
+              <li>Utilisez les <em>logpoints</em> (points d'arrêt sans pause, qui logguent seulement) pour déboguer en production sans arrêter l'exécution.</li>
+            </ol>
+          </div>
+
+          <div class="tp-block">
+            <h4>🔬 TP — Configuration d'un workspace professionnel <span class="niveau-badge niveau-avance">Avancé — 2h</span></h4>
+            <p style="font-size:14px;color:var(--muted);margin-bottom:12px;"><strong>Objectif :</strong> Configurer VS Code pour un projet web full-stack avec qualité de code automatisée.</p>
+            <ol class="tp-etapes">
+              <li><strong>Extensions indispensables :</strong> Installer et configurer : ESLint, Prettier, Python, GitLens, Thunder Client, Live Share, Error Lens, Auto Rename Tag.</li>
+              <li><strong>Settings.json :</strong> Configurer le formattage automatique à la sauvegarde, l'indentation (2 espaces), la règle de 80 caractères, le thème et les icônes.</li>
+              <li><strong>Workspace settings :</strong> Créer <code>.vscode/settings.json</code> avec les configs spécifiques au projet (Python path, lint rules).</li>
+              <li><strong>Snippets :</strong> Créer 5 snippets personnalisés pour vos patterns de code les plus utilisés (ex: composant Flask, structure HTML5, classe Python).</li>
+              <li><strong>Tasks :</strong> Configurer <code>.vscode/tasks.json</code> avec des tâches pour : lancer le serveur Flask, lancer les tests, builder le CSS.</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- NAVIGATION -->
+      <div class="page-nav">
+        <a href="capteurs.html">
+          <span class="page-nav-label">← Précédent</span>
+          <span class="page-nav-title"><i class="fas fa-thermometer-half"></i> Capteurs & Actionneurs</span>
+        </a>
+        <a href="git.html" class="next">
+          <span class="page-nav-label">Suivant →</span>
+          <span class="page-nav-title"><i class="fab fa-git-alt"></i> Git & GitHub</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-info">
+        <img src="assets/logo.png" alt="Logo" class="footer-logo">
+        <div class="footer-text">
+          <div class="footer-name">Adriel TATCHUM SIMO</div>
+          <div class="footer-job">Enseignant CIEL • Formateur Web & Électronique</div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Accueil</a>
+        <a href="html-complet.html">HTML</a>
+        <a href="css-complet.html">CSS</a>
+        <a href="javascript.html">JavaScript</a>
+      </div>
+      <div class="footer-copy">© 2026 Cours CIEL — Tous droits réservés</div>
+    </div>
+  </footer>
+
+  <button id="back-top" aria-label="Retour en haut">↑</button>
+
+  <script src="script.js"></script>
+  <script>
+    function toggleReponse(btn) {
+      const content = btn.nextElementSibling;
+      const isVisible = content.style.display === 'block';
+      content.style.display = isVisible ? 'none' : 'block';
+      btn.innerHTML = isVisible
+        ? '<i class="fas fa-eye"></i> Voir la réponse'
+        : '<i class="fas fa-eye-slash"></i> Masquer la réponse';
+      btn.style.background   = isVisible ? 'rgba(240,180,41,0.1)'  : 'rgba(0,117,143,0.15)';
+      btn.style.borderColor  = isVisible ? 'rgba(240,180,41,0.35)' : 'rgba(0,117,143,0.4)';
+      btn.style.color        = isVisible ? 'var(--accent)' : '#00b4d8';
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cybersécurité — Cours CIEL</title>
+  <meta name="description" content="Cours complet de cybersécurité : menaces, protection, cryptographie, sécurité réseau et bonnes pratiques niveau BAC.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="shared-styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+
+<body>
+
+  <div id="scroll-indicator"></div>
+  <button class="mobile-menu-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+
+  <aside id="sidebar">
+    <div class="sidebar-header">
+      <img src="assets/logo.png" alt="Logo CIEL" class="sidebar-logo">
+      <div class="sidebar-title">Cours CIEL<span>Adriel TATCHUM SIMO • Formateur</span></div>
+    </div>
+    <div class="search-container" style="padding: 12px 16px;">
+      <input type="text" id="searchInput" placeholder="Rechercher un cours..."
+        style="width:100%;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:13px;">
+    </div>
+    <div class="progress-container">
+      <div class="progress-label">Progression du cours</div>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 0%"></div>
+      </div>
+    </div>
+    <nav>
+      <div class="nav-group">
+        <div class="nav-group-title">Accueil</div>
+        <a href="index.html"><i class="fas fa-home"></i> Introduction</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 1 — Développement Web</div>
+        <a href="html-complet.html"><i class="fab fa-html5"></i> HTML Complet</a>
+        <a href="css-complet.html"><i class="fab fa-css3-alt"></i> CSS Complet</a>
+        <a href="javascript.html"><i class="fab fa-js"></i> JavaScript</a>
+        <a href="python-flask.html"><i class="fab fa-python"></i> Python & Flask</a>
+        <a href="mysql.html"><i class="fas fa-database"></i> MySQL</a>
+        <a href="projet-fullstack.html"><i class="fas fa-project-diagram"></i> Projet Full Stack</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 2 — Électronique</div>
+        <a href="electronique-bases.html"><i class="fas fa-bolt"></i> Bases Électronique</a>
+        <a href="composants.html"><i class="fas fa-microchip"></i> Composants</a>
+        <a href="arduino.html"><i class="fas fa-robot"></i> Arduino & ESP32</a>
+        <a href="raspberry-pi.html"><i class="fab fa-raspberry-pi"></i> Raspberry Pi</a>
+        <a href="capteurs.html"><i class="fas fa-thermometer-half"></i> Capteurs & Actionneurs</a>
+        <a href="maintenance-electronique.html"><i class="fas fa-tools"></i> Maintenance Électronique</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 3 — Réseaux & Sécurité</div>
+        <a href="reseau-informatique.html"><i class="fas fa-network-wired"></i> Réseau Informatique</a>
+        <a href="cybersecurite.html"><i class="fas fa-shield-alt"></i> Cybersécurité</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Outils & Workflow</div>
+        <a href="vscode.html"><i class="fas fa-code"></i> VS Code</a>
+        <a href="git.html"><i class="fab fa-git-alt"></i> Git & GitHub</a>
+        <a href="venv.html"><i class="fas fa-cube"></i> .venv Python</a>
+      </div>
+    </nav>
+    <div class="theme-toggle">
+      <button class="theme-btn"><i class="fas fa-sun"></i><span>Mode clair</span></button>
+    </div>
+  </aside>
+
+  <main id="main">
+<section id="hero">
+      <div class="hero-tag">Sécurité Informatique</div>
+      <h1 class="hero-title">Cybersécurité<br><em>Protection des systèmes</em></h1>
+      <p class="hero-desc">
+        Découvrez les fondamentaux de la cybersécurité : menaces, attaques, cryptographie, sécurité réseau et bonnes
+        pratiques de protection.
+      </p>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-val">8</span><span class="stat-label">Chapitres</span></div>
+        <div class="stat"><span class="stat-val">3</span><span class="stat-label">Travaux Pratiques</span></div>
+        <div class="stat"><span class="stat-val">~2h30</span><span class="stat-label">De lecture</span></div>
+      </div>
+    </section>
+
+
+    <!-- ══════ SECTION VIDÉO PÉDAGOGIQUE ══════ -->
+    <div class="video-ressource">
+      <div class="video-section-title"><i class="fab fa-youtube"></i> Vidéo pédagogique recommandée</div>
+      <div class="video-card">
+        <a href="https://www.youtube.com/watch?v=XjlLIwZFnYU" target="_blank" class="video-thumbnail">
+          <div class="video-thumbnail-bg">
+            <i class="fab fa-youtube video-yt-icon"></i>
+            <span class="video-yt-text">YOUTUBE</span>
+          </div>
+          <div class="video-play-overlay"><i class="fas fa-play"></i></div>
+        </a>
+        <div class="video-info">
+          <span class="video-badge"><i class="fas fa-clock"></i> 1h30</span>
+          <div class="video-titre">Introduction à la Cybersécurité</div>
+          <div class="video-chaine">Chaîne : Micode</div>
+          <div class="video-desc">Menaces, cryptographie, pare-feu, VPN et bonnes pratiques de sécurité.</div>
+          <a href="https://www.youtube.com/watch?v=XjlLIwZFnYU" target="_blank" class="video-watch-btn">
+            <i class="fab fa-youtube"></i> Voir sur YouTube
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════ TÉLÉCHARGEMENTS PDF ══════ -->
+    <div class="pdf-download-zone">
+      <a href="tp-cybersecurite.pdf" download class="pdf-download-btn">
+        <i class="fas fa-file-pdf"></i> Télécharger le TP (PDF)
+      </a>
+      <a href="correction-reseau.pdf" download class="correction-download-btn">
+        <i class="fas fa-check-circle"></i> Télécharger les corrections (PDF)
+      </a>
+      <span class="pdf-info-text">Documents imprimables pour travail hors-ligne</span>
+    </div>
+
+    <div id="content">
+</div><div id="content">
+
+      <!-- CH 1 - INTRODUCTION -->
+      <section class="chapter" id="intro">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#DC143C;background:rgba(220,20,60,0.1);border-color:rgba(220,20,60,0.2)">CYB.01</span>
+          <div class="chapter-title">Introduction à la Cybersécurité<span>Enjeux et importance de la sécurité
+              informatique</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Qu'est-ce que la cybersécurité ?</h3>
+          <p class="text">
+            La <strong>cybersécurité</strong> désigne l'ensemble des moyens techniques, organisationnels, juridiques et
+            humains
+            nécessaires pour protéger les systèmes informatiques, les réseaux et les données contre les
+            <strong>cyberattaques</strong>.
+          </p>
+
+          <div class="callout callout-warn">
+            <span class="callout-icon"><i class="fas fa-exclamation-triangle"></i></span>
+            <div class="callout-body">
+              <strong>Chiffres clés 2024 :</strong> Plus de 4 milliards de cyberattaques recensées dans le monde.
+              Le coût moyen d'une violation de données pour une entreprise : 4,45 millions de dollars.
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Les 3 piliers de la sécurité (Triade CIA)</h3>
+          <div class="cards-grid">
+            <div class="card">
+              <div class="card-type" style="color:#DC143C"><i class="fas fa-lock"></i> Confidentialité</div>
+              <div class="card-desc">Les données ne sont accessibles qu'aux personnes autorisées</div>
+              <div class="card-ex">Chiffrement, contrôle d'accès</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent2)"><i class="fas fa-check-circle"></i> Intégrité</div>
+              <div class="card-desc">Les données ne sont pas modifiées de manière non autorisée</div>
+              <div class="card-ex">Hash, signature numérique</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent)"><i class="fas fa-server"></i> Disponibilité</div>
+              <div class="card-desc">Les systèmes et données sont accessibles quand nécessaire</div>
+              <div class="card-ex">Redondance, sauvegardes</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="retenir">
+          <div class="retenir-title">Objectifs de la cybersécurité</div>
+          <ul>
+            <li>Protéger les données sensibles contre le vol et la fuite</li>
+            <li>Empêcher les accès non autorisés aux systèmes</li>
+            <li>Détecter et répondre rapidement aux incidents</li>
+            <li>Assurer la continuité des services informatiques</li>
+            <li>Se conformer aux réglementations (RGPD, etc.)</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CH 2 - MENACES -->
+      <section class="chapter" id="menaces">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#DC143C;background:rgba(220,20,60,0.1);border-color:rgba(220,20,60,0.2)">CYB.02</span>
+          <div class="chapter-title">Menaces et Attaques<span>Types de cyberattaques et vecteurs d'intrusion</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Principales menaces informatiques</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Type d'attaque</th>
+                <th>Description</th>
+                <th>Impact</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Malware</strong></td>
+                <td>Logiciels malveillants (virus, vers, trojans)</td>
+                <td>Vol de données, destruction</td>
+              </tr>
+              <tr>
+                <td><strong>Ransomware</strong></td>
+                <td>Chiffrement des données contre rançon</td>
+                <td>Paralysie de l'activité</td>
+              </tr>
+              <tr>
+                <td><strong>Phishing</strong></td>
+                <td>Emails frauduleux pour voler des identifiants</td>
+                <td>Compromission de comptes</td>
+              </tr>
+              <tr>
+                <td><strong>DDoS</strong></td>
+                <td>Saturation du serveur par des requêtes massives</td>
+                <td>Indisponibilité du service</td>
+              </tr>
+              <tr>
+                <td><strong>Injection SQL</strong></td>
+                <td>Exploitation de failles dans les bases de données</td>
+                <td>Vol ou destruction de données</td>
+              </tr>
+              <tr>
+                <td><strong>Man-in-the-Middle</strong></td>
+                <td>Interception des communications</td>
+                <td>Espionnage, vol d'informations</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Exemple d'attaque par Phishing</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Email frauduleux</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="str">De : security@banque-nationale.com (FAUX)</span>
+<span class="str">Objet : Action requise - Votre compte a été compromis</span>
+
+Cher client,
+
+Nous avons détecté une <span class="kw">activité suspecte</span> sur votre compte.
+Pour des raisons de sécurité, veuillez <span class="kw">cliquer ici</span> pour 
+vérifier votre identité :
+
+<span class="str">https://banque-nationale-securite.tk/verify</span> (LIEN MALVEILLANT)
+
+Cordialement,
+Service de sécurité
+
+<span class="cm">⚠️ Indicateurs de phishing :
+- Adresse email suspecte (.tk au lieu de .fr)
+- Urgence artificielle
+- Lien vers un site externe
+- Fautes d'orthographe parfois présentes</span></pre>
+          </div>
+        </div>
+
+        <div class="callout callout-warn">
+          <span class="callout-icon"><i class="fas fa-exclamation-triangle"></i></span>
+          <div class="callout-body">
+            <strong>Attention :</strong> Ne jamais cliquer sur des liens dans des emails non sollicités.
+            Toujours vérifier l'URL dans la barre d'adresse du navigateur.
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 3 - CRYPTOGRAPHIE -->
+      <section class="chapter" id="crypto">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#DC143C;background:rgba(220,20,60,0.1);border-color:rgba(220,20,60,0.2)">CYB.03</span>
+          <div class="chapter-title">Cryptographie<span>Chiffrement symétrique, asymétrique et hachage</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Qu'est-ce que le chiffrement ?</h3>
+          <p class="text">
+            Le <strong>chiffrement</strong> est une technique qui transforme des données lisibles (texte clair)
+            en données illisibles (texte chiffré) à l'aide d'une <strong>clé</strong>. Seule la personne possédant
+            la clé de déchiffrement peut lire le message original.
+          </p>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Chiffrement Symétrique vs Asymétrique</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Critère</th>
+                <th>Chiffrement Symétrique</th>
+                <th>Chiffrement Asymétrique</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Nombre de clés</td>
+                <td>1 clé (partagée)</td>
+                <td>2 clés (publique + privée)</td>
+              </tr>
+              <tr>
+                <td>Vitesse</td>
+                <td>Très rapide</td>
+                <td>Plus lent</td>
+              </tr>
+              <tr>
+                <td>Sécurité</td>
+                <td>Dépend du partage sécurisé de la clé</td>
+                <td>Très sécurisé</td>
+              </tr>
+              <tr>
+                <td>Usage typique</td>
+                <td>Chiffrement de fichiers, disques</td>
+                <td>HTTPS, email chiffré, signatures</td>
+              </tr>
+              <tr>
+                <td>Algorithmes</td>
+                <td>AES, DES, 3DES</td>
+                <td>RSA, ECC</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Exemple : Chiffrement AES en Python</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Python</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="kw">from</span> cryptography.fernet <span class="kw">import</span> Fernet
+
+<span class="cm"># Générer une clé de chiffrement</span>
+cle = Fernet.<span class="fn">generate_key</span>()
+<span class="fn">print</span>(<span class="str">f"Clé : {cle}"</span>)
+
+<span class="cm"># Créer un objet de chiffrement</span>
+cipher = Fernet(cle)
+
+<span class="cm"># Message à chiffrer</span>
+message = <span class="str">b"Ceci est un message secret"</span>
+
+<span class="cm"># Chiffrer le message</span>
+message_chiffre = cipher.<span class="fn">encrypt</span>(message)
+<span class="fn">print</span>(<span class="str">f"Message chiffré : {message_chiffre}"</span>)
+
+<span class="cm"># Déchiffrer le message</span>
+message_dechiffre = cipher.<span class="fn">decrypt</span>(message_chiffre)
+<span class="fn">print</span>(<span class="str">f"Message déchiffré : {message_dechiffre.decode()}"</span>)
+
+<span class="cm"># Résultat :</span>
+<span class="cm"># Message chiffré : gAAAAABk...</span>
+<span class="cm"># Message déchiffré : Ceci est un message secret</span></pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Fonction de Hachage</h3>
+          <p class="text">
+            Le <strong>hachage</strong> est une fonction à sens unique qui transforme des données de taille variable
+            en une empreinte de taille fixe. Utilisé pour vérifier l'intégrité des données et stocker les mots de passe.
+          </p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Python (SHA-256)</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="kw">import</span> hashlib
+
+<span class="cm"># Hacher un mot de passe</span>
+mot_de_passe = <span class="str">"MonMotDePasse123"</span>
+hash_objet = hashlib.<span class="fn">sha256</span>(mot_de_passe.<span class="fn">encode</span>())
+empreinte = hash_objet.<span class="fn">hexdigest</span>()
+
+<span class="fn">print</span>(<span class="str">f"Hash SHA-256 : {empreinte}"</span>)
+<span class="cm"># Résultat : a1b2c3d4e5f6... (toujours le même pour le même mot de passe)</span>
+
+<span class="cm"># Vérification de l'intégrité</span>
+fichier_hash = hashlib.<span class="fn">sha256</span>(<span class="kw">open</span>(<span class="str">'fichier.txt'</span>, <span class="str">'rb'</span>).<span class="fn">read</span>()).<span class="fn">hexdigest</span>()</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 4 - SÉCURITÉ RÉSEAU -->
+      <section class="chapter" id="reseau">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#DC143C;background:rgba(220,20,60,0.1);border-color:rgba(220,20,60,0.2)">CYB.04</span>
+          <div class="chapter-title">Sécurité Réseau<span>Pare-feu, VPN, protocoles sécurisés</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Éléments de sécurité réseau</h3>
+          <div class="cards-grid">
+            <div class="card">
+              <div class="card-type" style="color:#DC143C"><i class="fas fa-fire"></i> Pare-feu (Firewall)</div>
+              <div class="card-desc">Filtre le trafic entrant et sortant</div>
+              <div class="card-ex">Bloque ports, IPs suspectes</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent2)"><i class="fas fa-shield-alt"></i> VPN</div>
+              <div class="card-desc">Tunnel chiffré pour connexions à distance</div>
+              <div class="card-ex">OpenVPN, WireGuard</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent)"><i class="fas fa-eye"></i> IDS/IPS</div>
+              <div class="card-desc">Détection et prévention d'intrusions</div>
+              <div class="card-ex">Snort, Suricata</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent6)"><i class="fas fa-lock"></i> HTTPS</div>
+              <div class="card-desc">Communication web chiffrée (TLS/SSL)</div>
+              <div class="card-ex">Certificat SSL, Let's Encrypt</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Règles de pare-feu (iptables Linux)</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Bash</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="cm"># Bloquer tout le trafic entrant par défaut</span>
+<span class="kw">sudo</span> iptables -P INPUT DROP
+
+<span class="cm"># Autoriser le trafic SSH (port 22)</span>
+<span class="kw">sudo</span> iptables -A INPUT -p tcp --dport <span class="num">22</span> -j ACCEPT
+
+<span class="cm"># Autoriser HTTP (80) et HTTPS (443)</span>
+<span class="kw">sudo</span> iptables -A INPUT -p tcp --dport <span class="num">80</span> -j ACCEPT
+<span class="kw">sudo</span> iptables -A INPUT -p tcp --dport <span class="num">443</span> -j ACCEPT
+
+<span class="cm"># Bloquer une IP spécifique</span>
+<span class="kw">sudo</span> iptables -A INPUT -s <span class="num">192.168.1.100</span> -j DROP
+
+<span class="cm"># Voir les règles actives</span>
+<span class="kw">sudo</span> iptables -L -v</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 5 - MOTS DE PASSE -->
+      <section class="chapter" id="passwords">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#DC143C;background:rgba(220,20,60,0.1);border-color:rgba(220,20,60,0.2)">CYB.05</span>
+          <div class="chapter-title">Gestion des Mots de Passe<span>Bonnes pratiques et authentification forte</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Règles pour un mot de passe fort</h3>
+          <div class="retenir">
+            <div class="retenir-title">Caractéristiques d'un bon mot de passe</div>
+            <ul>
+              <li>Au moins <strong>12 caractères</strong></li>
+              <li>Mélange de majuscules, minuscules, chiffres et symboles</li>
+              <li>Pas de mots du dictionnaire ni d'informations personnelles</li>
+              <li>Unique pour chaque service (ne jamais réutiliser)</li>
+              <li>Utiliser un <strong>gestionnaire de mots de passe</strong> (Bitwarden, KeePass)</li>
+            </ul>
+          </div>
+
+          <div class="good-bad">
+            <div class="bad">
+              <div class="bad-label">❌ Mauvais exemples</div>
+              <pre>password123
+MonNom1990
+azerty
+admin
+12345678</pre>
+            </div>
+            <div class="good">
+              <div class="good-label">✅ Bons exemples</div>
+              <pre>k9#Tz@7mP$qL2&vN
+Correct-Horse-Battery-Staple-42!
+J'adore_L3s_Cours-CIEL2024!
+Xy$9pL@mK#2rT&vQ</pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Authentification à Deux Facteurs (2FA)</h3>
+          <p class="text">
+            La <strong>2FA</strong> ajoute une couche de sécurité supplémentaire en exigeant deux preuves d'identité :
+          </p>
+          <ol style="color: var(--text); margin-left: 20px; margin-bottom: 16px;">
+            <li><strong>Quelque chose que vous savez</strong> : mot de passe</li>
+            <li><strong>Quelque chose que vous possédez</strong> : smartphone, clé USB de sécurité</li>
+            <li><strong>Quelque chose que vous êtes</strong> : empreinte digitale, reconnaissance faciale</li>
+          </ol>
+
+          <div class="callout callout-tip">
+            <span class="callout-icon"><i class="fas fa-lightbulb"></i></span>
+            <div class="callout-body">
+              <strong>Applications 2FA recommandées :</strong> Google Authenticator, Microsoft Authenticator, Authy
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 6 - SÉCURITÉ WEB -->
+      <section class="chapter" id="web-security">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#DC143C;background:rgba(220,20,60,0.1);border-color:rgba(220,20,60,0.2)">CYB.06</span>
+          <div class="chapter-title">Sécurité des Applications Web<span>XSS, CSRF, injection SQL et protection</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Vulnérabilités web courantes (OWASP Top 10)</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Vulnérabilité</th>
+                <th>Description</th>
+                <th>Protection</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Injection SQL</strong></td>
+                <td>Insertion de code SQL malveillant</td>
+                <td>Requêtes préparées, validation des entrées</td>
+              </tr>
+              <tr>
+                <td><strong>XSS (Cross-Site Scripting)</strong></td>
+                <td>Injection de JavaScript dans une page</td>
+                <td>Échappement des caractères, CSP</td>
+              </tr>
+              <tr>
+                <td><strong>CSRF</strong></td>
+                <td>Action non voulue effectuée par un utilisateur authentifié</td>
+                <td>Jetons CSRF, SameSite cookies</td>
+              </tr>
+              <tr>
+                <td><strong>Broken Authentication</strong></td>
+                <td>Gestion incorrecte des sessions</td>
+                <td>2FA, expiration de session</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Exemple : Protection contre l'injection SQL</h3>
+          <div class="good-bad">
+            <div class="bad">
+              <div class="bad-label">❌ Code vulnérable</div>
+              <pre><span class="cm"># Python Flask - VULNÉRABLE</span>
+<span class="kw">@app</span>.route(<span class="str">'/login'</span>)
+<span class="kw">def</span> <span class="fn">login</span>():
+    username = request.args.<span class="fn">get</span>(<span class="str">'user'</span>)
+    query = <span class="str">f"SELECT * FROM users WHERE username='{username}'"</span>
+    <span class="cm"># Injection possible : user=' OR '1'='1</span>
+    result = db.<span class="fn">execute</span>(query)</pre>
+            </div>
+            <div class="good">
+              <div class="good-label">✅ Code sécurisé</div>
+              <pre><span class="cm"># Python Flask - SÉCURISÉ</span>
+<span class="kw">@app</span>.route(<span class="str">'/login'</span>)
+<span class="kw">def</span> <span class="fn">login</span>():
+    username = request.args.<span class="fn">get</span>(<span class="str">'user'</span>)
+    <span class="cm"># Requête préparée (paramétrisée)</span>
+    query = <span class="str">"SELECT * FROM users WHERE username=?"</span>
+    result = db.<span class="fn">execute</span>(query, (username,))</pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 7 - INCIDENT RESPONSE -->
+      <section class="chapter" id="incident">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#DC143C;background:rgba(220,20,60,0.1);border-color:rgba(220,20,60,0.2)">CYB.07</span>
+          <div class="chapter-title">Gestion des Incidents<span>Détection, réponse et récupération</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Cycle de gestion d'incident</h3>
+          <div class="cards-grid">
+            <div class="card">
+              <div class="card-type" style="color:#DC143C"><i class="fas fa-search"></i> 1. Détection</div>
+              <div class="card-desc">Identifier l'incident de sécurité</div>
+              <div class="card-ex">Logs, alertes IDS</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent)"><i class="fas fa-shield-alt"></i> 2. Confinement</div>
+              <div class="card-desc">Isoler le système compromis</div>
+              <div class="card-ex">Déconnexion réseau</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent2)"><i class="fas fa-tools"></i> 3. Éradication</div>
+              <div class="card-desc">Supprimer la menace</div>
+              <div class="card-ex">Suppression malware</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent6)"><i class="fas fa-redo"></i> 4. Récupération</div>
+              <div class="card-desc">Restaurer les systèmes</div>
+              <div class="card-ex">Sauvegardes, patches</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Actions immédiates en cas d'incident</h3>
+          <div class="retenir">
+            <div class="retenir-title">Checklist de réponse</div>
+            <ul>
+              <li>✓ Alerter le responsable sécurité / DSI</li>
+              <li>✓ Documenter l'incident (date, heure, symptômes)</li>
+              <li>✓ Isoler le système affecté du réseau</li>
+              <li>✓ Ne PAS éteindre brutalement (perte de preuves en RAM)</li>
+              <li>✓ Capturer les logs et l'état du système</li>
+              <li>✓ Changer tous les mots de passe potentiellement compromis</li>
+              <li>✓ Analyser l'étendue de la compromission</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 8 - BONNES PRATIQUES -->
+      <section class="chapter" id="best-practices">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#DC143C;background:rgba(220,20,60,0.1);border-color:rgba(220,20,60,0.2)">CYB.08</span>
+          <div class="chapter-title">Bonnes Pratiques<span>Hygiène numérique au quotidien</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">10 règles d'or de la cybersécurité</h3>
+          <div class="retenir">
+            <div class="retenir-title">À appliquer au quotidien</div>
+            <ul>
+              <li>1. <strong>Mettre à jour</strong> régulièrement tous les logiciels et le système d'exploitation</li>
+              <li>2. <strong>Utiliser un antivirus</strong> à jour et activer le pare-feu</li>
+              <li>3. <strong>Sauvegarder</strong> les données importantes (règle 3-2-1)</li>
+              <li>4. <strong>Vérifier les URLs</strong> avant de cliquer (survoler avec la souris)</li>
+              <li>5. <strong>Ne jamais partager</strong> de mots de passe ou informations sensibles</li>
+              <li>6. <strong>Activer la 2FA</strong> sur tous les comptes importants</li>
+              <li>7. <strong>Utiliser HTTPS</strong> uniquement pour les sites sensibles</li>
+              <li>8. <strong>Méfiez-vous des clés USB</strong> inconnues (vecteur de malware)</li>
+              <li>9. <strong>Verrouiller</strong> votre session quand vous vous absentez</li>
+              <li>10. <strong>Former et sensibiliser</strong> régulièrement (maillon faible = humain)</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- TRAVAUX PRATIQUES -->
+      <section class="chapter" id="tp">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:var(--accent);background:rgba(240,180,41,0.1);border-color:rgba(240,180,41,0.2)">TP</span>
+          <div class="chapter-title">Travaux Pratiques<span>3 exercices pour mettre en pratique</span></div>
+        </div>
+
+        <!-- TP 1 -->
+        <div class="section">
+          <h3 class="section-title">TP 1 : Analyse d'un Email de Phishing</h3>
+          <p class="text"><strong>Objectif :</strong> Détecter les indicateurs de phishing dans un email frauduleux</p>
+
+          <div class="callout callout-info">
+            <span class="callout-icon"><i class="fas fa-tasks"></i></span>
+            <div class="callout-body">
+              <strong>Énoncé :</strong> Vous recevez l'email suivant. Identifiez au moins 5 éléments suspects.
+            </div>
+          </div>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Email reçu</span>
+            </div>
+            <pre>De : support@amaz0n-securite.tk
+Objet : URGENT - Votre compte sera suspendu
+
+Bonjour cher client,
+
+Nous avons détecté une activité inhabituel sur votre compte Amazon.
+Pour éviter la suspension, cliquez sur le lien ci-dessous dans les 24h :
+
+http://amaz0n-verify.tk/account-suspend.php?id=12345
+
+Entrez vos identifiants pour confirmer votre identité.
+
+Cordialement,
+Équipe Amazon Security</pre>
+          </div>
+
+          <div class="callout callout-tip">
+            <span class="callout-icon"><i class="fas fa-lightbulb"></i></span>
+            <div class="callout-body">
+              <strong>Réponse :</strong><br>
+              1. Adresse email suspecte (.tk au lieu d'amazon.fr)<br>
+              2. Faute de français ("activité inhabituel")<br>
+              3. Urgence artificielle (24h)<br>
+              4. URL externe non officielle<br>
+              5. Demande d'identifiants (Amazon ne demande jamais par email)<br>
+              6. Utilisation du chiffre 0 au lieu de la lettre O dans "amaz0n"
+            </div>
+          </div>
+        </div>
+
+        <!-- TP 2 -->
+        <div class="section">
+          <h3 class="section-title">TP 2 : Configuration d'un Pare-feu Simple</h3>
+          <p class="text"><strong>Objectif :</strong> Configurer des règles de pare-feu sur Linux avec iptables</p>
+
+          <div class="callout callout-info">
+            <span class="callout-icon"><i class="fas fa-tasks"></i></span>
+            <div class="callout-body">
+              <strong>Énoncé :</strong> Configurez un pare-feu qui :
+              <ul style="margin-top: 8px;">
+                <li>Bloque tout trafic entrant par défaut</li>
+                <li>Autorise SSH (port 22) uniquement depuis 192.168.1.0/24</li>
+                <li>Autorise HTTP (80) et HTTPS (443) pour tous</li>
+                <li>Bloque l'IP 203.0.113.50 (attaquant connu)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Solution Bash</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="cm">#!/bin/bash</span>
+<span class="cm"># Script de configuration pare-feu</span>
+
+<span class="cm"># 1. Politique par défaut : DROP</span>
+<span class="kw">sudo</span> iptables -P INPUT DROP
+<span class="kw">sudo</span> iptables -P FORWARD DROP
+<span class="kw">sudo</span> iptables -P OUTPUT ACCEPT
+
+<span class="cm"># 2. Autoriser le loopback (localhost)</span>
+<span class="kw">sudo</span> iptables -A INPUT -i lo -j ACCEPT
+
+<span class="cm"># 3. Autoriser SSH uniquement depuis 192.168.1.0/24</span>
+<span class="kw">sudo</span> iptables -A INPUT -p tcp -s <span class="num">192.168.1.0/24</span> --dport <span class="num">22</span> -j ACCEPT
+
+<span class="cm"># 4. Autoriser HTTP et HTTPS pour tous</span>
+<span class="kw">sudo</span> iptables -A INPUT -p tcp --dport <span class="num">80</span> -j ACCEPT
+<span class="kw">sudo</span> iptables -A INPUT -p tcp --dport <span class="num">443</span> -j ACCEPT
+
+<span class="cm"># 5. Bloquer l'IP malveillante</span>
+<span class="kw">sudo</span> iptables -A INPUT -s <span class="num">203.0.113.50</span> -j DROP
+
+<span class="cm"># 6. Autoriser les connexions déjà établies</span>
+<span class="kw">sudo</span> iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+<span class="cm"># Sauvegarder les règles</span>
+<span class="kw">sudo</span> iptables-save > /etc/iptables/rules.v4
+
+<span class="fn">echo</span> <span class="str">"Pare-feu configuré avec succès"</span></pre>
+          </div>
+        </div>
+
+        <!-- TP 3 -->
+        <div class="section">
+          <h3 class="section-title">TP 3 : Chiffrement de Fichiers Sensibles</h3>
+          <p class="text"><strong>Objectif :</strong> Chiffrer et déchiffrer des fichiers avec GPG</p>
+
+          <div class="callout callout-info">
+            <span class="callout-icon"><i class="fas fa-tasks"></i></span>
+            <div class="callout-body">
+              <strong>Énoncé :</strong> Vous devez envoyer un fichier confidentiel par email.
+              Utilisez GPG pour le chiffrer de manière sécurisée.
+            </div>
+          </div>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Bash</span>
+              <button class="copy-btn">Copier</button>
+            </div>
+            <pre><span class="cm"># Installation de GPG (si nécessaire)</span>
+<span class="kw">sudo</span> apt install gnupg
+
+<span class="cm"># 1. Chiffrer un fichier avec mot de passe (chiffrement symétrique)</span>
+<span class="fn">gpg</span> -c fichier_secret.pdf
+<span class="cm"># Entrer un mot de passe fort</span>
+<span class="cm"># Crée : fichier_secret.pdf.gpg (fichier chiffré)</span>
+
+<span class="cm"># 2. Déchiffrer le fichier</span>
+<span class="fn">gpg</span> fichier_secret.pdf.gpg
+<span class="cm"># Entrer le mot de passe</span>
+<span class="cm"># Restaure : fichier_secret.pdf</span>
+
+<span class="cm"># 3. Générer une paire de clés (asymétrique)</span>
+<span class="fn">gpg</span> --full-generate-key
+<span class="cm"># Choisir : RSA, 4096 bits, validité 1 an</span>
+
+<span class="cm"># 4. Chiffrer pour un destinataire spécifique</span>
+<span class="fn">gpg</span> --encrypt --recipient destinataire@example.com fichier.txt
+
+<span class="cm"># 5. Vérifier le chiffrement</span>
+<span class="fn">file</span> fichier_secret.pdf.gpg
+<span class="cm"># Résultat : GPG encrypted data</span></pre>
+          </div>
+
+          <div class="callout callout-tip">
+            <span class="callout-icon"><i class="fas fa-lightbulb"></i></span>
+            <div class="callout-body">
+              <strong>Conseil :</strong> Pour transmettre le mot de passe de déchiffrement au destinataire,
+              utilisez un canal différent (SMS, appel téléphonique) jamais le même email.
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- EXERCICES & TP CYBERSÉCURITÉ -->
+      <section class="chapter" id="exercices-cyber">
+        <div class="chapter-header">
+          <span class="chapter-num" style="background:linear-gradient(135deg,#dc2626,#7c3aed);">EX</span>
+          <div class="chapter-title">Exercices &amp; Travaux Pratiques<span>Analyse de vulnérabilités, cryptographie et sécurisation des systèmes</span></div>
+        </div>
+        <div class="section">
+          <p class="section-intro">La cybersécurité s'apprend par la pratique dans un cadre éthique et légal. Ces exercices utilisent des environnements isolés (machines virtuelles, labs dédiés) pour comprendre les attaques et mettre en œuvre les défenses.</p>
+
+          <div class="callout callout-warn">
+            <span class="callout-icon">⚠️</span>
+            <div class="callout-body"><strong>Éthique et légalité :</strong> Ces exercices doivent UNIQUEMENT être réalisés sur des systèmes vous appartenant ou sur des environnements de lab dédiés (TryHackMe, HackTheBox). Toute attaque sans autorisation est un délit pénal (Art. 323-1 du Code pénal français).</div>
+          </div>
+
+          <p class="section-exo-title"><i class="fas fa-pencil-alt"></i> Exercices de compréhension</p>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 1 — Cryptographie appliquée <span class="niveau-badge niveau-facile">Facile</span></h4>
+            <ol>
+              <li>En Python, hashé la chaîne "Adriel TATCHUM SIMO" avec MD5, SHA-1, SHA-256. Observez les longueurs et les sorties. Pourquoi MD5 est-il obsolète pour les mots de passe ?</li>
+              <li>Implémentez un chiffrement César en Python : <code>encrypt("Hello", 13)</code> → ROT13. Créez aussi la fonction de déchiffrement.</li>
+              <li>Utilisez la bibliothèque <code>cryptography</code> Python pour : générer une paire de clés RSA 2048 bits, chiffrer un message avec la clé publique, déchiffrer avec la clé privée.</li>
+              <li><strong>Réflexion :</strong> Expliquez la différence entre chiffrement symétrique et asymétrique. Donnez des exemples d'algorithmes pour chacun.</li>
+            </ol>
+          </div>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 2 — Analyse de vulnérabilités web (OWASP) <span class="niveau-badge niveau-moyen">Moyen</span></h4>
+            <ol>
+              <li>Sur l'application de lab <a href="https://github.com/digininja/DVWA" target="_blank">DVWA</a> installée localement, testez et exploitez (en mode "Low" security) : une injection SQL basique, une XSS réfléchie, une vulnérabilité d'upload de fichier.</li>
+              <li>Pour chaque vulnérabilité : décrivez le mécanisme d'attaque, montrez le payload utilisé, et proposez la correction de code sécurisée.</li>
+              <li>Passez en mode "High" security et tentez les mêmes attaques. Analysez les protections mises en place.</li>
+            </ol>
+          </div>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 3 — Sécurisation d'un serveur Linux <span class="niveau-badge niveau-avance">Avancé</span></h4>
+            <ol>
+              <li>Sur une VM Ubuntu fraîchement installée, appliquez le hardening complet : désactiver root SSH, changer le port SSH (ex: 2222), activer l'authentification par clé uniquement, configurer fail2ban, installer et configurer ufw.</li>
+              <li>Auditez le serveur avec <code>lynis audit system</code> et corrigez les 10 points d'amélioration les plus critiques.</li>
+              <li>Configurez un certificat TLS auto-signé pour Apache avec OpenSSL. Comprenez le processus CSR → certificat → configuration Apache.</li>
+            </ol>
+          </div>
+
+          <p class="section-exo-title"><i class="fas fa-flask"></i> Travaux Pratiques</p>
+
+          <div class="tp-block">
+            <h4>🔬 TP — CTF (Capture The Flag) débutant <span class="niveau-badge niveau-moyen">Moyen — 3h</span></h4>
+            <p style="font-size:14px;color:var(--muted);margin-bottom:12px;"><strong>Objectif :</strong> Résoudre une série de challenges de cybersécurité guidés sur TryHackMe.</p>
+            <ol class="tp-etapes">
+              <li>Créez un compte gratuit sur <a href="https://tryhackme.com" target="_blank">TryHackMe</a>.</li>
+              <li>Complétez le parcours "<strong>Pre-Security</strong>" puis la room "<strong>Basic Pentesting</strong>".</li>
+              <li>Pour chaque flag trouvé, documentez : la technique utilisée, les outils employés, les commandes exécutées.</li>
+              <li>Rédigez un rapport de pentest simplifié : scope, résumé des vulnérabilités trouvées, criticité (CVSS), recommandations de correction.</li>
+              <li><strong>Bonus :</strong> Tentez la room "OWASP Top 10" pour couvrir les 10 vulnérabilités web les plus critiques.</li>
+            </ol>
+          </div>
+
+          <div class="quiz-block">
+            <h4>❓ Quiz de révision — Cybersécurité</h4>
+            <ol>
+              <li>Expliquez la triade CIA (Confidentialité, Intégrité, Disponibilité). Donnez un exemple d'attaque qui viole chaque propriété.</li>
+              <li>Qu'est-ce qu'une attaque Man-in-the-Middle ? Comment HTTPS s'y oppose-t-il ?</li>
+              <li>Différence entre un virus, un ver, un cheval de Troie et un ransomware.</li>
+              <li>Qu'est-ce que la validation côté client vs côté serveur ? Pourquoi la validation client est-elle insuffisante ?</li>
+              <li>Expliquez le fonctionnement d'une attaque par force brute et d'une attaque par dictionnaire. Comment s'en protéger ?</li>
+              <li>Qu'est-ce que le principe du moindre privilège ? Donnez 3 exemples d'application concrète.</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- NAVIGATION -->
+      <div class="page-nav">
+        <a href="reseau-informatique.html">
+          <span class="page-nav-label">← Précédent</span>
+          <span class="page-nav-title"><i class="fas fa-network-wired"></i> Réseau Informatique</span>
+        </a>
+        <a href="vscode.html" class="next">
+          <span class="page-nav-label">Suivant →</span>
+          <span class="page-nav-title"><i class="fas fa-code"></i> VS Code</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-info">
+        <img src="assets/logo.png" alt="Logo" class="footer-logo">
+        <div class="footer-text">
+          <div class="footer-name">Adriel TATCHUM SIMO</div>
+          <div class="footer-job">Enseignant CIEL • Formateur Web & Électronique</div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Accueil</a>
+        <a href="html-complet.html">HTML</a>
+        <a href="css-complet.html">CSS</a>
+        <a href="javascript.html">JavaScript</a>
+      </div>
+      <div class="footer-copy">© 2026 Cours CIEL — Tous droits réservés</div>
+    </div>
+  </footer>
+
+  <button id="back-top" aria-label="Retour en haut">↑</button>
+
+  <script src="script.js"></script>
+  <script>
+    function toggleReponse(btn) {
+      const content = btn.nextElementSibling;
+      const isVisible = content.style.display === 'block';
+      content.style.display = isVisible ? 'none' : 'block';
+      btn.innerHTML = isVisible
+        ? '<i class="fas fa-eye"></i> Voir la réponse'
+        : '<i class="fas fa-eye-slash"></i> Masquer la réponse';
+      btn.style.background   = isVisible ? 'rgba(240,180,41,0.1)'  : 'rgba(0,117,143,0.15)';
+      btn.style.borderColor  = isVisible ? 'rgba(240,180,41,0.35)' : 'rgba(0,117,143,0.4)';
+      btn.style.color        = isVisible ? 'var(--accent)' : '#00b4d8';
+    }
+  </script>
+</body>
+
+</html>

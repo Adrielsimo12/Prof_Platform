@@ -1,0 +1,313 @@
+GUIDE D'UTILISATION - PROF PLATFORM
+===================================
+
+1. DEMARRER LA PLATEFORME
+--------------------------
+
+Sur le PC serveur :
+
+1. Ouvrir le dossier prof-platform.
+2. Double-cliquer sur start.bat.
+3. Le backend et le frontend démarrent discrètement en arrière-plan.
+4. Le navigateur s'ouvre automatiquement :
+
+   http://localhost:5173
+
+Le fichier start-hidden.vbs est utilisé pour éviter les fenêtres de commande.
+Si le navigateur s'ouvre trop vite, attendre quelques secondes puis actualiser la page.
+
+Depuis un autre PC du même réseau :
+
+   http://172.20.10.6:5173
+
+L'adresse IP peut changer. Pour la vérifier sur le PC serveur, exécuter dans PowerShell :
+
+   Get-NetIPAddress -AddressFamily IPv4
+
+Si un autre PC ne peut pas accéder à la plateforme, vérifier que les ports 5173 et 5000 sont autorisés dans le pare-feu Windows.
+
+2. CONNEXION
+------------
+
+Saisir manuellement le nom d'utilisateur et le mot de passe.
+Les identifiants ne sont pas préremplis.
+
+Le compte initial est :
+
+   Nom d'utilisateur : enseignant
+   Mot de passe       : enseignant
+
+Le mot de passe peut être affiché ou masqué avec le bouton correspondant.
+
+Chaque enseignant possède son propre espace. Les classes, cours, activités, séances et évaluations sont séparés entre les enseignants.
+
+Le nom de l'enseignant connecté est affiché en haut à gauche de l'application.
+
+3. TABLEAU DE BORD
+------------------
+
+Le tableau de bord présente :
+
+- les classes de l'enseignant connecté ;
+- le nombre d'élèves ;
+- l'état des cours ;
+- les séances à venir ;
+- les dernières séances ;
+- les travaux à traiter.
+
+4. CLASSES
+----------
+
+Pour créer une classe :
+
+1. Ouvrir l'onglet Classes.
+2. Cliquer sur Nouvelle classe.
+3. Saisir le nom de la classe.
+4. Saisir l'année scolaire.
+5. Cliquer sur Créer.
+
+Une classe portant le même nom peut exister dans l'espace d'un autre enseignant. Dans un même espace, le nom doit être unique.
+
+En ouvrant une classe, plusieurs onglets sont disponibles :
+
+- Élèves
+- Cours
+- Séances
+- Activités
+
+5. ELEVES
+---------
+
+Dans l'onglet Élèves, il est possible de :
+
+- ajouter un élève ;
+- modifier les informations d'un élève ;
+- consulter sa fiche ;
+- importer une liste CSV ;
+- exporter la liste CSV ;
+- consulter les absences, retards et moyenne.
+
+Format CSV d'import :
+
+   nom;prenom;email;date_naissance
+
+Pour la classe 2 TNE :
+
+- affecter chaque élève au Groupe 1 ou au Groupe 2 ;
+- laisser le groupe vide si nécessaire.
+
+Les classes 1 CIEL et T CIEL utilisent une seule classe entière. Elles ne sont pas séparées en groupes.
+
+6. COURS
+--------
+
+Pour créer un cours :
+
+1. Ouvrir une classe.
+2. Aller dans l'onglet Cours.
+3. Cliquer sur Nouveau cours.
+4. Choisir une catégorie.
+5. Saisir le titre et les objectifs.
+6. Cliquer sur Créer.
+
+Un cours peut ensuite être ouvert pour modifier son contenu, ses exercices, son TP et ses ressources.
+
+7. ACTIVITES
+------------
+
+L'onglet Activités permet de créer des activités pédagogiques liées à une classe.
+
+Pour créer une activité :
+
+1. Ouvrir Activités.
+2. Choisir la classe.
+3. Saisir le titre.
+4. Ajouter la description, les consignes et la production attendue.
+5. Sélectionner les compétences de la filière.
+6. Cliquer sur Créer l'activité.
+
+La liste des activités est organisée par classe. Un filtre permet d'afficher une classe précise.
+
+Dans la fiche d'une classe, l'onglet Activités permet de suivre chaque élève individuellement.
+Pour chaque activité, choisir un état :
+
+- À commencer
+- Commencée
+- Terminée
+
+La progression de la classe et des groupes est calculée automatiquement.
+Pour 2 TNE, la progression est séparée entre Groupe 1 et Groupe 2.
+Pour 1 CIEL et T CIEL, la progression concerne toute la classe.
+
+8. SEANCES
+----------
+
+Pour créer une séance depuis une classe :
+
+1. Ouvrir la classe.
+2. Aller dans l'onglet Séances.
+3. Cliquer sur Nouvelle séance.
+4. Choisir la date et les horaires.
+5. Choisir le groupe concerné.
+6. Choisir éventuellement un cours.
+7. Cliquer sur Créer la séance.
+
+Pour 2 TNE, choisir :
+
+- Toute la classe
+- Groupe 1
+- Groupe 2
+
+Pour 1 CIEL et T CIEL, la séance concerne automatiquement toute la classe.
+
+La feuille de présence est créée automatiquement avec les élèves actifs concernés.
+Si une ancienne séance avait une feuille vide, ouvrir la séance ou recharger l'onglet : les présences sont resynchronisées automatiquement.
+
+9. PRESENCES
+------------
+
+Dans le détail d'une séance, cliquer sur le statut d'un élève pour le faire évoluer :
+
+   Présent -> Absent -> Retard -> Présent
+
+Le nombre d'absents est affiché dans la séance et dans la liste des séances.
+
+10. ANNULER UNE SEANCE
+----------------------
+
+Dans le détail d'une séance :
+
+1. Cliquer sur Annuler la séance.
+2. Confirmer l'annulation.
+
+La séance reste dans l'historique mais son statut devient Annulée.
+Le bouton Rétablir la séance permet de la remettre en statut Planifiée.
+Le bouton Supprimer efface définitivement la séance.
+
+11. PLANNING / EDT
+------------------
+
+L'EDT est organisé en créneaux de deux heures :
+
+- 08h - 10h
+- 10h - 12h
+- 12h - 14h
+- 14h - 16h
+- 16h - 18h
+- 18h - 20h
+
+L'EDT contient les cours habituels. Il est possible de cliquer sur un créneau EDT pour créer directement une séance.
+
+La création automatique reprend :
+
+- la classe ;
+- la date ;
+- l'horaire ;
+- le groupe Q1 ou Q2 quand il existe ;
+- le cours correspondant quand il est trouvé.
+
+Q1 correspond au Groupe 1 et Q2 au Groupe 2 pour 2 TNE.
+
+Les séances supplémentaires peuvent être créées en cliquant sur une cellule vide du planning.
+Les séances ajoutées sont accessibles dans la liste située sous la grille.
+
+Cliquer sur une séance permet d'ouvrir sa feuille de présence et son détail.
+
+12. EVALUATIONS
+---------------
+
+Pour saisir une note :
+
+1. Ouvrir Évaluations.
+2. Choisir une classe.
+3. Choisir un élève.
+4. Choisir une activité.
+5. Saisir la note obtenue sur 20.
+6. Cliquer sur Valider la note.
+
+Les notes acceptées sont comprises entre 0 et 20.
+Les décimales sont acceptées, par exemple 14.5.
+Une note déjà enregistrée peut être modifiée en la remplaçant puis en cliquant à nouveau sur Valider la note.
+
+Les niveaux de compétences sont évalués séparément :
+
+- Non acquis
+- En cours d'acquisition
+- Partiellement acquis
+- Acquis
+
+13. COMPETENCES ET IMPORT CSV
+-----------------------------
+
+L'onglet Compétences affiche le référentiel de la filière du compte connecté.
+Le référentiel CIEL existant d'Adriel est conservé.
+
+Un administrateur ou un enseignant peut importer un référentiel CSV depuis un PC ou un téléphone distant.
+Format minimal :
+
+   code;nom;domaine_code;domaine_nom;description;ordre
+
+Les imports CSV des élèves et du planning sont également envoyés au serveur par l'application.
+
+14. COMPTES ET ROLES
+--------------------
+
+La page Enseignants permet aux administrateurs de :
+
+- créer un compte enseignant ;
+- choisir le rôle enseignant ou administrateur ;
+- approuver les comptes en attente ;
+- modifier le mot de passe d'un enseignant ;
+- supprimer un compte et ses données ;
+- afficher ou masquer un mot de passe.
+
+Les enseignants ne peuvent pas supprimer d'utilisateur ni administrer les comptes.
+Adriel et enseignant possèdent le rôle administrateur.
+Chaque compte possède un espace de travail et une filière séparés.
+
+15. MESSAGERIE ET DOCUMENTS
+---------------------------
+
+L'onglet Messagerie permet de :
+
+- dialoguer avec un autre utilisateur approuvé ;
+- envoyer des messages ;
+- joindre des documents, images et autres fichiers ;
+- télécharger les pièces jointes depuis un téléphone ou un ordinateur distant.
+
+Les ressources PDF de cours sont elles aussi envoyées et téléchargées via le serveur distant.
+Ne jamais utiliser une adresse `localhost` depuis un téléphone : utiliser l'adresse IP du PC serveur.
+
+16. DECONNEXION
+---------------
+
+Cliquer sur Déconnexion dans la barre latérale.
+La session locale est supprimée et l'écran de connexion réapparaît.
+
+17. EN CAS DE PROBLEME
+----------------------
+
+Message : Impossible de contacter le serveur
+
+1. Vérifier que start.bat est lancé sur le PC serveur.
+2. Vérifier que les ports 5173 et 5000 sont ouverts dans le pare-feu.
+3. Depuis un autre PC, tester :
+
+   Test-NetConnection 172.20.10.6 -Port 5173
+   Test-NetConnection 172.20.10.6 -Port 5000
+
+Le résultat doit afficher :
+
+   TcpTestSucceeded : True
+
+Message : Mot de passe incorrect
+
+- Vérifier l'identifiant saisi.
+- Vérifier le mot de passe.
+- Demander à l'administrateur de réinitialiser le mot de passe depuis Enseignants.
+
+Après une modification du code, redémarrer le backend et actualiser le navigateur avec Ctrl + F5.
+
+Pour un accès distant, autoriser les ports 5173 et 5000 dans le pare-feu Windows et ouvrir :
+
+   http://ADRESSE_IP_DU_SERVEUR:5173

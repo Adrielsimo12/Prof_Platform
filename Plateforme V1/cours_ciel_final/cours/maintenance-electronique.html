@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maintenance Électronique — Cours CIEL</title>
+  <meta name="description" content="Cours complet de maintenance électronique : diagnostic, réparation, outils de mesure, composants et dépannage niveau BAC.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="shared-styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+
+<body>
+
+  <div id="scroll-indicator"></div>
+  <button class="mobile-menu-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+
+  <aside id="sidebar">
+    <div class="sidebar-header">
+      <img src="assets/logo.png" alt="Logo CIEL" class="sidebar-logo">
+      <div class="sidebar-title">Cours CIEL<span>Adriel TATCHUM SIMO • Formateur</span></div>
+    </div>
+    <div class="search-container" style="padding: 12px 16px;">
+      <input type="text" id="searchInput" placeholder="Rechercher un cours..."
+        style="width:100%;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:13px;">
+    </div>
+    <div class="progress-container">
+      <div class="progress-label">Progression du cours</div>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 0%"></div>
+      </div>
+    </div>
+    <nav>
+      <div class="nav-group">
+        <div class="nav-group-title">Accueil</div>
+        <a href="index.html"><i class="fas fa-home"></i> Introduction</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 1 — Développement Web</div>
+        <a href="html-complet.html"><i class="fab fa-html5"></i> HTML Complet</a>
+        <a href="css-complet.html"><i class="fab fa-css3-alt"></i> CSS Complet</a>
+        <a href="javascript.html"><i class="fab fa-js"></i> JavaScript</a>
+        <a href="python-flask.html"><i class="fab fa-python"></i> Python & Flask</a>
+        <a href="mysql.html"><i class="fas fa-database"></i> MySQL</a>
+        <a href="projet-fullstack.html"><i class="fas fa-project-diagram"></i> Projet Full Stack</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 2 — Électronique</div>
+        <a href="electronique-bases.html"><i class="fas fa-bolt"></i> Bases Électronique</a>
+        <a href="composants.html"><i class="fas fa-microchip"></i> Composants</a>
+        <a href="arduino.html"><i class="fas fa-robot"></i> Arduino & ESP32</a>
+        <a href="raspberry-pi.html"><i class="fab fa-raspberry-pi"></i> Raspberry Pi</a>
+        <a href="capteurs.html"><i class="fas fa-thermometer-half"></i> Capteurs & Actionneurs</a>
+        <a href="maintenance-electronique.html"><i class="fas fa-tools"></i> Maintenance Électronique</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 3 — Réseaux & Sécurité</div>
+        <a href="reseau-informatique.html"><i class="fas fa-network-wired"></i> Réseau Informatique</a>
+        <a href="cybersecurite.html"><i class="fas fa-shield-alt"></i> Cybersécurité</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Outils & Workflow</div>
+        <a href="vscode.html"><i class="fas fa-code"></i> VS Code</a>
+        <a href="git.html"><i class="fab fa-git-alt"></i> Git & GitHub</a>
+        <a href="venv.html"><i class="fas fa-cube"></i> .venv Python</a>
+      </div>
+    </nav>
+    <div class="theme-toggle">
+      <button class="theme-btn"><i class="fas fa-sun"></i><span>Mode clair</span></button>
+    </div>
+  </aside>
+
+  <main id="main">
+<section id="hero">
+      <div class="hero-tag">Maintenance & Dépannage</div>
+      <h1 class="hero-title">Maintenance Électronique<br><em>Diagnostic & Réparation</em></h1>
+      <p class="hero-desc">
+        Maîtrisez la maintenance électronique : diagnostic de pannes, utilisation des outils de mesure, remplacement de
+        composants et bonnes pratiques de réparation.
+      </p>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-val">5</span><span class="stat-label">Chapitres</span></div>
+        <div class="stat"><span class="stat-val">3</span><span class="stat-label">Travaux Pratiques</span></div>
+        <div class="stat"><span class="stat-val">~2h</span><span class="stat-label">De lecture</span></div>
+      </div>
+    </section>
+
+
+    <!-- ══════ SECTION VIDÉO PÉDAGOGIQUE ══════ -->
+    <div class="video-ressource">
+      <div class="video-section-title"><i class="fab fa-youtube"></i> Vidéo pédagogique recommandée</div>
+      <div class="video-card">
+        <a href="https://www.youtube.com/watch?v=pxj1vr4kP1A" target="_blank" class="video-thumbnail">
+          <div class="video-thumbnail-bg">
+            <i class="fab fa-youtube video-yt-icon"></i>
+            <span class="video-yt-text">YOUTUBE</span>
+          </div>
+          <div class="video-play-overlay"><i class="fas fa-play"></i></div>
+        </a>
+        <div class="video-info">
+          <span class="video-badge"><i class="fas fa-clock"></i> 1h30</span>
+          <div class="video-titre">Maintenance et Dépannage Électronique</div>
+          <div class="video-chaine">Chaîne : TP Électronique</div>
+          <div class="video-desc">Utilisation du multimètre, diagnostic de pannes et réparation de circuits.</div>
+          <a href="https://www.youtube.com/watch?v=pxj1vr4kP1A" target="_blank" class="video-watch-btn">
+            <i class="fab fa-youtube"></i> Voir sur YouTube
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════ TÉLÉCHARGEMENTS PDF ══════ -->
+    <div class="pdf-download-zone">
+      <a href="tp-electronique.pdf" download class="pdf-download-btn">
+        <i class="fas fa-file-pdf"></i> Télécharger le TP (PDF)
+      </a>
+      <a href="correction-electronique.pdf" download class="correction-download-btn">
+        <i class="fas fa-check-circle"></i> Télécharger les corrections (PDF)
+      </a>
+      <span class="pdf-info-text">Documents imprimables pour travail hors-ligne</span>
+    </div>
+
+    <div id="content">
+</div><div id="content">
+
+      <!-- CH 1 - INTRODUCTION -->
+      <section class="chapter" id="intro">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#FF6B35;background:rgba(255,107,53,0.1);border-color:rgba(255,107,53,0.2)">MNT.01</span>
+          <div class="chapter-title">Introduction à la Maintenance<span>Rôle et importance du technicien</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Qu'est-ce que la maintenance électronique ?</h3>
+          <p class="text">
+            La <strong>maintenance électronique</strong> consiste à <strong>diagnostiquer</strong>,
+            <strong>réparer</strong>
+            et <strong>entretenir</strong> des équipements électroniques pour assurer leur bon fonctionnement et
+            prolonger leur durée de vie.
+          </p>
+
+          <div class="callout callout-info">
+            <span class="callout-icon"><i class="fas fa-info-circle"></i></span>
+            <div class="callout-body">
+              <strong>Objectifs :</strong> Réduire les temps d'arrêt, minimiser les coûts de remplacement,
+              assurer la sécurité des utilisateurs et optimiser les performances des équipements.
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Types de maintenance</h3>
+          <div class="cards-grid">
+            <div class="card">
+              <div class="card-type" style="color:#FF6B35"><i class="fas fa-calendar-check"></i> Préventive</div>
+              <div class="card-desc">Actions planifiées avant la panne</div>
+              <div class="card-ex">Nettoyage, remplacement périodique</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent2)"><i class="fas fa-wrench"></i> Corrective</div>
+              <div class="card-desc">Réparation après panne</div>
+              <div class="card-ex">Dépannage, remplacement composants</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent)"><i class="fas fa-chart-line"></i> Prédictive</div>
+              <div class="card-desc">Surveillance continue (capteurs)</div>
+              <div class="card-ex">Analyse vibrations, température</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent6)"><i class="fas fa-sync-alt"></i> Améliorative</div>
+              <div class="card-desc">Modification pour améliorer</div>
+              <div class="card-ex">Upgrade firmware, optimisation</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="retenir">
+          <div class="retenir-title">Compétences du technicien</div>
+          <ul>
+            <li>Lecture de schémas électroniques et électriques</li>
+            <li>Maîtrise des outils de mesure (multimètre, oscilloscope)</li>
+            <li>Connaissance des composants électroniques</li>
+            <li>Méthode de diagnostic structurée</li>
+            <li>Soudure et dessoudage de composants</li>
+            <li>Respect des normes de sécurité</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CH 2 - OUTILS -->
+      <section class="chapter" id="outils">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#FF6B35;background:rgba(255,107,53,0.1);border-color:rgba(255,107,53,0.2)">MNT.02</span>
+          <div class="chapter-title">Outils de Mesure<span>Multimètre, oscilloscope, générateur</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Le Multimètre</h3>
+          <p class="text">
+            Le <strong>multimètre</strong> est l'outil de base du technicien. Il mesure la tension (V), le courant (A)
+            et la résistance (Ω).
+          </p>
+
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Fonction</th>
+                <th>Mode</th>
+                <th>Usage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Voltmètre</strong></td>
+                <td>V DC / V AC</td>
+                <td>Mesurer tension alimentation, signal</td>
+              </tr>
+              <tr>
+                <td><strong>Ampèremètre</strong></td>
+                <td>A DC / A AC</td>
+                <td>Mesurer consommation courant</td>
+              </tr>
+              <tr>
+                <td><strong>Ohmmètre</strong></td>
+                <td>Ω</td>
+                <td>Tester résistances, continuité</td>
+              </tr>
+              <tr>
+                <td><strong>Test diode</strong></td>
+                <td>⏵|</td>
+                <td>Vérifier diodes, jonctions</td>
+              </tr>
+              <tr>
+                <td><strong>Continuité</strong></td>
+                <td>♫</td>
+                <td>Tester câbles, pistes PCB</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Mesures courantes</h3>
+          <div class="callout callout-warn">
+            <span class="callout-icon"><i class="fas fa-exclamation-triangle"></i></span>
+            <div class="callout-body">
+              <strong>Sécurité :</strong> Toujours débrancher l'alimentation avant de mesurer la résistance.
+              Pour mesurer le courant, placer le multimètre EN SÉRIE (couper le circuit).
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 3 - DIAGNOSTIC -->
+      <section class="chapter" id="diagnostic">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#FF6B35;background:rgba(255,107,53,0.1);border-color:rgba(255,107,53,0.2)">MNT.03</span>
+          <div class="chapter-title">Méthode de Diagnostic<span>Approche structurée du dépannage</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Les 6 étapes du diagnostic</h3>
+          <div class="cards-grid">
+            <div class="card">
+              <div class="card-type" style="color:#FF6B35"><i class="fas fa-question-circle"></i> 1. Observation</div>
+              <div class="card-desc">Identifier les symptômes</div>
+              <div class="card-ex">L'appareil ne s'allume pas, surchauffe, bruit anormal</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent2)"><i class="fas fa-book"></i> 2. Documentation</div>
+              <div class="card-desc">Consulter schémas, manuels</div>
+              <div class="card-ex">Datasheet, schéma électrique</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent)"><i class="fas fa-ruler"></i> 3. Mesure</div>
+              <div class="card-desc">Vérifier tensions, continuité</div>
+              <div class="card-ex">Alimentation, signaux, masse</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent6)"><i class="fas fa-search"></i> 4. Analyse</div>
+              <div class="card-desc">Comparer valeurs mesurées/attendues</div>
+              <div class="card-ex">Identifier l'écart</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent3)"><i class="fas fa-lightbulb"></i> 5. Hypothèse</div>
+              <div class="card-desc">Émettre une hypothèse de panne</div>
+              <div class="card-ex">Condensateur défectueux, court-circuit</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:#DC143C"><i class="fas fa-check-circle"></i> 6. Vérification</div>
+              <div class="card-desc">Confirmer et réparer</div>
+              <div class="card-ex">Remplacer composant, tester</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="retenir">
+          <div class="retenir-title">Méthode "Diviser pour régner"</div>
+          <ul>
+            <li>Diviser le circuit en blocs fonctionnels</li>
+            <li>Tester chaque bloc un par un</li>
+            <li>Isoler le bloc défectueux</li>
+            <li>Identifier le composant fautif dans ce bloc</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CH 4 - PANNES COURANTES -->
+      <section class="chapter" id="pannes">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#FF6B35;background:rgba(255,107,53,0.1);border-color:rgba(255,107,53,0.2)">MNT.04</span>
+          <div class="chapter-title">Pannes Courantes<span>Symptômes et solutions</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Diagnostic par symptôme</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Symptôme</th>
+                <th>Cause probable</th>
+                <th>Vérification</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Appareil ne s'allume pas</td>
+                <td>Alimentation défectueuse</td>
+                <td>Vérifier tension secteur, fusible, transfo</td>
+              </tr>
+              <tr>
+                <td>Surchauffe anormale</td>
+                <td>Court-circuit, ventilation</td>
+                <td>Mesurer courant, vérifier ventilateur</td>
+              </tr>
+              <tr>
+                <td>Signal audio distordu</td>
+                <td>Condensateur de liaison HS</td>
+                <td>Tester condensateurs électrolytiques</td>
+              </tr>
+              <tr>
+                <td>Affichage LCD vide</td>
+                <td>Contraste, alimentation, données</td>
+                <td>Ajuster contraste, vérifier 5V, bus I2C</td>
+              </tr>
+              <tr>
+                <td>Fusible grille répétitivement</td>
+                <td>Court-circuit en aval</td>
+                <td>Débrancher charges, mesurer résistances</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- CH 5 - SOUDURE -->
+      <section class="chapter" id="soudure">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#FF6B35;background:rgba(255,107,53,0.1);border-color:rgba(255,107,53,0.2)">MNT.05</span>
+          <div class="chapter-title">Soudure & Dessoudage<span>Techniques de réparation</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Matériel de soudage</h3>
+          <div class="cards-grid">
+            <div class="card">
+              <div class="card-type" style="color:#FF6B35"><i class="fas fa-fire"></i> Fer à souder</div>
+              <div class="card-desc">30-60W avec réglage température</div>
+              <div class="card-ex">300-350°C pour électronique</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent2)"><i class="fas fa-circle"></i> Fil d'étain</div>
+              <div class="card-desc">Sn60/Pb40 ou sans plomb (RoHS)</div>
+              <div class="card-ex">Diamètre 0.5-1mm avec flux</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent)"><i class="fas fa-pump-soap"></i> Flux</div>
+              <div class="card-desc">Améliore mouillage de l'étain</div>
+              <div class="card-ex">Liquide ou stylo</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent6)"><i class="fas fa-wind"></i> Tresse/Pompe</div>
+              <div class="card-desc">Dessoudage</div>
+              <div class="card-ex">Tresse à dessouder ou pompe manuelle</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Technique de soudage (5 étapes)</h3>
+          <ol style="color: var(--text); margin-left: 20px; margin-bottom: 16px;">
+            <li><strong>Nettoyer</strong> la panne du fer (éponge humide)</li>
+            <li><strong>Chauffer</strong> simultanément la patte du composant ET la pastille du PCB (2-3 secondes)</li>
+            <li><strong>Appliquer</strong> le fil d'étain sur le point de jonction (pas sur la panne !)</li>
+            <li><strong>Retirer</strong> le fil d'étain quand suffisamment fondu</li>
+            <li><strong>Retirer</strong> le fer en maintenant le composant immobile</li>
+          </ol>
+
+          <div class="callout callout-tip">
+            <span class="callout-icon"><i class="fas fa-lightbulb"></i></span>
+            <div class="callout-body">
+              <strong>Soudure réussie :</strong> Forme de cône brillant, surface lisse, bonne adhérence.
+              Éviter soudure froide (terne, grumeleuse) ou pont de soudure (court-circuit).
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TRAVAUX PRATIQUES -->
+      <section class="chapter" id="tp">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:var(--accent);background:rgba(240,180,41,0.1);border-color:rgba(240,180,41,0.2)">TP</span>
+          <div class="chapter-title">Travaux Pratiques<span>3 exercices de maintenance</span></div>
+        </div>
+
+        <!-- TP 1 -->
+        <div class="section">
+          <h3 class="section-title">TP 1 : Diagnostic d'une Alimentation Défectueuse</h3>
+          <p class="text"><strong>Objectif :</strong> Diagnostiquer une panne d'alimentation 12V</p>
+
+          <div class="callout callout-info">
+            <span class="callout-icon"><i class="fas fa-tasks"></i></span>
+            <div class="callout-body">
+              <strong>Énoncé :</strong> Une alimentation 12V/2A ne délivre aucune tension en sortie.
+              Le voyant LED ne s'allume pas. Suivez la méthode de diagnostic pour identifier la panne.
+            </div>
+          </div>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Démarche de diagnostic</span>
+            </div>
+            <pre><span class="num">1.</span> <span class="kw">OBSERVATION</span>
+   - Pas de tension sortie (devrait être 12V)
+   - LED éteinte
+   - Pas de bruit anormal, pas de fumée
+
+<span class="num">2.</span> <span class="kw">SÉCURITÉ</span>
+   - Débrancher l'alimentation du secteur
+   - Attendre décharge des condensateurs (2 min)
+
+<span class="num">3.</span> <span class="kw">INSPECTION VISUELLE</span>
+   - Ouvrir le boîtier
+   - Chercher composants brûlés, gonflés
+   - Vérifier soudures
+
+<span class="num">4.</span> <span class="kw">MESURES (hors tension)</span>
+   <span class="str">a) Fusible :</span>
+      - Multimètre en mode continuité (♫)
+      - Mesurer aux bornes du fusible
+      - <span class="cm">✓ Si bip : fusible OK</span>
+      - <span class="cm">✗ Si pas de bip : fusible grillé → REMPLACER</span>
+   
+   <span class="str">b) Transfo/Pont de diodes :</span>
+      - Multimètre en mode Ω
+      - Mesurer résistance enroulement primaire transfo
+      - <span class="cm">Valeur attendue : quelques Ω à quelques kΩ</span>
+   
+   <span class="str">c) Condensateurs :</span>
+      - Inspection visuelle : gonflés, fuite ?
+      - Mesurer avec capacimètre si disponible
+
+<span class="num">5.</span> <span class="kw">MESURES (sous tension - ATTENTION !)</span>
+   - Rebrancher avec multimètre en mode V AC
+   - Mesurer tension APRÈS fusible
+   - Mesurer tension sortie transfo (secondaire)
+   - Mesurer tension APRÈS pont de diodes (DC)
+
+<span class="num">6.</span> <span class="kw">DIAGNOSTIC</span>
+   <span class="str">Si fusible OK + transfo OK mais pas de sortie :</span>
+      → Condensateur de filtrage HS
+      → Régulateur de tension défaillant
+   
+   <span class="str">Si fusible grillé répétitivement :</span>
+      → Court-circuit en aval (pont diodes, condo, charge)</pre>
+          </div>
+
+          <div class="callout callout-tip">
+            <span class="callout-icon"><i class="fas fa-lightbulb"></i></span>
+            <div class="callout-body">
+              <strong>Résolution type :</strong> Le fusible est grillé. Après remplacement, mesurer la résistance
+              du pont de diodes révèle un court-circuit → Remplacer le pont de diodes, remplacer fusible, tester.
+            </div>
+          </div>
+        </div>
+
+        <!-- TP 2 -->
+        <div class="section">
+          <h3 class="section-title">TP 2 : Remplacement d'un Condensateur Électrolytique</h3>
+          <p class="text"><strong>Objectif :</strong> Dessouder et remplacer un condensateur défectueux</p>
+
+          <div class="callout callout-info">
+            <span class="callout-icon"><i class="fas fa-tasks"></i></span>
+            <div class="callout-body">
+              <strong>Énoncé :</strong> Un condensateur électrolytique 1000µF/16V est gonflé (signe de défaillance).
+              Vous devez le remplacer.
+            </div>
+          </div>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Procédure</span>
+            </div>
+            <pre><span class="num">1.</span> <span class="kw">PRÉPARATION</span>
+   - Débrancher alimentation
+   - Décharger le condensateur avec résistance 10kΩ
+   - Prendre photo du PCB (repérer polarité +/-)
+
+<span class="num">2.</span> <span class="kw">DESSOUDAGE</span>
+   <span class="str">Méthode A : Tresse à dessouder</span>
+   - Placer tresse sur soudure
+   - Chauffer avec fer à souder
+   - Étain absorbé par tresse capillaire
+   
+   <span class="str">Méthode B : Pompe à dessouder</span>
+   - Chauffer soudure avec fer
+   - Actionner pompe pour aspirer étain fondu
+   
+   - Retirer condensateur avec douceur (ne pas arracher pistes)
+
+<span class="num">3.</span> <span class="kw">CHOIX DU COMPOSANT DE REMPLACEMENT</span>
+   <span class="cm">Paramètres à respecter :</span>
+   - <span class="str">Capacité :</span> identique (1000µF) ou légèrement supérieure
+   - <span class="str">Tension :</span> ≥ tension d'origine (16V minimum, 25V OK)
+   - <span class="str">Diamètre/hauteur :</span> compatibles avec PCB
+   - <span class="str">Température :</span> 85°C ou 105°C
+
+<span class="num">4.</span> <span class="kw">SOUDAGE</span>
+   - Insérer nouveau condensateur (RESPECTER POLARITÉ !)
+      <span class="cm">Patte longue = + / Marquage - sur corps</span>
+   - Souder les deux pattes
+   - Couper l'excédent
+
+<span class="num">5.</span> <span class="kw">VÉRIFICATION</span>
+   - Inspection visuelle soudures
+   - Multimètre mode continuité : pas de court-circuit
+   - Rebrancher, tester tension sortie
+   - Mesurer ondulation (oscillo) si disponible</pre>
+          </div>
+
+          <div class="callout callout-warn">
+            <span class="callout-icon"><i class="fas fa-exclamation-triangle"></i></span>
+            <div class="callout-body">
+              <strong>Attention polarité !</strong> Inverser un condensateur électrolytique → explosion/feu.
+              Toujours vérifier marquage +/- avant soudage.
+            </div>
+          </div>
+        </div>
+
+        <!-- TP 3 -->
+        <div class="section">
+          <h3 class="section-title">TP 3 : Test de Composants avec Multimètre</h3>
+          <p class="text"><strong>Objectif :</strong> Tester résistances, diodes, transistors</p>
+
+          <div class="callout callout-info">
+            <span class="callout-icon"><i class="fas fa-tasks"></i></span>
+            <div class="callout-body">
+              <strong>Énoncé :</strong> Vérifier l'état de différents composants avec un multimètre
+            </div>
+          </div>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">Tests</span>
+            </div>
+            <pre><span class="kw">A. TEST RÉSISTANCE</span>
+   <span class="num">1.</span> Dessouder au moins une patte (éviter mesure faussée par circuit)
+   <span class="num">2.</span> Mode Ω sur multimètre
+   <span class="num">3.</span> Mesurer, comparer avec code couleur
+   <span class="str">Tolérance :</span> ±5% (or) ou ±10% (argent)
+   <span class="str">Résistance 10kΩ ±5% :</span> entre 9.5kΩ et 10.5kΩ = OK
+
+<span class="kw">B. TEST DIODE</span>
+   <span class="num">1.</span> Mode test diode (⏵|) sur multimètre
+   <span class="num">2.</span> <span class="str">Sens direct (anode → cathode) :</span>
+      - Affichage ~0.6-0.7V = diode OK
+   <span class="num">3.</span> <span class="str">Sens inverse :</span>
+      - Affichage OL (infini) = diode OK
+   
+   <span class="cm">Si 0V dans les deux sens → court-circuit → HS
+   Si OL dans les deux sens → circuit ouvert → HS</span>
+
+<span class="kw">C. TEST TRANSISTOR NPN (ex: 2N2222)</span>
+   <span class="cm">Transistor = 2 diodes tête-bêche</span>
+   
+   <span class="num">1.</span> <span class="str">Base-Émetteur :</span>
+      Pointe rouge (B), noire (E) → ~0.6-0.7V (comme diode)
+   
+   <span class="num">2.</span> <span class="str">Base-Collecteur :</span>
+      Pointe rouge (B), noire (C) → ~0.6-0.7V
+   
+   <span class="num">3.</span> <span class="str">Collecteur-Émetteur :</span>
+      Les deux sens → OL (pas de conduction directe)
+   
+   <span class="cm">Si tous les tests OK → transistor fonctionnel</span>
+
+<span class="kw">D. TEST CONDENSATEUR (capacimètre requis)</span>
+   - Dessouder, décharger
+   - Connecter au capacimètre
+   - Valeur mesurée ≈ valeur marquée (±20% pour électrolytiques)
+   - <span class="cm">Si 0 ou très faible → HS (ouvert)
+   Si court-circuit → HS</span></pre>
+          </div>
+
+          <div class="callout callout-tip">
+            <span class="callout-icon"><i class="fas fa-lightbulb"></i></span>
+            <div class="callout-body">
+              <strong>Astuce :</strong> Toujours dessouder au moins une patte avant test pour éviter les mesures
+              faussées par les autres composants du circuit en parallèle.
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- EXERCICES & TP MAINTENANCE -->
+      <section class="chapter" id="exercices-maintenance">
+        <div class="chapter-header">
+          <span class="chapter-num" style="background:linear-gradient(135deg,#b45309,#d97706);">EX</span>
+          <div class="chapter-title">Exercices &amp; Travaux Pratiques<span>Diagnostic, soudure et réparation de circuits électroniques</span></div>
+        </div>
+        <div class="section">
+          <p class="section-intro">La maintenance électronique est un art qui s'apprend par la pratique. Ces exercices et TP vous enseignent les méthodes de diagnostic systématique, les techniques de soudure et les procédures de réparation professionnelles.</p>
+
+          <div class="callout callout-warn">
+            <span class="callout-icon">⚠️</span>
+            <div class="callout-body"><strong>ESD (Électricité Statique) :</strong> Portez toujours un bracelet antistatique et travaillez sur un tapis antistatique lorsque vous manipulez des composants sensibles (microcontrôleurs, RAM, GPU). Une décharge de 100 V imperceptible à l'humain peut détruire un composant.</div>
+          </div>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 1 — Diagnostic méthodique <span class="niveau-badge niveau-facile">Facile</span></h4>
+            <ol>
+              <li>Un circuit présenté ne fonctionne pas. Appliquez la méthode des 5 étapes : observation visuelle, mesure des tensions d'alimentation, vérification des masses, test des signaux de commande, remplacement des composants suspects.</li>
+              <li>Utilisez un multimètre en mode continuité pour identifier une piste rompue sur un PCB endommagé.</li>
+              <li>Rédigez un rapport de diagnostic avec : symptômes observés, hypothèses testées, composant défectueux identifié, solution appliquée.</li>
+            </ol>
+          </div>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 2 — Techniques de soudure <span class="niveau-badge niveau-moyen">Moyen</span></h4>
+            <ol>
+              <li>Pratiquez la soudure sur une carte d'entraînement : résistances traversantes (through-hole), puis composants CMS (surface mount) avec fil d'étain fin et flux.</li>
+              <li>Dessoudez proprement un composant traversant avec une pompe à dessouder ou de la tresse à dessouder.</li>
+              <li>Réalisez un kit électronique complet (ex: kit clignotant ou mini-ampli) en suivant les bonnes pratiques : insérer les plus petits composants en premier, vérifier les polarités, inspecter chaque soudure.</li>
+              <li>Évaluez la qualité de vos soudures selon les critères IPC-A-610 : soudure brillante, forme conique, mouillage correct.</li>
+            </ol>
+          </div>
+
+          <div class="tp-block">
+            <h4>🔬 TP — Réparation d'une carte Arduino défectueuse <span class="niveau-badge niveau-avance">Avancé — 2h</span></h4>
+            <p style="font-size:14px;color:var(--muted);margin-bottom:12px;"><strong>Objectif :</strong> Diagnostiquer et réparer une carte Arduino volontairement endommagée par le formateur.</p>
+            <ol class="tp-etapes">
+              <li><strong>Analyse des symptômes :</strong> La carte ne se reconnaît plus sur USB. Le PC n'émet aucun son de connexion. Commencez par l'inspection visuelle.</li>
+              <li><strong>Mesures :</strong> Vérifiez la tension 5 V du régulateur, la tension 3,3 V, la continuité sur les pistes USB D+/D−.</li>
+              <li><strong>Hypothèse 1 :</strong> Chip USB-Serial (CH340 ou ATmega16U2) défectueux → vérifiez avec sonde logique les signaux TX/RX.</li>
+              <li><strong>Hypothèse 2 :</strong> Fusible polyfuse déclenché → mesure résistance &lt; 1 Ω = OK, &gt; 100 Ω = déclenché → attendre ou court-circuiter temporairement.</li>
+              <li><strong>Réparation :</strong> Remplacer le composant défectueux. Re-flasher le bootloader si nécessaire (via ISP programmer).</li>
+              <li><strong>Rapport :</strong> Chronologie du diagnostic, composant remplacé, coût de la réparation vs prix neuf, conclusion sur la rentabilité de la réparation.</li>
+            </ol>
+          </div>
+
+          <div class="quiz-block">
+            <h4>❓ Quiz de révision — Maintenance Électronique</h4>
+            <ol>
+              <li>Quels sont les 5 symptômes visuels d'un composant défectueux sur un PCB ?</li>
+              <li>Expliquez la différence entre un court-circuit et un circuit ouvert. Comment les identifier au multimètre ?</li>
+              <li>Qu'est-ce que la température de fusion de l'étain à souder ? Quelle est la bonne température du fer à souder ?</li>
+              <li>Pourquoi faut-il éviter de surchauffer un composant pendant la soudure ? Quel outil utilise-t-on pour absorber la chaleur (heat sink clip) ?</li>
+              <li>Citez 3 outils indispensables d'un poste de travail en maintenance électronique et leur rôle.</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- NAVIGATION -->
+      <div class="page-nav">
+        <a href="capteurs.html">
+          <span class="page-nav-label">← Précédent</span>
+          <span class="page-nav-title"><i class="fas fa-thermometer-half"></i> Capteurs & Actionneurs</span>
+        </a>
+        <a href="reseau-informatique.html" class="next">
+          <span class="page-nav-label">Suivant →</span>
+          <span class="page-nav-title"><i class="fas fa-network-wired"></i> Réseau Informatique</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-info">
+        <img src="assets/logo.png" alt="Logo" class="footer-logo">
+        <div class="footer-text">
+          <div class="footer-name">Adriel TATCHUM SIMO</div>
+          <div class="footer-job">Enseignant CIEL • Formateur Web & Électronique</div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Accueil</a>
+        <a href="html-complet.html">HTML</a>
+        <a href="css-complet.html">CSS</a>
+        <a href="javascript.html">JavaScript</a>
+      </div>
+      <div class="footer-copy">© 2026 Cours CIEL — Tous droits réservés</div>
+    </div>
+  </footer>
+
+  <button id="back-top" aria-label="Retour en haut">↑</button>
+
+  <script src="script.js"></script>
+  <script>
+    function toggleReponse(btn) {
+      const content = btn.nextElementSibling;
+      const isVisible = content.style.display === 'block';
+      content.style.display = isVisible ? 'none' : 'block';
+      btn.innerHTML = isVisible
+        ? '<i class="fas fa-eye"></i> Voir la réponse'
+        : '<i class="fas fa-eye-slash"></i> Masquer la réponse';
+      btn.style.background   = isVisible ? 'rgba(240,180,41,0.1)'  : 'rgba(0,117,143,0.15)';
+      btn.style.borderColor  = isVisible ? 'rgba(240,180,41,0.35)' : 'rgba(0,117,143,0.4)';
+      btn.style.color        = isVisible ? 'var(--accent)' : '#00b4d8';
+    }
+  </script>
+</body>
+
+</html>

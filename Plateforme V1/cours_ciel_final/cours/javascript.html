@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript — Cours CIEL</title>
+  <meta name="description" content="Cours complet JavaScript avec variables, fonctions, DOM, événements et exemples pratiques.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="shared-styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+
+<body>
+
+  <div id="scroll-indicator"></div>
+  <button class="mobile-menu-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+
+  <aside id="sidebar">
+    <div class="sidebar-header">
+      <img src="assets/logo.png" alt="Logo CIEL" class="sidebar-logo">
+      <div class="sidebar-title">Cours CIEL<span>Adriel TATCHUM SIMO • Formateur</span></div>
+    </div>
+    <div class="search-container" style="padding: 12px 16px;">
+      <input type="text" id="searchInput" placeholder="Rechercher un cours..."
+        style="width:100%;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:13px;">
+    </div>
+    <div class="progress-container">
+      <div class="progress-label">Progression du cours</div>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 0%"></div>
+      </div>
+    </div>
+    <nav>
+      <div class="nav-group">
+        <div class="nav-group-title">Accueil</div>
+        <a href="index.html"><i class="fas fa-home"></i> Introduction</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 1 — Développement Web</div>
+        <a href="html-complet.html"><i class="fab fa-html5"></i> HTML Complet</a>
+        <a href="css-complet.html"><i class="fab fa-css3-alt"></i> CSS Complet</a>
+        <a href="javascript.html"><i class="fab fa-js"></i> JavaScript</a>
+        <a href="python-flask.html"><i class="fab fa-python"></i> Python & Flask</a>
+        <a href="mysql.html"><i class="fas fa-database"></i> MySQL</a>
+        <a href="projet-fullstack.html"><i class="fas fa-project-diagram"></i> Projet Full Stack</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 2 — Électronique</div>
+        <a href="electronique-bases.html"><i class="fas fa-bolt"></i> Bases Électronique</a>
+        <a href="composants.html"><i class="fas fa-microchip"></i> Composants</a>
+        <a href="arduino.html"><i class="fas fa-robot"></i> Arduino & ESP32</a>
+        <a href="raspberry-pi.html"><i class="fab fa-raspberry-pi"></i> Raspberry Pi</a>
+        <a href="capteurs.html"><i class="fas fa-thermometer-half"></i> Capteurs & Actionneurs</a>
+        <a href="maintenance-electronique.html"><i class="fas fa-tools"></i> Maintenance Électronique</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Partie 3 — Réseaux & Sécurité</div>
+        <a href="reseau-informatique.html"><i class="fas fa-network-wired"></i> Réseau Informatique</a>
+        <a href="cybersecurite.html"><i class="fas fa-shield-alt"></i> Cybersécurité</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">Outils & Workflow</div>
+        <a href="vscode.html"><i class="fas fa-code"></i> VS Code</a>
+        <a href="git.html"><i class="fab fa-git-alt"></i> Git & GitHub</a>
+        <a href="venv.html"><i class="fas fa-cube"></i> .venv Python</a>
+      </div>
+    </nav>
+    <div class="theme-toggle">
+      <button class="theme-btn"><i class="fas fa-sun"></i><span>Mode clair</span></button>
+    </div>
+  </aside>
+
+  <main id="main">
+<section id="hero">
+      <div class="hero-tag">Chapitre complet</div>
+      <h1 class="hero-title">JavaScript<br><em>Interactivité du Web</em></h1>
+      <p class="hero-desc">
+        Maîtrisez JavaScript : variables, fonctions, tableaux, objets, DOM et événements.
+        Des bases aux concepts avancés avec démos interactives.
+      </p>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-val">10</span><span class="stat-label">Chapitres</span></div>
+        <div class="stat"><span class="stat-val">25+</span><span class="stat-label">Exemples</span></div>
+        <div class="stat"><span class="stat-val">~2h</span><span class="stat-label">De lecture</span></div>
+      </div>
+    </section>
+
+
+    <!-- ══════ SECTION VIDÉO PÉDAGOGIQUE ══════ -->
+    <div class="video-ressource">
+      <div class="video-section-title"><i class="fab fa-youtube"></i> Vidéo pédagogique recommandée</div>
+      <div class="video-card">
+        <a href="https://www.youtube.com/watch?v=XkvrHQNmigs" target="_blank" class="video-thumbnail">
+          <div class="video-thumbnail-bg">
+            <i class="fab fa-youtube video-yt-icon"></i>
+            <span class="video-yt-text">YOUTUBE</span>
+          </div>
+          <div class="video-play-overlay"><i class="fas fa-play"></i></div>
+        </a>
+        <div class="video-info">
+          <span class="video-badge"><i class="fas fa-clock"></i> 2h45</span>
+          <div class="video-titre">JavaScript - Les Fondamentaux</div>
+          <div class="video-chaine">Chaîne : Le Designer du Web</div>
+          <div class="video-desc">Variables, fonctions, DOM, événements et fetch API pour rendre vos pages interactives.</div>
+          <a href="https://www.youtube.com/watch?v=XkvrHQNmigs" target="_blank" class="video-watch-btn">
+            <i class="fab fa-youtube"></i> Voir sur YouTube
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════ TÉLÉCHARGEMENTS PDF ══════ -->
+    <div class="pdf-download-zone">
+      <a href="tp-javascript.pdf" download class="pdf-download-btn">
+        <i class="fas fa-file-pdf"></i> Télécharger le TP (PDF)
+      </a>
+      <a href="correction-javascript.pdf" download class="correction-download-btn">
+        <i class="fas fa-check-circle"></i> Télécharger les corrections (PDF)
+      </a>
+      <span class="pdf-info-text">Documents imprimables pour travail hors-ligne</span>
+    </div>
+
+    <div id="content">
+</div><div id="content">
+
+      <!-- CH 1 - VARIABLES -->
+      <section class="chapter" id="variables">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#f7df1e;background:rgba(247,223,30,0.1);border-color:rgba(247,223,30,0.2)">JS.01</span>
+          <div class="chapter-title">Variables & Types de données<span>let, const, var — string, number, boolean,
+              object</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Déclarer une variable</h3>
+          <p class="text">
+            Une variable est une <strong>boîte nommée</strong> qui stocke une valeur. En JavaScript moderne, on utilise
+            <code>let</code> ou <code>const</code>.
+          </p>
+
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Mot-clé</th>
+                <th>Usage</th>
+                <th>Modifiable ?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>let</code></td>
+                <td>Variable dont la valeur peut changer</td>
+                <td>✓ Oui</td>
+              </tr>
+              <tr>
+                <td><code>const</code></td>
+                <td>Constante — valeur fixe</td>
+                <td>✗ Non</td>
+              </tr>
+              <tr>
+                <td><code>var</code></td>
+                <td>Ancienne syntaxe (à éviter)</td>
+                <td>Héritage</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">JavaScript — Variables</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="kw">let</span> nom     = <span class="str">'Alice'</span>;          <span class="cm">// chaîne de caractères</span>
+<span class="kw">let</span> age     = <span class="num">17</span>;               <span class="cm">// nombre entier</span>
+<span class="kw">let</span> moyenne = <span class="num">13.5</span>;             <span class="cm">// nombre décimal</span>
+<span class="kw">let</span> majeur  = <span class="kw">false</span>;           <span class="cm">// booléen</span>
+<span class="kw">const</span> PI    = <span class="num">3.14159</span>;         <span class="cm">// constante</span>
+
+nom = <span class="str">'Bob'</span>;                    <span class="cm">// ✓ let : on peut modifier</span>
+<span class="cm">// PI = 3;                      ✗ const : TypeError !</span></pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Les types de données</h3>
+          <div class="cards-grid">
+            <div class="card">
+              <div class="card-type" style="color:#f7df1e">string</div>
+              <div class="card-desc">Texte entre guillemets</div>
+              <div class="card-ex">"Bonjour" 'JS' `${nom}`</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent2)">number</div>
+              <div class="card-desc">Entier ou décimal</div>
+              <div class="card-ex">42 3.14 -7</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent6)">boolean</div>
+              <div class="card-desc">Vrai ou faux</div>
+              <div class="card-ex">true false</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--muted)">undefined</div>
+              <div class="card-desc">Non initialisé</div>
+              <div class="card-ex">let x; // undefined</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--muted)">null</div>
+              <div class="card-desc">Absence volontaire</div>
+              <div class="card-ex">let d = null;</div>
+            </div>
+            <div class="card">
+              <div class="card-type" style="color:var(--accent)">object</div>
+              <div class="card-desc">Structure complexe</div>
+              <div class="card-ex">{nom: 'Alice'} [1,2,3]</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Les template literals</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">JavaScript — Template literals</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="kw">let</span> prenom = <span class="str">'Marie'</span>;
+<span class="kw">let</span> note   = <span class="num">16</span>;
+
+<span class="cm">// ❌ Concaténation classique (vieille méthode)</span>
+<span class="kw">let</span> msg1 = <span class="str">'Bonjour '</span> + prenom + <span class="str">', ta note est '</span> + note;
+
+<span class="cm">// ✅ Template literal (méthode moderne)</span>
+<span class="kw">let</span> msg2 = <span class="str">`Bonjour ${prenom}, ta note est ${note}/20`</span>;
+
+<span class="fn">console</span>.<span class="fn">log</span>(msg2); <span class="cm">// Bonjour Marie, ta note est 16/20</span></pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Démo interactive</h3>
+          <div class="demo-box">
+            <div class="demo-header">
+              <span class="demo-label">Variables JavaScript</span>
+              <button class="run-btn" data-demo="variables">▶ Exécuter</button>
+            </div>
+            <div class="demo-output empty" id="out1">Cliquez sur Exécuter pour voir le résultat…</div>
+          </div>
+        </div>
+
+        <div class="retenir">
+          <div class="retenir-title">À retenir</div>
+          <ul>
+            <li><code>let</code> pour une variable modifiable, <code>const</code> pour une constante</li>
+            <li>6 types principaux : string, number, boolean, undefined, null, object</li>
+            <li><code>typeof x</code> retourne le type d'une variable</li>
+            <li>Les template literals <code>`${var}`</code> remplacent la concaténation avec <code>+</code></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CH 2 - CONDITIONS -->
+      <section class="chapter" id="conditions">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#f7df1e;background:rgba(247,223,30,0.1);border-color:rgba(247,223,30,0.2)">JS.02</span>
+          <div class="chapter-title">Structures conditionnelles<span>if / else — switch — opérateur ternaire</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">if / else if / else</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">JavaScript — Conditions</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="kw">let</span> note = <span class="num">14</span>;
+
+<span class="kw">if</span> (note >= <span class="num">16</span>) {
+  <span class="fn">console</span>.<span class="fn">log</span>(<span class="str">'Très bien ✨'</span>);
+} <span class="kw">else if</span> (note >= <span class="num">14</span>) {
+  <span class="fn">console</span>.<span class="fn">log</span>(<span class="str">'Bien 👍'</span>);       <span class="cm">// ← ce bloc s'exécute</span>
+} <span class="kw">else if</span> (note >= <span class="num">12</span>) {
+  <span class="fn">console</span>.<span class="fn">log</span>(<span class="str">'Assez bien'</span>);
+} <span class="kw">else if</span> (note >= <span class="num">10</span>) {
+  <span class="fn">console</span>.<span class="fn">log</span>(<span class="str">'Passable'</span>);
+} <span class="kw">else</span> {
+  <span class="fn">console</span>.<span class="fn">log</span>(<span class="str">'Insuffisant'</span>);
+}</pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Opérateur ternaire</h3>
+          <p class="text">Version compacte du if/else sur une ligne : <code>condition ? siVrai : siFaux</code></p>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">JavaScript — Ternaire</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="kw">let</span> age    = <span class="num">17</span>;
+<span class="kw">let</span> statut = age >= <span class="num">18</span> ? <span class="str">'Majeur'</span> : <span class="str">'Mineur'</span>;
+<span class="fn">console</span>.<span class="fn">log</span>(statut); <span class="cm">// 'Mineur'</span></pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Opérateurs de comparaison</h3>
+          <div class="callout callout-warn">
+            <span class="callout-icon"><i class="fas fa-exclamation-triangle"></i></span>
+            <div class="callout-body">
+              <strong>Toujours utiliser <code>===</code> (égalité stricte)</strong> plutôt que <code>==</code> (égalité
+              faible).
+              <code>5 == '5'</code> vaut <code>true</code> à cause de la conversion de type — c'est une source de bugs !
+            </div>
+          </div>
+
+          <div class="good-bad">
+            <div class="good">
+              <div class="good-label">✅ Correct</div>
+              <pre><span class="kw">if</span> (age === <span class="num">18</span>) {
+  <span class="cm">// comparaison stricte</span>
+  <span class="cm">// type ET valeur</span>
+}</pre>
+            </div>
+            <div class="bad">
+              <div class="bad-label">❌ À éviter</div>
+              <pre><span class="kw">if</span> (age == <span class="str">'18'</span>) {
+  <span class="cm">// '18' == 18 → true !</span>
+  <span class="cm">// comportement surprenant</span>
+}</pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 3 - BOUCLES -->
+      <section class="chapter" id="boucles">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#f7df1e;background:rgba(247,223,30,0.1);border-color:rgba(247,223,30,0.2)">JS.03</span>
+          <div class="chapter-title">Boucles<span>for — while — forEach — for…of</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">La boucle for</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">JavaScript — Boucle for</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm">// for (initialisation ; condition ; mise à jour)</span>
+<span class="kw">for</span> (<span class="kw">let</span> i = <span class="num">0</span>; i < <span class="num">5</span>; i++) {
+  <span class="fn">console</span>.<span class="fn">log</span>(<span class="str">`Tour n°${i}`</span>);
+}
+<span class="cm">// Affiche : Tour n°0, Tour n°1, ..., Tour n°4</span></pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">forEach et for…of</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">JavaScript — Parcourir un tableau</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="kw">let</span> fruits = [<span class="str">'pomme'</span>, <span class="str">'banane'</span>, <span class="str">'cerise'</span>];
+
+<span class="cm">// for...of : syntaxe simple</span>
+<span class="kw">for</span> (<span class="kw">let</span> fruit <span class="kw">of</span> fruits) {
+  <span class="fn">console</span>.<span class="fn">log</span>(fruit);
+}
+
+<span class="cm">// forEach : avec index</span>
+fruits.<span class="fn">forEach</span>(<span class="kw">function</span>(fruit, index) {
+  <span class="fn">console</span>.<span class="fn">log</span>(<span class="str">`${index + 1}. ${fruit}`</span>);
+});
+
+<span class="cm">// Version fléchée (plus concise)</span>
+fruits.<span class="fn">forEach</span>((f, i) => <span class="fn">console</span>.<span class="fn">log</span>(<span class="str">`${i}: ${f}`</span>));</pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Démo — Tables de multiplication</h3>
+          <div class="demo-box">
+            <div class="demo-header">
+              <span class="demo-label">Boucles imbriquées</span>
+              <button class="run-btn" data-demo="boucles">▶ Exécuter</button>
+            </div>
+            <div class="demo-output empty" id="out4">Cliquez sur Exécuter pour voir les tables de 1 à 5…</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 4 - FONCTIONS -->
+      <section class="chapter" id="fonctions">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#f7df1e;background:rgba(247,223,30,0.1);border-color:rgba(247,223,30,0.2)">JS.04</span>
+          <div class="chapter-title">Fonctions<span>Déclaration, expression, flèche, portée</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Les 3 façons d'écrire une fonction</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">JavaScript — Fonctions</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm">// 1. Déclaration (function declaration)</span>
+<span class="kw">function</span> <span class="fn">additionner</span>(a, b) {
+  <span class="kw">return</span> a + b;
+}
+
+<span class="cm">// 2. Expression (function expression)</span>
+<span class="kw">const</span> multiplier = <span class="kw">function</span>(a, b) {
+  <span class="kw">return</span> a * b;
+};
+
+<span class="cm">// 3. Fonction fléchée (arrow function) — moderne</span>
+<span class="kw">const</span> diviser = (a, b) => a / b;
+
+<span class="cm">// Avec paramètre par défaut</span>
+<span class="kw">const</span> saluer = (nom, lang = <span class="str">'fr'</span>) => {
+  <span class="kw">return</span> lang === <span class="str">'fr'</span> ? <span class="str">`Bonjour ${nom}`</span> : <span class="str">`Hello ${nom}`</span>;
+};</pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Démo — Calcul de moyenne</h3>
+          <div class="demo-box">
+            <div class="demo-header">
+              <span class="demo-label">Fonction calculerMoyenne</span>
+              <button class="run-btn" data-demo="fonctions">▶ Exécuter</button>
+            </div>
+            <div class="demo-output empty" id="out5">Cliquez pour calculer la moyenne d'un tableau de notes…</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 5 - TABLEAUX -->
+      <section class="chapter" id="tableaux">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#f7df1e;background:rgba(247,223,30,0.1);border-color:rgba(247,223,30,0.2)">JS.05</span>
+          <div class="chapter-title">Tableaux (Array)<span>Créer, parcourir, transformer</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Méthodes de base</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">JavaScript — Tableaux</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="kw">let</span> fruits = [<span class="str">'pomme'</span>, <span class="str">'banane'</span>, <span class="str">'cerise'</span>];
+
+fruits[<span class="num">0</span>];              <span class="cm">// 'pomme' — indices commencent à 0</span>
+fruits.length;          <span class="cm">// 3</span>
+fruits[fruits.length - <span class="num">1</span>]; <span class="cm">// 'cerise' — dernier élément</span>
+
+fruits.<span class="fn">push</span>(<span class="str">'kiwi'</span>);    <span class="cm">// ajouter à la fin</span>
+fruits.<span class="fn">pop</span>();            <span class="cm">// retirer le dernier</span>
+fruits.<span class="fn">unshift</span>(<span class="str">'ananas'</span>); <span class="cm">// ajouter au début</span>
+fruits.<span class="fn">shift</span>();          <span class="cm">// retirer le premier</span>
+fruits.<span class="fn">includes</span>(<span class="str">'banane'</span>); <span class="cm">// true</span>
+fruits.<span class="fn">indexOf</span>(<span class="str">'cerise'</span>);  <span class="cm">// 1</span></pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">map, filter, reduce</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">JavaScript — Méthodes avancées</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="kw">let</span> notes = [<span class="num">8</span>, <span class="num">15</span>, <span class="num">12</span>, <span class="num">18</span>, <span class="num">10</span>, <span class="num">14</span>];
+
+<span class="cm">// map : transforme chaque élément → nouveau tableau</span>
+<span class="kw">let</span> doubles = notes.<span class="fn">map</span>(n => n * <span class="num">2</span>);
+<span class="cm">// [16, 30, 24, 36, 20, 28]</span>
+
+<span class="cm">// filter : garde seulement les éléments qui passent le test</span>
+<span class="kw">let</span> reçus = notes.<span class="fn">filter</span>(n => n >= <span class="num">10</span>);
+<span class="cm">// [15, 12, 18, 10, 14]</span>
+
+<span class="cm">// reduce : calcule une valeur unique</span>
+<span class="kw">let</span> somme = notes.<span class="fn">reduce</span>((acc, n) => acc + n, <span class="num">0</span>);
+<span class="kw">let</span> moyenne = somme / notes.length; <span class="cm">// 12.83</span>
+
+<span class="cm">// find : premier élément qui satisfait</span>
+<span class="kw">let</span> premiereSup15 = notes.<span class="fn">find</span>(n => n > <span class="num">15</span>); <span class="cm">// 18</span></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 6 - DOM -->
+      <section class="chapter" id="dom">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#f7df1e;background:rgba(247,223,30,0.1);border-color:rgba(247,223,30,0.2)">JS.06</span>
+          <div class="chapter-title">Le DOM<span>Sélectionner, modifier, créer des éléments HTML</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Sélectionner des éléments</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Méthode</th>
+                <th>Résultat</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>getElementById('id')</code></td>
+                <td>1 seul élément par son identifiant</td>
+              </tr>
+              <tr>
+                <td><code>querySelector('.classe')</code></td>
+                <td>1er élément correspondant au sélecteur CSS</td>
+              </tr>
+              <tr>
+                <td><code>querySelectorAll('li')</code></td>
+                <td>Tous les éléments → NodeList</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">JavaScript — DOM</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="kw">const</span> titre   = <span class="fn">document</span>.<span class="fn">getElementById</span>(<span class="str">'monTitre'</span>);
+<span class="kw">const</span> premier = <span class="fn">document</span>.<span class="fn">querySelector</span>(<span class="str">'h2'</span>);
+<span class="kw">const</span> tousLi  = <span class="fn">document</span>.<span class="fn">querySelectorAll</span>(<span class="str">'ul li'</span>);
+
+<span class="cm">// Modifier le texte</span>
+titre.textContent = <span class="str">'Nouveau titre'</span>;
+
+<span class="cm">// Modifier le HTML interne</span>
+titre.innerHTML = <span class="str">'Titre <em>en italique</em>'</span>;
+
+<span class="cm">// Modifier le style</span>
+titre.style.color    = <span class="str">'red'</span>;
+titre.style.fontSize = <span class="str">'24px'</span>;
+
+<span class="cm">// Manipuler les classes CSS</span>
+titre.classList.<span class="fn">add</span>(<span class="str">'actif'</span>);
+titre.classList.<span class="fn">remove</span>(<span class="str">'actif'</span>);
+titre.classList.<span class="fn">toggle</span>(<span class="str">'visible'</span>);</pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Démo — Manipulation DOM</h3>
+          <div class="demo-box">
+            <div class="demo-header">
+              <span class="demo-label">Modifier le DOM</span>
+              <button class="run-btn" data-demo="dom">▶ Exécuter</button>
+            </div>
+            <div class="demo-output empty" id="out6">Cliquez pour manipuler le DOM…</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 7 - ÉVÉNEMENTS -->
+      <section class="chapter" id="evenements">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#f7df1e;background:rgba(247,223,30,0.1);border-color:rgba(247,223,30,0.2)">JS.07</span>
+          <div class="chapter-title">Les événements<span>addEventListener, event, délégation</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Écouter un événement</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">JavaScript — Événements</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="kw">const</span> btn = <span class="fn">document</span>.<span class="fn">getElementById</span>(<span class="str">'monBouton'</span>);
+
+<span class="cm">// Méthode recommandée</span>
+btn.<span class="fn">addEventListener</span>(<span class="str">'click'</span>, <span class="kw">function</span>(event) {
+  <span class="fn">console</span>.<span class="fn">log</span>(<span class="str">'Cliqué !'</span>);
+  <span class="fn">console</span>.<span class="fn">log</span>(event.target); <span class="cm">// l'élément cliqué</span>
+});
+
+<span class="cm">// Événements clavier</span>
+<span class="fn">document</span>.<span class="fn">addEventListener</span>(<span class="str">'keydown'</span>, (e) => {
+  <span class="fn">console</span>.<span class="fn">log</span>(e.key);     <span class="cm">// 'Enter', 'a', 'Escape'…</span>
+  <span class="fn">console</span>.<span class="fn">log</span>(e.ctrlKey); <span class="cm">// true si Ctrl est enfoncé</span>
+});</pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Événements courants</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Événement</th>
+                <th>Déclencheur</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>click</code></td>
+                <td>Clic de souris</td>
+              </tr>
+              <tr>
+                <td><code>dblclick</code></td>
+                <td>Double-clic</td>
+              </tr>
+              <tr>
+                <td><code>mouseover / mouseout</code></td>
+                <td>Survol / fin de survol</td>
+              </tr>
+              <tr>
+                <td><code>keydown / keyup</code></td>
+                <td>Touche enfoncée / relâchée</td>
+              </tr>
+              <tr>
+                <td><code>input</code></td>
+                <td>Modification d'un champ (temps réel)</td>
+              </tr>
+              <tr>
+                <td><code>change</code></td>
+                <td>Modification confirmée</td>
+              </tr>
+              <tr>
+                <td><code>submit</code></td>
+                <td>Soumission d'un formulaire</td>
+              </tr>
+              <tr>
+                <td><code>DOMContentLoaded</code></td>
+                <td>DOM entièrement construit</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">preventDefault</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">JavaScript — Intercepter un formulaire</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="fn">document</span>.<span class="fn">getElementById</span>(<span class="str">'monForm'</span>)
+  .<span class="fn">addEventListener</span>(<span class="str">'submit'</span>, <span class="kw">function</span>(event) {
+    event.<span class="fn">preventDefault</span>(); <span class="cm">// stoppe l'envoi par défaut</span>
+
+    <span class="cm">// Traitement JS ici (validation, etc.)</span>
+    <span class="fn">console</span>.<span class="fn">log</span>(<span class="str">'Formulaire intercepté !'</span>);
+  });</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- CH 8 - FETCH API -->
+      <section class="chapter" id="fetch">
+        <div class="chapter-header">
+          <span class="chapter-num"
+            style="color:#f7df1e;background:rgba(247,223,30,0.1);border-color:rgba(247,223,30,0.2)">JS.08</span>
+          <div class="chapter-title">Fetch API<span>Requêtes HTTP asynchrones</span></div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Appeler une API</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <span class="code-lang">JavaScript — Fetch</span>
+              <button class="copy-btn">copier</button>
+            </div>
+            <pre><span class="cm">// GET — récupérer des données</span>
+<span class="kw">async function</span> <span class="fn">chargerUtilisateurs</span>() {
+  <span class="kw">const</span> reponse = <span class="kw">await</span> <span class="fn">fetch</span>(<span class="str">'http://192.168.1.10:5000/api/utilisateurs'</span>);
+  <span class="kw">const</span> data    = <span class="kw">await</span> reponse.<span class="fn">json</span>();
+  <span class="fn">console</span>.<span class="fn">log</span>(data);
+}
+
+<span class="cm">// POST — envoyer des données</span>
+<span class="kw">async function</span> <span class="fn">creerUtilisateur</span>(nom, email) {
+  <span class="kw">const</span> reponse = <span class="kw">await</span> <span class="fn">fetch</span>(<span class="str">'http://192.168.1.10:5000/api/utilisateur'</span>, {
+    method: <span class="str">'POST'</span>,
+    headers: { <span class="str">'Content-Type'</span>: <span class="str">'application/json'</span> },
+    body: <span class="fn">JSON</span>.<span class="fn">stringify</span>({ nom, email })
+  });
+  <span class="kw">const</span> resultat = <span class="kw">await</span> reponse.<span class="fn">json</span>();
+  <span class="fn">console</span>.<span class="fn">log</span>(resultat);
+}</pre>
+          </div>
+        </div>
+
+        <div class="retenir">
+          <div class="retenir-title">À retenir — JavaScript</div>
+          <ul>
+            <li><code>let</code> et <code>const</code> pour déclarer des variables</li>
+            <li><code>===</code> pour comparer (égalité stricte)</li>
+            <li><code>map</code>, <code>filter</code>, <code>reduce</code> pour transformer les tableaux</li>
+            <li><code>querySelector</code> pour sélectionner des éléments DOM</li>
+            <li><code>addEventListener</code> pour réagir aux interactions</li>
+            <li><code>fetch</code> avec <code>async/await</code> pour les appels API</li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="page-nav">
+        <a href="css-complet.html">
+          <span class="page-nav-label">← Précédent</span>
+          <span class="page-nav-title"><i class="fab fa-css3-alt"></i> CSS Complet</span>
+        </a>
+        <a href="python-flask.html" class="next">
+          <span class="page-nav-label">Suivant →</span>
+          <span class="page-nav-title"><i class="fab fa-python"></i> Python & Flask</span>
+        </a>
+      </div>
+
+    </div>
+  
+      <!-- EXERCICES & TP JAVASCRIPT -->
+      <section class="chapter" id="exercices-js">
+        <div class="chapter-header">
+          <span class="chapter-num" style="background:linear-gradient(135deg,#f7df1e,#e6b800);color:#000;">EX</span>
+          <div class="chapter-title">Exercices &amp; Travaux Pratiques<span>Algorithmes, manipulation du DOM, fetch, et projets complets en JavaScript</span></div>
+        </div>
+        <div class="section">
+          <p class="section-intro">JavaScript est le langage qui donne vie aux pages web. Ces exercices progressifs vous feront maîtriser les bases algorithmiques, la manipulation du DOM, les appels API asynchrones et la programmation orientée objet.</p>
+
+          <div class="callout callout-warn">
+            <span class="callout-icon">⚠️</span>
+            <div class="callout-body"><strong>Bonne pratique :</strong> Ouvrez toujours la console navigateur (F12) pendant vos exercices. Utilisez <code>console.log()</code> pour déboguer, <code>console.table()</code> pour les tableaux et <code>console.error()</code> pour les erreurs.</div>
+          </div>
+
+          <p class="section-exo-title"><i class="fas fa-pencil-alt"></i> Exercices de compréhension</p>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 1 — Algorithmique de base <span class="niveau-badge niveau-facile">Facile</span></h4>
+            <ol>
+              <li>Écrivez une fonction <code>isPrime(n)</code> qui retourne <code>true</code> si <code>n</code> est premier, <code>false</code> sinon. Affichez tous les nombres premiers jusqu'à 100.</li>
+              <li>Implémentez un tri à bulles (<em>bubble sort</em>) sur un tableau de nombres. Comptez le nombre d'opérations effectuées.</li>
+              <li>Créez une fonction <code>fibonacci(n)</code> en version récursive ET en version itérative. Comparez les performances avec <code>console.time()</code> pour n=40.</li>
+              <li>Écrivez <code>flatten(arr)</code> qui aplatit un tableau imbriqué à profondeur arbitraire sans utiliser <code>Array.flat()</code>.</li>
+            </ol>
+          </div>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 2 — Manipulation du DOM <span class="niveau-badge niveau-moyen">Moyen</span></h4>
+            <ol>
+              <li>Créez dynamiquement une liste de tâches (To-Do) : champ de saisie + bouton "Ajouter" → crée un <code>&lt;li&gt;</code> avec un bouton "Supprimer" et une case à cocher "Terminé".</li>
+              <li>Sauvegardez et restaurez la liste via <code>localStorage</code> (persistance après rechargement).</li>
+              <li>Ajoutez un filtre : "Toutes", "En cours", "Terminées" qui masque/affiche les tâches sans supprimer le DOM.</li>
+              <li>Implémentez le glisser-déposer (drag &amp; drop HTML5) pour réordonner les tâches.</li>
+            </ol>
+          </div>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 3 — Asynchrone &amp; Fetch API <span class="niveau-badge niveau-moyen">Moyen</span></h4>
+            <ol>
+              <li>Appelez l'API publique <code>https://jsonplaceholder.typicode.com/users</code> avec <code>fetch()</code> et affichez les utilisateurs dans des cartes HTML.</li>
+              <li>Gérez les états : <em>loading</em> (spinner), <em>success</em> (affichage des données), <em>error</em> (message d'erreur en rouge).</li>
+              <li>Ajoutez une barre de recherche qui filtre les utilisateurs côté client (<code>input event</code> + <code>Array.filter()</code>).</li>
+              <li>Refactorisez avec <code>async/await</code> et expliquez la différence avec <code>.then()/.catch()</code>.</li>
+              <li><strong>Bonus :</strong> Implémentez un cache simple : si les données ont déjà été chargées (stockées en variable), ne refaites pas l'appel réseau.</li>
+            </ol>
+          </div>
+
+          <div class="exercice-block">
+            <h4>📝 Exercice 4 — POO et Modules ES6 <span class="niveau-badge niveau-avance">Avancé</span></h4>
+            <ol>
+              <li>Créez une classe <code>BankAccount</code> avec propriétés privées (<code>#balance</code>), méthodes <code>deposit()</code>, <code>withdraw()</code>, <code>getHistory()</code> et un getter <code>balance</code>.</li>
+              <li>Étendez avec <code>SavingsAccount extends BankAccount</code> qui ajoute un taux d'intérêt et une méthode <code>applyInterest()</code>.</li>
+              <li>Créez un module <code>bank.js</code> qui exporte les classes, et un <code>app.js</code> qui les importe et les utilise (type="module").</li>
+              <li>Ajoutez une méthode statique <code>BankAccount.transfer(from, to, amount)</code> qui gère le transfert entre deux comptes avec validation.</li>
+            </ol>
+          </div>
+
+          <p class="section-exo-title"><i class="fas fa-flask"></i> Travaux Pratiques</p>
+
+          <div class="tp-block">
+            <h4>🔬 TP 1 — Application météo avec API OpenWeatherMap <span class="niveau-badge niveau-moyen">Moyen — 2h</span></h4>
+            <p style="font-size:14px;color:var(--muted);margin-bottom:12px;"><strong>Objectif :</strong> Construire une application météo qui interroge une vraie API REST.</p>
+            <ol class="tp-etapes">
+              <li>Créez un compte gratuit sur <a href="https://openweathermap.org/api" target="_blank">openweathermap.org</a> et obtenez une clé API.</li>
+              <li>Interface HTML : champ de saisie ville + bouton rechercher + zone d'affichage des résultats.</li>
+              <li>Appel API : <code>https://api.openweathermap.org/data/2.5/weather?q={ville}&appid={KEY}&units=metric&lang=fr</code>.</li>
+              <li>Affichez : nom de la ville, pays, température actuelle, ressenti, description, humidité, vent, icône météo.</li>
+              <li>Géolocalisation : bouton "Ma position" qui utilise <code>navigator.geolocation</code> pour détecter la ville automatiquement.</li>
+              <li>Historique : stockez les 5 dernières recherches dans localStorage et affichez-les comme suggestions.</li>
+            </ol>
+          </div>
+
+          <div class="tp-block">
+            <h4>🔬 TP 2 — Jeu du Snake en Canvas <span class="niveau-badge niveau-avance">Avancé — 3h</span></h4>
+            <p style="font-size:14px;color:var(--muted);margin-bottom:12px;"><strong>Objectif :</strong> Implémenter le jeu classique Snake avec HTML Canvas et JavaScript pur.</p>
+            <ol class="tp-etapes">
+              <li><strong>Canvas :</strong> Créer le canvas 400×400, définir la taille des cellules (20px), dessiner la grille.</li>
+              <li><strong>Serpent :</strong> Représenter comme un tableau de segments <code>[{x,y}]</code>. Déplacer en ajoutant la tête et supprimant la queue.</li>
+              <li><strong>Contrôles :</strong> Clavier (flèches) + swipe tactile sur mobile. Interdire le demi-tour immédiat.</li>
+              <li><strong>Pomme :</strong> Générer en position aléatoire (hors serpent). Incrémenter le score. Accélérer progressivement.</li>
+              <li><strong>Collisions :</strong> Mur → Game Over. Collision avec soi-même → Game Over. Afficher un écran "Game Over" avec le score et un bouton Rejouer.</li>
+              <li><strong>Bonus :</strong> High score en localStorage, effets visuels (flash lors de la mort), sons avec Web Audio API.</li>
+            </ol>
+          </div>
+
+          <div class="quiz-block">
+            <h4>❓ Quiz de révision — JavaScript</h4>
+            <ol>
+              <li>Quelle est la différence entre <code>==</code> et <code>===</code> ? Donnez 3 exemples où <code>==</code> donne un résultat surprenant.</li>
+              <li>Expliquez le concept de <em>closure</em>. Donnez un exemple concret d'utilisation.</li>
+              <li>Qu'est-ce que l'<em>event loop</em> ? Comment fonctionne la file des microtâches vs macrotâches ?</li>
+              <li>Différence entre <code>let</code>, <code>const</code> et <code>var</code> en termes de scope, hoisting et mutabilité.</li>
+              <li>Expliquez le <em>prototype chain</em> en JavaScript. Comment fonctionne l'héritage ?</li>
+              <li>Qu'est-ce qu'une <em>Promise</em> ? Quels sont ses 3 états possibles ?</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-info">
+        <img src="assets/logo.png" alt="Logo" class="footer-logo">
+        <div class="footer-text">
+          <div class="footer-name">Adriel TATCHUM SIMO</div>
+          <div class="footer-job">Enseignant CIEL • Formateur Web & Électronique</div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Accueil</a>
+        <a href="html-complet.html">HTML</a>
+        <a href="css-complet.html">CSS</a>
+        <a href="javascript.html">JavaScript</a>
+      </div>
+      <div class="footer-copy">© 2026 Cours CIEL — Tous droits réservés</div>
+    </div>
+  </footer>
+
+  <button id="back-top" aria-label="Retour en haut">↑</button>
+
+  <script src="script.js"></script>
+  <script>
+    function toggleReponse(btn) {
+      const content = btn.nextElementSibling;
+      const isVisible = content.style.display === 'block';
+      content.style.display = isVisible ? 'none' : 'block';
+      btn.innerHTML = isVisible
+        ? '<i class="fas fa-eye"></i> Voir la réponse'
+        : '<i class="fas fa-eye-slash"></i> Masquer la réponse';
+      btn.style.background   = isVisible ? 'rgba(240,180,41,0.1)'  : 'rgba(0,117,143,0.15)';
+      btn.style.borderColor  = isVisible ? 'rgba(240,180,41,0.35)' : 'rgba(0,117,143,0.4)';
+      btn.style.color        = isVisible ? 'var(--accent)' : '#00b4d8';
+    }
+  </script>
+</body>
+
+</html>
