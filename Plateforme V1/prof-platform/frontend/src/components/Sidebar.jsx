@@ -13,6 +13,8 @@ const links = [
   { to: "/messages", label: "Messagerie" },
 ];
 
+const COURS_EN_LIGNE_URL = "https://adrielsimo12.github.io/Education/cours/";
+
 export default function Sidebar() {
   let teacherName = "Enseignant";
   try {
@@ -39,6 +41,9 @@ export default function Sidebar() {
             {l.label}
           </NavLink>
         ))}
+        <a href={COURS_EN_LIGNE_URL} target="_blank" rel="noopener noreferrer">
+          Cours en ligne ↗
+        </a>
       </nav>
       <button type="button" className="btn btn-sm" onClick={logout} style={{ margin: "16px 16px 0" }}>
         Déconnexion

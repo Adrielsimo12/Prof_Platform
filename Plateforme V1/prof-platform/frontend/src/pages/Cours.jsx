@@ -81,8 +81,16 @@ export default function Cours() {
           <div className="sub">{cours.length} cours au total</div>
         </div>
         <div className="toolbar">
+          <a
+            href="https://adrielsimo12.github.io/Education/cours/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-copper"
+          >
+            Accéder aux cours en ligne ↗
+          </a>
           <button type="button" className="btn" onClick={() => exportCurrentPage("Cours et progression")}>Exporter PDF</button>
-          <button type="button" className="btn btn-copper" onClick={() => setShowCategorieModal(true)}>+ Nouvelle catégorie</button>
+          <button type="button" className="btn" onClick={() => setShowCategorieModal(true)}>+ Nouvelle catégorie</button>
           <select style={{ width: 200 }} value={classeFilter} onChange={(e) => setClasseFilter(e.target.value)}>
             <option value="">Toutes les classes</option>
             {classes.map((c) => <option key={c.id} value={c.id}>{c.nom}</option>)}
