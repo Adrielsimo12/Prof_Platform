@@ -91,6 +91,8 @@ Format CSV d'import :
 
    nom;prenom;email;date_naissance
 
+Aucun fichier CSV de données n'est fourni avec le projet. Sélectionner depuis l'application le fichier CSV à importer depuis l'ordinateur ou le téléphone.
+
 Pour la classe 2 TNE :
 
 - affecter chaque élève au Groupe 1 ou au Groupe 2 ;
@@ -248,6 +250,7 @@ Format minimal :
    code;nom;domaine_code;domaine_nom;description;ordre
 
 Les imports CSV des élèves et du planning sont également envoyés au serveur par l'application.
+Les fichiers CSV utilisés pour les imports restent sur votre appareil et ne sont pas ajoutés automatiquement au projet.
 
 14. COMPTES ET ROLES
 --------------------
